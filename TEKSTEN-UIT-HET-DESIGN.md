@@ -43,7 +43,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Tuinaannemers en hoveniers ·  _(op 1 pagina)_
 - Uitgesproken typografie  _(op 1 pagina)_
 - Vakmensen ·  _(op 1 pagina)_
-- Vanaf €490 + vanaf €29 per maand excl. btw, met eerst een gratis demo.  _(op 1 pagina)_
+- Vanaf €490 + vanaf €29 per maand excl. btw. Vrijblijvend voorstel.  _(op 1 pagina)_
 - Veilig afrekenen  _(op 1 pagina)_
 - Verfijnde stijl  _(op 1 pagina)_
 - Website laten maken in heel België, voor elke zaak, vereniging of zelfstandige.  _(op 1 pagina)_
@@ -112,7 +112,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Zone d’intervention  _(op 1 pagina)_
 - © 2026 Kempen Webstudio · Numéro d’entreprise BE 0897.577.919  _(op 38 pagina's)_
 - · Pas encore d’avis  _(op 1 pagina)_
-- À partir de €490 + à partir de €29 par mois HTVA, avec d’abord une démo gratuite.  _(op 1 pagina)_
+- À partir de €490 + à partir de €29 par mois HTVA, proposition sans engagement.  _(op 1 pagina)_
 
 ## EN
 
@@ -139,7 +139,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Coverage area  _(op 1 pagina)_
 - Directions · Call · Website  _(op 1 pagina)_
 - Fast  _(op 1 pagina)_
-- From €490 + from €29 per month excl. VAT, starting with a free demo.  _(op 1 pagina)_
+- From €490 + from €29 per month excl. VAT, no-obligation proposal.  _(op 1 pagina)_
 - Gallery  _(op 1 pagina)_
 - Garden contractors and landscape gardeners ·  _(op 1 pagina)_
 - Hair salons and barbershops ·  _(op 1 pagina)_

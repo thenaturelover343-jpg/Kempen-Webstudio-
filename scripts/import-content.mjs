@@ -75,6 +75,7 @@ if (ARGS.includes('--live')) {
   }
 }
 report.correcties = (await import('./apply-corrections.mjs')).applyCorrections(() => {});
+report.demoWeg = (await import('./apply-demo-weg.mjs')).applyDemoWeg(() => {});  // beslissing Karim 14-11-2026: geen gratis demo meer
 fs.writeFileSync(path.join(DST, '_import-verslag.json'), JSON.stringify(report, null, 1));
 console.log(`content/ klaar: ${n} bestanden uit ${SRC}${commit ? ' (commit ' + commit + ')' : ''}`);
 if (ARGS.includes('--live')) console.log(`  online vervangen (FR/EN): ${report.onlineVervangen.length}, opgehaald: ${report.onlineOpgehaald.join(', ') || 'geen'}, NL-verschillen (bron behouden): ${report.verschillenNL.length}`);

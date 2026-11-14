@@ -11,9 +11,9 @@ import DD from '../site/design-data.json';
 const DEMO_ID: Record<string, string> = { '/houtatelier-nethe/': 'houtatelier-nethe', '/horeca-voorbeeld/': 'bistro-tilvaar', '/webshop-voorbeeld/': 'vennebrand', '/dakwerken-hoogland/': 'dakwerken-hoogland', '/kleurwerk-voorbeeld/': 'atelier-kleurwerk', '/tuin-voorbeeld/': 'tuinzorg-varelinde', '/schoonheidssalon-voorbeeld/': 'velours', '/kapsalon-voorbeeld/': 'kapsalon-ivelien', '/barbier-voorbeeld/': 'barbier-kolvaard' };
 const SECTOR_ID: Record<string, string> = { 'website-vakmensen': 'vakmensen', 'website-horeca': 'horeca', 'website-kapsalon': 'kapsalons', 'website-schilder': 'schilders', 'website-tuinaannemer': 'tuinaannemers' };
 const H1_SPLIT: Record<string, string[]> = {
-  nl: ['Website laten', 'maken, ', 'met eerst', 'een ', 'gratis demo'],
-  fr: ['Faire créer', 'un site web, ', 'avec d’abord', 'une ', 'démo gratuite'],
-  en: ['Have a website', 'built, ', 'starting with', 'a ', 'free demo'],
+  nl: ['Website laten', 'maken, ', 'op maat', 'van ', 'uw zaak'],
+  fr: ['Faire créer', 'un site web, ', 'sur mesure', 'pour ', 'votre entreprise'],
+  en: ['Have a website', 'built, ', 'tailored', 'to ', 'your business'],
 };
 const Badge = ({ children, dark = false, copper = false }: { children: any; dark?: boolean; copper?: boolean }) => (
   <span className={copper ? 'inline-block rounded-md bg-[#B85D28]/10 border border-[#B85D28]/20 px-3 py-1 text-[11.5px] font-medium text-[#5E2A11]'

@@ -103,8 +103,8 @@ const MARK = (s = 28) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2
   write('favicon.ico', Buffer.concat([head, ...imgs]));
   write('site.webmanifest', JSON.stringify({ name: 'Kempen Webstudio', short_name: 'Kempen Webstudio', icons: [{ src: '/icons/kw-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icons/kw-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icons/kw.svg', sizes: 'any', type: 'image/svg+xml' }], theme_color: '#dcdde0', background_color: '#dcdde0', display: 'browser' }));
 }
-const OG_IMAGE = '/assets/og-v3.jpg';
-write('assets/og-v3.jpg', fs.readFileSync(path.join(ROOT, 'src', 'img', 'og-v3.jpg')));
+const OG_IMAGE = '/assets/og-v4.jpg';
+write('assets/og-v4.jpg', fs.readFileSync(path.join(ROOT, 'src', 'img', 'og-v4.jpg')));
 
 // ---------- 4. renderer (TSX -> Node-module), CSS (Tailwind), JS ----------
 const RENDER = path.join(CACHE, 'render.mjs');

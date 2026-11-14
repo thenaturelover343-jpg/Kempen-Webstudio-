@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 14-11-2026, 20:30. Branch `nieuwe-website`.
+Laatst bijgewerkt: 14-11-2026, 22:00. Branch `nieuwe-website`.
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -52,12 +52,19 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - dienstpagina's: de sectietitel staat nu links naast de introtekst (geen leeg vlak);
   - check 0 fouten, nergens horizontaal scrollen, Lighthouse mobiel en desktop 100/100/100/100, CLS 0.
 
+- [x] **Geen gratis demo meer** (beslissing Karim, 14-11, 22:00):
+  - alle verwijzingen weg uit NL/FR/EN: titels, H1, meta, OG, JSON-LD (FAQ), CTA's, zwevende knoppen, formulier, bedanktpagina, OG-beeld (nu `og-v4.jpg`, "Website laten maken, op maat van uw zaak");
+  - CTA: "Vrijblijvend voorstel aanvragen" / "Demander une proposition sans engagement" / "Request a no-obligation proposal"; home-H1 "Website laten maken, op maat van uw zaak" (zoals het originele design);
+  - regels in `config/demo-weg.json`, toegepast door `scripts/apply-demo-weg.mjs` (ook na elke import); oud -> nieuw per URL in `TEKST-WIJZIGINGEN-DEMO.md`;
+  - SEO: hoofdzoekwoorden behouden; NL-titles <= 60 en NL-descriptions <= 155; geen enkele tekst langer geworden boven de grens.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
 
 ## Nog te doen
 
+- [ ] **Karim:** de nieuwe teksten zonder demo nalezen in `TEKST-WIJZIGINGEN-DEMO.md` (en zeggen of "U betaalt pas als u tevreden bent" blijft kloppen).
 - [ ] **Karim:** de teksten in `TEKSTEN-UIT-HET-DESIGN.md` goedkeuren of aanpassen.
 - [ ] **Karim:** de bewuste afwijkingen goedkeuren (LEESMIJ):
   - sterren weg (geen reviews);
@@ -71,7 +78,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
 
 1. **Design via SSR van de echte componenten**, niet nagebouwd. Alleen zo blijft het pixelgelijk (eis van Karim). React draait alleen tijdens de build.
 2. **`content/` in de repo is de bron** (snapshot van `site`, met FR/EN van online), zodat de build zelfstandig werkt. `site`, `site-live` en `vertaling` worden nooit aangepast.
-3. **Teksten:** "gratis demo" (de aanpak van Kempen Webstudio) in plaats van "vrijblijvend voorstel" uit het design. Lege designvakken zijn gevuld met bestaande sitetekst; wat echt nieuw is, staat ter goedkeuring.
+3. **Teksten:** sinds 14-11 "vrijblijvend voorstel" (gratis demo geschrapt door Karim). Lege designvakken zijn gevuld met bestaande sitetekst; wat echt nieuw is, staat ter goedkeuring.
 4. **NL-descriptions** van Gent, Kortrijk en Leuven: de versie uit `site` gehouden (nieuwer, met prijs).
 5. **Formulier:** web3forms met de bestaande sleutel, met mailto als terugval. Na verzenden volgt een doorverwijzing naar `/bedankt/` (zoals nu).
 6. **Geen URL-wijzigingen**, dus geen redirects nodig. De 9 voorbeeldsites worden ongewijzigd overgenomen.

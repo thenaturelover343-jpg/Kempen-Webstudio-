@@ -13,7 +13,9 @@ npm run lighthouse           # Lighthouse mobiel + desktop op 7 paginatypes -> _
 npm run screens              # volledige schermafbeeldingen 1440 en 390 px per paginatype -> _screens/
 node scripts/overflow.mjs    # elke pagina op horizontaal scrollen controleren (390/1440)
 node scripts/compare-design.mjs http://localhost:3001 http://localhost:4100   # origineel design naast de site -> _screens/vergelijking-*
-npm run import -- --live     # inhoud opnieuw uit ../site halen (+ verbeterde FR/EN-teksten van online, + tekstcorrecties)
+npm run import -- --live     # inhoud opnieuw uit ../site halen (+ verbeterde FR/EN-teksten van online, + tekstcorrecties, + demo weg)
+node scripts/apply-demo-weg.mjs  # 'geen gratis demo' opnieuw toepassen op content/ -> TEKST-WIJZIGINGEN-DEMO.md
+node scripts/imgcheck.mjs    # alle pagina's: alle afbeeldingen geladen, zwevende knoppen nooit over de hero (390)
 ```
 
 **Live zetten** gebeurt alleen na Karims OK. Je publiceert dan de volledige inhoud van `dist-live/`, en niets met de hand.
@@ -29,7 +31,7 @@ npm run import -- --live     # inhoud opnieuw uit ../site halen (+ verbeterde FR
   - sliders en keuzes (hero-kaart, 9 voorbeeldontwerpen, sectoren, voor/na, werkgebied, realisaties, cirkels);
   - de FAQ (filter op onderwerp en accordeon);
   - menupaneel, Diensten-submenu, klok (Europe/Brussels), voortgangsbalk en cursoreffect in de hero;
-  - het contactvenster (elke "Gratis demo aanvragen"-knop) en het formulier (web3forms, met mailto als terugval);
+  - het contactvenster (elke "Vrijblijvend voorstel aanvragen"-knop) en het formulier (web3forms, met mailto als terugval);
   - de cookiekeuze, met statistiek pas na toestemming.
 - **Inhoud.**
   - `src/site/model.mjs` leest elke pagina uit `content/` (NL/FR/EN) en vult er de designcomponenten mee.
@@ -40,7 +42,7 @@ npm run import -- --live     # inhoud opnieuw uit ../site halen (+ verbeterde FR
     - de pakketkaarten, werkwijzekaarten en FAQ van de home;
     - het donkere CTA-blok en de sectorkaarten met beeld.
 - **Controle bij elke build.** Elke tekst van de oude pagina moet op de nieuwe pagina staan; anders stopt de build. Tekst die alleen uit het design komt, staat in `TEKSTEN-UIT-HET-DESIGN.md`.
-- **SEO per pagina.** Title, description, canonical, hreflang (nl-BE/fr-BE/en/x-default), Open Graph en alle JSON-LD blijven letterlijk. Het OG-beeld is nieuw (`/assets/og-v3.jpg`).
+- **SEO per pagina.** Title, description, canonical, hreflang (nl-BE/fr-BE/en/x-default), Open Graph en alle JSON-LD blijven letterlijk. Het OG-beeld is nieuw (`/assets/og-v4.jpg`).
 - **Robots en sitemap** werken zoals maak-live:
   - test: `noindex,nofollow` en `Disallow: /`;
   - live: volgens `config/live-config.json`;
@@ -69,13 +71,15 @@ npm run import -- --live     # inhoud opnieuw uit ../site halen (+ verbeterde FR
 4. **Navigatie aangevuld.**
    - Bovenaan: Home, Diensten (submenu), Voorbeelden, Werkwijze, Kosten, Uitleg, Contact.
    - De footer heeft 4 kolommen (Diensten, Sectoren, Pagina's, Contact), met onderaan de 9 plaatsen als links.
-5. **Hero-kaart** (Vaste prijs vooraf / Snel online): toont nu "Gratis demo, zonder verplichting" en "Prijzen vanaf €490 excl. btw" (tekst van de site).
+5. **Hero-kaart** (Vaste prijs vooraf / Snel online): toont nu "Vrijblijvend voorstel, prijs vooraf" en "Prijzen vanaf €490 excl. btw" (tekst van de site).
 6. **Formulier.** Na verzenden stuurt het formulier door naar `/bedankt/` (zoals nu), in plaats van een melding op de pagina. De oude verborgen statusmeldingen vervallen daardoor.
 7. **Homepage.**
-   - De drie telefoonafbeeldingen (oude "reel") en de knop "Gratis demo aanvragen" die op gsm dubbel stond, staan niet meer op de home.
+   - De drie telefoonafbeeldingen (oude "reel") en de knop "Vrijblijvend voorstel aanvragen" die op gsm dubbel stond, staan niet meer op de home.
    - De Google-zoekresultaat-nabootsing is vervangen door de voor/na-kaart van het design. De teksten ervan blijven.
 
 ## Teksten
+
+- **Geen gratis demo meer (14-11-2026, beslissing Karim).** Alle verwijzingen zijn vervangen door een vrijblijvend voorstel, via `config/demo-weg.json`. Elke wijziging (oud -> nieuw per URL) staat in `TEKST-WIJZIGINGEN-DEMO.md`. De ronde sectorportretten en de 9 fictieve voorbeeldsites blijven ongewijzigd.
 
 - **Woord voor woord.** Alle bestaande teksten staan op de nieuwe pagina's; de build controleert dat.
 - **Nieuw uit het design.** Labels, klok, "Naar boven", de capsules "Snel/Helder/Op maat", de kenmerken per voorbeeldontwerp, de regio's op de kaart en dergelijke. Ze staan allemaal in **`TEKSTEN-UIT-HET-DESIGN.md`** (ter goedkeuring). De FR/EN-versies komen uit de vertalingen in het design.

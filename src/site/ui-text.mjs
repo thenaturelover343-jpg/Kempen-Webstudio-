@@ -1,6 +1,6 @@
 // Korte teksten die alleen in het design bestaan (labels, knoppen voor schermlezers, klok ...).
 // Bron: src/i18n/translations.ts van het design (NL/FR/EN), aangepast aan Kempen Webstudio
-// ("gratis demo" i.p.v. "vrijblijvend voorstel"). Alles wat inhoud is, komt uit de bestaande site (model.mjs).
+// (vanaf 14-11-2026 "vrijblijvend voorstel", geen gratis demo meer). Alles wat inhoud is, komt uit de bestaande site (model.mjs).
 // Elke tekst hier staat ook in LEESMIJ.md bij "teksten ter goedkeuring".
 export const UI = {
   nl: {
