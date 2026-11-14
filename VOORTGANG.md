@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 14-11-2026, 13:55. Branch `nieuwe-website`, laatste commit `4499f93`.
+Laatst bijgewerkt: 14-11-2026, 14:05. Branch `nieuwe-website`, laatste commit `baa0dda`.
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -42,7 +42,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
 
 ## Bezig
 
-- Niets.
+- Laatste controleronde: nog niet nagekeken screenshots (kempen, kennis-index, toegankelijkheid, privacy, bedankt, FR/EN op 390 en 1440), toetsenbordtest, contactvenster op onderpagina's, alle controles opnieuw.
 
 ## Nog te doen
 
