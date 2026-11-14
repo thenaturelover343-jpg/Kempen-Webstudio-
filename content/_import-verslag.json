@@ -1,0 +1,73 @@
+{
+ "bron": "C:\\Users\\GbThe\\KempenTeam\\site",
+ "bronCommit": "da5fea3",
+ "datum": "2026-11-14",
+ "bestanden": 375,
+ "onlineVervangen": [
+  "/fr/",
+  "/fr/voorbeeldontwerpen/",
+  "/fr/wat-kost-een-website/",
+  "/fr/webshop-laten-maken/",
+  "/fr/website-vakmensen/",
+  "/fr/website-starters/",
+  "/fr/website-laten-vernieuwen/",
+  "/fr/website-laten-maken-gent/",
+  "/fr/website-laten-maken-leuven/",
+  "/fr/website-laten-maken-kortrijk/",
+  "/fr/website-schilder/",
+  "/fr/website-tuinaannemer/",
+  "/fr/kennis/",
+  "/fr/kennis/hoe-lang-duurt-website-laten-maken/",
+  "/fr/toegankelijke-website/",
+  "/fr/logo-en-huisstijl/",
+  "/fr/kennis/wat-moet-er-op-een-website-staan/",
+  "/fr/kennis/google-bedrijfsprofiel-aanmaken/",
+  "/fr/kennis/website-fiscaal-aftrekbaar/",
+  "/fr/kennis/terugkerende-kosten-website/",
+  "/fr/kennis/website-laten-maken-of-zelf-bouwen/",
+  "/fr/kennis/wettelijke-vermeldingen-website/",
+  "/fr/kennis/wordpress-of-maatwerk/",
+  "/en/",
+  "/en/wat-kost-een-website/",
+  "/en/webshop-laten-maken/",
+  "/en/website-laten-vernieuwen/",
+  "/en/website-laten-maken-gent/",
+  "/en/website-laten-maken-leuven/",
+  "/en/website-laten-maken-kortrijk/",
+  "/en/kennis/terugkerende-kosten-website/"
+ ],
+ "onlineOpgehaald": [
+  "/assets/og-v2.jpg",
+  "/icons/kw-192.png",
+  "/icons/kw-512.png"
+ ],
+ "verschillenNL": [
+  {
+   "url": "/website-laten-maken-gent/",
+   "title": null,
+   "desc": {
+    "online": "Website laten maken in Gent: eerst gratis een demo van uw eigen zaak, met antwoord binnen 1 werkdag. U zit nergens aan vast.",
+    "bron": "Website laten maken in Gent: eerst gratis een demo van uw eigen zaak, met antwoord binnen 1 werkdag. Prijzen vanaf €490 excl. btw, u zit nergens aan vast."
+   },
+   "tekst": null
+  },
+  {
+   "url": "/website-laten-maken-leuven/",
+   "title": null,
+   "desc": {
+    "online": "Webdesign in Leuven, Heverlee, Kessel-Lo en Wilsele: een eigen ontwerp en eerst gratis een demo van uw zaak. U zit nergens aan vast.",
+    "bron": "Webdesign in Leuven, Heverlee, Kessel-Lo en Wilsele: een eigen ontwerp en eerst gratis een demo van uw zaak. Prijzen vanaf €490 excl. btw, nergens aan vast."
+   },
+   "tekst": null
+  },
+  {
+   "url": "/website-laten-maken-kortrijk/",
+   "title": null,
+   "desc": {
+    "online": "Website laten maken in Kortrijk en omgeving: eerst bouwen wij gratis een demo van uw zaak. U zit nergens aan vast.",
+    "bron": "Website laten maken in Kortrijk en omgeving: eerst bouwen wij gratis een demo van uw zaak. Prijzen vanaf €490 excl. btw, u zit nergens aan vast."
+   },
+   "tekst": null
+  }
+ ]
+}

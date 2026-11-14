@@ -1,36 +1,31 @@
 {
-  "name": "react-example",
+  "name": "kempen-webstudio",
+  "description": "Website van Kempen Webstudio (www.kempenwebstudio.be): statische build in het nieuwe design.",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+  "engines": {
+    "node": ">=20"
   },
-  "dependencies": {
-    "@google/genai": "^2.4.0",
-    "@tailwindcss/vite": "^4.3.3",
-    "@vitejs/plugin-react": "^6.1.1",
-    "lucide-react": "^0.546.0",
-    "react": "^19.0.1",
-    "react-dom": "^19.0.1",
-    "vite": "^8.3.0",
-    "express": "^4.21.2",
-    "dotenv": "^17.2.3",
-    "motion": "^12.23.24"
+  "scripts": {
+    "import": "node scripts/import-content.mjs",
+    "build": "npm run build:test && npm run build:live",
+    "build:test": "node scripts/build.mjs --mode test",
+    "build:live": "node scripts/build.mjs --mode live",
+    "serve": "node scripts/serve.mjs dist-test 4100",
+    "serve:live": "node scripts/serve.mjs dist-live 4101",
+    "check": "node scripts/check.mjs dist-live && node scripts/check.mjs dist-test",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "screens": "node scripts/screens.mjs"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "autoprefixer": "^10.4.21",
-    "esbuild": "^0.25.0",
-    "tailwindcss": "^4.3.3",
-    "tsx": "^4.21.0",
-    "typescript": "^7.0.2",
-    "@types/express": "^4.17.21"
+    "@fontsource-variable/dm-sans": "5.2.8",
+    "esbuild": "^0.27.0",
+    "linkedom": "^0.18.12",
+    "sharp": "^0.34.5"
+  },
+  "optionalDependencies": {
+    "lighthouse": "^12.8.2",
+    "playwright-core": "^1.56.1"
   }
 }

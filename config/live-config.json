@@ -1,0 +1,17 @@
+{
+  "_uitleg": "Instellingen voor maak-live.mjs. 'noindex' = pagina's die ook live NIET in Google horen (zelfde waarde als op live, 11-11-2026). Alle andere pagina's worden index,follow. Voorbeeldsites (demoFolders) krijgen demoRobots, tenzij hierboven een eigen waarde staat.",
+  "origin": "https://www.kempenwebstudio.be",
+  "noindex": {
+    "/404.html": "noindex",
+    "/bedankt/": "noindex",
+    "/privacyverklaring/": "noindex,follow",
+    "/cookiebeleid/": "noindex,follow",
+    "/horeca-voorbeeld/": "noindex,nofollow"
+  },
+  "demoFolders": ["barbier-voorbeeld", "dakwerken-hoogland", "horeca-voorbeeld", "houtatelier-nethe", "kapsalon-voorbeeld", "kleurwerk-voorbeeld", "schoonheidssalon-voorbeeld", "tuin-voorbeeld", "webshop-voorbeeld"],
+  "demoRobots": "noindex,follow",
+  "robotsTxt": "User-agent: *\nAllow: /\nSitemap: https://www.kempenwebstudio.be/sitemap.xml\n",
+  "cname": null,
+  "exclude": [".git", ".gitignore", ".claude", "_build", "_gusje-live", "CNAME"],
+  "excludeExt": [".patch", ".zip", ".tar", ".md"]
+}
