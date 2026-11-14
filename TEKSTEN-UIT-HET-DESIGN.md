@@ -13,10 +13,18 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - 07 / 09 · Schoonheidssalon  _(op 1 pagina)_
 - 08 / 09 · Kapsalon  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
+- 5–10 werkdagen  _(op 1 pagina)_
 - Afsprakenplanner  _(op 1 pagina)_
 - Boekingssysteem  _(op 1 pagina)_
+- Dag 1  _(op 1 pagina)_
 - Diensten op een rij  _(op 1 pagina)_
+- Doorlopend  _(op 1 pagina)_
+- Duidelijk overzicht vooraf, zonder verrassingen  _(op 1 pagina)_
+- Duidelijke antwoorden over onze aanpak, vaste prijzen en oplevering.  _(op 1 pagina)_
+- Eén vast aanspreekpunt na lancering  _(op 1 pagina)_
+- Eén vast aanspreekpunt  _(op 1 pagina)_
 - Galerij  _(op 2 pagina's)_
+- Geoptimaliseerd voor gsm en computer  _(op 1 pagina)_
 - Heel België  _(op 42 pagina's)_
 - Helder  _(op 1 pagina)_
 - Heldere opbouw  _(op 1 pagina)_
@@ -27,25 +35,31 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Lichte stijl  _(op 1 pagina)_
 - MENU  _(op 39 pagina's)_
 - Menukaart  _(op 1 pagina)_
+- Mobile-first  _(op 1 pagina)_
 - Naar boven  _(op 39 pagina's)_
 - Offerteaanvraag  _(op 1 pagina)_
 - Offerteformulier  _(op 1 pagina)_
 - Online boeken  _(op 1 pagina)_
 - Op maat  _(op 1 pagina)_
 - Per behandeling  _(op 1 pagina)_
+- Persoonlijk antwoord binnen 1 werkdag  _(op 1 pagina)_
 - Productpagina’s  _(op 1 pagina)_
 - Route · Bellen · Website  _(op 1 pagina)_
 - Rustig palet  _(op 1 pagina)_
 - Schilders ·  _(op 1 pagina)_
+- Snel op gsm en computer  _(op 1 pagina)_
 - Snel  _(op 1 pagina)_
+- Start-pakket online  _(op 1 pagina)_
 - Taal  _(op 1 pagina)_
 - Tijd in België  _(op 39 pagina's)_
 - Tuinaannemers en hoveniers ·  _(op 1 pagina)_
 - Uitgesproken typografie  _(op 1 pagina)_
 - Vakmensen ·  _(op 1 pagina)_
 - Vanaf €490 + vanaf €29 per maand excl. btw. Vrijblijvend voorstel.  _(op 1 pagina)_
+- Vaste prijs  _(op 1 pagina)_
 - Veilig afrekenen  _(op 1 pagina)_
 - Verfijnde stijl  _(op 1 pagina)_
+- Vier overzichtelijke stappen waarmee u altijd weet wat er gebeurt, wat het kost en wanneer uw nieuwe website online staat.  _(op 1 pagina)_
 - Website laten maken in heel België, voor elke zaak, vereniging of zelfstandige.  _(op 1 pagina)_
 - Webstudio K  _(op 39 pagina's)_
 - Werkgebied  _(op 2 pagina's)_
@@ -66,6 +80,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - 07 / 09 · Institut de beauté  _(op 1 pagina)_
 - 08 / 09 · Salon de coiffure  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
+- 5–10 jours ouvr.  _(op 1 pagina)_
 - Actif dans toute la Belgique  _(op 5 pagina's)_
 - Adapté mobile  _(op 1 pagina)_
 - Agenda en ligne  _(op 1 pagina)_
@@ -74,28 +89,38 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Artisans ·  _(op 1 pagina)_
 - Bouton rendez-vous  _(op 1 pagina)_
 - Clair  _(op 1 pagina)_
+- Continu  _(op 1 pagina)_
 - Demande de devis  _(op 2 pagina's)_
+- Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.  _(op 1 pagina)_
 - Design épuré  _(op 1 pagina)_
 - Entrepreneurs de jardins et jardiniers-paysagistes ·  _(op 1 pagina)_
 - Faire créer un site web dans toute la Belgique, pour chaque entreprise, association ou indépendant.  _(op 1 pagina)_
 - Faire créer un site web à la Campine  _(op 1 pagina)_
 - Fiches produits  _(op 1 pagina)_
 - Flandre-Occidentale  _(op 2 pagina's)_
+- Forfait Start en ligne  _(op 1 pagina)_
 - Galerie  _(op 2 pagina's)_
 - Haut de page  _(op 38 pagina's)_
 - Heure en Belgique  _(op 38 pagina's)_
 - Horeca ·  _(op 1 pagina)_
 - Intérieur  _(op 1 pagina)_
 - Itinéraire · Appeler · Site web  _(op 1 pagina)_
+- Jour 1  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 76 pagina's)_
 - MENU  _(op 38 pagina's)_
+- Mobile-first  _(op 1 pagina)_
+- Optimisé pour mobile et ordinateur  _(op 1 pagina)_
 - Paiement sécurisé  _(op 1 pagina)_
 - Palette apaisante  _(op 1 pagina)_
 - Panier  _(op 1 pagina)_
 - Peintres ·  _(op 1 pagina)_
 - Pour chaque activité  _(op 1 pagina)_
+- Prix fixe  _(op 1 pagina)_
+- Quatre étapes simples pour savoir à tout moment ce qui est fait, ce que cela coûte et quand votre site sera en ligne.  _(op 1 pagina)_
+- Rapide sur smartphone et PC  _(op 1 pagina)_
 - Rapide  _(op 1 pagina)_
 - Réponse habituelle sous 1 jour ouvrable  _(op 38 pagina's)_
+- Réponse personnelle sous 1 jour ouvrable  _(op 1 pagina)_
 - Réservation en ligne  _(op 2 pagina's)_
 - Salons de coiffure et barbershops ·  _(op 1 pagina)_
 - Services clairs  _(op 1 pagina)_
@@ -105,8 +130,11 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Sur mesure  _(op 2 pagina's)_
 - Surfaces sombres  _(op 1 pagina)_
 - Tons chaleureux  _(op 1 pagina)_
+- Tout est clair à l’avance, sans surprises  _(op 1 pagina)_
 - Toute la Belgique  _(op 41 pagina's)_
 - Typographie affirmée  _(op 1 pagina)_
+- Un interlocuteur unique après lancement  _(op 1 pagina)_
+- Un interlocuteur unique  _(op 1 pagina)_
 - Webstudio K  _(op 38 pagina's)_
 - Zone d’action  _(op 1 pagina)_
 - Zone d’intervention  _(op 1 pagina)_
@@ -125,6 +153,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - 07 / 09 · Beauty salon  _(op 1 pagina)_
 - 08 / 09 · Hair salon  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
+- 5–10 bus. days  _(op 1 pagina)_
 - All of Belgium  _(op 41 pagina's)_
 - Back to top  _(op 38 pagina's)_
 - Bespoke work  _(op 1 pagina)_
@@ -133,13 +162,19 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Booking calendar  _(op 1 pagina)_
 - Booking system  _(op 1 pagina)_
 - Calm palette  _(op 1 pagina)_
+- Clear answers about our approach, fixed pricing and delivery times.  _(op 1 pagina)_
 - Clear structure  _(op 1 pagina)_
 - Clear  _(op 1 pagina)_
 - Completed projects  _(op 1 pagina)_
 - Coverage area  _(op 1 pagina)_
+- Day 1  _(op 1 pagina)_
 - Directions · Call · Website  _(op 1 pagina)_
+- Fast on mobile and desktop  _(op 1 pagina)_
 - Fast  _(op 1 pagina)_
+- Fixed price  _(op 1 pagina)_
+- Four straightforward steps so you always know what happens next, what it costs and when your website goes live.  _(op 1 pagina)_
 - From €490 + from €29 per month excl. VAT, no-obligation proposal.  _(op 1 pagina)_
+- Full clarity upfront, with zero surprises  _(op 1 pagina)_
 - Gallery  _(op 1 pagina)_
 - Garden contractors and landscape gardeners ·  _(op 1 pagina)_
 - Hair salons and barbershops ·  _(op 1 pagina)_
@@ -150,8 +185,12 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - MENU  _(op 38 pagina's)_
 - Menu showcase  _(op 1 pagina)_
 - Mobile friendly  _(op 1 pagina)_
+- Mobile-first  _(op 1 pagina)_
+- One dedicated contact after launch  _(op 1 pagina)_
+- Optimized for phone and desktop  _(op 1 pagina)_
 - Painters ·  _(op 1 pagina)_
 - Per treatment  _(op 1 pagina)_
+- Personal reply within 1 business day  _(op 1 pagina)_
 - Photo gallery  _(op 1 pagina)_
 - Product pages  _(op 1 pagina)_
 - Quote form  _(op 1 pagina)_
@@ -163,6 +202,8 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op 
 - Service overview  _(op 1 pagina)_
 - Serving all of Belgium  _(op 5 pagina's)_
 - Shopping cart  _(op 1 pagina)_
+- Single point of contact  _(op 1 pagina)_
+- Start package online  _(op 1 pagina)_
 - Table booking  _(op 1 pagina)_
 - Table reservations  _(op 1 pagina)_
 - Tailored  _(op 1 pagina)_

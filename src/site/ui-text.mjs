@@ -12,6 +12,10 @@ export const UI = {
     prev: 'Vorige', next: 'Volgende', select: 'Selecteer', nextDemo: 'Volgend voorbeeldontwerp', show: 'Toon',
     faqFilter: 'Filter vragen op onderwerp', step: 'Stap', open: 'Openen', newWindow: '(opent in een nieuw venster)',
     sectorsMore: 'Sectoren',
+    stepTags: ['Dag 1', 'Vaste prijs', '5–10 werkdagen', 'Doorlopend'],
+    stepNotes: ['Persoonlijk antwoord binnen 1 werkdag', 'Duidelijk overzicht vooraf, zonder verrassingen', 'Geoptimaliseerd voor gsm en computer', 'Eén vast aanspreekpunt na lancering'],
+    stepsSub: 'Vier overzichtelijke stappen waarmee u altijd weet wat er gebeurt, wat het kost en wanneer uw nieuwe website online staat.',
+    faqSub: 'Duidelijke antwoorden over onze aanpak, vaste prijzen en oplevering.',
   },
   fr: {
     region: 'Toute la Belgique', timeIn: 'Heure en Belgique', language: 'Langue', langGroup: 'Choix de langue', menu: 'MENU',
@@ -22,6 +26,10 @@ export const UI = {
     prev: 'Précédent', next: 'Suivant', select: 'Sélectionner', nextDemo: 'Exemple suivant', show: 'Afficher',
     faqFilter: 'Filtrer les questions par sujet', step: 'Étape', open: 'Ouvrir', newWindow: '(s’ouvre dans une nouvelle fenêtre)',
     sectorsMore: 'Secteurs',
+    stepTags: ['Jour 1', 'Prix fixe', '5–10 jours ouvr.', 'Continu'],
+    stepNotes: ['Réponse personnelle sous 1 jour ouvrable', 'Tout est clair à l’avance, sans surprises', 'Optimisé pour mobile et ordinateur', 'Un interlocuteur unique après lancement'],
+    stepsSub: 'Quatre étapes simples pour savoir à tout moment ce qui est fait, ce que cela coûte et quand votre site sera en ligne.',
+    faqSub: 'Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.',
   },
   en: {
     region: 'All of Belgium', timeIn: 'Time in Belgium', language: 'Language', langGroup: 'Language selector', menu: 'MENU',
@@ -32,5 +40,9 @@ export const UI = {
     prev: 'Previous', next: 'Next', select: 'Select', nextDemo: 'Next sample design', show: 'Show',
     faqFilter: 'Filter questions by topic', step: 'Step', open: 'Open', newWindow: '(opens in a new window)',
     sectorsMore: 'Sectors',
+    stepTags: ['Day 1', 'Fixed price', '5–10 bus. days', 'Ongoing'],
+    stepNotes: ['Personal reply within 1 business day', 'Full clarity upfront, with zero surprises', 'Optimized for phone and desktop', 'One dedicated contact after launch'],
+    stepsSub: 'Four straightforward steps so you always know what happens next, what it costs and when your website goes live.',
+    faqSub: 'Clear answers about our approach, fixed pricing and delivery times.',
   },
 };

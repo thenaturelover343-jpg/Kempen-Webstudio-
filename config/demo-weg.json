@@ -839,15 +839,15 @@
   ],
   "regex": [
    [
-    "(?<=>)van uw eigen zaak((?: in [^<]+?)?), die u rustig bekijkt.",
+    "(?<=>)van uw eigen zaak((?: in [^<]+?)?), die u rustig bekijkt\\.",
     "voor uw eigen zaak$1, dat u rustig bekijkt."
    ],
    [
-    "Hoe ziet uw zaak in ([^?<\"]+?) er online uit?",
+    "Hoe ziet uw zaak in ([^?<\"]+?) er online uit\\?",
     "Een website voor uw zaak in $1?"
    ],
    [
-    "Wilt u eerst zien hoe (<a [^>]+>een website laten maken</a>) voor uw zaak eruitziet, stuur dan een korte e-mail.",
+    "Wilt u eerst zien hoe (<a [^>]+>een website laten maken</a>) voor uw zaak eruitziet, stuur dan een korte e-mail\\.",
     "Wilt u $1 voor uw zaak, stuur dan een korte e-mail voor een vrijblijvend voorstel."
    ]
   ]
@@ -1683,15 +1683,15 @@
   ],
   "regex": [
    [
-    "(?<=>)de votre propre entreprise((?: à [^<]+?)?), que vous consultez tranquillement.",
+    "(?<=>)de votre propre entreprise((?: à [^<]+?)?), que vous consultez tranquillement\\.",
     "pour votre propre entreprise$1, que vous consultez tranquillement."
    ],
    [
-    "Quelle apparence votre entreprise à ([^?<\"]+?) peut-elle avoir en ligne(s)?",
+    "Quelle apparence votre entreprise à ([^?<\"]+?) peut-elle avoir en ligne(\\s)\\?",
     "Un site web pour votre entreprise à $1$2?"
    ],
    [
-    "Si vous souhaitez d’abord voir à quoi ressemble (<a [^>]+>)le fait de faire créer un site web(</a>) pour votre entreprise, envoyez alors un court e-mail.",
+    "Si vous souhaitez d’abord voir à quoi ressemble (<a [^>]+>)le fait de faire créer un site web(</a>) pour votre entreprise, envoyez alors un court e-mail\\.",
     "Si vous souhaitez $1faire créer un site web$2 pour votre entreprise, envoyez alors un court e-mail pour une proposition sans engagement."
    ]
   ]
@@ -2503,15 +2503,15 @@
   ],
   "regex": [
    [
-    "(?<=>)of your own business((?: in [^<]+?)?), which you look at at your leisure.",
+    "(?<=>)of your own business((?: in [^<]+?)?), which you look at at your leisure\\.",
     "for your own business$1, which you can review at your leisure."
    ],
    [
-    "How does your business in ([^?<\"]+?) look online?",
+    "How does your business in ([^?<\"]+?) look online\\?",
     "A website for your business in $1?"
    ],
    [
-    "If you first want to see what (<a [^>]+>having a website built</a>) for your business looks like, send a short email.",
+    "If you first want to see what (<a [^>]+>having a website built</a>) for your business looks like, send a short email\\.",
     "If you are thinking about $1 for your business, send a short email for a no-obligation proposal."
    ]
   ]

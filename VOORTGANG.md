@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 14-11-2026, 23:15. Branch `nieuwe-website`.
+Laatst bijgewerkt: 15-11-2026. Branch `nieuwe-website`.
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -66,6 +66,12 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
 - [x] Afbeeldingencontrole alle pagina's (scripts/imgcheck.mjs, nu bestand tegen gecrashte tabbladen): alle afbeeldingen geladen, zwevende knoppen nooit over de hero.
 - [x] UI UX Pro Max als user-skill geïnstalleerd (na review) in `C:\Users\GbThe\.claude\skills\ui-ux-pro-max`.
 
+- [x] **Home foutloos en design doorgetrokken naar alle pagina's** (15-11-2026; details in `FOUTEN-HOME.md`):
+  - home sectie per sectie vergeleken met het originele design (8cc9567) op 1440/390 (`scripts/compare-sections.mjs`) en alles aangeklikt (`scripts/test-home.mjs`, 57/57 in orde);
+  - opgelost op de home: dienstkaarten compact, werkwijzekaarten met labels en slotregels uit het design, prijskaarten (dubbele kop, maandprijs), cirkels, hero-strip op gsm, FAQ-ondertitel;
+  - onderpagina's: werkwijzeraster volgt het aantal stappen, korte tekst en elke tweede lange tekstsectie in het lichtgrijze paneel, juridische artikels als kaarten, 404/bedankt met de capsules van de home, 4 voorbeeldontwerpen naast elkaar, "??" in de stads-CTA hersteld, introzinnen met hoofdletter;
+  - controles: tekstcontrole (alle oude teksten aanwezig), linkcheck/SEO 0 fouten, 105/105 URL's, geen "demo", Lighthouse mobiel home 99 / dienst 100 / FR 99, CLS 0.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
@@ -75,7 +81,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
 - [ ] **Motion:** gepauzeerd op vraag van Karim; pas hervatten als hij dat vraagt (branch `motion-proef`).
 
 - [ ] **Karim:** de nieuwe teksten zonder demo nalezen in `TEKST-WIJZIGINGEN-DEMO.md` (en zeggen of "U betaalt pas als u tevreden bent" blijft kloppen).
-- [ ] **Karim:** de teksten in `TEKSTEN-UIT-HET-DESIGN.md` goedkeuren of aanpassen.
+- [ ] **Karim:** de teksten in `TEKSTEN-UIT-HET-DESIGN.md` goedkeuren of aanpassen (nu ook de werkwijzelabels en -slotregels en de FAQ-ondertitel).
 - [ ] **Karim:** de bewuste afwijkingen goedkeuren (LEESMIJ):
   - sterren weg (geen reviews);
   - echte sectorfoto's in plaats van AI-portretten;

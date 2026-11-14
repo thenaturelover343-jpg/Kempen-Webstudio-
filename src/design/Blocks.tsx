@@ -147,7 +147,17 @@ function Figure({ html, phone }: { html: string; phone?: boolean }) {
   );
 }
 
+const CAPS = ['bg-[#F2F2F2] hover:bg-[#E7E8EB] text-[#121214]', 'copper-pill-gradient text-white', 'bg-[#08080A] text-white', 'bg-[#D3D6DA] hover:bg-[#C7CACE] text-[#121214]'];
 function Chips({ links, aria }: { links: any[]; aria?: string }) {
+  if (links.length >= 2 && links.length <= 4) return (
+    <nav aria-label={aria || undefined}>
+      <ul className={cx('grid grid-cols-1 gap-3 sm:gap-4', links.length === 4 ? 'sm:grid-cols-2' : links.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2')}>
+        {links.map((l: any, i: number) => (
+          <li key={l.href + l.label}><a href={l.href} className={cx('font-title w-full h-[72px] sm:h-[88px] rounded-full flex items-center justify-center text-[20px] sm:text-[24px] font-normal tracking-[-0.03em] transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]', CAPS[i % 4])}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  );
   return (
     <nav aria-label={aria || undefined}>
       <ul className="flex flex-wrap gap-2.5">
@@ -160,7 +170,7 @@ function Chips({ links, aria }: { links: any[]; aria?: string }) {
 }
 
 export function Blocks({ blocks, s }: { blocks: any[]; s: any }) {
-  let prevDark = false; let n = 0; let firstCards = true;
+  let prevDark = false; let n = 0; let firstCards = true; let prevPlainProse = false;
   const out: any[] = [];
   for (const b of blocks) {
     const plainCards = b.kind === 'cards' && !b.lists && !b.articles && !b.duo;
@@ -168,6 +178,8 @@ export function Blocks({ blocks, s }: { blocks: any[]; s: any }) {
     if (plainCards && firstCards && !prevDark) dark = true;
     if (plainCards) firstCards = false;
     if (dark && prevDark) dark = false;
+    // ritme zoals op de home: twee witte tekstsecties na elkaar -> de tweede als lichtgrijs paneel
+    if (b.kind === 'prose') { const plain = !dark && !b.fig && strip(b.html).length >= 700; b.panel = plain && prevPlainProse; prevPlainProse = plain && !b.panel; } else prevPlainProse = false;
     const props = { dark, afterDark: !dark && prevDark, first: n === 0 && !dark, id: b.id, aria: b.aria, k: n };
     out.push(<Fragment key={n}>{render(b, props, s)}</Fragment>);
     prevDark = dark; n++;
@@ -184,7 +196,7 @@ function render(b: any, P: any, s: any) {
           <FadeIn className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12 sm:mb-16">
             {b.h2 && <div className="lg:col-span-5"><H2 html={b.h2} id={b.h2id} /></div>}
             <div className={cx('lg:col-span-7', !b.h2 && 'lg:col-start-6')}>
-              <p className={cx('font-title leading-[1.16] tracking-[-0.03em] font-normal text-[#121214] max-w-2xl [text-wrap:balance] kw-link', strip(b.intro.join(' ')).length > 340 ? 'text-[18px] sm:text-[20px] lg:text-[22px]' : strip(b.intro.join(' ')).length > 190 ? 'text-[20px] sm:text-[24px] lg:text-[28px]' : 'text-[24px] sm:text-[32px] lg:text-[38px]')}>
+              <p className={cx('font-title leading-[1.16] tracking-[-0.03em] font-normal text-[#121214] max-w-2xl [text-wrap:balance] kw-link first-letter:uppercase', strip(b.intro.join(' ')).length > 340 ? 'text-[18px] sm:text-[20px] lg:text-[22px]' : strip(b.intro.join(' ')).length > 190 ? 'text-[20px] sm:text-[24px] lg:text-[28px]' : 'text-[24px] sm:text-[32px] lg:text-[38px]')}>
                 <Html html={b.intro[0]} />{b.intro.slice(1).map((t: string, i: number) => <span key={i} className="text-[#4C433F]"> <Html html={t} /></span>)}
               </p>
               {b.introBtn && <Btns ctas={[b.introBtn]} />}
@@ -255,7 +267,7 @@ function render(b: any, P: any, s: any) {
     }
     case 'prose': return (
       <Sec {...P}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <div className={cx('grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start', !dark && !b.fig && (strip(b.html).length < 700 || b.panel) && 'rounded-[28px] bg-[#F2F2F2] border border-[#D3D6DA] p-7 sm:p-10 lg:p-12')}>
           <FadeIn className="lg:col-span-5 lg:sticky lg:top-8">
             {b.badge && <Badge dark={dark}>{b.badge}</Badge>}
             {b.h2 && <H2 html={b.h2} id={b.h2id} tag={b.h2tag} dark={dark} className={cx(b.badge && 'mt-3', '!text-[30px] sm:!text-[40px]')} />}
@@ -357,7 +369,7 @@ function render(b: any, P: any, s: any) {
     case 'demos': return (
       <Sec {...P}>
         <Head b={b} />
-        <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerGroup className={cx('grid grid-cols-1 sm:grid-cols-2 gap-6', b.items && b.items.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3')}>
           {b.items.map((d: any, i: number) => (
             <StaggerItem key={i} i={i} className="h-full">
               <a href={d.href} target={d.newTab ? '_blank' : undefined} rel={d.newTab ? 'noopener' : undefined} className="group rounded-[24px] bg-[#F2F2F2] border border-[#D3D6DA] hover:border-[#B85D28]/60 p-5 flex flex-col justify-between h-full transition-colors">
@@ -387,9 +399,9 @@ function render(b: any, P: any, s: any) {
     );
     case 'legal': return (
       <Sec {...P}>
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-4 sm:gap-5">
           {b.items.map((it: any, i: number) => (
-            <FadeIn key={i} className="pt-4 border-t-2 border-[#121214] grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10">
+            <FadeIn key={i} className="rounded-[24px] bg-[#F7F7F8] border border-[#E5E7EB] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10">
               <div className="lg:col-span-4">
                 <p aria-hidden="true" className="font-title text-[28px] font-normal tabular-nums text-[#9A4A1C]">{String(i + 1).padStart(2, '0')}</p>
                 <h2 id={it.hid || undefined} className="mt-2 text-[19px] font-medium text-[#121214]" dangerouslySetInnerHTML={{ __html: it.h }} />

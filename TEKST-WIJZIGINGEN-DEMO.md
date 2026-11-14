@@ -527,7 +527,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Free demo~~ → No-obligation proposal (4x)
 - ~~approval of the demo~~ → approval of the proposal
 - ~~of your own business in Geel, which you look at at your leisure.~~ → for your own business in Geel, which you can review at your leisure.
-- ~~How does your business in Geel look online~~ → A website for your business in Geel?
+- ~~How does your business in Geel look online?~~ → A website for your business in Geel?
 
 ### /en/website-laten-maken-gent/
 
@@ -556,7 +556,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Request a free demo~~ → Request a no-obligation proposal (2x)
 - ~~Free demo~~ → No-obligation proposal (3x)
 - ~~approval of the demo~~ → approval of the proposal
-- ~~How does your business in Ghent look online~~ → A website for your business in Ghent?
+- ~~How does your business in Ghent look online?~~ → A website for your business in Ghent?
 
 ### /en/website-laten-maken-herentals/
 
@@ -570,7 +570,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Free demo~~ → No-obligation proposal (4x)
 - ~~approval of the demo~~ → approval of the proposal
 - ~~of your own business in Herentals, which you look at at your leisure.~~ → for your own business in Herentals, which you can review at your leisure.
-- ~~How does your business in Herentals look online~~ → A website for your business in Herentals?
+- ~~How does your business in Herentals look online?~~ → A website for your business in Herentals?
 
 ### /en/website-laten-maken-kasterlee/
 
@@ -584,7 +584,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Free demo~~ → No-obligation proposal (4x)
 - ~~you approve the demo~~ → you approve the proposal
 - ~~of your own business in Kasterlee, Lichtaart or Tielen, which you look at at your leisure.~~ → for your own business in Kasterlee, Lichtaart or Tielen, which you can review at your leisure.
-- ~~How does your business in Kasterlee look online~~ → A website for your business in Kasterlee?
+- ~~How does your business in Kasterlee look online?~~ → A website for your business in Kasterlee?
 
 ### /en/website-laten-maken-kempen/
 
@@ -645,7 +645,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Free demo~~ → No-obligation proposal (4x)
 - ~~If you approve the demo~~ → If you approve the proposal
 - ~~of your own business in Mol, which you look at at your leisure.~~ → for your own business in Mol, which you can review at your leisure.
-- ~~How does your business in Mol look online~~ → A website for your business in Mol?
+- ~~How does your business in Mol look online?~~ → A website for your business in Mol?
 
 ### /en/website-laten-maken-turnhout/
 
@@ -659,7 +659,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Free demo~~ → No-obligation proposal (4x)
 - ~~you approve the demo~~ → you approve the proposal
 - ~~of your own business in Turnhout, which you look at at your leisure.~~ → for your own business in Turnhout, which you can review at your leisure.
-- ~~How does your business in Turnhout look online~~ → A website for your business in Turnhout?
+- ~~How does your business in Turnhout look online?~~ → A website for your business in Turnhout?
 
 ### /en/website-laten-vernieuwen/
 
@@ -1102,7 +1102,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Démo gratuite~~ → Proposition sans engagement (5x)
 - ~~approbation de la démo~~ → approbation de la proposition
 - ~~de votre propre entreprise à Geel, que vous consultez tranquillement.~~ → pour votre propre entreprise à Geel, que vous consultez tranquillement.
-- ~~Quelle apparence votre entreprise à Geel peut-elle avoir en ligne~~ → Un site web pour votre entreprise à Geel?
+- ~~Quelle apparence votre entreprise à Geel peut-elle avoir en ligne ?~~ → Un site web pour votre entreprise à Geel ?
 
 ### /fr/website-laten-maken-gent/
 
@@ -1131,7 +1131,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Méthode et démo gratuite~~ → Méthode et proposition
 - ~~Démo gratuite~~ → Proposition sans engagement (4x)
 - ~~approbation de la démo~~ → approbation de la proposition
-- ~~Quelle apparence votre entreprise à Gand peut-elle avoir en ligne~~ → Un site web pour votre entreprise à Gand?
+- ~~Quelle apparence votre entreprise à Gand peut-elle avoir en ligne ?~~ → Un site web pour votre entreprise à Gand ?
 
 ### /fr/website-laten-maken-herentals/
 
@@ -1145,7 +1145,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Démo gratuite~~ → Proposition sans engagement (5x)
 - ~~approbation de la démo~~ → approbation de la proposition
 - ~~de votre propre entreprise à Herentals, que vous consultez tranquillement.~~ → pour votre propre entreprise à Herentals, que vous consultez tranquillement.
-- ~~Quelle apparence votre entreprise à Herentals peut-elle avoir en ligne~~ → Un site web pour votre entreprise à Herentals?
+- ~~Quelle apparence votre entreprise à Herentals peut-elle avoir en ligne ?~~ → Un site web pour votre entreprise à Herentals ?
 
 ### /fr/website-laten-maken-kasterlee/
 
@@ -1159,7 +1159,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Démo gratuite~~ → Proposition sans engagement (5x)
 - ~~vous approuvez la démo~~ → vous approuvez la proposition
 - ~~de votre propre entreprise à Kasterlee, Lichtaart ou Tielen, que vous consultez tranquillement.~~ → pour votre propre entreprise à Kasterlee, Lichtaart ou Tielen, que vous consultez tranquillement.
-- ~~Quelle apparence votre entreprise à Kasterlee peut-elle avoir en ligne~~ → Un site web pour votre entreprise à Kasterlee?
+- ~~Quelle apparence votre entreprise à Kasterlee peut-elle avoir en ligne ?~~ → Un site web pour votre entreprise à Kasterlee ?
 
 ### /fr/website-laten-maken-kempen/
 
@@ -1220,7 +1220,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Démo gratuite~~ → Proposition sans engagement (5x)
 - ~~vous approuvez la démo~~ → vous approuvez la proposition
 - ~~de votre propre entreprise à Mol, que vous consultez tranquillement.~~ → pour votre propre entreprise à Mol, que vous consultez tranquillement.
-- ~~Quelle apparence votre entreprise à Mol peut-elle avoir en ligne~~ → Un site web pour votre entreprise à Mol?
+- ~~Quelle apparence votre entreprise à Mol peut-elle avoir en ligne ?~~ → Un site web pour votre entreprise à Mol ?
 
 ### /fr/website-laten-maken-turnhout/
 
@@ -1234,7 +1234,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Démo gratuite~~ → Proposition sans engagement (5x)
 - ~~vous approuvez la démo~~ → vous approuvez la proposition
 - ~~de votre propre entreprise à Turnhout, que vous consultez tranquillement.~~ → pour votre propre entreprise à Turnhout, que vous consultez tranquillement.
-- ~~Quelle apparence votre entreprise à Turnhout peut-elle avoir en ligne~~ → Un site web pour votre entreprise à Turnhout?
+- ~~Quelle apparence votre entreprise à Turnhout peut-elle avoir en ligne ?~~ → Un site web pour votre entreprise à Turnhout ?
 
 ### /fr/website-laten-vernieuwen/
 
@@ -1648,7 +1648,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Gratis demo~~ → Vrijblijvend voorstel (4x)
 - ~~goedkeuring van de demo~~ → goedkeuring van het voorstel
 - ~~van uw eigen zaak in Geel, die u rustig bekijkt.~~ → voor uw eigen zaak in Geel, dat u rustig bekijkt.
-- ~~Hoe ziet uw zaak in Geel er online uit~~ → Een website voor uw zaak in Geel?
+- ~~Hoe ziet uw zaak in Geel er online uit?~~ → Een website voor uw zaak in Geel?
 
 ### /website-laten-maken-gent/
 
@@ -1678,7 +1678,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Gratis demo aanvragen~~ → Vrijblijvend voorstel aanvragen (2x)
 - ~~Gratis demo~~ → Vrijblijvend voorstel (3x)
 - ~~goedkeuring van de demo~~ → goedkeuring van het voorstel
-- ~~Hoe ziet uw zaak in Gent er online uit~~ → Een website voor uw zaak in Gent?
+- ~~Hoe ziet uw zaak in Gent er online uit?~~ → Een website voor uw zaak in Gent?
 
 ### /website-laten-maken-herentals/
 
@@ -1692,7 +1692,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Gratis demo~~ → Vrijblijvend voorstel (4x)
 - ~~goedkeuring van de demo~~ → goedkeuring van het voorstel
 - ~~van uw eigen zaak in Herentals, die u rustig bekijkt.~~ → voor uw eigen zaak in Herentals, dat u rustig bekijkt.
-- ~~Hoe ziet uw zaak in Herentals er online uit~~ → Een website voor uw zaak in Herentals?
+- ~~Hoe ziet uw zaak in Herentals er online uit?~~ → Een website voor uw zaak in Herentals?
 
 ### /website-laten-maken-kasterlee/
 
@@ -1706,7 +1706,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Gratis demo~~ → Vrijblijvend voorstel (4x)
 - ~~u de demo goedkeurt~~ → u het voorstel goedkeurt
 - ~~van uw eigen zaak in Kasterlee, Lichtaart of Tielen, die u rustig bekijkt.~~ → voor uw eigen zaak in Kasterlee, Lichtaart of Tielen, dat u rustig bekijkt.
-- ~~Hoe ziet uw zaak in Kasterlee er online uit~~ → Een website voor uw zaak in Kasterlee?
+- ~~Hoe ziet uw zaak in Kasterlee er online uit?~~ → Een website voor uw zaak in Kasterlee?
 
 ### /website-laten-maken-kempen/
 
@@ -1767,7 +1767,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Gratis demo~~ → Vrijblijvend voorstel (4x)
 - ~~Keurt u de demo goed~~ → Keurt u het voorstel goed
 - ~~van uw eigen zaak in Mol, die u rustig bekijkt.~~ → voor uw eigen zaak in Mol, dat u rustig bekijkt.
-- ~~Hoe ziet uw zaak in Mol er online uit~~ → Een website voor uw zaak in Mol?
+- ~~Hoe ziet uw zaak in Mol er online uit?~~ → Een website voor uw zaak in Mol?
 
 ### /website-laten-maken-turnhout/
 
@@ -1781,7 +1781,7 @@ Zinnen die op meerdere plaatsen van een pagina staan (tekst, meta, JSON-LD), sta
 - ~~Gratis demo~~ → Vrijblijvend voorstel (4x)
 - ~~u de demo goedkeurt~~ → u het voorstel goedkeurt
 - ~~van uw eigen zaak in Turnhout, die u rustig bekijkt.~~ → voor uw eigen zaak in Turnhout, dat u rustig bekijkt.
-- ~~Hoe ziet uw zaak in Turnhout er online uit~~ → Een website voor uw zaak in Turnhout?
+- ~~Hoe ziet uw zaak in Turnhout er online uit?~~ → Een website voor uw zaak in Turnhout?
 
 ### /website-laten-vernieuwen/
 

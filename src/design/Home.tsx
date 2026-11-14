@@ -164,7 +164,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
             <span className="font-title wordmark-gradient font-semibold tracking-[-0.025em] text-[12.5vw] sm:text-[12vw] lg:text-[11vw] whitespace-nowrap">WEBSTUDIO K</span>
           </div>
           <div className="relative z-[35] w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 mt-3 sm:mt-4">
-            <ul className="w-full rounded-2xl sm:rounded-full bg-[#121214]/95 backdrop-blur-md text-[#E4E4E7] px-5 sm:px-8 lg:px-10 min-h-[48px] sm:h-[54px] py-3 sm:py-0 flex flex-wrap sm:flex-nowrap items-center justify-between gap-x-4 gap-y-1.5 text-[12px] sm:text-[13px] lg:text-[13.5px] font-normal shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
+            <ul className="w-full rounded-2xl sm:rounded-full bg-[#121214]/95 backdrop-blur-md text-[#E4E4E7] px-5 sm:px-8 lg:px-10 min-h-[48px] sm:h-[54px] py-3 sm:py-0 flex flex-wrap max-sm:flex-col max-sm:items-start sm:flex-nowrap items-center justify-between gap-x-4 gap-y-1.5 text-[12px] sm:text-[13px] lg:text-[13.5px] font-normal shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
               <li className="inline-flex items-center gap-2 whitespace-nowrap"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><span>{t0}</span></li>
               <li className="inline-flex items-center gap-2 whitespace-nowrap"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><span>{t1}</span></li>
               <li><a href="#intro" className="inline-flex items-center gap-2 whitespace-nowrap hover:text-white transition-colors cursor-pointer"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><span>{s.skip}</span></a></li>
@@ -406,7 +406,9 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                           <span aria-hidden="true" className={cx('font-title text-[56px] sm:text-[64px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', first ? 'text-white/90' : 'text-[#D47A3B]')}>0{i + 1}.</span>
                           <div className={cx('text-right text-[11px] leading-snug', first ? 'text-white' : 'text-[#D3D6DA]')}>
                             <p className={cx('font-medium', !first && 'text-[#D47A3B]')}>{d.priceText}</p>
-                            {d.chips.map((c: string, k: number) => <p key={k} className={cx('relative z-10', first ? 'text-white/90' : 'text-[#D3D6DA]/85')}><Html html={c} /></p>)}
+                            {d.chips.length > 0 && <p className={cx('relative z-10 mt-0.5 ml-auto max-w-[230px] [text-wrap:balance]', first ? 'text-white/90' : 'text-[#D3D6DA]/85')}>
+                              {d.chips.map((c: string, k: number) => <Fragment key={k}>{k > 0 && <span aria-hidden="true" className="opacity-60"> · </span>}<Html html={c} /></Fragment>)}
+                            </p>}
                           </div>
                         </div>
                       </div>
@@ -476,8 +478,9 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                   <Html html={h.steps.h2} />
                 </h2>
               </div>
+              {ui.stepsSub && <p className="text-[14px] text-[#4C433F] max-w-md leading-relaxed">{ui.stepsSub}</p>}
             </FadeIn>
-            <Steps items={h.steps.items} chat={demoCta} ui={ui} />
+            <Steps items={h.steps.items} chat={demoCta} ui={ui} extras={h.steps.items.length === 4} />
             <div className="mt-6 rounded-[20px] bg-[#F2F2F2] border border-[#D3D6DA] px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <p className="text-[13.5px] text-[#4C433F]"><Html html={h.steps.ctaNote} /></p>
               {h.steps.cta && (
@@ -551,7 +554,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
               <div className="relative z-10 text-center max-w-md mx-auto">
                 <Badge>{faq.badge}</Badge>
                 <h2 className="mt-3 text-[32px] sm:text-[42px] leading-[1.06] tracking-[-0.03em] font-normal text-[#121214]">{faq.card && lastTwo(faq.card.h.replace(/<[^>]+>/g, ''))[0]}<br />{faq.card && lastTwo(faq.card.h.replace(/<[^>]+>/g, ''))[1]}</h2>
-                {faq.card && <p className="mt-3 text-[13.5px] text-[#4C433F] leading-relaxed"><Html html={faq.card.p} /></p>}
+                {faq.card && <p className="mt-3 text-[13.5px] text-[#4C433F] leading-relaxed lg:max-w-[360px] lg:mx-auto"><Html html={faq.card.p} /></p>}
                 {faq.card && (
                   <A href={faq.card.cta.href} chat className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#121214] hover:bg-[#B85D28] text-white px-5 py-2.5 text-[12.5px] font-medium transition-colors cursor-pointer">
                     <span>{faq.card.cta.label}</span><ArrowRight className="w-3.5 h-3.5" />
@@ -581,6 +584,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
               <div>
                 <Badge>{faq.h2.replace(/<[^>]+>/g, '')}</Badge>
                 <h2 id={faq.h2id} className="mt-3 text-[32px] sm:text-[42px] leading-[1.06] tracking-[-0.03em] font-normal text-[#121214]"><Html html={faq.h2} /></h2>
+                {ui.faqSub && <p className="mt-2 text-[13.5px] text-[#4C433F] max-w-md">{ui.faqSub}</p>}
               </div>
               <div role="tablist" aria-label={ui.faqFilter} className="flex flex-wrap gap-2">
                 {[ui.faqAll, ...groups.map((g: any) => g.title)].map((label: string, i: number) => (
@@ -693,14 +697,14 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
                         <span className="text-[12px] opacity-85">{tier.amtAfter}</span>
                       </div>
                       {tier.m.map((m: any, k: number) => (
-                        <p key={k} className={`mt-2 text-[13px] font-medium tabular-nums ${m.ex ? (cop || obs ? 'text-white/80 font-normal' : 'text-[#4C433F] font-normal') : monthAcc} [&_span]:font-normal ${cop || obs ? '[&_span]:text-white/80' : '[&_span]:text-[#4C433F]'}`}><Html html={m.html} /></p>
+                        <p key={k} className={`mt-2 text-[13px] tabular-nums ${m.ex ? (cop || obs ? 'text-white/80' : 'text-[#4C433F]') : (cop || obs ? 'text-white/80' : 'text-[#4C433F]')} [&_em]:not-italic [&_em]:font-medium ${cop ? '[&_em]:text-white' : obs ? '[&_em]:text-[#D47A3B]' : '[&_em]:text-[#9A4A1C]'}`}><Html html={m.ex ? m.html : m.html.replace(/^([^<€]*€\s?[\d.,]+)/, '<em>$1</em>')} /></p>
                       ))}
                     </div>
                   )}
                 </div>
                 {tier.list.length > 0 && (
                   <div className="mt-5">
-                    {tier.listTitle && <p className={`text-[12px] font-semibold mb-3 ${cop || obs ? 'text-white' : 'text-[#121214]'}`}>{tier.listTitle}</p>}
+                    {tier.listTitle && <p className={`${tier.list.some((it: any) => it.all) ? 'sr' : ''} text-[12px] font-semibold mb-3 ${cop || obs ? 'text-white' : 'text-[#121214]'}`}>{tier.listTitle}</p>}
                     <ul className="flex flex-col gap-2.5 text-[12.5px] leading-snug">
                       {tier.list.map((it: any, k: number) => it.all ? (
                         <li key={k} className={`font-semibold ${cop || obs ? 'text-white' : 'text-[#121214]'}`}><Html html={it.html} /></li>
@@ -714,7 +718,7 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
                   </div>
                 )}
                 {(tier.mp || tier.extra.length > 0) && (
-                  <div className={`mt-4 pt-4 border-t text-[11.5px] leading-relaxed ${note} [&_b]:block [&_b]:font-semibold [&_b]:mb-0.5`}>
+                  <div className={`mt-4 pt-4 border-t text-[11.5px] leading-relaxed ${note} [&_b]:font-semibold [&_b]:after:content-[':_']`}>
                     {tier.mp && <p><Html html={tier.mp} /></p>}
                     {tier.extra.map((e: string, k: number) => <p key={k} className="kw-link"><Html html={e} /></p>)}
                   </div>
@@ -736,9 +740,9 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
   );
 }
 
-export function Steps({ items, chat, ui }: { items: any[]; chat: any; ui: any }) {
+export function Steps({ items, chat, ui, extras = false }: { items: any[]; chat: any; ui: any; extras?: boolean }) {
   return (
-    <StaggerGroup data-sel="" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
+    <StaggerGroup data-sel="" className={cx('grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-stretch', items.length === 3 || items.length === 6 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4')}>
       {items.map((it: any, i: number) => {
         const on = i === 0;
         return (
@@ -748,11 +752,13 @@ export function Steps({ items, chat, ui }: { items: any[]; chat: any; ui: any })
               <div>
                 <div className="flex items-center justify-between gap-3">
                   <span data-sel-item={i} {...sel(on, 'text-[#FB4D27]', 'text-[#9A4A1C]', 'font-title text-[22px] font-medium tabular-nums leading-none')}>{it.n.replace(/\.$/, '')}.</span>
+                  {extras && ui.stepTags?.[i] && <span data-sel-item={i} {...sel(on, 'bg-[#1D1D20] border-white/10 text-[#D3D6DA]', 'bg-white border-[#D3D6DA] text-[#4C433F]', 'rounded-full border px-2.5 py-0.5 text-[10.5px] font-medium whitespace-nowrap')}>{ui.stepTags[i]}</span>}
                 </div>
                 <h3 data-sel-item={i} {...sel(on, 'text-white', 'text-[#121214]', 'mt-4 text-[19px] font-medium tracking-[-0.02em]')}><Html html={it.h} /></h3>
                 <p data-sel-item={i} {...sel(on, 'text-[#D3D6DA]', 'text-[#4C433F]', 'mt-2.5 text-[13.5px] leading-relaxed')}><Html html={it.p} /></p>
               </div>
-              <div data-sel-item={i} {...sel(on, 'border-white/15', 'border-[#D3D6DA]', 'mt-5 pt-4 border-t flex items-center justify-end gap-3')}>
+              <div data-sel-item={i} {...sel(on, 'border-white/15', 'border-[#D3D6DA]', cx('mt-5 pt-4 border-t flex items-center gap-3', extras && ui.stepNotes?.[i] ? 'justify-between' : 'justify-end'))}>
+                {extras && ui.stepNotes?.[i] && <span data-sel-item={i} {...sel(on, 'text-white', 'text-[#9A4A1C]', 'text-[12px] font-medium leading-snug')}>{ui.stepNotes[i]}</span>}
                 <A href={chat.href} chat aria-label={`${chat.label}: ${it.h.replace(/<[^>]+>/g, '')}`} data-sel-item={i}
                   {...sel(on, 'copper-pill-gradient text-white', 'bg-[#4C433F] hover:bg-[#B85D28] text-white', 'w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors cursor-pointer')}><ArrowRight className="w-3.5 h-3.5" /></A>
               </div>
