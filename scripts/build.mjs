@@ -145,10 +145,14 @@ function upgradeImages(doc, scope) {
     const pic = img.parentElement && img.parentElement.tagName === 'PICTURE' ? img.parentElement : null;
     if (pic) {
       if (pic.querySelector('source[type="image/avif"]')) continue;
-      const s = pic.querySelector('source[type="image/webp"]') || pic.querySelector('source:not([type])');
-      const ss = s ? s.getAttribute('srcset') : img.getAttribute('srcset') || src;
-      const a = ss && avifFor(ss);
-      if (a) { const n = doc.createElement('source'); n.setAttribute('type', 'image/avif'); n.setAttribute('srcset', a); const sz = (s && s.getAttribute('sizes')) || img.getAttribute('sizes'); if (sz) n.setAttribute('sizes', sz); pic.insertBefore(n, pic.firstChild); }
+      // elke bestaande bron (met of zonder media-query) krijgt een AVIF-tegenhanger vlak ervoor; daarna één voor het img zelf
+      for (const s of [...pic.querySelectorAll('source')]) {
+        const t = s.getAttribute('type'); if (t && t !== 'image/webp') continue;
+        const a = avifFor(s.getAttribute('srcset') || ''); if (!a) continue;
+        const n = s.cloneNode(false); n.setAttribute('type', 'image/avif'); n.setAttribute('srcset', a); pic.insertBefore(n, s);
+      }
+      const a = avifFor(img.getAttribute('srcset') || src);
+      if (a) { const n = doc.createElement('source'); n.setAttribute('type', 'image/avif'); n.setAttribute('srcset', a); if (img.getAttribute('sizes')) n.setAttribute('sizes', img.getAttribute('sizes')); pic.insertBefore(n, img); }
       continue;
     }
     if (!src.startsWith('/assets/img/')) continue;
@@ -256,6 +260,7 @@ for (const rel of pages) {
   upgradeImages(doc, B);
   for (const img of B.querySelectorAll('main img')) {
     if (img.closest('.hero')) { img.removeAttribute('loading'); continue; }
+    img.removeAttribute('fetchpriority'); // alleen het hero-beeld krijgt voorrang
     if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
   }
 

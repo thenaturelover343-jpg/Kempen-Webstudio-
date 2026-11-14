@@ -5,3 +5,4 @@ dist-live/
 _screens/*.tmp
 *.log
 .DS_Store
+_lighthouse/

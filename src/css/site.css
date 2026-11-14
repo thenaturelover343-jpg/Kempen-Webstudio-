@@ -211,7 +211,9 @@ main > section:not(.hero) { background: var(--paper); }
 main > :not(.hero) + :not(.hero) { margin-top: -1px; }
 .sec, .s6 { padding: 72px 0; }
 @media (min-width: 1024px) { .sec, .s6 { padding: 112px 0; } }
-.sec + .sec:not(.band):not(.steps):not(.spd):not(.werk):not(.xr-d), .sec.xr + .sec.xr:not(.spd):not(.werk):not(.steps) { padding-top: 0; }
+.sec:not(.spd):not(.steps):not(.werk):not(#diensten):not(.band) + .sec:not(.band):not(.steps):not(.spd):not(.werk):not(#diensten) { padding-top: 0; }
+.spd + .sec:not(.spd) { padding-top: 108px; }
+@media (min-width: 1024px) { .spd + .sec:not(.spd) { padding-top: 148px; } }
 .band { border-radius: var(--r-xl) var(--r-xl) 0 0; }
 .ribbon { display: none; }
 .sh { display: grid; gap: 14px; margin-bottom: 40px; }

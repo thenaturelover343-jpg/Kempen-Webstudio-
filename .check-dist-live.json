@@ -1,0 +1,38 @@
+{
+ "build": "dist-live",
+ "paginas": 115,
+ "html": 140,
+ "links": 13174,
+ "jsonLd": 348,
+ "hreflangParen": 342,
+ "urls": {
+  "online": {
+   "totaal": 105,
+   "ok": 105,
+   "ontbreekt": []
+  },
+  "site": {
+   "totaal": 31,
+   "ok": 31,
+   "ontbreekt": []
+  },
+  "site-live": {
+   "totaal": 105,
+   "ok": 105,
+   "ontbreekt": []
+  },
+  "content": {
+   "totaal": 140,
+   "ok": 140,
+   "ontbreekt": []
+  },
+  "sitemap": {
+   "nieuw": 105,
+   "online": 105,
+   "weg": [],
+   "extra": []
+  }
+ },
+ "fouten": [],
+ "opmerkingen": []
+}
