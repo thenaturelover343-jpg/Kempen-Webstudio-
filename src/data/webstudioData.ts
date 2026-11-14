@@ -7,7 +7,67 @@ import studioInteriorImg from '../assets/images/warsaw_studio_interior_179454961
 import type { Language } from '../i18n/LanguageContext';
 import type { FaqTopicKey } from '../i18n/translations';
 
-export type PageRoute = 'Home' | 'Services' | 'About' | 'Vision';
+export type SectorSlug =
+  | 'website-horeca'
+  | 'website-winkel'
+  | 'website-kapsalon'
+  | 'website-vakmensen'
+  | 'website-zorg'
+  | 'website-vrij-beroep'
+  | 'website-vereniging'
+  | 'website-starters'
+  | 'website-schilder'
+  | 'website-tuinaannemer';
+
+export type RegionSlug =
+  | 'website-laten-maken-kempen'
+  | 'website-laten-maken-turnhout'
+  | 'website-laten-maken-geel'
+  | 'website-laten-maken-herentals'
+  | 'website-laten-maken-mol'
+  | 'website-laten-maken-kasterlee'
+  | 'website-laten-maken-gent'
+  | 'website-laten-maken-leuven'
+  | 'website-laten-maken-kortrijk';
+
+export type ArticleSlug =
+  | 'hoe-lang-duurt-website-laten-maken'
+  | 'wat-moet-er-op-een-website-staan'
+  | 'google-bedrijfsprofiel-aanmaken'
+  | 'website-fiscaal-aftrekbaar'
+  | 'terugkerende-kosten-website'
+  | 'website-laten-maken-of-zelf-bouwen'
+  | 'wettelijke-vermeldingen-website'
+  | 'wordpress-of-maatwerk';
+
+export type DemoSlug =
+  | 'houtatelier-nethe'
+  | 'horeca-voorbeeld'
+  | 'webshop-voorbeeld'
+  | 'dakwerken-hoogland'
+  | 'kleurwerk-voorbeeld'
+  | 'tuin-voorbeeld'
+  | 'schoonheidssalon-voorbeeld'
+  | 'kapsalon-voorbeeld'
+  | 'barbier-voorbeeld';
+
+export type PageRoute =
+  | 'Home'
+  | 'Services'
+  | 'About'
+  | 'Vision'
+  | 'Sectors'
+  | 'Regions'
+  | 'Webshop'
+  | 'Vernieuwen'
+  | 'LogoHuisstijl'
+  | 'Toegankelijk'
+  | 'Privacy'
+  | 'Cookies'
+  | `Sector:${SectorSlug}`
+  | `Region:${RegionSlug}`
+  | `Article:${ArticleSlug}`
+  | `Demo:${DemoSlug}`;
 
 export interface ShowcaseSlide {
   index: string;
