@@ -58,11 +58,22 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - regels in `config/demo-weg.json`, toegepast door `scripts/apply-demo-weg.mjs` (ook na elke import); oud -> nieuw per URL in `TEKST-WIJZIGINGEN-DEMO.md`;
   - SEO: hoofdzoekwoorden behouden; NL-titles <= 60 en NL-descriptions <= 155; geen enkele tekst langer geworden boven de grens.
 
+- [x] **Motion (Motion for React) geprobeerd, niet overgenomen** (14-11, 22:00):
+  - gebouwd als islands: LazyMotion + domAnimation (apart geladen chunk), m-componenten die de statische HTML hydrateren, alleen opacity/transform, niet geladen bij "minder beweging";
+  - design pixelgelijk (screenshotvergelijking voor/na met scripts/diff-screens.mjs: < 0,1 % afwijkende pixels, alleen klok en zwevende knop), alle interacties werkten;
+  - maar Lighthouse mobiel: home 73, dienstpagina 90, FR 75 (TBT tot 1,4 s door de React-runtime van 58 kB gz en de hydratatie) -> volgens Karims regel teruggedraaid;
+  - de poging staat op branch `motion-proef` (commit ba7e89d); `nieuwe-website` gebruikt weer CSS-animaties;
+  - voorstel: het `motion`-pakket zonder React (`animate`/`inView`, enkele kB) haalt wel 95+; wacht op Karims keuze.
+- [x] Afbeeldingencontrole alle pagina's (scripts/imgcheck.mjs, nu bestand tegen gecrashte tabbladen): alle afbeeldingen geladen, zwevende knoppen nooit over de hero.
+- [x] UI UX Pro Max als user-skill geïnstalleerd (na review) in `C:\Users\GbThe\.claude\skills\ui-ux-pro-max`.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
 
 ## Nog te doen
+
+- [ ] **Karim:** kiezen hoe Motion gebruikt wordt: zonder React (`motion` vanilla, haalt 95+) of de React-versie aanvaarden met een lagere mobiele score (73-90).
 
 - [ ] **Karim:** de nieuwe teksten zonder demo nalezen in `TEKST-WIJZIGINGEN-DEMO.md` (en zeggen of "U betaalt pas als u tevreden bent" blijft kloppen).
 - [ ] **Karim:** de teksten in `TEKSTEN-UIT-HET-DESIGN.md` goedkeuren of aanpassen.

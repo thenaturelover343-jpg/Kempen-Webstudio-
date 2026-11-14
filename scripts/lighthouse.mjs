@@ -18,7 +18,10 @@ let server = null;
 try { await fetch(BASE + '/'); } catch { server = spawn(process.execPath, [path.join(ROOT, 'scripts', 'serve.mjs'), path.join(ROOT, 'dist-live'), String(PORT)], { stdio: 'ignore' }); await new Promise(r => setTimeout(r, 800)); }
 const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless=new', '--no-first-run', '--disable-extensions'] });
 const rows = [];
-for (const [name, p] of PAGES) for (const formFactor of ['mobile', 'desktop']) {
+// opwarmen: de eerste meting na het starten van Chrome is te pessimistisch (koude start); die telt niet mee
+await lighthouse(BASE + '/', { port: chrome.port, output: 'json', logLevel: 'error', onlyCategories: ['performance'] }).catch(() => {});
+const ONLY = process.env.ONLY ? process.env.ONLY.split(',') : null;
+for (const [name, p] of PAGES.filter(x => !ONLY || ONLY.includes(x[0]))) for (const formFactor of ['mobile', 'desktop']) {
   let best = null;
   for (let run = 0; run < 2; run++) { // twee runs, de beste performance telt (vlakt meetruis af)
     const cfg = formFactor === 'desktop' ? (await import('lighthouse/core/config/desktop-config.js')).default : undefined;

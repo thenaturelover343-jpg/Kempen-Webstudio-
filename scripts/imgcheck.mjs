@@ -13,14 +13,19 @@ const urls = [...fs.readFileSync(path.join(ROOT, 'dist-live', 'sitemap.xml'), 'u
 let server = null;
 try { await fetch(BASE + '/'); } catch { server = spawn(process.execPath, [path.join(ROOT, 'scripts', 'serve.mjs'), path.join(ROOT, 'dist-live'), String(PORT)], { stdio: 'ignore' }); await new Promise(r => setTimeout(r, 800)); }
 const browser = await chromium.launch({ channel: 'chrome' });
+const stop = () => { try { server && server.kill(); } catch {} };
+process.on('exit', stop); process.on('SIGTERM', () => { stop(); process.exit(1); });
 const bad = [];
 let nImg = 0;
 for (const width of [1440, 390]) {
   const ctx = await browser.newContext({ viewport: { width, height: width > 500 ? 900 : 844 }, isMobile: width < 500, hasTouch: width < 500 });
   await ctx.addInitScript(() => { try { localStorage.setItem('kw_consent', JSON.stringify({ v: 1, t: Date.now(), s: false, m: false })); } catch (e) {} });
-  const page = await ctx.newPage();
+  let page = await ctx.newPage();
   for (const u of urls) {
-    await page.goto(BASE + u, { waitUntil: 'load' });
+   for (let poging = 1; poging <= 2; poging++) {
+   try {
+    page.setDefaultTimeout(20000);
+    await page.goto(BASE + u, { waitUntil: 'load', timeout: 30000 });
     if (width < 500) {
       // bovenaan: zwevende knoppen onzichtbaar zolang de hero in beeld is
       await page.waitForTimeout(150);
@@ -47,6 +52,14 @@ for (const width of [1440, 390]) {
     });
     nImg += r.length;
     r.filter(i => !i.ok && i.vis).forEach(i => bad.push(`${width} ${u}: afbeelding niet geladen: ${i.s}`));
+    break;
+   } catch (e) {
+    // tabblad gecrasht of vastgelopen: nieuw tabblad en nog één poging
+    try { await page.close(); } catch {}
+    page = await ctx.newPage();
+    if (poging === 2) bad.push(`${width} ${u}: controle mislukt (${String(e.message).split(String.fromCharCode(10))[0]})`);
+   }
+   }
   }
   await ctx.close();
 }
