@@ -1,0 +1,7 @@
+{
+  "_uitleg": "Tekstcorrecties die na elke import (scripts/import-content.mjs) op content/ worden toegepast, met scripts/apply-corrections.mjs. Alleen voor duidelijke fouten in de bestaande site; elke correctie staat ook in LEESMIJ.md. 'lang' = map (fr/en), 'from' en 'to' = letterlijke HTML.",
+  "corrections": [
+    { "lang": "fr", "from": "info@kempenwebstudio.be</a> of bel ", "to": "info@kempenwebstudio.be</a> ou appelez le ", "why": "onvertaald Nederlands in FR-CTA (ook online)" },
+    { "lang": "en", "from": "info@kempenwebstudio.be</a> of bel ", "to": "info@kempenwebstudio.be</a> or call ", "why": "onvertaald Nederlands in EN-CTA (ook online)" }
+  ]
+}

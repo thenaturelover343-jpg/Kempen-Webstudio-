@@ -1,87 +1,92 @@
 # Kempen Webstudio: nieuwe website (design Webstudio K)
 
-Statische site voor www.kempenwebstudio.be, in het nieuwe design. Elke URL is volledige HTML: geen SPA en geen framework in de browser. Eén klein script (9 kB, `defer`) doet de interactieve delen.
+Statische site voor www.kempenwebstudio.be in het design van Webstudio K. Elke URL is volledige HTML: geen SPA en geen React in de browser. Eén klein script (13 kB, `defer`) doet de interactie.
 
 ## Gebruik
 
 ```
 npm install                  # werkt zonder --legacy-peer-deps
-npm run build                # dist-test/ (noindex) en dist-live/ (index,follow, sitemap, robots.txt)
-npm run check                # linkcontrole, URL-lijsten, SEO, hreflang, JSON-LD (beide builds)
-npm run serve                # dist-test op http://localhost:4100  (serve:live -> 4101)
+npm run build                # dist-test/ (noindex) en dist-live/ (index,follow, sitemap, robots.txt, _headers)
+npm run check                # linkcontrole incl. ankers, URL-lijsten, SEO, hreflang, JSON-LD (beide builds)
+npm run serve                # dist-test op http://localhost:4100   (serve:live -> 4101)
 npm run lighthouse           # Lighthouse mobiel + desktop op 7 paginatypes -> _lighthouse/
-npm run screens              # schermafbeeldingen 1440 en 390 px per paginatype -> _screens/
+npm run screens              # volledige schermafbeeldingen 1440 en 390 px per paginatype -> _screens/
 node scripts/overflow.mjs    # elke pagina op horizontaal scrollen controleren (390/1440)
-npm run import -- --live     # inhoud opnieuw uit ../site halen (+ verbeterde FR/EN-teksten van online)
+node scripts/compare-design.mjs http://localhost:3001 http://localhost:4100   # origineel design naast de site -> _screens/vergelijking-*
+npm run import -- --live     # inhoud opnieuw uit ../site halen (+ verbeterde FR/EN-teksten van online, + tekstcorrecties)
 ```
 
 **Live zetten** gebeurt alleen na Karims OK. Je publiceert dan de volledige inhoud van `dist-live/`, en niets met de hand.
 
-## Opbouw
+## Hoe het werkt
 
-| Map | Inhoud |
-|---|---|
-| `content/` | De inhoud: alle pagina's (NL, /fr/, /en/), voorbeeldsites en beelden. Geïmporteerd uit `../site` (commit da5fea3); zie `content/_import-verslag.json`. |
-| `config/live-config.json` | Robots per pagina en voorbeeldsites. Komt uit `site/_build`, zodat de logica van maak-live behouden blijft. |
-| `config/sitemap-online.xml` | De online sitemap van 14-11-2026: volgorde en URL-controle. |
-| `src/css/site.css` | Het design. Wordt inline in elke pagina gezet (geminificeerd 49 kB, gzip ongeveer 9 kB). |
-| `src/js/site.js` | De interactie: menu, Diensten-submenu, mobiel menu, formulier, pakketkeuze, cookiekeuze, statistiek na toestemming en verschijnen bij scrollen. |
-| `src/img/og-v3.jpg` | Het nieuwe deelbeeld. Je maakt het opnieuw met `node scripts/make-og.mjs`. |
-| `design-bron/` | Het hero-portret uit het design. AVIF- en WebP-varianten worden bij de build gemaakt. |
-| `scripts/` | `build`, `check`, `serve`, `lighthouse`, `screens`, `overflow`, `import-content`, `make-og`. |
+- **Design pixelgelijk.**
+  - De componenten van het design (React/Tailwind uit commit 8cc9567) staan in `src/design/*.tsx`, met dezelfde opmaak en klassen.
+  - Bij de build worden ze met React naar HTML gerenderd. React draait alleen tijdens de build.
+  - Tailwind genereert de CSS uit dezelfde klassen. `src/css/site.css` is de `index.css` van het design, plus de fonts en de statische animaties.
+- **Animaties.** motion/react is vervangen door CSS-klassen (fade, stagger, sectie, laden) en `site.js`. Alles gebeurt met transform/opacity, en bij "minder beweging" staat alles stil.
+- **Interacties** in `site.js`:
+  - sliders en keuzes (hero-kaart, 9 voorbeeldontwerpen, sectoren, voor/na, werkgebied, realisaties, cirkels);
+  - de FAQ (filter op onderwerp en accordeon);
+  - menupaneel, Diensten-submenu, klok (Europe/Brussels), voortgangsbalk en cursoreffect in de hero;
+  - het contactvenster (elke "Gratis demo aanvragen"-knop) en het formulier (web3forms, met mailto als terugval);
+  - de cookiekeuze, met statistiek pas na toestemming.
+- **Inhoud.**
+  - `src/site/model.mjs` leest elke pagina uit `content/` (NL/FR/EN) en vult er de designcomponenten mee.
+  - Teksten blijven letterlijk (als HTML, dus links en opmaak in zinnen blijven behouden).
+  - Onderpagina's zijn uitsluitend opgebouwd uit designcomponenten (`src/design/Blocks.tsx`):
+    - de hero van de dienstenpagina;
+    - de kaarten van werkwijze en voorbeelden;
+    - de pakketkaarten, werkwijzekaarten en FAQ van de home;
+    - het donkere CTA-blok en de sectorkaarten met beeld.
+- **Controle bij elke build.** Elke tekst van de oude pagina moet op de nieuwe pagina staan; anders stopt de build. Tekst die alleen uit het design komt, staat in `TEKSTEN-UIT-HET-DESIGN.md`.
+- **SEO per pagina.** Title, description, canonical, hreflang (nl-BE/fr-BE/en/x-default), Open Graph en alle JSON-LD blijven letterlijk. Het OG-beeld is nieuw (`/assets/og-v3.jpg`).
+- **Robots en sitemap** werken zoals maak-live:
+  - test: `noindex,nofollow` en `Disallow: /`;
+  - live: volgens `config/live-config.json`;
+  - de sitemap bevat exact dezelfde 105 URL's als online, met hreflang.
+- **Voorbeeldsites.** De 9 fictieve klantensites worden ongewijzigd overgenomen.
 
-## Wat de build doet
+## Stijlgids (14-11-2026): controle
 
-- **Head per pagina.** Title, description, canonical, hreflang (nl-BE/fr-BE/en/x-default), Open Graph, Twitter en alle JSON-LD komen letterlijk uit de bron. Alleen het OG-beeld is nieuw (`/assets/og-v3.jpg`; `og-v2.jpg` blijft bestaan).
-- **Teksten.** Bij elke build wordt de hoofdtekst van elke pagina vergeleken met de bron. Die is woord voor woord gelijk; bij elk verschil stopt de build met een fout.
-- **Header, footer en cookiemelding.** De bestaande (vertaalde) opbouw krijgt het nieuwe design: NL/FR/EN-schakelaar, Diensten-submenu, de footer met 9 steden en de Kempen-pagina's.
-- **Beelden.**
-  - AVIF naast elke WebP/JPG, met `<picture>`, `srcset`/`sizes` per container en kleinere varianten waar het design kleiner toont.
-  - Overal width/height, lazy onder de vouw.
-  - Het hero-beeld krijgt preload met `fetchpriority=high`.
-- **Lettertype.** DM Sans wordt zelf gehost (latin-subset, variabel, 37 kB), met preload en een fallback met aangepaste metriek.
-- **Voorbeeldsites.** De 9 fictieve klantensites worden ongewijzigd overgenomen, met dezelfde robots-waarde als live.
-- **Robots en sitemap.**
-  - test: `noindex,nofollow` overal en `Disallow: /`.
-  - live: `index,follow` behalve wat in `live-config.json` staat (404, bedankt, privacy, cookies, voorbeeldsites).
-  - De sitemap bevat 105 URL's met hreflang. Dat is exact dezelfde lijst als online.
-- **Animaties.** Alleen transform en opacity. Bij "minder beweging" staat alles stil.
+| Onderdeel | Stijlgids | Design-repo vóór | Nu |
+|---|---|---|---|
+| Titels | Neue Montreal | DM Sans (Google Fonts) | **Switzer** (open vervanger, keuze Karim), zelf gehost |
+| Tekst | Inter Tight | DM Sans / Plus Jakarta Sans | **Inter Tight**, zelf gehost |
+| Kleuren | #FB4D27, #D3D6DA, #929090, #F2F2F2, #4C433F, zwart | precies deze 5 + koper #B85D28/#5E2A11/#D47A3B + obsidiaan #070709 | ongewijzigd (koper en obsidiaan zijn deel van het design, maar staan niet in de gids) |
 
-## Keuzes (gemaakt zonder vraag, hier vastgelegd)
+- **Fontafstelling.** Switzer is iets breder en zwaarder dan DM Sans. Titels krijgen daarom gewicht 380/470/560 (in plaats van 400/500/600) en −0,012em extra letterafstand. Zo blijven breedte en kleur zo dicht mogelijk bij het design.
+- **Licentie.** Zie `src/fonts/LICENTIES.md`. Neue Montreal is commercieel en wordt niet meegeleverd. Switzer valt onder de ITF Free Font License (gratis, ook commercieel); Inter Tight onder de OFL.
+- **Tegenstrijdigheid in de stijlgids.** De gids is op één punt tegenstrijdig: bij Neue Montreal staat "Usage: Body Text" en bij Inter Tight "Title/Captions". Gevolgd is Karims bericht: titels in Neue Montreal (nu Switzer), tekst in Inter Tight.
 
-1. **Statische HTML in plaats van React.** Het template (React, Vite, Gemini, Express, "Zenrixa") is verwijderd. Het design is overgenomen in CSS op de bestaande, semantische opbouw van de pagina's. Zo blijven teksten, links, ankers en structured data op elke pagina gegarandeerd gelijk.
-2. **Nieuwere FR/EN-teksten van online.** Online staan op 31 FR/EN-pagina's verbeterde vertalingen die nog niet in `site` of `site-live` zitten. Voorbeelden: "per month" i.p.v. "per maand", Ghent/Gand, Courtrai, Louvain, "nouveaux entrepreneurs", "Sans aucun engagement". Voor die pagina's is de online versie gebruikt; NL komt altijd uit `site`.
-3. **Drie NL-descriptions verschillen met online** (Gent, Kortrijk, Leuven). Ik heb de versie uit `site` behouden: die is nieuwer en vermeldt "Prijzen vanaf €490 excl. btw".
-4. **Naam.**
-   - Overal "Kempen Webstudio": logo, titels, NAP en JSON-LD.
-   - "WEBSTUDIO K" alleen als groot decoratief woordmerk in de home-hero (`aria-hidden`).
-   - E-mail is info@kempenwebstudio.be (het template had een verkeerd adres).
-5. **Beelden.**
-   - Het portret uit het design staat alleen op de home.
-   - De AI-portretten van "teamleden" en "klanten" uit het template zijn niet gebruikt, omdat ze echte klanten zouden suggereren. De sectorkaarten tonen de bestaande sectorfoto's.
-6. **Iconen.** De favicon en app-iconen hebben het nieuwe logo (oranje vlak). De bestanden `kw-192.png` en `kw-512.png` uit het manifest bestaan nu ook in de build.
+## Bewuste afwijkingen van het design (klein, met reden)
 
-## Tekstwijzigingen ter goedkeuring (Karim)
+1. **Sterren in de hero weggelaten** (5 sterren naast "Prijzen vanaf €490"). Die suggereren klantbeoordelingen, en die zijn er nog niet (CLAUDE.md regel 4: geen verzonnen reviews).
+2. **Echte foto's in plaats van AI-portretten.**
+   - De ronde sectorportretten tonen de bestaande sectorfoto's van de site.
+   - Op de werkgebiedkaart en bij de cases staat het merkembleem in plaats van een (fictieve) persoon.
+3. **Contrast (WCAG AA).** Koperkleurige tekst #B85D28 op lichtgrijs (#F2F2F2/#F7F7F8) wordt #9A4A1C waar de tekst klein is: FAQ-onderwerp, prijs per maand, stapnummers, prijslijsten. Op wit en op donker blijft de designkleur.
+4. **Navigatie aangevuld.**
+   - Bovenaan: Home, Diensten (submenu), Voorbeelden, Werkwijze, Kosten, Uitleg, Contact.
+   - De footer heeft 4 kolommen (Diensten, Sectoren, Pagina's, Contact), met onderaan de 9 plaatsen als links.
+5. **Hero-kaart** (Vaste prijs vooraf / Snel online): toont nu "Gratis demo, zonder verplichting" en "Prijzen vanaf €490 excl. btw" (tekst van de site).
+6. **Formulier.** Na verzenden stuurt het formulier door naar `/bedankt/` (zoals nu), in plaats van een melding op de pagina. De oude verborgen statusmeldingen vervallen daardoor.
+7. **Homepage.**
+   - De drie telefoonafbeeldingen (oude "reel") en de knop "Gratis demo aanvragen" die op gsm dubbel stond, staan niet meer op de home.
+   - De Google-zoekresultaat-nabootsing is vervangen door de voor/na-kaart van het design. De teksten ervan blijven.
 
-De hoofdtekst is nergens gewijzigd. Deze kleine zaken zijn nieuw of anders:
+## Teksten
 
-1. **Menuknop (gsm).** Toont nu het woord "Menu"; vroeger alleen twee streepjes. Het woord is in NL, FR en EN hetzelfde.
-2. **Zwevende knop rechtsonder.** Toont "Gratis demo aanvragen" (bestaande tekst) met een chaticoon. De belknop is op gsm een icoon met verborgen label "Bel ons".
-3. **Dubbele knop op de home weggelaten.** De extra knop "Gratis demo aanvragen" (alleen gsm) onderaan de veelgestelde vragen viel samen met de zwevende knop.
-4. **Woordmerk.** Groot woordmerk "WEBSTUDIO K" in de home-hero (decoratief).
-5. **Foutmelding van het formulier in FR/EN.** Stond in het Nederlands; nu vertaald:
-   - FR: "L’envoi a échoué. Réessayez ou écrivez à info@kempenwebstudio.be."
-   - EN: "Sending failed. Please try again or email info@kempenwebstudio.be."
-6. **Taalknoppen (voor schermlezers).** Het label is nu "NL – Nederlands", "FR – Français" en "EN – English".
+- **Woord voor woord.** Alle bestaande teksten staan op de nieuwe pagina's; de build controleert dat.
+- **Nieuw uit het design.** Labels, klok, "Naar boven", de capsules "Snel/Helder/Op maat", de kenmerken per voorbeeldontwerp, de regio's op de kaart en dergelijke. Ze staan allemaal in **`TEKSTEN-UIT-HET-DESIGN.md`** (ter goedkeuring). De FR/EN-versies komen uit de vertalingen in het design.
+- **Online FR/EN gebruikt.** Op 31 FR/EN-pagina's staan online verbeterde vertalingen (per month, Gand, Courtrai …). Die zijn gebruikt; NL komt uit `site`.
+- **Correcties** (`config/tekstcorrecties.json`, ook na elke nieuwe import): het onvertaalde "of bel" is op 15 FR-pagina's "ou appelez le" en op 15 EN-pagina's "or call" geworden.
 
 ## Open punten
 
-1. **"of bel" staat onvertaald op 15 FR- en 15 EN-pagina's**, in de CTA "Or email … of bel …". Dat is ook zo op de huidige site. Voorstel:
-   - FR: "ou appelez le"
-   - EN: "or call"
-
-   Niet aangepast, omdat de teksten woord voor woord moeten blijven. Op OK pas ik het in de bron aan.
-2. **De online FR/EN-verbeteringen staan nog niet in `../vertaling`.** Draait iemand `vertaal.mjs import` in `site`, dan komen de oude fouten terug. De vertaalbestanden moeten dus eerst bijgewerkt worden.
-3. **Publicatie.** `dist-live/` vervangt de volledige huidige site. Oude bestanden die geen pagina meer gebruikt, mogen weg op de server: `assets/lab4/*`, `assets/kw-fx.js`, `assets/kw-gedeeld.css`. Laat je ze staan, dan is dat ook geen probleem.
-4. **Contactformulier.** Werkt via web3forms met de bestaande sleutel uit de pagina. Lokaal is alleen de validatie getest; er is niets verstuurd. Na publicatie één testaanvraag doen.
-5. **Cloudflare.** Brotli en lange cache voor `/assets/fonts`, `/assets/img` en `/assets/site.*.js` worden aanbevolen. De bestandsnaam van het script bevat een hash.
+1. **vertaal.mjs.** Een deel van de online FR/EN-verbeteringen zit in tekst die `site/_build/vertaal.mjs` beschermt en dus nooit vertaalt (bv. "€29 per maand" via de PROTECT-regel `€… (eenmalig|per maand)`). Daardoor kan `../vertaling` die fouten niet herstellen. `site/` en `../vertaling` zijn niet aangepast.
+   - Voorstel: in vertaal.mjs "eenmalig/per maand" niet meer mee beschermen.
+   - Voor de nieuwe site is `content/` in deze repo de bron; werk teksten daar bij (of herimporteer met `--live`).
+2. **Contactformulier.** Lokaal zijn validatie, ingevuld pakket, contactvenster en foutmelding getest; er is niets verstuurd. Na publicatie één testaanvraag doen.
+3. **Publicatie.** `dist-live/` vervangt de volledige huidige site. Op de server mogen daarna weg: `assets/lab4/*`, `assets/kw-fx.js`, `assets/kw-gedeeld.css`. `_headers` geldt voor Cloudflare Pages/Netlify (lange cache voor fonts, script en beelden).
+4. **Goedkeuring nodig** van de teksten in `TEKSTEN-UIT-HET-DESIGN.md` en van de afwijkingen hierboven.

@@ -74,6 +74,7 @@ if (ARGS.includes('--live')) {
     fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, Buffer.from(await res.arrayBuffer())); report.onlineOpgehaald.push(f);
   }
 }
+report.correcties = (await import('./apply-corrections.mjs')).applyCorrections(() => {});
 fs.writeFileSync(path.join(DST, '_import-verslag.json'), JSON.stringify(report, null, 1));
 console.log(`content/ klaar: ${n} bestanden uit ${SRC}${commit ? ' (commit ' + commit + ')' : ''}`);
 if (ARGS.includes('--live')) console.log(`  online vervangen (FR/EN): ${report.onlineVervangen.length}, opgehaald: ${report.onlineOpgehaald.join(', ') || 'geen'}, NL-verschillen (bron behouden): ${report.verschillenNL.length}`);

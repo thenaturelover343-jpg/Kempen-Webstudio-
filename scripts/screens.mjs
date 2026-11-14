@@ -26,12 +26,11 @@ for (const width of [1440, 390]) {
   for (const [name, p] of (process.env.ONLY ? TYPES.filter(t => process.env.ONLY.split(',').includes(t[0])) : TYPES)) {
     await page.goto(BASE + p, { waitUntil: 'networkidle' });
     await page.evaluate(async () => {
-      document.querySelectorAll('.rv').forEach(e => e.classList.add('in'));
+      document.querySelectorAll('.kw-fade, .kw-sec, .kw-sg').forEach(e => e.classList.add('kw-in'));
       document.querySelectorAll('img[loading="lazy"]').forEach(i => { i.loading = 'eager'; });
       await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
-      document.querySelector('.mbar')?.classList.add('hide');
     });
-    await page.waitForTimeout(900);
+    await page.waitForTimeout(1200);
     const file = path.join(OUT, `${name}-${width}.jpg`);
     await page.screenshot({ path: file, fullPage: true, type: 'jpeg', quality: 78 });
     console.log(file);

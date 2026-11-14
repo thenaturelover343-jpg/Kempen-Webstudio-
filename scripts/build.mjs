@@ -318,6 +318,9 @@ for (const rel of demoPages) {
 // ---------- 9. robots.txt en sitemap.xml ----------
 if (MODE === 'live') {
   write('robots.txt', CFG.robotsTxt);
+  // Cloudflare Pages / Netlify: lange cache voor bestanden met vaste of gehashte naam, basis-beveiligingsheaders
+  write('_headers', ['/assets/fonts/*', '  Cache-Control: public, max-age=31536000, immutable', '/assets/site.*', '  Cache-Control: public, max-age=31536000, immutable',
+    '/assets/img/*', '  Cache-Control: public, max-age=2592000', '/*', '  X-Content-Type-Options: nosniff', '  Referrer-Policy: strict-origin-when-cross-origin', ''].join(String.fromCharCode(10)));
   const online = fs.readFileSync(path.join(ROOT, 'config', 'sitemap-online.xml'), 'utf8');
   const order = [...online.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]); const rank = u => { const i = order.indexOf(u); return i < 0 ? 1e4 + u.length : i; };
   const byBase = {}; for (const p of indexable) (byBase[p.base] = byBase[p.base] || {})[p.lang] = ORIGIN + p.url;
