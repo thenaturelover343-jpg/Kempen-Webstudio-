@@ -46,7 +46,7 @@ button { cursor: pointer; }
 
 /* ---------- knoppen ---------- */
 .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 6px 7px 6px 20px; border-radius: 999px; border: 1px solid transparent;
-  font-size: 14px; font-weight: 500; line-height: 1.2; letter-spacing: -.005em; text-decoration: none; white-space: nowrap; background: var(--obs-2); color: #fff; transition: transform .35s var(--ease); }
+  font-size: 14px; font-weight: 500; line-height: 1.25; letter-spacing: -.005em; text-decoration: none; text-align: left; max-width: 100%; background: var(--obs-2); color: #fff; transition: transform .35s var(--ease); }
 .btn::after { content: ""; flex: none; width: 32px; height: 32px; border-radius: 50%; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2318181b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E") center / 15px no-repeat; transition: transform .35s var(--ease); }
 .btn:hover { transform: translateY(-1px); }
 .btn:hover::after { transform: translateX(3px); }
@@ -218,7 +218,7 @@ main > :not(.hero) + :not(.hero) { margin-top: -1px; }
 .ribbon { display: none; }
 .sh { display: grid; gap: 14px; margin-bottom: 40px; }
 .sh-split { gap: 18px; }
-@media (min-width: 1024px) { .sh { margin-bottom: 56px; } .sh-split { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: end; gap: 48px; } .sh-split > :last-child { justify-self: end; max-width: 460px; } }
+@media (min-width: 1024px) { .sh { margin-bottom: 56px; } .sh-split { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: end; gap: 48px; } .sh-split > :last-child:not(:first-child) { justify-self: end; max-width: 460px; } }
 .sh-side { display: grid; gap: 18px; justify-items: start; }
 .mega { font-size: clamp(2rem, 1.3rem + 3vw, 3.5rem); letter-spacing: -.04em; line-height: 1.03; font-weight: 500; }
 .d2 { font-size: clamp(1.75rem, 1.3rem + 1.9vw, 2.75rem); letter-spacing: -.035em; line-height: 1.06; }
@@ -273,6 +273,7 @@ main > :not(.hero) + :not(.hero) { margin-top: -1px; }
 
 /* kaarten-raster (diensten, factoren, gemeenten ...) */
 .sv-g { display: grid; gap: 14px; counter-reset: svc; }
+.sv-g > *, .pk-g > *, .wks > *, .plist > *, .vak-g > *, .srows > *, .cs-l > * { min-width: 0; }
 @media (min-width: 720px) { .sv-g { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1100px) { .sv-g.sv-3, .sv-g.kw31g, .sv-g-band3, .sv-g-muni, .sv-g:not(.lg2):not(.duo .sv-g):has(> .svc:nth-child(3):last-child), .sv-g:has(> .svc:nth-child(6)) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .svc { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 26px; border-radius: var(--r); background: var(--soft); border: 1px solid transparent; counter-increment: svc; transition: transform .45s var(--ease); }
@@ -307,7 +308,7 @@ main > :not(.hero) + :not(.hero) { margin-top: -1px; }
 /* prijslijst losse diensten */
 .ls-l { list-style: none; display: grid; }
 .ls-l > li { display: grid; gap: 6px; padding: 14px 0; border-top: 1px solid var(--line-2); }
-.lr { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.lr { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
 .lr h4 { font-size: 15.5px; font-weight: 600; letter-spacing: -.01em; }
 .lp { font-size: 14.5px; font-weight: 600; color: var(--cu-t); white-space: nowrap; }
 .ld { font-size: 14.5px; color: var(--ink-2); }
@@ -334,6 +335,8 @@ main > :not(.hero) + :not(.hero) { margin-top: -1px; }
 #diensten .btn-line { color: #fff; border-color: rgba(255,255,255,.3); }
 #diensten .btn-line::after { background-color: #fff; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2318181b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E"); }
 .werk .fine { color: var(--on-dark-2); }
+.werk + .werk { border-radius: 0; padding-top: 8px; }
+@media (min-width: 1024px) { .werk + .werk { padding-top: 16px; } }
 
 /* werkwijze (stappen) in een donker paneel */
 .steps { background: var(--paper); }

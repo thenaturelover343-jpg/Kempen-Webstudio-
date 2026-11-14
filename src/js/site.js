@@ -71,7 +71,7 @@
   var rv = d.querySelectorAll('.rv');
   if ('IntersectionObserver' in window && !reduced) {
     var io = new IntersectionObserver(function (es) { es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
-    [].forEach.call(rv, function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); else io.observe(el); });
+    [].forEach.call(rv, function (el) { io.observe(el); });
   } else [].forEach.call(rv, function (el) { el.classList.add('in'); });
   h.classList.add('rv-ok');
 

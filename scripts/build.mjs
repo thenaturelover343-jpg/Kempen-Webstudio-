@@ -165,6 +165,41 @@ function upgradeImages(doc, scope) {
   }
 }
 const HL = { nl: /gratis demo/i, fr: /démo gratuite/i, en: /free demo/i };
+// In het nieuwe design zijn sommige beelden kleiner dan in het oude: juiste 'sizes' en (waar nodig) een kleinere variant.
+const SIZES = [
+  ['.case-desk img, .wk-desk img', '(min-width: 1100px) 400px, (min-width: 720px) 46vw, 92vw', 420],
+  ['.reel-ph img', '(min-width: 1024px) 230px, 30vw', 240],
+  ['.wk-mob img', '(min-width: 1100px) 90px, 20vw', 180],
+  ['.sreel-in img', '(max-width: 1100px) 92vw, 1040px', 0],
+  ['.browser img', '(min-width: 900px) 56vw, 92vw', 0],
+];
+const made = new Map();
+async function smaller(url, w) { // maakt <naam>-w<W>.webp en .avif uit het gegeven beeld (eenmalig, gecachet)
+  const key = url + '@' + w; if (made.has(key)) return made.get(key);
+  const src = fs.readFileSync(path.join(SRC, url)); const meta = await sharp(src).metadata();
+  if (!meta.width || meta.width <= w) { made.set(key, null); return null; }
+  const base = url.replace(/\.(webp|jpe?g|png|avif)$/i, '') + '-w' + w;
+  for (const [ext, opt] of [['webp', { quality: 80, effort: 5 }], ['avif', { quality: 58, effort: 5 }]]) {
+    const buf = await cached(`sm-${hash(src)}-${w}.${ext}`, () => sharp(src).resize({ width: w }).toFormat(ext, opt).toBuffer());
+    write(base.slice(1) + '.' + ext, buf); if (ext === 'avif') AVIF.add(base + '.avif');
+  }
+  const h = Math.round(meta.height * w / meta.width); const r = { webp: base + '.webp', avif: base + '.avif', w, h }; made.set(key, r); return r;
+}
+async function resizeFor(doc) {
+  for (const [sel, sizes, extra] of SIZES) for (const img of doc.querySelectorAll(sel)) {
+    img.setAttribute('sizes', sizes);
+    const pic = img.parentElement?.tagName === 'PICTURE' ? img.parentElement : null;
+    if (pic) for (const s of pic.querySelectorAll('source:not([media])')) s.setAttribute('sizes', sizes);
+    if (!extra) continue;
+    const ss = img.getAttribute('srcset'); if (!ss) continue;
+    const cands = ss.split(',').map(x => x.trim().split(/\s+/)).map(([u, d]) => ({ u, w: parseInt(d) || 0 }));
+    const smallest = cands.reduce((m, c) => (c.w && c.w < m.w ? c : m), cands[0]);
+    if (!smallest.w || smallest.w <= extra * 1.15 || !smallest.u.startsWith('/assets/img/')) continue;
+    const v = await smaller(smallest.u, extra); if (!v) continue;
+    img.setAttribute('srcset', `${v.webp} ${v.w}w, ` + ss);
+    if (pic) for (const s of pic.querySelectorAll('source[type="image/avif"]:not([media])')) s.setAttribute('srcset', `${v.avif} ${v.w}w, ` + s.getAttribute('srcset'));
+  }
+}
 
 const report = { pages: 0, textDiff: [], h1: [], perPage: [] };
 const indexable = [];
@@ -236,6 +271,7 @@ for (const rel of pages) {
       if (t !== '/' && !t.includes('#') && (here === t || (t === '/kennis/' && here.startsWith('/kennis/')))) a.setAttribute('aria-current', 'page');
     }
   } else warn.push('geen header in ' + url);
+  for (const a of B.querySelectorAll('nav.lang a[aria-label]')) a.setAttribute('aria-label', `${a.textContent.trim()} – ${a.getAttribute('aria-label')}`);
 
   // ---- hero ----
   const hero = B.querySelector('main > section.hero');
@@ -258,6 +294,7 @@ for (const rel of pages) {
 
   // ---- beelden ----
   upgradeImages(doc, B);
+  await resizeFor(doc);
   for (const img of B.querySelectorAll('main img')) {
     if (img.closest('.hero')) { img.removeAttribute('loading'); continue; }
     img.removeAttribute('fetchpriority'); // alleen het hero-beeld krijgt voorrang

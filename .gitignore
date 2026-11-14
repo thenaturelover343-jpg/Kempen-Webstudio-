@@ -3,6 +3,7 @@ dist-test/
 dist-live/
 .cache/
 _screens/*.tmp
+_screens/_*
 *.log
 .DS_Store
 _lighthouse/
