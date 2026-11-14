@@ -1,9 +1,9 @@
-node_modules/
-dist-test/
-dist-live/
-.cache/
-_screens/*.tmp
-_screens/_*
 *.log
 .DS_Store
+.cache/
 _lighthouse/
+_screens/*.tmp
+_screens/_*
+dist-live/
+dist-test/
+node_modules/

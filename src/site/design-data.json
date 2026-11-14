@@ -1,0 +1,557 @@
+{
+ "nl": {
+  "demos": {
+   "houtatelier-nethe": {
+    "disciplines": [
+     "Warme tinten",
+     "Maatwerk",
+     "Contactformulier"
+    ],
+    "category": "Schrijnwerker"
+   },
+   "bistro-tilvaar": {
+    "disciplines": [
+     "Menukaart",
+     "Terras & groepen",
+     "Tafel reserveren"
+    ],
+    "category": "Horeca"
+   },
+   "vennebrand": {
+    "disciplines": [
+     "Winkelmand",
+     "Productpagina’s",
+     "Veilig afrekenen"
+    ],
+    "category": "Webshop"
+   },
+   "dakwerken-hoogland": {
+    "disciplines": [
+     "Diensten op een rij",
+     "Werkgebied",
+     "Offerteformulier"
+    ],
+    "category": "Dakwerker"
+   },
+   "atelier-kleurwerk": {
+    "disciplines": [
+     "Rustig palet",
+     "Binnen & buiten",
+     "Verfijnde stijl"
+    ],
+    "category": "Fijnschilder"
+   },
+   "tuinzorg-varelinde": {
+    "disciplines": [
+     "Heldere opbouw",
+     "Aanleg & onderhoud",
+     "Galerij"
+    ],
+    "category": "Tuinonderhoud"
+   },
+   "velours": {
+    "disciplines": [
+     "Afsprakenplanner",
+     "Per behandeling",
+     "Ingetogen ontwerp"
+    ],
+    "category": "Schoonheidssalon"
+   },
+   "kapsalon-ivelien": {
+    "disciplines": [
+     "Afspraakknop",
+     "Lichte stijl",
+     "Mobielvriendelijk"
+    ],
+    "category": "Kapsalon"
+   },
+   "barbier-kolvaard": {
+    "disciplines": [
+     "Uitgesproken typografie",
+     "Donkere vlakken",
+     "Online boeken"
+    ],
+    "category": "Barbershop"
+   }
+  },
+  "sectors": {
+   "vakmensen": {
+    "experience": "Offerteaanvraag",
+    "location": "Heel België",
+    "specialty": "Werkgebied & vlotte offerteaanvraag"
+   },
+   "horeca": {
+    "experience": "Tafel reserveren",
+    "location": "Heel België",
+    "specialty": "Kaart, openingsuren & reservaties"
+   },
+   "kapsalons": {
+    "experience": "Boekingssysteem",
+    "location": "Heel België",
+    "specialty": "Afspraakknop, behandelingen & foto's"
+   },
+   "schilders": {
+    "experience": "Realisaties",
+    "location": "Heel België",
+    "specialty": "Binnen- & buitenwerk, afgewerkte werven"
+   },
+   "tuinaannemers": {
+    "experience": "Galerij",
+    "location": "Heel België",
+    "specialty": "Aanleg & onderhoud in een galerij"
+   }
+  },
+  "places": [
+   {
+    "id": "kasterlee",
+    "city": "Kasterlee & Kempen",
+    "x": 56,
+    "y": 30,
+    "countryLabel": "Kemelbeekstraat 16, 2460 Kasterlee",
+    "teamLabel": "Webstudio K",
+    "subLabel": "Werkt in heel België"
+   },
+   {
+    "id": "turnhout-geel",
+    "city": "Turnhout, Geel, Herentals & Mol",
+    "x": 64,
+    "y": 42,
+    "countryLabel": "De Kempen, Antwerpen",
+    "teamLabel": "Lokale ondernemers & vakmensen",
+    "subLabel": "Persoonlijk per mail, telefoon of online"
+   },
+   {
+    "id": "leuven-gent",
+    "city": "Gent & Leuven",
+    "x": 30,
+    "y": 46,
+    "countryLabel": "Vlaanderen",
+    "teamLabel": "KMO’s, horeca & vrije beroepen",
+    "subLabel": "Persoonlijk voorstel binnen 1 werkdag"
+   },
+   {
+    "id": "kortrijk",
+    "city": "Kortrijk & West-Vlaanderen",
+    "x": 18,
+    "y": 60,
+    "countryLabel": "Heel België",
+    "teamLabel": "Zelfstandigen & verenigingen",
+    "subLabel": "Antwoord binnen 1 werkdag"
+   }
+  ],
+  "awards": [
+   {
+    "id": "voorstel",
+    "title": "Vast tarief",
+    "subtitle": "Vooraf duidelijk, zonder verrassingen",
+    "variant": "light",
+    "positionClass": "lg:top-4 lg:left-[12%]"
+   },
+   {
+    "id": "prijzen",
+    "title": "Vanaf €490",
+    "subtitle": "Duidelijke prijzen excl. btw",
+    "variant": "dark",
+    "positionClass": "lg:top-28 lg:left-[23%]"
+   },
+   {
+    "id": "wcag",
+    "title": "WCAG 2.2 AA",
+    "subtitle": "Toegankelijk vanaf het ontwerp",
+    "variant": "gray",
+    "positionClass": "lg:bottom-8 lg:left-[6%]"
+   },
+   {
+    "id": "mobiel",
+    "title": "Mobile-first",
+    "subtitle": "Snel op gsm en computer",
+    "variant": "glass",
+    "positionClass": "lg:top-10 lg:right-[11%]"
+   },
+   {
+    "id": "belgie",
+    "title": "Heel België",
+    "subtitle": "Eén vast aanspreekpunt",
+    "variant": "clutch",
+    "positionClass": "lg:top-32 lg:right-[23%]"
+   },
+   {
+    "id": "snel",
+    "title": "5 werkdagen",
+    "subtitle": "Start-pakket online",
+    "variant": "dark",
+    "positionClass": "lg:bottom-4 lg:right-[11%]"
+   }
+  ]
+ },
+ "fr": {
+  "demos": {
+   "houtatelier-nethe": {
+    "disciplines": [
+     "Tons chaleureux",
+     "Sur mesure",
+     "Formulaire de contact"
+    ],
+    "category": "Menuisier"
+   },
+   "bistro-tilvaar": {
+    "disciplines": [
+     "Carte & menu",
+     "Terrasse & groupes",
+     "Réserver une table"
+    ],
+    "category": "Horeca"
+   },
+   "vennebrand": {
+    "disciplines": [
+     "Panier",
+     "Fiches produits",
+     "Paiement sécurisé"
+    ],
+    "category": "Boutique en ligne"
+   },
+   "dakwerken-hoogland": {
+    "disciplines": [
+     "Services clairs",
+     "Zone d’intervention",
+     "Demande de devis"
+    ],
+    "category": "Couvreur"
+   },
+   "atelier-kleurwerk": {
+    "disciplines": [
+     "Palette apaisante",
+     "Intérieur & extérieur",
+     "Style raffiné"
+    ],
+    "category": "Peintre décorateur"
+   },
+   "tuinzorg-varelinde": {
+    "disciplines": [
+     "Structure claire",
+     "Aménagement & entretien",
+     "Galerie"
+    ],
+    "category": "Entretien de jardins"
+   },
+   "velours": {
+    "disciplines": [
+     "Agenda par soin",
+     "Réservation en ligne",
+     "Design épuré"
+    ],
+    "category": "Institut de beauté"
+   },
+   "kapsalon-ivelien": {
+    "disciplines": [
+     "Bouton rendez-vous",
+     "Style lumineux",
+     "Adapté mobile"
+    ],
+    "category": "Salon de coiffure"
+   },
+   "barbier-kolvaard": {
+    "disciplines": [
+     "Typographie affirmée",
+     "Surfaces sombres",
+     "Réservation en ligne"
+    ],
+    "category": "Barbier"
+   }
+  },
+  "sectors": {
+   "vakmensen": {
+    "experience": "Demande de devis",
+    "location": "Toute la Belgique",
+    "specialty": "Zone d’action & demande de devis rapide"
+   },
+   "horeca": {
+    "experience": "Réserver une table",
+    "location": "Toute la Belgique",
+    "specialty": "Carte, horaires & réservations"
+   },
+   "kapsalons": {
+    "experience": "Agenda en ligne",
+    "location": "Toute la Belgique",
+    "specialty": "Bouton rendez-vous, soins & photos"
+   },
+   "schilders": {
+    "experience": "Réalisations",
+    "location": "Toute la Belgique",
+    "specialty": "Intérieur & extérieur, réalisations finies"
+   },
+   "tuinaannemers": {
+    "experience": "Galerie",
+    "location": "Toute la Belgique",
+    "specialty": "Création & entretien en galerie photo"
+   }
+  },
+  "places": [
+   {
+    "id": "kasterlee",
+    "city": "Kasterlee & Campine",
+    "x": 56,
+    "y": 30,
+    "countryLabel": "Kemelbeekstraat 16, 2460 Kasterlee",
+    "teamLabel": "Webstudio K",
+    "subLabel": "Actif dans toute la Belgique"
+   },
+   {
+    "id": "turnhout-geel",
+    "city": "Turnhout, Geel, Herentals & Mol",
+    "x": 64,
+    "y": 42,
+    "countryLabel": "Campine, Anvers",
+    "teamLabel": "Entrepreneurs & artisans locaux",
+    "subLabel": "Suivi personnel par e-mail, téléphone ou visio"
+   },
+   {
+    "id": "leuven-gent",
+    "city": "Gand & Louvain",
+    "x": 30,
+    "y": 46,
+    "countryLabel": "Flandre & Bruxelles",
+    "teamLabel": "PME, horeca & professions libérales",
+    "subLabel": "Devis personnalisé sous 1 jour ouvrable"
+   },
+   {
+    "id": "kortrijk",
+    "city": "Courtrai & Flandre-Occidentale",
+    "x": 18,
+    "y": 60,
+    "countryLabel": "Toute la Belgique",
+    "teamLabel": "Indépendants & associations",
+    "subLabel": "Réponse sous 1 jour ouvrable"
+   }
+  ],
+  "awards": [
+   {
+    "id": "voorstel",
+    "title": "Prix fixe",
+    "subtitle": "Clair dès le départ, sans surprise",
+    "variant": "light",
+    "positionClass": "lg:top-4 lg:left-[12%]"
+   },
+   {
+    "id": "prijzen",
+    "title": "Dès €490",
+    "subtitle": "Tarifs transparents HTVA",
+    "variant": "dark",
+    "positionClass": "lg:top-28 lg:left-[23%]"
+   },
+   {
+    "id": "wcag",
+    "title": "WCAG 2.2 AA",
+    "subtitle": "Accessible dès la conception",
+    "variant": "gray",
+    "positionClass": "lg:bottom-8 lg:left-[6%]"
+   },
+   {
+    "id": "mobiel",
+    "title": "Mobile-first",
+    "subtitle": "Rapide sur smartphone et PC",
+    "variant": "glass",
+    "positionClass": "lg:top-10 lg:right-[11%]"
+   },
+   {
+    "id": "belgie",
+    "title": "Toute la Belgique",
+    "subtitle": "Un interlocuteur unique",
+    "variant": "clutch",
+    "positionClass": "lg:top-32 lg:right-[23%]"
+   },
+   {
+    "id": "snel",
+    "title": "5 jours ouvr.",
+    "subtitle": "Forfait Start en ligne",
+    "variant": "dark",
+    "positionClass": "lg:bottom-4 lg:right-[11%]"
+   }
+  ]
+ },
+ "en": {
+  "demos": {
+   "houtatelier-nethe": {
+    "disciplines": [
+     "Warm tones",
+     "Bespoke work",
+     "Contact form"
+    ],
+    "category": "Joinery & Carpentry"
+   },
+   "bistro-tilvaar": {
+    "disciplines": [
+     "Menu showcase",
+     "Terrace & groups",
+     "Table booking"
+    ],
+    "category": "Hospitality"
+   },
+   "vennebrand": {
+    "disciplines": [
+     "Shopping cart",
+     "Product pages",
+     "Secure checkout"
+    ],
+    "category": "Webshop"
+   },
+   "dakwerken-hoogland": {
+    "disciplines": [
+     "Service overview",
+     "Coverage area",
+     "Quote form"
+    ],
+    "category": "Roofing contractor"
+   },
+   "atelier-kleurwerk": {
+    "disciplines": [
+     "Calm palette",
+     "Interior & exterior",
+     "Refined style"
+    ],
+    "category": "Fine Painter"
+   },
+   "tuinzorg-varelinde": {
+    "disciplines": [
+     "Clear structure",
+     "Design & upkeep",
+     "Gallery"
+    ],
+    "category": "Garden Care"
+   },
+   "velours": {
+    "disciplines": [
+     "Booking calendar",
+     "Per treatment",
+     "Understated layout"
+    ],
+    "category": "Beauty Salon"
+   },
+   "kapsalon-ivelien": {
+    "disciplines": [
+     "Booking button",
+     "Light aesthetic",
+     "Mobile friendly"
+    ],
+    "category": "Hair Salon"
+   },
+   "barbier-kolvaard": {
+    "disciplines": [
+     "Bold typography",
+     "Dark surfaces",
+     "Online booking"
+    ],
+    "category": "Barbershop"
+   }
+  },
+  "sectors": {
+   "vakmensen": {
+    "experience": "Quote requests",
+    "location": "All of Belgium",
+    "specialty": "Service area & quick quote form"
+   },
+   "horeca": {
+    "experience": "Table reservations",
+    "location": "All of Belgium",
+    "specialty": "Menu, opening hours & reservations"
+   },
+   "kapsalons": {
+    "experience": "Booking system",
+    "location": "All of Belgium",
+    "specialty": "Booking button, treatments & photos"
+   },
+   "schilders": {
+    "experience": "Completed projects",
+    "location": "All of Belgium",
+    "specialty": "Interior & exterior completed work"
+   },
+   "tuinaannemers": {
+    "experience": "Photo gallery",
+    "location": "All of Belgium",
+    "specialty": "Design & maintenance in one gallery"
+   }
+  },
+  "places": [
+   {
+    "id": "kasterlee",
+    "city": "Kasterlee & Campine",
+    "x": 56,
+    "y": 30,
+    "countryLabel": "Kemelbeekstraat 16, 2460 Kasterlee",
+    "teamLabel": "Webstudio K",
+    "subLabel": "Serving all of Belgium"
+   },
+   {
+    "id": "turnhout-geel",
+    "city": "Turnhout, Geel, Herentals & Mol",
+    "x": 64,
+    "y": 42,
+    "countryLabel": "Campine, Antwerp",
+    "teamLabel": "Local businesses & tradespeople",
+    "subLabel": "Personal contact by email, phone or online"
+   },
+   {
+    "id": "leuven-gent",
+    "city": "Ghent & Leuven",
+    "x": 30,
+    "y": 46,
+    "countryLabel": "Flanders & Brussels",
+    "teamLabel": "SMEs, hospitality & liberal professions",
+    "subLabel": "Personal proposal within 1 business day"
+   },
+   {
+    "id": "kortrijk",
+    "city": "Kortrijk & West Flanders",
+    "x": 18,
+    "y": 60,
+    "countryLabel": "All of Belgium",
+    "teamLabel": "Sole traders & associations",
+    "subLabel": "Reply within 1 business day"
+   }
+  ],
+  "awards": [
+   {
+    "id": "voorstel",
+    "title": "Fixed pricing",
+    "subtitle": "Clear upfront, zero surprises",
+    "variant": "light",
+    "positionClass": "lg:top-4 lg:left-[12%]"
+   },
+   {
+    "id": "prijzen",
+    "title": "From €490",
+    "subtitle": "Transparent rates excl. VAT",
+    "variant": "dark",
+    "positionClass": "lg:top-28 lg:left-[23%]"
+   },
+   {
+    "id": "wcag",
+    "title": "WCAG 2.2 AA",
+    "subtitle": "Accessible by design",
+    "variant": "gray",
+    "positionClass": "lg:bottom-8 lg:left-[6%]"
+   },
+   {
+    "id": "mobiel",
+    "title": "Mobile-first",
+    "subtitle": "Fast on mobile and desktop",
+    "variant": "glass",
+    "positionClass": "lg:top-10 lg:right-[11%]"
+   },
+   {
+    "id": "belgie",
+    "title": "All of Belgium",
+    "subtitle": "Single point of contact",
+    "variant": "clutch",
+    "positionClass": "lg:top-32 lg:right-[23%]"
+   },
+   {
+    "id": "snel",
+    "title": "5 bus. days",
+    "subtitle": "Start package online",
+    "variant": "dark",
+    "positionClass": "lg:bottom-4 lg:right-[11%]"
+   }
+  ]
+ }
+}

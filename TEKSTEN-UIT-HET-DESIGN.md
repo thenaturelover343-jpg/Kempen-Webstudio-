@@ -1,0 +1,175 @@
+# Teksten die alleen uit het design komen (ter goedkeuring)
+
+Automatisch gemaakt door scripts/build.mjs (2026-11-14). Alle andere teksten op de site komen woord voor woord uit de huidige site; de build controleert dat per pagina.
+
+## NL
+
+- 01 / 09 · Schrijnwerker  _(op 1 pagina)_
+- 02 / 09 · Horeca  _(op 1 pagina)_
+- 03 / 09 · Webshop  _(op 1 pagina)_
+- 04 / 09 · Dakwerker  _(op 1 pagina)_
+- 05 / 09 · Fijnschilder  _(op 1 pagina)_
+- 06 / 09 · Tuinonderhoud  _(op 1 pagina)_
+- 07 / 09 · Schoonheidssalon  _(op 1 pagina)_
+- 08 / 09 · Kapsalon  _(op 1 pagina)_
+- 09 / 09 · Barbershop  _(op 1 pagina)_
+- Afsprakenplanner  _(op 1 pagina)_
+- Boekingssysteem  _(op 1 pagina)_
+- Diensten op een rij  _(op 1 pagina)_
+- Galerij  _(op 2 pagina's)_
+- Heel België  _(op 42 pagina's)_
+- Helder  _(op 1 pagina)_
+- Heldere opbouw  _(op 1 pagina)_
+- Horeca ·  _(op 1 pagina)_
+- Ingetogen ontwerp  _(op 1 pagina)_
+- Kapsalons en barbershops ·  _(op 1 pagina)_
+- Kasterlee, BE · CET  _(op 78 pagina's)_
+- Lichte stijl  _(op 1 pagina)_
+- MENU  _(op 39 pagina's)_
+- Menukaart  _(op 1 pagina)_
+- Naar boven  _(op 39 pagina's)_
+- Offerteaanvraag  _(op 1 pagina)_
+- Offerteformulier  _(op 1 pagina)_
+- Online boeken  _(op 1 pagina)_
+- Op maat  _(op 1 pagina)_
+- Per behandeling  _(op 1 pagina)_
+- Productpagina’s  _(op 1 pagina)_
+- Route · Bellen · Website  _(op 1 pagina)_
+- Rustig palet  _(op 1 pagina)_
+- Schilders ·  _(op 1 pagina)_
+- Snel  _(op 1 pagina)_
+- Taal  _(op 1 pagina)_
+- Tijd in België  _(op 39 pagina's)_
+- Tuinaannemers en hoveniers ·  _(op 1 pagina)_
+- Uitgesproken typografie  _(op 1 pagina)_
+- Vakmensen ·  _(op 1 pagina)_
+- Vanaf €490 + vanaf €29 per maand excl. btw, met eerst een gratis demo.  _(op 1 pagina)_
+- Veilig afrekenen  _(op 1 pagina)_
+- Verfijnde stijl  _(op 1 pagina)_
+- Website laten maken in heel België, voor elke zaak, vereniging of zelfstandige.  _(op 1 pagina)_
+- Webstudio K  _(op 39 pagina's)_
+- Werkgebied  _(op 2 pagina's)_
+- Werkt in heel België  _(op 5 pagina's)_
+- West-Vlaanderen  _(op 2 pagina's)_
+- Winkelmand  _(op 1 pagina)_
+- © 2026 Kempen Webstudio · Ondernemingsnummer BE 0897.577.919  _(op 39 pagina's)_
+- · Nog geen reviews  _(op 1 pagina)_
+
+## FR
+
+- 01 / 09 · Menuisier  _(op 1 pagina)_
+- 02 / 09 · Horeca  _(op 1 pagina)_
+- 03 / 09 · Webshop  _(op 1 pagina)_
+- 04 / 09 · Couvreur  _(op 1 pagina)_
+- 05 / 09 · Peintre de finition  _(op 1 pagina)_
+- 06 / 09 · Entretien de jardins  _(op 1 pagina)_
+- 07 / 09 · Institut de beauté  _(op 1 pagina)_
+- 08 / 09 · Salon de coiffure  _(op 1 pagina)_
+- 09 / 09 · Barbershop  _(op 1 pagina)_
+- Actif dans toute la Belgique  _(op 5 pagina's)_
+- Adapté mobile  _(op 1 pagina)_
+- Agenda en ligne  _(op 1 pagina)_
+- Agenda par soin  _(op 1 pagina)_
+- Aménagement  _(op 1 pagina)_
+- Artisans ·  _(op 1 pagina)_
+- Bouton rendez-vous  _(op 1 pagina)_
+- Clair  _(op 1 pagina)_
+- Demande de devis  _(op 2 pagina's)_
+- Design épuré  _(op 1 pagina)_
+- Entrepreneurs de jardins et jardiniers-paysagistes ·  _(op 1 pagina)_
+- Faire créer un site web dans toute la Belgique, pour chaque entreprise, association ou indépendant.  _(op 1 pagina)_
+- Faire créer un site web à la Campine  _(op 1 pagina)_
+- Fiches produits  _(op 1 pagina)_
+- Flandre-Occidentale  _(op 2 pagina's)_
+- Galerie  _(op 2 pagina's)_
+- Haut de page  _(op 38 pagina's)_
+- Heure en Belgique  _(op 38 pagina's)_
+- Horeca ·  _(op 1 pagina)_
+- Intérieur  _(op 1 pagina)_
+- Itinéraire · Appeler · Site web  _(op 1 pagina)_
+- Kasterlee, BE · CET  _(op 76 pagina's)_
+- MENU  _(op 38 pagina's)_
+- Paiement sécurisé  _(op 1 pagina)_
+- Palette apaisante  _(op 1 pagina)_
+- Panier  _(op 1 pagina)_
+- Peintres ·  _(op 1 pagina)_
+- Pour chaque activité  _(op 1 pagina)_
+- Rapide  _(op 1 pagina)_
+- Réponse habituelle sous 1 jour ouvrable  _(op 38 pagina's)_
+- Réservation en ligne  _(op 2 pagina's)_
+- Salons de coiffure et barbershops ·  _(op 1 pagina)_
+- Services clairs  _(op 1 pagina)_
+- Structure claire  _(op 1 pagina)_
+- Style lumineux  _(op 1 pagina)_
+- Style raffiné  _(op 1 pagina)_
+- Sur mesure  _(op 2 pagina's)_
+- Surfaces sombres  _(op 1 pagina)_
+- Tons chaleureux  _(op 1 pagina)_
+- Toute la Belgique  _(op 41 pagina's)_
+- Typographie affirmée  _(op 1 pagina)_
+- Webstudio K  _(op 38 pagina's)_
+- Zone d’action  _(op 1 pagina)_
+- Zone d’intervention  _(op 1 pagina)_
+- © 2026 Kempen Webstudio · Numéro d’entreprise BE 0897.577.919  _(op 38 pagina's)_
+- · Pas encore d’avis  _(op 1 pagina)_
+- À partir de €490 + à partir de €29 par mois HTVA, avec d’abord une démo gratuite.  _(op 1 pagina)_
+
+## EN
+
+- 01 / 09 · Joiner  _(op 1 pagina)_
+- 02 / 09 · Hospitality  _(op 1 pagina)_
+- 03 / 09 · Webshop  _(op 1 pagina)_
+- 04 / 09 · Roofer  _(op 1 pagina)_
+- 05 / 09 · Finish painter  _(op 1 pagina)_
+- 06 / 09 · Garden maintenance  _(op 1 pagina)_
+- 07 / 09 · Beauty salon  _(op 1 pagina)_
+- 08 / 09 · Hair salon  _(op 1 pagina)_
+- 09 / 09 · Barbershop  _(op 1 pagina)_
+- All of Belgium  _(op 41 pagina's)_
+- Back to top  _(op 38 pagina's)_
+- Bespoke work  _(op 1 pagina)_
+- Bold typography  _(op 1 pagina)_
+- Booking button  _(op 1 pagina)_
+- Booking calendar  _(op 1 pagina)_
+- Booking system  _(op 1 pagina)_
+- Calm palette  _(op 1 pagina)_
+- Clear structure  _(op 1 pagina)_
+- Clear  _(op 1 pagina)_
+- Completed projects  _(op 1 pagina)_
+- Coverage area  _(op 1 pagina)_
+- Directions · Call · Website  _(op 1 pagina)_
+- Fast  _(op 1 pagina)_
+- From €490 + from €29 per month excl. VAT, starting with a free demo.  _(op 1 pagina)_
+- Gallery  _(op 1 pagina)_
+- Garden contractors and landscape gardeners ·  _(op 1 pagina)_
+- Hair salons and barbershops ·  _(op 1 pagina)_
+- Have a website built anywhere in Belgium, for every business, association or self-employed professional.  _(op 1 pagina)_
+- Hospitality ·  _(op 1 pagina)_
+- Kasterlee, BE · CET  _(op 76 pagina's)_
+- Light aesthetic  _(op 1 pagina)_
+- MENU  _(op 38 pagina's)_
+- Menu showcase  _(op 1 pagina)_
+- Mobile friendly  _(op 1 pagina)_
+- Painters ·  _(op 1 pagina)_
+- Per treatment  _(op 1 pagina)_
+- Photo gallery  _(op 1 pagina)_
+- Product pages  _(op 1 pagina)_
+- Quote form  _(op 1 pagina)_
+- Quote requests  _(op 1 pagina)_
+- Refined style  _(op 1 pagina)_
+- Reply usually within 1 business day  _(op 38 pagina's)_
+- Secure checkout  _(op 1 pagina)_
+- Service Area  _(op 1 pagina)_
+- Service overview  _(op 1 pagina)_
+- Serving all of Belgium  _(op 5 pagina's)_
+- Shopping cart  _(op 1 pagina)_
+- Table booking  _(op 1 pagina)_
+- Table reservations  _(op 1 pagina)_
+- Tailored  _(op 1 pagina)_
+- Time in Belgium  _(op 38 pagina's)_
+- Tradespeople ·  _(op 1 pagina)_
+- Understated layout  _(op 1 pagina)_
+- Webstudio K  _(op 38 pagina's)_
+- West Flanders  _(op 2 pagina's)_
+- © 2026 Kempen Webstudio · Company number BE 0897.577.919  _(op 38 pagina's)_
+- · No reviews yet  _(op 1 pagina)_

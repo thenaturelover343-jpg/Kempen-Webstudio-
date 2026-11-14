@@ -19,10 +19,16 @@
     "screens": "node scripts/screens.mjs"
   },
   "devDependencies": {
-    "@fontsource-variable/dm-sans": "5.2.8",
+    "@fontsource-variable/inter-tight": "^5.2.7",
+    "@tailwindcss/cli": "^4.1.17",
     "esbuild": "^0.27.0",
     "linkedom": "^0.18.12",
-    "sharp": "^0.34.5"
+    "lucide-react": "^0.546.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sharp": "^0.34.5",
+    "subset-font": "^2.4.0",
+    "tailwindcss": "^4.1.17"
   },
   "optionalDependencies": {
     "lighthouse": "^12.8.2",
