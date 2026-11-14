@@ -44,7 +44,7 @@ export function Header({ s }: { s: any }) {
   return (
     <>
       <header className="relative z-40 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 pt-5 pb-3 flex items-center justify-between gap-2 sm:gap-6">
-        <a href={home.href} aria-label={s.logoAria}
+        <a href={home.href} aria-label={`Webstudio K – ${s.logoAria}`}
           className="group flex items-center gap-2 sm:gap-2.5 text-[#141416] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B85D28] rounded-md">
           <WebstudioLogoMark />
           <span aria-hidden="true" className="font-title wordmark-gradient text-[17px] sm:text-[21px] font-semibold tracking-[-0.03em]">Webstudio K</span>

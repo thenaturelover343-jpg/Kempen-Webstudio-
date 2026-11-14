@@ -179,6 +179,21 @@ function avifFor(srcset) {
   if (!parts.length || !parts.every(p => AVIF.has(p.a))) return null;
   return parts.map(p => p.a + (p.d ? ' ' + p.d : '')).join(', ');
 }
+const made = new Map();
+async function smallVariants(doc) { // kleine beelden (cirkels): extra variant van data-small px breed, als webp + avif
+  for (const img of doc.querySelectorAll('img[data-small]')) {
+    const w = +img.getAttribute('data-small'); img.removeAttribute('data-small');
+    const ss = img.getAttribute('srcset') || img.getAttribute('src'); const c = ss.split(',').map(x => x.trim().split(/\s+/)).map(([u, d]) => ({ u, w: parseInt(d) || 9999 })).sort((a, b) => a.w - b.w)[0];
+    if (!c || !c.u.startsWith('/assets/img/') || c.w <= w * 1.2) continue;
+    const key = c.u + '@' + w; let v = made.get(key);
+    if (!v) {
+      const src = fs.readFileSync(path.join(SRC, c.u)); const base = c.u.replace(/\.(webp|jpe?g|png)$/i, '') + '-w' + w;
+      for (const [ext, opt] of [['webp', { quality: 80, effort: 5 }], ['avif', { quality: 58, effort: 5 }]]) write(base.slice(1) + '.' + ext, await cached(`sm-${hash(src)}-${w}.${ext}`, () => sharp(src).resize({ width: w }).toFormat(ext, opt).toBuffer()));
+      AVIF.add(base + '.avif'); v = base + '.webp'; made.set(key, v);
+    }
+    img.setAttribute('srcset', `${v} ${w}w` + (img.getAttribute('srcset') ? ', ' + img.getAttribute('srcset') : ''));
+  }
+}
 function upgradeImages(doc) {
   for (const img of doc.querySelectorAll('img')) {
     const src = img.getAttribute('src') || '';
@@ -251,7 +266,9 @@ for (const rel of pages) {
   ].filter(Boolean).join('\n');
 
   // ---- body nabewerken: beelden (AVIF), controles
+  body = body.replace(/ srcSet=/g, ' srcset=').replace(/ fetchPriority=/g, ' fetchpriority=').replace(/ hrefLang=/g, ' hreflang=').replace(/ tabIndex=/g, ' tabindex=').replace(/ autoComplete=/g, ' autocomplete=');
   const { document: nd } = parseHTML(`<!doctype html><html><head></head><body>${body}</body></html>`);
+  await smallVariants(nd);
   upgradeImages(nd);
   const B = nd.body;
   // teksten: alles van de oude pagina moet er staan

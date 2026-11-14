@@ -23,7 +23,7 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-[#D3D6DA]">
             <div className="lg:col-span-4 flex flex-col justify-between gap-6">
               <div>
-                <a href={home.href} aria-label={s.logoAria} className="group inline-flex items-center gap-2.5 text-[#141416] cursor-pointer">
+                <a href={home.href} aria-label={`Webstudio K – ${s.logoAria}`} className="group inline-flex items-center gap-2.5 text-[#141416] cursor-pointer">
                   <WebstudioLogoMark />
                   <span aria-hidden="true" className="font-title wordmark-gradient text-[22px] font-semibold tracking-[-0.03em]">Webstudio K</span>
                 </a>

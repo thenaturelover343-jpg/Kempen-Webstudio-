@@ -141,7 +141,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
               </div>
 
               <nav aria-label={h.band.h2} className="order-1 lg:order-2 w-full lg:max-w-[408px] mt-4 sm:mt-6 lg:mt-16 flex flex-col items-end">
-                <p className="text-[13px] font-medium text-[#18181B] mb-3 text-right">{h.band.h2}</p>
+                <p id={h.band.h2id || undefined} className="text-[13px] font-medium text-[#18181B] mb-3 text-right">{h.band.h2}</p>
                 {[h.band.chips.slice(0, 4), h.band.chips.slice(4, 8)].map((row: any[], r: number) => (
                   <div key={r} className={r === 0 ? 'flex flex-wrap items-center justify-end gap-x-4 sm:gap-x-5 gap-y-2 text-[12px] sm:text-[12.5px] text-[#4C433F]' : 'flex flex-wrap items-center justify-end gap-x-4 sm:gap-x-6 gap-y-2 mt-2 text-[12px] sm:text-[12.5px] text-[#4C433F]'}>
                     {row.map((c: any, i: number) => {
@@ -653,7 +653,7 @@ function SectorBtn({ m, i }: { m: any; i: number }) {
   return (
     <button type="button" data-sel-to={i} className="relative group flex flex-col items-center cursor-pointer">
       <div data-sel-item={i} {...sel(i === 0, 'scale-[1.03]', 'opacity-90 hover:opacity-100', 'w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden bg-[#D3D6DA] transition-transform duration-200')}>
-        <img src={m.imgSrc} srcSet={m.imgSrcset || undefined} sizes="(min-width: 1024px) 144px, (min-width: 640px) 128px, 96px" alt="" width={144} height={144} loading="lazy" decoding="async" className="w-full h-full object-cover object-center" />
+        <img data-small="320" src={m.imgSrc} srcSet={m.imgSrcset || undefined} sizes="(min-width: 1024px) 144px, (min-width: 640px) 128px, 96px" alt="" width={144} height={144} loading="lazy" decoding="async" className="w-full h-full object-cover object-center" />
       </div>
       <span data-sel-item={i} {...sel(i === 0, 'mt-2 rounded-full copper-pill-gradient text-white text-[11px] font-medium px-3 py-1 shadow-md whitespace-nowrap', 'mt-2 text-[11px] sm:text-[11.5px] font-medium text-[#4C433F] text-center')}>{m.h}</span>
     </button>

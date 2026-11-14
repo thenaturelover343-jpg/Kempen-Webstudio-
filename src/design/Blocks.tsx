@@ -22,7 +22,7 @@ const Prose = ({ html, dark = false, className = '' }: { html: string; dark?: bo
   <div className={cx('kw-prose kw-link text-[15px] leading-relaxed', dark ? 'text-[#D3D6DA] [&_a]:text-white [&_strong]:text-white' : 'text-[#4C433F] [&_strong]:text-[#121214]', className)} dangerouslySetInnerHTML={{ __html: html }} />
 );
 /** lijsten met prijzen of links in kaarten (wat-kost, voorbeeldontwerpen): opmaak in de stijl van de design-lijsten */
-const LIST = '[&_.ls-l]:flex [&_.ls-l]:flex-col [&_.ls-l>li]:py-3 [&_.ls-l>li]:border-t [&_.ls-l>li]:border-[#D3D6DA] [&_.lr]:flex [&_.lr]:flex-wrap [&_.lr]:items-baseline [&_.lr]:justify-between [&_.lr]:gap-x-4 [&_.lr]:gap-y-1 [&_.lr_h4]:text-[14.5px] [&_.lr_h4]:font-medium [&_.lr_h4]:text-[#121214] [&_.lp]:text-[13px] [&_.lp]:font-medium [&_.lp]:tabular-nums [&_.lp]:text-[#9A4A1C] [&_.ld]:mt-1 [&_.ld]:text-[13px] [&_.ix-l]:flex [&_.ix-l]:flex-col [&_.ix-l>li]:flex [&_.ix-l>li]:justify-between [&_.ix-l>li]:gap-3 [&_.ix-l>li]:py-2.5 [&_.ix-l>li]:border-t [&_.ix-l>li]:border-[#D3D6DA] [&_.ix-l_a]:font-medium [&_.ix-l_a]:text-[#121214] [&_.ix-l_span]:text-[12.5px]';
+const LIST = '[&_.ls-l]:list-none [&_.ls-l]:pl-0 [&_.ix-l]:list-none [&_.ix-l]:pl-0 [&_.ls-l]:flex [&_.ls-l]:flex-col [&_.ls-l>li]:py-3 [&_.ls-l>li]:border-t [&_.ls-l>li]:border-[#D3D6DA] [&_.lr]:flex [&_.lr]:flex-wrap [&_.lr]:items-baseline [&_.lr]:justify-between [&_.lr]:gap-x-4 [&_.lr]:gap-y-1 [&_.lr_h4]:text-[14.5px] [&_.lr_h4]:font-medium [&_.lr_h4]:text-[#121214] [&_.lp]:text-[13px] [&_.lp]:font-medium [&_.lp]:tabular-nums [&_.lp]:text-[#9A4A1C] [&_.ld]:mt-1 [&_.ld]:text-[13px] [&_.ix-l]:flex [&_.ix-l]:flex-col [&_.ix-l>li]:flex [&_.ix-l>li]:justify-between [&_.ix-l>li]:gap-3 [&_.ix-l>li]:py-2.5 [&_.ix-l>li]:border-t [&_.ix-l>li]:border-[#D3D6DA] [&_.ix-l_a]:font-medium [&_.ix-l_a]:text-[#121214] [&_.ix-l_span]:text-[12.5px]';
 
 function Btns({ ctas }: { ctas: any[] }) {
   if (!ctas || !ctas.length) return null;
@@ -160,10 +160,13 @@ function Chips({ links, aria }: { links: any[]; aria?: string }) {
 }
 
 export function Blocks({ blocks, s }: { blocks: any[]; s: any }) {
-  let prevDark = false; let n = 0;
+  let prevDark = false; let n = 0; let firstCards = true;
   const out: any[] = [];
   for (const b of blocks) {
-    const dark = b.kind === 'prose' && b.spd || b.kind === 'cards' && b.spd && !b.lists && !b.articles;
+    const plainCards = b.kind === 'cards' && !b.lists && !b.articles && !b.duo;
+    let dark = b.kind === 'prose' && b.spd || plainCards && b.spd;
+    if (plainCards && firstCards && !prevDark) dark = true;
+    if (plainCards) firstCards = false;
     const props = { dark, afterDark: !dark && prevDark, first: n === 0 && !dark, id: b.id, aria: b.aria, k: n };
     out.push(<Fragment key={n}>{render(b, props, s)}</Fragment>);
     prevDark = dark; n++;
@@ -179,7 +182,7 @@ function render(b: any, P: any, s: any) {
         {b.intro.length > 0 && (
           <FadeIn className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12 sm:mb-16">
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="font-title text-[24px] sm:text-[32px] lg:text-[38px] leading-[1.16] tracking-[-0.03em] font-normal text-[#121214] max-w-2xl [text-wrap:balance] kw-link">
+              <p className={cx('font-title leading-[1.16] tracking-[-0.03em] font-normal text-[#121214] max-w-2xl [text-wrap:balance] kw-link', strip(b.intro.join(' ')).length > 340 ? 'text-[18px] sm:text-[20px] lg:text-[22px]' : strip(b.intro.join(' ')).length > 190 ? 'text-[20px] sm:text-[24px] lg:text-[28px]' : 'text-[24px] sm:text-[32px] lg:text-[38px]')}>
                 <Html html={b.intro[0]} />{b.intro.slice(1).map((t: string, i: number) => <span key={i} className="text-[#4C433F]"> <Html html={t} /></span>)}
               </p>
               {b.introBtn && <Btns ctas={[b.introBtn]} />}
@@ -375,7 +378,7 @@ function render(b: any, P: any, s: any) {
       <section className="bg-[#FFFFFF] pb-14 sm:pb-20" >
         <div className={W}>
           <FadeIn>
-            <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden border border-[#D3D6DA] bg-[#070709] max-h-[540px] w-full [&_picture]:block [&_img]:w-full [&_img]:h-auto [&_.bar]:hidden" dangerouslySetInnerHTML={{ __html: b.html }} />
+            <div className="relative mx-auto max-w-[1120px] rounded-[28px] sm:rounded-[36px] overflow-hidden border border-[#D3D6DA] bg-[#070709] max-h-[540px] w-full [&_picture]:block [&_img]:w-full [&_img]:h-auto [&_.bar]:hidden" dangerouslySetInnerHTML={{ __html: b.html }} />
           </FadeIn>
         </div>
       </section>
