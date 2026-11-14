@@ -56,6 +56,7 @@ if (ARGS.includes('--live')) {
       desc: document.querySelector('meta[name=description]')?.getAttribute('content') || '' };
   };
   const sm = await (await fetch(ORIGIN + '/sitemap.xml')).text();
+  fs.writeFileSync(path.join(ROOT, 'config', 'sitemap-online.xml'), sm); // volgorde + lastmod voor de nieuwe sitemap, en URL-controle
   const urls = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].replace(ORIGIN, ''));
   for (const u of urls) {
     const file = path.join(DST, u.endsWith('/') ? u + 'index.html' : u);
