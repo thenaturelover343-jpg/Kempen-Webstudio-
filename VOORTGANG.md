@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 14-11-2026, 14:05. Branch `nieuwe-website`, laatste commit `baa0dda`.
+Laatst bijgewerkt: 14-11-2026, 14:30. Branch `nieuwe-website`.
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -26,7 +26,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - AVIF/WebP met srcset, kleine beeldvarianten voor kleine beelden, portret bijgesneden en vooraf geladen;
   - inline CSS en `_headers` voor caching.
 - [x] Tekstcorrectie "of bel" (15 FR- en 15 EN-pagina's), via `config/tekstcorrecties.json`; wordt bij elke import opnieuw toegepast.
-- [x] Controles (laatste run 14-11, 13:45):
+- [x] Controles (eerste volledige run 14-11, 13:45):
 
   | Controle | Resultaat |
   |---|---|
@@ -39,10 +39,15 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
 
 - [x] Screenshots per paginatype in `_screens/` (1440 en 390 px), plus de vergelijking design ↔ site.
 - [x] Documentatie: `LEESMIJ.md`, regel in `../logboek.md`.
+- [x] Laatste controleronde (14-11, 14:30):
+  - alle screenshots nagekeken;
+  - opgelost: dubbel kruimelpad ("KempenKempen"), een dubbele zin op het kennisoverzicht, twee donkere secties na elkaar, een donkere knop op een donkere achtergrond;
+  - getest met het toetsenbord: skiplink, contactvenster (focus, validatie, Escape, focus terug) en menu's;
+  - alle controles opnieuw: 0 fouten, 105/105 URL's, nergens horizontaal scrollen, Lighthouse mobiel 99–100/100/100/100 en desktop 100/100/100/100, CLS 0.
 
 ## Bezig
 
-- Laatste controleronde: nog niet nagekeken screenshots (kempen, kennis-index, toegankelijkheid, privacy, bedankt, FR/EN op 390 en 1440), toetsenbordtest, contactvenster op onderpagina's, alle controles opnieuw.
+- Niets. Ik wacht op Karim (zie Nog te doen).
 
 ## Nog te doen
 

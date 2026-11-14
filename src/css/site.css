@@ -169,6 +169,9 @@
     mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 66%, transparent 99%), linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
   }
 }
+/* kruimelpad uit de bestaande inhoud: lange naam, op gsm de korte */
+.crumb-short { display: none; }
+@media (max-width: 639px) { .crumb-full { display: none; } .crumb-short { display: inline; } }
 /* schermlezertekst uit de bestaande inhoud */
 .sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 /* Switzer i.p.v. DM Sans: iets lichter en iets nauwer, zodat titels even breed en even zwaar ogen als in het design */

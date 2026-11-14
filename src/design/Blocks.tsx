@@ -167,6 +167,7 @@ export function Blocks({ blocks, s }: { blocks: any[]; s: any }) {
     let dark = b.kind === 'prose' && b.spd || plainCards && b.spd;
     if (plainCards && firstCards && !prevDark) dark = true;
     if (plainCards) firstCards = false;
+    if (dark && prevDark) dark = false;
     const props = { dark, afterDark: !dark && prevDark, first: n === 0 && !dark, id: b.id, aria: b.aria, k: n };
     out.push(<Fragment key={n}>{render(b, props, s)}</Fragment>);
     prevDark = dark; n++;
@@ -214,7 +215,7 @@ function render(b: any, P: any, s: any) {
             <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {b.cards.map((c: any, i: number) => (
                 <StaggerItem key={i} i={i} className={cx('h-full', i === b.cards.length - 1 && b.cards.length === 3 && 'md:col-span-3')}>
-                  <div className="h-full rounded-[24px] bg-[#F2F2F2] border border-[#D3D6DA] p-7 flex flex-col justify-between">
+                  <div className="h-full rounded-[24px] bg-[#F2F2F2] border border-[#D3D6DA] p-7 flex flex-col">
                     <span aria-hidden="true" className="font-title text-[20px] font-medium text-[#9A4A1C]">{['I.', 'II.', 'III.', 'IV.', 'V.'][i]}</span>
                     <div className="mt-6 text-[14px] leading-relaxed text-[#4C433F] kw-prose kw-link" dangerouslySetInnerHTML={{ __html: c.body }} />
                   </div>
@@ -259,7 +260,7 @@ function render(b: any, P: any, s: any) {
             {b.h2 && <H2 html={b.h2} id={b.h2id} tag={b.h2tag} dark={dark} className={cx(b.badge && 'mt-3', '!text-[30px] sm:!text-[40px]')} />}
           </FadeIn>
           <FadeIn delay={0.08} className="lg:col-span-7 flex flex-col gap-8">
-            <Prose html={b.html} dark={dark} className="[&_.btn]:mt-6 [&_.btn]:inline-flex [&_.btn]:items-center [&_.btn]:rounded-full [&_.btn]:bg-[#121214] [&_.btn]:text-white [&_.btn]:px-6 [&_.btn]:min-h-[46px] [&_.btn]:text-[13.5px] [&_.btn]:font-medium [&_.btn]:no-underline" />
+            <Prose html={b.html} dark={dark} className={cx('[&_.btn]:mt-6 [&_.btn]:inline-flex [&_.btn]:items-center [&_.btn]:rounded-full [&_.btn]:px-6 [&_.btn]:min-h-[46px] [&_.btn]:text-[13.5px] [&_.btn]:font-medium [&_.btn]:no-underline', dark ? '[&_.btn]:bg-white [&_.btn]:!text-[#121214]' : '[&_.btn]:bg-[#121214] [&_.btn]:text-white')} />
             {b.fig && <Figure html={b.fig} phone={b.figPhone} />}
           </FadeIn>
         </div>

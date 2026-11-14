@@ -131,7 +131,7 @@ export function blocksModel(doc) {
         fig: br && $(br, '.b-fig') ? inner($(br, '.b-fig')) : '',
         figPhone: !!(br && $(br, '.pcard-ph')),
         chips: br && $(br, '.chips') ? { aria: $(br, '.chips').getAttribute('aria-label') || '', links: $$(br, '.chips a').map(link) } : null,
-        prose: $(wrap, ':scope > .kw-home-prose') ? inner($(wrap, ':scope > .kw-home-prose')) : '',
+        prose: $(wrap, ':scope > .kw-home-prose:not(.pr-b)') ? inner($(wrap, ':scope > .kw-home-prose:not(.pr-b)')) : '',
         cards: $(wrap, ':scope > .sv-g') ? $$(wrap, ':scope > .sv-g > .svc').map(cardOf) : [],
         pre: $$(wrap, ':scope > .pr-b').filter(e => $(wrap, ':scope > .sv-g') && (e.compareDocumentPosition($(wrap, ':scope > .sv-g')) & 4)).map(inner),
         extra: $$(wrap, ':scope > .pr-b, :scope > p').filter(e => !$(wrap, ':scope > .sv-g') || !(e.compareDocumentPosition($(wrap, ':scope > .sv-g')) & 4)).map(e => e.outerHTML).join(''),

@@ -170,463 +170,463 @@
  "perPage": [
   {
    "url": "/404.html",
-   "bytes": 107447
+   "bytes": 107681
   },
   {
    "url": "/bedankt/",
-   "bytes": 111662
+   "bytes": 111896
   },
   {
    "url": "/cookiebeleid/",
-   "bytes": 118822
+   "bytes": 119056
   },
   {
    "url": "/en/bedankt/",
-   "bytes": 111956
+   "bytes": 112190
   },
   {
    "url": "/en/cookiebeleid/",
-   "bytes": 119025
+   "bytes": 119259
   },
   {
    "url": "/en/",
-   "bytes": 294086
+   "bytes": 294320
   },
   {
    "url": "/en/kennis/google-bedrijfsprofiel-aanmaken/",
-   "bytes": 145382
+   "bytes": 145617
   },
   {
    "url": "/en/kennis/hoe-lang-duurt-website-laten-maken/",
-   "bytes": 133724
+   "bytes": 133711
   },
   {
    "url": "/en/kennis/",
-   "bytes": 124203
+   "bytes": 124115
   },
   {
    "url": "/en/kennis/terugkerende-kosten-website/",
-   "bytes": 124520
+   "bytes": 124757
   },
   {
    "url": "/en/kennis/wat-moet-er-op-een-website-staan/",
-   "bytes": 139336
+   "bytes": 139573
   },
   {
    "url": "/en/kennis/website-fiscaal-aftrekbaar/",
-   "bytes": 122616
+   "bytes": 122852
   },
   {
    "url": "/en/kennis/website-laten-maken-of-zelf-bouwen/",
-   "bytes": 122688
+   "bytes": 122924
   },
   {
    "url": "/en/kennis/wettelijke-vermeldingen-website/",
-   "bytes": 124117
+   "bytes": 124353
   },
   {
    "url": "/en/kennis/wordpress-of-maatwerk/",
-   "bytes": 123369
+   "bytes": 123605
   },
   {
    "url": "/en/logo-en-huisstijl/",
-   "bytes": 139637
+   "bytes": 139872
   },
   {
    "url": "/en/privacyverklaring/",
-   "bytes": 122189
+   "bytes": 122423
   },
   {
    "url": "/en/toegankelijke-website/",
-   "bytes": 140651
+   "bytes": 140917
   },
   {
    "url": "/en/voorbeeldontwerpen/",
-   "bytes": 148573
+   "bytes": 148808
   },
   {
    "url": "/en/wat-kost-een-website/",
-   "bytes": 220327
+   "bytes": 220562
   },
   {
    "url": "/en/webshop-laten-maken/",
-   "bytes": 161367
+   "bytes": 161602
   },
   {
    "url": "/en/website-horeca/",
-   "bytes": 149809
+   "bytes": 150043
   },
   {
    "url": "/en/website-kapsalon/",
-   "bytes": 164484
+   "bytes": 164720
   },
   {
    "url": "/en/website-laten-maken-geel/",
-   "bytes": 143189
+   "bytes": 143375
   },
   {
    "url": "/en/website-laten-maken-gent/",
-   "bytes": 142149
+   "bytes": 142384
   },
   {
    "url": "/en/website-laten-maken-herentals/",
-   "bytes": 143810
+   "bytes": 143980
   },
   {
    "url": "/en/website-laten-maken-kasterlee/",
-   "bytes": 143814
+   "bytes": 143984
   },
   {
    "url": "/en/website-laten-maken-kempen/",
-   "bytes": 150883
+   "bytes": 151069
   },
   {
    "url": "/en/website-laten-maken-kortrijk/",
-   "bytes": 139062
+   "bytes": 139297
   },
   {
    "url": "/en/website-laten-maken-leuven/",
-   "bytes": 144182
+   "bytes": 144417
   },
   {
    "url": "/en/website-laten-maken-mol/",
-   "bytes": 141996
+   "bytes": 142166
   },
   {
    "url": "/en/website-laten-maken-turnhout/",
-   "bytes": 144973
+   "bytes": 145159
   },
   {
    "url": "/en/website-laten-vernieuwen/",
-   "bytes": 156684
+   "bytes": 156920
   },
   {
    "url": "/en/website-schilder/",
-   "bytes": 155159
+   "bytes": 155395
   },
   {
    "url": "/en/website-starters/",
-   "bytes": 146649
+   "bytes": 146883
   },
   {
    "url": "/en/website-tuinaannemer/",
-   "bytes": 156988
+   "bytes": 157224
   },
   {
    "url": "/en/website-vakmensen/",
-   "bytes": 169370
+   "bytes": 169606
   },
   {
    "url": "/en/website-vereniging/",
-   "bytes": 155371
+   "bytes": 155636
   },
   {
    "url": "/en/website-vrij-beroep/",
-   "bytes": 147002
+   "bytes": 147236
   },
   {
    "url": "/en/website-winkel/",
-   "bytes": 149597
+   "bytes": 149831
   },
   {
    "url": "/en/website-zorg/",
-   "bytes": 146438
+   "bytes": 146672
   },
   {
    "url": "/fr/bedankt/",
-   "bytes": 112530
+   "bytes": 112764
   },
   {
    "url": "/fr/cookiebeleid/",
-   "bytes": 120257
+   "bytes": 120491
   },
   {
    "url": "/fr/",
-   "bytes": 298701
+   "bytes": 298935
   },
   {
    "url": "/fr/kennis/google-bedrijfsprofiel-aanmaken/",
-   "bytes": 147975
+   "bytes": 148210
   },
   {
    "url": "/fr/kennis/hoe-lang-duurt-website-laten-maken/",
-   "bytes": 135156
+   "bytes": 135128
   },
   {
    "url": "/fr/kennis/",
-   "bytes": 125332
+   "bytes": 125235
   },
   {
    "url": "/fr/kennis/terugkerende-kosten-website/",
-   "bytes": 126129
+   "bytes": 126366
   },
   {
    "url": "/fr/kennis/wat-moet-er-op-een-website-staan/",
-   "bytes": 141619
+   "bytes": 141856
   },
   {
    "url": "/fr/kennis/website-fiscaal-aftrekbaar/",
-   "bytes": 124271
+   "bytes": 124507
   },
   {
    "url": "/fr/kennis/website-laten-maken-of-zelf-bouwen/",
-   "bytes": 124048
+   "bytes": 124284
   },
   {
    "url": "/fr/kennis/wettelijke-vermeldingen-website/",
-   "bytes": 126048
+   "bytes": 126284
   },
   {
    "url": "/fr/kennis/wordpress-of-maatwerk/",
-   "bytes": 125012
+   "bytes": 125248
   },
   {
    "url": "/fr/logo-en-huisstijl/",
-   "bytes": 141781
+   "bytes": 142016
   },
   {
    "url": "/fr/privacyverklaring/",
-   "bytes": 123852
+   "bytes": 124086
   },
   {
    "url": "/fr/toegankelijke-website/",
-   "bytes": 142410
+   "bytes": 142676
   },
   {
    "url": "/fr/voorbeeldontwerpen/",
-   "bytes": 150275
+   "bytes": 150510
   },
   {
    "url": "/fr/wat-kost-een-website/",
-   "bytes": 224473
+   "bytes": 224708
   },
   {
    "url": "/fr/webshop-laten-maken/",
-   "bytes": 164114
+   "bytes": 164349
   },
   {
    "url": "/fr/website-horeca/",
-   "bytes": 152006
+   "bytes": 152240
   },
   {
    "url": "/fr/website-kapsalon/",
-   "bytes": 167180
+   "bytes": 167416
   },
   {
    "url": "/fr/website-laten-maken-geel/",
-   "bytes": 144601
+   "bytes": 144787
   },
   {
    "url": "/fr/website-laten-maken-gent/",
-   "bytes": 144244
+   "bytes": 144479
   },
   {
    "url": "/fr/website-laten-maken-herentals/",
-   "bytes": 145070
+   "bytes": 145240
   },
   {
    "url": "/fr/website-laten-maken-kasterlee/",
-   "bytes": 145467
+   "bytes": 145637
   },
   {
    "url": "/fr/website-laten-maken-kempen/",
-   "bytes": 152391
+   "bytes": 152577
   },
   {
    "url": "/fr/website-laten-maken-kortrijk/",
-   "bytes": 140799
+   "bytes": 141034
   },
   {
    "url": "/fr/website-laten-maken-leuven/",
-   "bytes": 146189
+   "bytes": 146424
   },
   {
    "url": "/fr/website-laten-maken-mol/",
-   "bytes": 143384
+   "bytes": 143554
   },
   {
    "url": "/fr/website-laten-maken-turnhout/",
-   "bytes": 146595
+   "bytes": 146781
   },
   {
    "url": "/fr/website-laten-vernieuwen/",
-   "bytes": 159032
+   "bytes": 159268
   },
   {
    "url": "/fr/website-schilder/",
-   "bytes": 157505
+   "bytes": 157741
   },
   {
    "url": "/fr/website-starters/",
-   "bytes": 148573
+   "bytes": 148807
   },
   {
    "url": "/fr/website-tuinaannemer/",
-   "bytes": 159494
+   "bytes": 159730
   },
   {
    "url": "/fr/website-vakmensen/",
-   "bytes": 172081
+   "bytes": 172317
   },
   {
    "url": "/fr/website-vereniging/",
-   "bytes": 157599
+   "bytes": 157864
   },
   {
    "url": "/fr/website-vrij-beroep/",
-   "bytes": 148963
+   "bytes": 149197
   },
   {
    "url": "/fr/website-winkel/",
-   "bytes": 151800
+   "bytes": 152034
   },
   {
    "url": "/fr/website-zorg/",
-   "bytes": 148471
+   "bytes": 148705
   },
   {
    "url": "/",
-   "bytes": 293241
+   "bytes": 293475
   },
   {
    "url": "/kennis/google-bedrijfsprofiel-aanmaken/",
-   "bytes": 144874
+   "bytes": 145109
   },
   {
    "url": "/kennis/hoe-lang-duurt-website-laten-maken/",
-   "bytes": 133412
+   "bytes": 133390
   },
   {
    "url": "/kennis/",
-   "bytes": 123878
+   "bytes": 123791
   },
   {
    "url": "/kennis/terugkerende-kosten-website/",
-   "bytes": 124278
+   "bytes": 124515
   },
   {
    "url": "/kennis/wat-moet-er-op-een-website-staan/",
-   "bytes": 139015
+   "bytes": 139252
   },
   {
    "url": "/kennis/website-fiscaal-aftrekbaar/",
-   "bytes": 122424
+   "bytes": 122660
   },
   {
    "url": "/kennis/website-laten-maken-of-zelf-bouwen/",
-   "bytes": 122169
+   "bytes": 122405
   },
   {
    "url": "/kennis/wettelijke-vermeldingen-website/",
-   "bytes": 124032
+   "bytes": 124268
   },
   {
    "url": "/kennis/wordpress-of-maatwerk/",
-   "bytes": 123003
+   "bytes": 123239
   },
   {
    "url": "/logo-en-huisstijl/",
-   "bytes": 139001
+   "bytes": 139236
   },
   {
    "url": "/privacyverklaring/",
-   "bytes": 122199
+   "bytes": 122433
   },
   {
    "url": "/toegankelijke-website/",
-   "bytes": 140514
+   "bytes": 140780
   },
   {
    "url": "/voorbeeldontwerpen/",
-   "bytes": 148412
+   "bytes": 148647
   },
   {
    "url": "/wat-kost-een-website/",
-   "bytes": 219246
+   "bytes": 219481
   },
   {
    "url": "/webshop-laten-maken/",
-   "bytes": 160652
+   "bytes": 160887
   },
   {
    "url": "/website-horeca/",
-   "bytes": 149452
+   "bytes": 149686
   },
   {
    "url": "/website-kapsalon/",
-   "bytes": 164029
+   "bytes": 164265
   },
   {
    "url": "/website-laten-maken-geel/",
-   "bytes": 142800
+   "bytes": 142986
   },
   {
    "url": "/website-laten-maken-gent/",
-   "bytes": 141592
+   "bytes": 141827
   },
   {
    "url": "/website-laten-maken-herentals/",
-   "bytes": 143254
+   "bytes": 143424
   },
   {
    "url": "/website-laten-maken-kasterlee/",
-   "bytes": 143495
+   "bytes": 143665
   },
   {
    "url": "/website-laten-maken-kempen/",
-   "bytes": 150237
+   "bytes": 150423
   },
   {
    "url": "/website-laten-maken-kortrijk/",
-   "bytes": 138504
+   "bytes": 138739
   },
   {
    "url": "/website-laten-maken-leuven/",
-   "bytes": 143666
+   "bytes": 143901
   },
   {
    "url": "/website-laten-maken-mol/",
-   "bytes": 141487
+   "bytes": 141657
   },
   {
    "url": "/website-laten-maken-turnhout/",
-   "bytes": 144512
+   "bytes": 144698
   },
   {
    "url": "/website-laten-vernieuwen/",
-   "bytes": 156199
+   "bytes": 156435
   },
   {
    "url": "/website-schilder/",
-   "bytes": 154495
+   "bytes": 154731
   },
   {
    "url": "/website-starters/",
-   "bytes": 146152
+   "bytes": 146386
   },
   {
    "url": "/website-tuinaannemer/",
-   "bytes": 156180
+   "bytes": 156416
   },
   {
    "url": "/website-vakmensen/",
-   "bytes": 169084
+   "bytes": 169320
   },
   {
    "url": "/website-vereniging/",
-   "bytes": 155162
+   "bytes": 155427
   },
   {
    "url": "/website-vrij-beroep/",
-   "bytes": 146561
+   "bytes": 146795
   },
   {
    "url": "/website-winkel/",
-   "bytes": 149303
+   "bytes": 149537
   },
   {
    "url": "/website-zorg/",
-   "bytes": 146229
+   "bytes": 146463
   }
  ],
  "sitemap": 105,
