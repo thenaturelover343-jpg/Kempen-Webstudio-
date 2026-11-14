@@ -27,8 +27,12 @@ for (const width of [1440, 390]) {
     await page.goto(BASE + p, { waitUntil: 'networkidle' });
     await page.evaluate(async () => {
       document.querySelectorAll('.kw-fade, .kw-sec, .kw-sg').forEach(e => e.classList.add('kw-in'));
-      document.querySelectorAll('img[loading="lazy"]').forEach(i => { i.loading = 'eager'; });
-      await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
+    });
+    // echt door de pagina scrollen (zoals een bezoeker), zodat elke lazy-afbeelding laadt; daarna terug naar boven
+    for (let y = 0, H = await page.evaluate(() => document.documentElement.scrollHeight); y < H; y += 500) { await page.evaluate(v => scrollTo(0, v), y); await page.waitForTimeout(60); }
+    await page.evaluate(async () => {
+      await Promise.all([...document.images].map(i => (i.complete ? Promise.resolve() : new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); setTimeout(r, 5000); })).then(() => i.decode ? Promise.race([i.decode().catch(() => 0), new Promise(r => setTimeout(r, 2000))]) : 0)));
+      scrollTo(0, 0);
     });
     await page.waitForTimeout(1200);
     const file = path.join(OUT, `${name}-${width}.jpg`);

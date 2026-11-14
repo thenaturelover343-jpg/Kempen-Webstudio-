@@ -176,9 +176,13 @@
 
   /* ---------- zwevende knop: niet over de hero en niet bij het contactformulier ---------- */
   var fl = d.querySelector('[data-floating]'), ct = d.getElementById('contact');
-  if (fl && 'IntersectionObserver' in W) {
-    var inC = false, inH = !!hero, upd = function () { fl.style.opacity = inC ? 0 : 1; fl.style.pointerEvents = inC ? 'none' : ''; };
-    if (ct) new IntersectionObserver(function (es) { inC = es[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(ct);
+  if (fl) {
+    var fh = d.querySelector('[data-fl-hide]'), inC = false, inH = !!fh, upd = function () { fl.classList.toggle('kw-on', !inC && !inH); };
+    if ('IntersectionObserver' in W) {
+      if (fh) new IntersectionObserver(function (es) { inH = es[0].isIntersecting; upd(); }).observe(fh);
+      if (ct) new IntersectionObserver(function (es) { inC = es[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(ct);
+    } else inH = false;
+    upd();
   }
 
   /* ---------- formulieren (contact op de home + contactvenster): web3forms, terugval mailto ---------- */

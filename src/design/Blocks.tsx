@@ -41,7 +41,7 @@ function Btns({ ctas }: { ctas: any[] }) {
 
 export function PageHero({ h }: { h: any }) {
   return (
-    <SectionReveal immediate aria-labelledby={h.sectionAria || undefined} className="hero-canvas pt-10 sm:pt-16 pb-14 sm:pb-20">
+    <SectionReveal immediate data-fl-hide="" aria-labelledby={h.sectionAria || undefined} className="hero-canvas pt-10 sm:pt-16 pb-14 sm:pb-20">
       <div className={W}>
         <FadeIn immediate>
           {h.crumbs ? (
@@ -182,7 +182,8 @@ function render(b: any, P: any, s: any) {
       <Sec {...P}>
         {b.intro.length > 0 && (
           <FadeIn className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12 sm:mb-16">
-            <div className="lg:col-span-7 lg:col-start-6">
+            {b.h2 && <div className="lg:col-span-5"><H2 html={b.h2} id={b.h2id} /></div>}
+            <div className={cx('lg:col-span-7', !b.h2 && 'lg:col-start-6')}>
               <p className={cx('font-title leading-[1.16] tracking-[-0.03em] font-normal text-[#121214] max-w-2xl [text-wrap:balance] kw-link', strip(b.intro.join(' ')).length > 340 ? 'text-[18px] sm:text-[20px] lg:text-[22px]' : strip(b.intro.join(' ')).length > 190 ? 'text-[20px] sm:text-[24px] lg:text-[28px]' : 'text-[24px] sm:text-[32px] lg:text-[38px]')}>
                 <Html html={b.intro[0]} />{b.intro.slice(1).map((t: string, i: number) => <span key={i} className="text-[#4C433F]"> <Html html={t} /></span>)}
               </p>
@@ -192,7 +193,7 @@ function render(b: any, P: any, s: any) {
         )}
         <div className={cx('grid grid-cols-1 gap-10 items-start', (b.fig || b.prose || b.lead.length || b.chips) && 'lg:grid-cols-12')}>
           <FadeIn className={cx(b.fig ? 'lg:col-span-5' : 'lg:col-span-5')}>
-            {b.h2 && <H2 html={b.h2} id={b.h2id} />}
+            {b.h2 && b.intro.length === 0 && <H2 html={b.h2} id={b.h2id} />}
             {b.fig && b.lead.length > 0 && <div className="mt-6 flex flex-col gap-4">{b.lead.map((p: any, i: number) => <p key={i} className={cx('kw-link leading-relaxed', p.lead ? 'text-[16px] text-[#121214]' : 'text-[14.5px] text-[#4C433F]')} dangerouslySetInnerHTML={{ __html: p.html }} />)}</div>}
             {b.fig && b.txt && <Prose html={b.txt} className="mt-6 [&_ul]:list-none [&_ul]:pl-0 [&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.35em] [&_li]:before:w-4 [&_li]:before:h-4 [&_li]:before:rounded-full [&_li]:before:bg-[#B85D28]/15" />}
           </FadeIn>

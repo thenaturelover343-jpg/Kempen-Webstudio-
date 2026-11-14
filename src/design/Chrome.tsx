@@ -15,7 +15,7 @@ export function FloatingCta({ s }: { s: any }) {
   const [demo, call] = s.floating;
   if (!demo) return null;
   return (
-    <div data-floating="" className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-40 flex items-center gap-2">
+    <div data-floating="" className="kw-fl fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-40 flex items-center gap-2">
       {call && (
         <a href={call.href} aria-label={call.label}
           className="kw-pop lg:hidden inline-flex items-center justify-center rounded-full bg-[#121214] text-white border border-white/15 w-[46px] h-[46px] shadow-[0_14px_34px_rgba(7,7,9,0.28)]">

@@ -193,6 +193,9 @@ html.js .kw-sg:not(.kw-in) > .kw-si { opacity: 0; transform: translateY(18px); }
 .kw-sg > .kw-si { transition: opacity .55s cubic-bezier(.16, 1, .3, 1) calc(.05s + var(--i, 0) * .08s), transform .55s cubic-bezier(.16, 1, .3, 1) calc(.05s + var(--i, 0) * .08s); }
 .kw-sg.kw-load-g > .kw-si { animation: kw-up .55s cubic-bezier(.16, 1, .3, 1) calc(.05s + var(--i, 0) * .08s) both; --y: 18px; transition: none; }
 .kw-swap { animation: kw-up .28s cubic-bezier(.16, 1, .3, 1) both; --y: 8px; }
+/* zwevende knoppen: veilige ruimte onderaan (iPhone), pas zichtbaar na de hero (site.js zet .kw-on) */
+.kw-fl { margin-bottom: env(safe-area-inset-bottom, 0px); transition: opacity .3s ease, visibility .3s; }
+html.js .kw-fl:not(.kw-on) { opacity: 0; visibility: hidden; pointer-events: none; }
 .kw-pop { transition: transform .18s cubic-bezier(.16, 1, .3, 1); }
 .kw-pop:hover { transform: scale(1.03); }
 .kw-pop:active { transform: scale(.98); }

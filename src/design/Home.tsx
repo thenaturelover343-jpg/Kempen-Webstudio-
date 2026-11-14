@@ -66,7 +66,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
   return (
     <div className="w-full overflow-x-hidden">
       {/* SECTION 1: HERO */}
-      <section aria-labelledby={h.hero.h1id} data-hero="" className="relative min-h-[calc(100vh-76px)] w-full hero-canvas flex flex-col justify-between overflow-hidden">
+      <section aria-labelledby={h.hero.h1id} data-hero="" data-fl-hide="" className="relative min-h-[calc(100vh-76px)] w-full hero-canvas flex flex-col justify-between overflow-hidden">
         <div aria-hidden="true" data-aura="" className="hidden lg:block pointer-events-none absolute top-0 left-0 z-[12] w-[360px] h-[360px] -ml-[180px] -mt-[180px] rounded-full opacity-0 transition-opacity duration-300"
           style={{ background: 'radial-gradient(circle, rgba(184,93,40,0.14) 0%, rgba(251,77,39,0.06) 36%, rgba(255,255,255,0) 70%)' }} />
         <div aria-hidden="true" data-dot="" className="hidden lg:flex pointer-events-none absolute top-0 left-0 z-[25] w-6 h-6 -ml-3 -mt-3 rounded-full border border-[#B85D28]/45 bg-[#FB4D27]/10 items-center justify-center opacity-0 transition-opacity duration-200">
