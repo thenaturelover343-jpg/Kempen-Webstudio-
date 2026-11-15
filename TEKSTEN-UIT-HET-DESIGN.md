@@ -52,12 +52,12 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Tuinaannemers en hoveniers ·  _(op 1 pagina)_
 - Uitgesproken typografie  _(op 1 pagina)_
 - Vakmensen ·  _(op 1 pagina)_
-- Vanaf €490 + vanaf €29 per maand excl. btw. Vrijblijvend voorstel.  _(op 1 pagina)_
+- Vanaf €490 excl. btw, prijs vooraf, één aanspreekpunt.  _(op 1 pagina)_
 - Vaste prijs  _(op 1 pagina)_
 - Veilig afrekenen  _(op 1 pagina)_
 - Verfijnde stijl  _(op 1 pagina)_
 - Vier overzichtelijke stappen waarmee u altijd weet wat er gebeurt, wat het kost en wanneer uw nieuwe website online staat.  _(op 1 pagina)_
-- Website laten maken in heel België, voor elke zaak, vereniging of zelfstandige.  _(op 1 pagina)_
+- Website laten maken in België: webdesign op maat voor uw zaak, eerst een vrijblijvend voorstel.  _(op 1 pagina)_
 - Werkgebied  _(op 2 pagina's)_
 - Werkt in heel België  _(op 5 pagina's)_
 - Winkelmand  _(op 1 pagina)_
@@ -82,11 +82,12 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Aménagement  _(op 1 pagina)_
 - Bouton rendez-vous  _(op 1 pagina)_
 - Continu  _(op 1 pagina)_
+- Création de site internet en Belgique : un site sur mesure pour votre entreprise, avec d’abord une proposition sans engagement.  _(op 1 pagina)_
+- Création de site internet à la Campine  _(op 1 pagina)_
 - Demande de devis  _(op 1 pagina)_
 - Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.  _(op 1 pagina)_
 - Design épuré  _(op 1 pagina)_
-- Faire créer un site web dans toute la Belgique, pour chaque entreprise, association ou indépendant.  _(op 1 pagina)_
-- Faire créer un site web à la Campine  _(op 1 pagina)_
+- Dès €490 HTVA.  _(op 1 pagina)_
 - Fiches produits  _(op 1 pagina)_
 - Flandre-Occidentale  _(op 2 pagina's)_
 - Forfait Start en ligne  _(op 1 pagina)_
@@ -118,7 +119,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Surfaces sombres  _(op 1 pagina)_
 - Tons chaleureux  _(op 1 pagina)_
 - Tout est clair à l’avance, sans surprises  _(op 1 pagina)_
-- Toute la Belgique  _(op 58 pagina's)_
 - Typographie affirmée  _(op 1 pagina)_
 - Un interlocuteur unique après lancement  _(op 1 pagina)_
 - Un interlocuteur unique  _(op 1 pagina)_
@@ -126,7 +126,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Zone d’intervention  _(op 1 pagina)_
 - © 2026 Kempen Webstudio · Numéro d’entreprise BE 0897.577.919  _(op 55 pagina's)_
 - · Pas encore d’avis  _(op 1 pagina)_
-- À partir de €490 + à partir de €29 par mois HTVA, proposition sans engagement.  _(op 1 pagina)_
 
 ## EN
 
@@ -157,12 +156,13 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Fast on mobile and desktop  _(op 1 pagina)_
 - Fixed price  _(op 1 pagina)_
 - Four straightforward steps so you always know what happens next, what it costs and when your website goes live.  _(op 1 pagina)_
-- From €490 + from €29 per month excl. VAT, no-obligation proposal.  _(op 1 pagina)_
+- From €490 excl. VAT, price up front.  _(op 1 pagina)_
 - Full clarity upfront, with zero surprises  _(op 1 pagina)_
 - Gallery  _(op 1 pagina)_
 - Garden contractors and landscape gardeners ·  _(op 1 pagina)_
 - Hair salons and barbershops ·  _(op 1 pagina)_
-- Have a website built anywhere in Belgium, for every business, association or self-employed professional.  _(op 1 pagina)_
+- Have a website built in Belgium: a custom design for your business, starting with a no-obligation proposal.  _(op 1 pagina)_
+- Have a website built in the Kempen  _(op 1 pagina)_
 - Hospitality ·  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 104 pagina's)_
 - Light aesthetic  _(op 1 pagina)_

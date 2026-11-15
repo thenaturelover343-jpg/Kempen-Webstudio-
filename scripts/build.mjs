@@ -128,7 +128,7 @@ for (const lang of ['nl', 'fr', 'en']) {
   const f = formModel(homeDoc);
   const hm = homeModel(homeDoc);
   const s0 = shellModel(homeDoc, lang === 'nl' ? '/' : `/${lang}/`);
-  const cities = s0.footer.cols.find(c => /Website laten maken in|Faire créer un site web à|Have a website built in/i.test(c.title));
+  const cities = s0.footer.cols.find(c => /Website laten maken in|Faire créer un site web à|Création de site internet à|Have a website built in/i.test(c.title));
   const cityBy = href => cities.links.find(l => baseOf(l.href) === href);
   const kosten = blocksModel(readDoc(relFor(lang, '/wat-kost-een-website/'))).find(b => b.kind === 'pricing');
   const delivery = kosten ? kosten.tiers.map(t => norm((t.list.find(l => l.lt) || {}).html || '').replace(/<[^>]+>/g, '')) : [];

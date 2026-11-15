@@ -14,7 +14,7 @@ const DEMO_ID: Record<string, string> = { '/houtatelier-nethe/': 'houtatelier-ne
 const SECTOR_ID: Record<string, string> = { 'website-vakmensen': 'vakmensen', 'website-horeca': 'horeca', 'website-kapsalon': 'kapsalons', 'website-schilder': 'schilders', 'website-tuinaannemer': 'tuinaannemers' };
 const H1_SPLIT: Record<string, string[]> = {
   nl: ['Website laten', 'maken, ', 'op maat', 'van ', 'uw zaak'],
-  fr: ['Faire créer', 'un site web, ', 'sur mesure', 'pour ', 'votre entreprise'],
+  fr: ['Création de', 'site internet, ', 'sur mesure', 'pour ', 'votre entreprise'],
   en: ['Have a website', 'built, ', 'tailored', 'to ', 'your business'],
 };
 const Badge = ({ children, dark = false, copper = false }: { children: any; dark?: boolean; copper?: boolean }) => (

@@ -116,10 +116,10 @@ function aanvul(p) {
   if (p.slogan) d.querySelector('main .hero-slogan').innerHTML = p.slogan;
   const ctx = { ids: new Set([...d.querySelectorAll('[id]')].map(e => e.id)), lang: p.lang, path: p.path };
   for (const ins of p.insert || []) {
-    const ref = typeof ins.after === 'number' ? d.querySelector('main').children[ins.after] : d.querySelector(ins.after);
-    if (!ref) throw new Error('aanvul: anker niet gevonden ' + ins.after + ' op ' + p.path);
+    const ref = ins.before ? d.querySelector(ins.before) : typeof ins.after === 'number' ? d.querySelector('main').children[ins.after] : d.querySelector(ins.after);
+    if (!ref) throw new Error('aanvul: anker niet gevonden ' + (ins.before || ins.after) + ' op ' + p.path);
     const html = ins.sections.map(x => sectionHtml(x, ctx)).join('\n').replace(/<section /g, '<section data-kw-extra="" ');
-    ref.insertAdjacentHTML('afterend', html);
+    ref.insertAdjacentHTML(ins.before ? 'beforebegin' : 'afterend', html);
   }
   if (p.faqExtra && p.faqExtra.length) {
     const g = d.querySelector('main .fq6 .fq-g');
@@ -141,11 +141,18 @@ for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.mjs') && !f.startsW
   const m = await import(pathToFileURL(path.join(dir, f)).href + '?t=' + Date.now());
   pages.push(...m.default);
 }
-const seen = new Set(); let n = 0, skipped = [];
+// aanvullingen op hetzelfde pad samenvoegen (secties en vragen na elkaar, laatste title/desc/h1 wint)
+const merged = new Map();
 for (const p of pages) {
-  if (seen.has(p.path)) throw new Error('dubbel pad ' + p.path); seen.add(p.path);
-  if (strip(p.title).length > 60) console.warn(`title > 60 (${strip(p.title).length}): ${p.path} ${p.title}`);
-  if (p.desc.length > 155) console.warn(`description > 155 (${p.desc.length}): ${p.path}`);
+  const q = merged.get(p.path);
+  if (!q) { merged.set(p.path, { ...p }); continue; }
+  if (!q.aanvul || !p.aanvul) throw new Error('dubbel pad ' + p.path);
+  merged.set(p.path, { ...q, ...p, insert: [...(q.insert || []), ...(p.insert || [])], faqExtra: [...(q.faqExtra || []), ...(p.faqExtra || [])] });
+}
+let n = 0, skipped = [];
+for (const p of merged.values()) {
+  if (p.title && strip(p.title).length > 60) console.warn(`title > 60 (${strip(p.title).length}): ${p.path} ${p.title}`);
+  if (p.desc && p.desc.length > 155) console.warn(`description > 155 (${p.desc.length}): ${p.path}`);
   const f = fileOf(p.path);
   if (fs.existsSync(f) && !p.vervang && !p.aanvul && !fs.readFileSync(f, 'utf8').includes('name="kw-gegenereerd"')) { skipped.push(p.path); continue; }
   fs.mkdirSync(path.dirname(f), { recursive: true });
