@@ -12,6 +12,8 @@ Datum: 15-11-2026. Er zijn **geen nieuwe foto's van Unsplash of Pexels** gedownl
 | vb-* (9 voorbeeldsites) | `*-m600.webp`, `*-d1000.webp` | eigen screenshots van de 9 voorbeeldsites (bestaande site, `site/assets/img/`) |
 | showcase op de home | `/assets/img/*-d640/d1000/d1600.webp` | dezelfde eigen screenshots van de 9 voorbeeldsites |
 | portret | `hero-portret.jpg` | het hero-beeld uit het design (`design-bron/`), al gebruikt in de hero |
+| kaart (contactpagina) | `kaart-kasterlee.png` | OpenStreetMap-tegels (© OpenStreetMap-bijdragers, ODbL), gemaakt met `scripts/kaart.mjs` op 15-11-2026; speld op het centrum van Kasterlee, niet op het huisadres. De bronvermelding staat op de pagina |
+| deelbeelden per pagina | `src/img/og/*.jpg` | gemaakt met `scripts/og-paginas.mjs` uit het hero-beeld en de H1 van elke pagina |
 | case-koelaanhangwagen, case-taponderhoud, case-barlicious | `case-*-d.png` | screenshot van de echte klantsites op 15-11-2026 (`scripts/shoot-sites.mjs`); alleen een fragment, zonder logo of cookiebanner |
 
 ## Aandachtspunten voor Karim

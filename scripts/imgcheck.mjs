@@ -21,7 +21,7 @@ for (const width of (process.env.W || "1440,390").split(",").map(Number)) {
   const mk = async () => { const c = await browser.newContext({ viewport: { width, height: width > 500 ? 900 : 844 }, isMobile: width < 500, hasTouch: width < 500 }); await c.addInitScript(() => { try { localStorage.setItem('kw_consent', JSON.stringify({ v: 1, t: Date.now(), s: false, m: false })); } catch (e) {} }); return c; };
   let ctx = await mk();
   let page = await ctx.newPage();
-  for (const u of urls.slice(+(process.env.FROM || 0))) {
+  for (const u of urls.slice(+(process.env.FROM || 0), process.env.TO ? +process.env.TO : undefined)) {
    for (let poging = 1; poging <= 3; poging++) {
    try {
     page.setDefaultTimeout(20000);

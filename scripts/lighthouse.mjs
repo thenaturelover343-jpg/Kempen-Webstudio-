@@ -11,7 +11,7 @@ import * as chromeLauncher from 'chrome-launcher';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = +(process.argv[2] || 4101);
 const BASE = `http://localhost:${PORT}`;
-const PAGES = [['home', '/'], ['dienst', '/webshop-laten-maken/'], ['sector', '/website-horeca/'], ['stad', '/website-laten-maken-geel/'], ['kennis', '/kennis/wordpress-of-maatwerk/'], ['fr', '/fr/'], ['en', '/en/website-laten-maken-gent/']];
+const PAGES = [['home', '/'], ['dienst', '/webshop-laten-maken/'], ['sector', '/website-horeca/'], ['stad', '/website-laten-maken-geel/'], ['kennis', '/kennis/wordpress-of-maatwerk/'], ['fr', '/fr/'], ['en', '/en/website-laten-maken-gent/'], ['antwerpen', '/website-laten-maken-antwerpen/'], ['prijsgids', '/wat-kost-een-website/'], ['contact', '/contact/'], ['demo', '/voorbeeldontwerpen/bistro-tilvaar/'], ['liege', '/fr/creation-site-internet-liege/'], ['over', '/over-ons/']];
 const OUT = path.join(ROOT, '_lighthouse'); fs.mkdirSync(OUT, { recursive: true });
 
 let server = null;

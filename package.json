@@ -8,6 +8,7 @@
     "node": ">=20"
   },
   "scripts": {
+    "paginas": "node scripts/paginas.mjs && node scripts/shell.mjs && node scripts/og-paginas.mjs",
     "import": "node scripts/import-content.mjs",
     "build": "npm run build:test && npm run build:live",
     "build:test": "node scripts/build.mjs --mode test",
@@ -16,7 +17,9 @@
     "serve:live": "node scripts/serve.mjs dist-live 4101",
     "check": "node scripts/check.mjs dist-live && node scripts/check.mjs dist-test",
     "lighthouse": "node scripts/lighthouse.mjs",
-    "screens": "node scripts/screens.mjs"
+    "screens": "node scripts/screens.mjs",
+    "seocheck": "node scripts/seocheck.mjs dist-live",
+    "redirectcheck": "node scripts/redirectcheck.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/inter-tight": "^5.2.7",

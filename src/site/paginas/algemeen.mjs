@@ -209,7 +209,7 @@ const contact = {
     ],
   },
   fr: {
-    path: P.contact.fr, pageType: 'ContactPage', title: 'Contact | Kempen Webstudio, Kasterlee', desc: 'Contactez Kempen Webstudio : appelez le +32 14 71 80 80, écrivez à info@kempenwebstudio.be ou via le formulaire. Réponse sous 1 jour ouvrable.',
+    path: P.contact.fr, pageType: 'ContactPage', title: 'Contact | Kempen Webstudio, studio web à Kasterlee', desc: 'Contactez Kempen Webstudio : appelez le +32 14 71 80 80, écrivez à info@kempenwebstudio.be ou via le formulaire. Réponse sous 1 jour ouvrable.',
     h1: 'Contacter Kempen Webstudio', crumbCur: 'Contact',
     slogan: 'Parlez-nous brièvement de votre entreprise et nous vous recontactons. Nous répondons généralement à un message dans un délai d’un jour ouvrable.',
     sections: [
@@ -229,7 +229,7 @@ const contact = {
     ],
   },
   en: {
-    path: P.contact.en, pageType: 'ContactPage', title: 'Contact | Kempen Webstudio, Kasterlee', desc: 'Contact Kempen Webstudio in Kasterlee, Belgium: call +32 14 71 80 80, email info@kempenwebstudio.be or use the form. Reply within 1 working day.',
+    path: P.contact.en, pageType: 'ContactPage', title: 'Contact | Kempen Webstudio, web studio in Kasterlee', desc: 'Contact Kempen Webstudio in Kasterlee, Belgium: call +32 14 71 80 80, email info@kempenwebstudio.be or use the form. Reply within 1 working day.',
     h1: 'Contact Kempen Webstudio', crumbCur: 'Contact',
     slogan: 'Tell us briefly about your business and we will get back to you. We usually reply to a message within 1 working day.',
     sections: [

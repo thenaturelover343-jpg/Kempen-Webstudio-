@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 15-11-2026. Branch `nieuwe-website`.
+Laatst bijgewerkt: 16-11-2026. Branch `nieuwe-website`.
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -89,6 +89,16 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - eindcontrole: linkcheck/SEO 0 fouten (105/105 URL's), beeldcontrole 0 problemen (1440 en 390), slotcheck 0, test-home 57/57, geen zichtbare "demo", Lighthouse mobiel home 100 / dienst 100 / sector 99 / stad 100 / kennis 100 / FR 99 / EN 100, desktop 100, CLS 0;
   - open punten in VOORTGANG/FOUTEN-HOME: technisch niets meer; wat overblijft zijn Karims beslissingen (zie Nog te doen).
 
+- [x] **SEO-ronde** (15/16-11-2026, op basis van `../seo-concurrentie-rapport-2026-11.md` en `../seo-data/` queries.csv + volumes.csv):
+  - **Nieuwe stadspagina's** met eigen lokale inhoud (economie, wijken/gemeenten, sectoren, bereikbaarheid, eigen FAQ): NL Antwerpen, Brussel, Mechelen, Hasselt, Brugge; FR Bruxelles, Liège, Namur, Charleroi; EN Brussels. Regio-hub per taal (`/website-laten-maken-belgie/`, `/fr/creation-site-internet/`, `/en/website-design-belgium/`). In footer, hub, sitemap en hreflang (Brussel NL/FR/EN onderling).
+  - **FR-slugs:** 37 FR-pagina's op Franse URL's (`src/site/slugs.mjs`), alle links/canonicals/hreflang/sitemap bijgewerkt, 301's in `dist-live/_redirects` (host = Cloudflare) + HTML-vangnet op elk oud pad. FR-titels en H1's op "création site internet".
+  - **Nieuwe pagina's (NL/FR/EN):** Over ons (zonder naam of gezicht), Contact (NAP, formulier, statische OSM-kaart van Kasterlee, antwoordtermijn), SEO laten doen (zoekvolume "seo bureau"), detailpagina per voorbeeldontwerp (9 x 3, duidelijk fictief, CreativeWork-schema); voorbeeldontwerpen-overzicht linkt naar de details. Geen cases (Karim: "nog geen cases").
+  - **Prijsgids 2026** (NL/FR/EN): tabel prijzen per type site, marktprijzen (eigen onderzoek nov. 2026), vergelijking zelf bouwen/freelancer/bureau, onderhoudskosten, verborgen kosten, extra FAQ (FAQPage).
+  - **Technische SEO:** titles ≤60 en descriptions ≤155 op elke pagina, hoofdzoekwoord vooraan (GSC-pagina's op positie 40-90 versterkt: schilder, kapper/kapsalon/schoonheidssalon, Leuven/webbureau, Kempen/webdesign, Mol, webshop, vernieuwen, vereniging; "webdesign" in home en steden); één H1; Organization+ProfessionalService met areaServed België + 16 steden, contactPoint en talen; Service per dienst; FAQPage; BreadcrumbList; Article met datum (zonder zichtbare datum); WebSite; eigen OG-beeld per pagina (164); image-sitemap; hreflang per pagina in de sitemap; `llms.txt`; interne links van alle dienst-, sector- en kennispagina's naar home, prijsgids, hub en steden; menu/footer met Contact, Over ons, SEO en steden.
+  - **SEO-ACTIES-KARIM/**: Bedrijfsprofiel-teksten, reviewverzoek (mail/WhatsApp NL/FR), citaties met URL, Search Console/Bing-stappenplan, backlinklijst.
+  - Werkwijze: `npm run paginas` (generator `scripts/paginas.mjs` uit `src/site/paginas/*.mjs`, `scripts/shell.mjs` voor menu/footer, `scripts/og-paginas.mjs` voor deelbeelden) en daarna `npm run build`.
+  - Eindcontrole: linkcheck/SEO 0 fouten (test en live, 154 URL's in de sitemap), seocheck 0, redirects in orde (37 oude paden, geen ketens, geen interne links naar oude paden), beeldcontrole 0 problemen (156 pagina's, 1440 en 390), lege beeldvakken 0, rastergaten 0, test-home 57/57, geen zichtbare "demo", Lighthouse mobiel 99-100 (home 99, alle andere 100; ook Antwerpen, prijsgids, contact, voorbeelddetail, Liège, over ons), desktop 100, CLS 0. `http://localhost:5050` toont de nieuwe build.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
@@ -106,6 +116,8 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - kopertekst iets donkerder voor contrast;
   - navigatie en footer aangevuld.
 - [ ] **Karim:** het voorstel voor `site/_build/vertaal.mjs` beoordelen ("€… per maand" niet meer beschermen). Alleen nodig als de oude vertaalwerkwijze blijft bestaan.
+- [ ] **Karim:** de acties in `SEO-ACTIES-KARIM/` (Bedrijfsprofiel, reviews, gidsen, Search Console/Bing na publicatie, backlinks) en de vragen in `SEO-ACTIES-KARIM/0-LEESMIJ.md` (openingsuren, eigen foto's, profiel-URL's, cases op de home).
+- [ ] **Karim:** de nieuwe pagina's, titels en FR-adressen nalezen.
 - [ ] **Na Karims OK:** de volledige inhoud van `dist-live/` publiceren (`npm run build` en `npm run check` vooraf). Daarna één testaanvraag via het formulier doen en de oude bestanden op de server opruimen (`assets/lab4/*`, `assets/kw-fx.js`, `assets/kw-gedeeld.css`).
 
 ## Belangrijke keuzes (met reden)

@@ -1,10 +1,10 @@
 {
  "build": "dist-test",
- "paginas": 115,
- "html": 140,
- "links": 16160,
- "jsonLd": 348,
- "hreflangParen": 342,
+ "paginas": 164,
+ "html": 226,
+ "links": 24335,
+ "jsonLd": 542,
+ "hreflangParen": 468,
  "urls": {
   "online": {
    "totaal": 105,
@@ -22,8 +22,8 @@
    "ontbreekt": []
   },
   "content": {
-   "totaal": 140,
-   "ok": 140,
+   "totaal": 189,
+   "ok": 189,
    "ontbreekt": []
   }
  },
