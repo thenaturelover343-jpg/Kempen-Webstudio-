@@ -204,7 +204,7 @@
       var data = {}; ['naam', 'zaak', 'email', 'dienst', 'bericht', 'website'].forEach(function (n) { data[n] = f.elements[n] ? (f.elements[n].value || '').trim() : ''; });
       data.pagina = location.pathname;
       btn.disabled = true; btn.style.opacity = '.7'; if (bl) bl.textContent = T.busy;
-      var done = function () { location.href = pre + '/bedankt/'; };
+      var done = function () { location.href = pre === '/fr' ? '/fr/merci/' : pre + '/bedankt/'; };
       var fail = function () { reset(); if (err) { err.textContent = T.fail; var a = d.createElement('a'); a.href = 'mailto:' + E; a.textContent = E; a.style.textDecoration = 'underline'; err.appendChild(a); err.appendChild(d.createTextNode('.')); err.hidden = false; } };
       if (data.website || (f.elements.botcheck && f.elements.botcheck.checked)) { setTimeout(done, 500); return; }
       var K = f.elements.access_key ? (f.elements.access_key.value || '').trim() : '';

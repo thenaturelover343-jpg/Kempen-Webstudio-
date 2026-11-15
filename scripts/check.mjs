@@ -9,6 +9,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseHTML } from 'linkedom';
+import { FR_SLUGS, baseOf } from '../src/site/slugs.mjs';
+const STUBS = new Set(Object.keys(FR_SLUGS));
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.resolve(ROOT, process.argv[2] || 'dist-live');
@@ -89,7 +91,7 @@ if (LIVE) {
   const a = new Set(online), b = new Set(newSitemap);
   const gone = online.filter(u => !b.has(u)), extra = newSitemap.filter(u => !a.has(u));
   urlReport.sitemap = { nieuw: newSitemap.length, online: online.length, weg: gone, extra };
-  for (const u of gone) err('sitemap', 'staat online in de sitemap maar niet in de nieuwe: ' + u);
+  for (const u of gone) { const p = u.replace(ORIGIN, ''); if (STUBS.has(p)) notes.push('verhuisd met 301: ' + p + ' -> ' + FR_SLUGS[p]); else err('sitemap', 'staat online in de sitemap maar niet in de nieuwe: ' + u); }
   for (const u of extra) notes.push('nieuw in de sitemap (niet in de online sitemap): ' + u);
   const sm = fs.readFileSync(path.join(DIR, 'sitemap.xml'), 'utf8');
   if (!/^<\?xml/.test(sm) || (sm.match(/<url>/g) || []).length !== newSitemap.length) err('sitemap', 'sitemap.xml niet goed gevormd');
@@ -109,8 +111,10 @@ for (const rel of htmlFiles) {
   const robots = H.querySelector('meta[name="robots"]')?.getAttribute('content');
   if (!LIVE && !/noindex/.test(robots || '')) err('robots', `${url}: test-build zonder noindex`);
   if (isDemo) continue; // voorbeeldsites: ongewijzigd overgenomen
+  if (STUBS.has(url)) { // vangnet op een oud FR-pad: noindex, canonical en refresh naar het nieuwe pad
+    const c = H.querySelector('link[rel="canonical"]')?.getAttribute('href'); if (c !== ORIGIN + FR_SLUGS[url] || !/noindex/.test(robots || '')) err('redirect', `${url}: vangnet klopt niet`); continue; }
   nPages++;
-  const base = url.replace(/^\/(fr|en)(?=\/)/, '');
+  const base = baseOf(url);
   const want = LIVE ? (CFG.noindex[base] || 'index,follow') : 'noindex,nofollow';
   if (robots !== want) err('robots', `${url}: ${robots} (verwacht ${want})`);
   const title = doc.title?.trim(); if (!title || title.length < 10) err('title', `${url}: ontbreekt of te kort`);
@@ -144,10 +148,10 @@ for (const rel of htmlFiles) {
 let nPairs = 0;
 for (const [page, m] of Object.entries(hreflangMap)) {
   if (!m['x-default']) err('hreflang', `${page}: x-default ontbreekt`);
-  if (!m['nl-BE'] || !m['fr-BE'] || !m.en) err('hreflang', `${page}: niet alle talen (${Object.keys(m).join(', ')})`);
+  if (Object.keys(m).filter(k => k !== 'x-default').length < 2) err('hreflang', `${page}: hreflang met maar één taal`);
   if (!Object.values(m).includes(page)) err('hreflang', `${page}: verwijst niet naar zichzelf`);
   for (const [l, u] of Object.entries(m)) {
-    if (l === 'x-default') { if (u !== m['nl-BE']) err('hreflang', `${page}: x-default is niet de NL-versie`); continue; }
+    if (l === 'x-default') { if (u !== (m['nl-BE'] || m['fr-BE'] || m.en)) err('hreflang', `${page}: x-default is niet de NL-versie`); continue; }
     const other = hreflangMap[u];
     if (!fileFor(u.replace(ORIGIN, ''))) { err('hreflang', `${page} -> ${l} ${u} bestaat niet`); continue; }
     if (!other) { err('hreflang', `${u} (doel van ${page}) heeft geen hreflang`); continue; }

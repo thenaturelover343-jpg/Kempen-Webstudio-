@@ -43,7 +43,7 @@ fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(CACHE, { recursive: true });
 const write = (rel, data) => { const f = path.join(OUT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, data); };
 const urlOf = rel => '/' + rel.split(path.sep).join('/').replace(/index\.html$/, '');
-const baseOf = u => u.replace(/^\/(fr|en)(?=\/)/, '');
+const { baseOf, FR_SLUGS } = await import(pathToFileURL(path.join(ROOT, 'src', 'site', 'slugs.mjs')).href);
 const langOf = u => (u.match(/^\/(fr|en)\//) || [, 'nl'])[1];
 const hash = s => crypto.createHash('sha1').update(s).digest('hex').slice(0, 10);
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -119,6 +119,8 @@ write(JS_FILE.slice(1), JS);
 
 // ---------- 5. gedeelde gegevens per taal (formulier, extra's voor de home) ----------
 const readDoc = rel => parse(fs.readFileSync(path.join(SRC, rel), 'utf8'));
+/** content-bestand van een pagina in een taal, vanaf het NL-pad (FR heeft eigen slugs) */
+const relFor = (lang, base) => { let u = (lang === 'nl' ? '' : '/' + lang) + base; if (lang === 'fr') u = FR_SLUGS[u] || u; return u.slice(1) + 'index.html'; };
 const PER_LANG = {};
 for (const lang of ['nl', 'fr', 'en']) {
   const p = lang === 'nl' ? '' : lang + '/';
@@ -128,9 +130,9 @@ for (const lang of ['nl', 'fr', 'en']) {
   const s0 = shellModel(homeDoc, lang === 'nl' ? '/' : `/${lang}/`);
   const cities = s0.footer.cols.find(c => /Website laten maken in|Faire créer un site web à|Have a website built in/i.test(c.title));
   const cityBy = href => cities.links.find(l => baseOf(l.href) === href);
-  const kosten = blocksModel(readDoc(p + 'wat-kost-een-website/index.html')).find(b => b.kind === 'pricing');
+  const kosten = blocksModel(readDoc(relFor(lang, '/wat-kost-een-website/'))).find(b => b.kind === 'pricing');
   const delivery = kosten ? kosten.tiers.map(t => norm((t.list.find(l => l.lt) || {}).html || '').replace(/<[^>]+>/g, '')) : [];
-  const kennisDoc = readDoc(p + 'kennis/index.html');
+  const kennisDoc = readDoc(relFor(lang, '/kennis/'));
   const kennisHero = heroModel(kennisDoc);
   const articles = [...kennisDoc.querySelectorAll('.kw31g .svc')].slice(0, 3).map(a => ({ title: norm(a.querySelector('h3').textContent), href: a.querySelector('h3 a').getAttribute('href'), excerpt: a.querySelector('.svc-d').innerHTML.trim() }));
   const uitleg = s0.navTop.find(l => baseOf(l.href) === '/kennis/');
@@ -334,6 +336,17 @@ for (const rel of demoPages) {
   let s = fs.readFileSync(path.join(SRC, rel), 'utf8'); const want = ROBOTS(urlOf(rel)); const re = /<meta name="robots" content="[^"]*">/;
   if (re.test(s)) s = s.replace(re, `<meta name="robots" content="${want}">`); else if (want !== 'index,follow') s = s.replace('</head>', `<meta name="robots" content="${want}">\n</head>`);
   write(rel, s);
+}
+
+// ---------- 8b. oude FR-paden: 301 in _redirects (Cloudflare Pages/Workers, Netlify) + HTML-vangnet op het oude pad ----------
+{
+  const lines = ['# Oude FR-URL\'s (Nederlandse slug) -> Franse slug, permanent. Gegenereerd door scripts/build.mjs uit src/site/slugs.mjs'];
+  for (const [from, to] of Object.entries(FR_SLUGS)) {
+    lines.push(`${from} ${to} 301`, `${from.replace(/\/$/, '')} ${to} 301`);
+    const abs = ORIGIN + to;
+    write(path.join(...from.split('/').filter(Boolean), 'index.html'), `<!doctype html>\n<html lang="fr-BE">\n<head>\n<meta charset="utf-8">\n<title>Page déplacée</title>\n<meta name="robots" content="noindex,follow">\n<link rel="canonical" href="${abs}">\n<meta http-equiv="refresh" content="0; url=${to}">\n</head>\n<body>\n<p>Cette page a déménagé : <a href="${to}">${abs}</a></p>\n</body>\n</html>\n`);
+  }
+  write('_redirects', lines.join('\n') + '\n');
 }
 
 // ---------- 9. robots.txt en sitemap.xml ----------

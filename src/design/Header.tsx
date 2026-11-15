@@ -3,6 +3,7 @@
 import { ArrowRight, ChevronDown, X } from 'lucide-react';
 import { ActiveNavFlower, WebstudioLogoMark } from './brand';
 import { cx } from './primitives';
+import { baseOf } from '../site/slugs.mjs';
 
 type L = { label: string; href: string; html?: string; current?: boolean };
 
@@ -26,7 +27,7 @@ export function LanguageSwitcher({ s, compact = false, fullWidth = false }: { s:
 }
 
 const isCur = (href: string, s: any) => {
-  const base = (u: string) => u.replace(/^\/(fr|en)(?=\/)/, '').split('#')[0];
+  const base = (u: string) => baseOf(u.split('#')[0]);
   const here = base(s.url), t = base(href);
   if (!t || href.includes('#')) return false;
   if (t === '/') return here === '/';

@@ -83,26 +83,22 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - 5–10 jours ouvr.  _(op 1 pagina)_
 - Actif dans toute la Belgique  _(op 5 pagina's)_
 - Adapté mobile  _(op 1 pagina)_
-- Agenda en ligne  _(op 1 pagina)_
 - Agenda par soin  _(op 1 pagina)_
 - Aménagement  _(op 1 pagina)_
-- Artisans ·  _(op 1 pagina)_
 - Bouton rendez-vous  _(op 1 pagina)_
 - Clair  _(op 1 pagina)_
 - Continu  _(op 1 pagina)_
-- Demande de devis  _(op 2 pagina's)_
+- Demande de devis  _(op 1 pagina)_
 - Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.  _(op 1 pagina)_
 - Design épuré  _(op 1 pagina)_
-- Entrepreneurs de jardins et jardiniers-paysagistes ·  _(op 1 pagina)_
 - Faire créer un site web dans toute la Belgique, pour chaque entreprise, association ou indépendant.  _(op 1 pagina)_
 - Faire créer un site web à la Campine  _(op 1 pagina)_
 - Fiches produits  _(op 1 pagina)_
 - Flandre-Occidentale  _(op 2 pagina's)_
 - Forfait Start en ligne  _(op 1 pagina)_
-- Galerie  _(op 2 pagina's)_
+- Galerie  _(op 1 pagina)_
 - Haut de page  _(op 38 pagina's)_
 - Heure en Belgique  _(op 38 pagina's)_
-- Horeca ·  _(op 1 pagina)_
 - Intérieur  _(op 1 pagina)_
 - Itinéraire · Appeler · Site web  _(op 1 pagina)_
 - Jour 1  _(op 1 pagina)_
@@ -113,7 +109,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Paiement sécurisé  _(op 1 pagina)_
 - Palette apaisante  _(op 1 pagina)_
 - Panier  _(op 1 pagina)_
-- Peintres ·  _(op 1 pagina)_
 - Pour chaque activité  _(op 1 pagina)_
 - Prix fixe  _(op 1 pagina)_
 - Quatre étapes simples pour savoir à tout moment ce qui est fait, ce que cela coûte et quand votre site sera en ligne.  _(op 1 pagina)_
@@ -122,7 +117,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Réponse habituelle sous 1 jour ouvrable  _(op 38 pagina's)_
 - Réponse personnelle sous 1 jour ouvrable  _(op 1 pagina)_
 - Réservation en ligne  _(op 2 pagina's)_
-- Salons de coiffure et barbershops ·  _(op 1 pagina)_
 - Services clairs  _(op 1 pagina)_
 - Structure claire  _(op 1 pagina)_
 - Style lumineux  _(op 1 pagina)_
