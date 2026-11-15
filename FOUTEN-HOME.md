@@ -36,3 +36,16 @@ Gecontroleerd en in orde: hero (portret, cursor, parallax, kaart-slider), voorbe
 | 17 | Toegankelijkheid | De grote introzin begon met een kleine letter ("ook voor wie…") | Eerste letter van introzinnen via CSS als hoofdletter; de tekst zelf blijft gelijk |
 
 De nieuwe designteksten (labels en slotregels van de werkwijze, de FAQ-ondertitel) staan automatisch in `TEKSTEN-UIT-HET-DESIGN.md` (ter goedkeuring).
+
+## Ronde 2 (15-11-2026, na Karims controle van de final-screenshots)
+
+| # | Waar | Probleem (Karim) | Oplossing |
+|---|---|---|---|
+| 18 | Home, diensten | Groot leeg zwart vlak links onder de titel, "Alle prijzen zijn exclusief btw" verloren onderaan, kaart 01 hoger en kaart 04 alleen rechts | Titel links en introtekst + knop rechts op één rij; de vier dienstkaarten daaronder in één rij van vier, even hoog, nummers op dezelfde lijn (op tablet 2 × 2). De dubbele losse btw-regel is weg (de zin staat al in de intro) |
+| 19 | Home, "Werkt in heel België" | Label "Kasterlee & Kempen" viel achter de logocirkel | Labels verplaatst (Kasterlee boven-rechts van de cirkel, de rest verder naar buiten); nagemeten op 820, 1100 en 1440 px: geen overlap |
+| 20 | Hero van elke onderpagina | Alleen tekst op grijs met een lege rechterhelft | Zelfde opbouw als de home-hero: het portret (gecentreerd achter de inhoud, op gsm onder de knoppen), de zwevende kaart rechts met een paginaspecifieke boodschap (de paginanaam, bv. "Webshop laten maken" of "Website laten maken in Geel", daarna de troeven van de pagina), de sectorlijst, de grote WEBSTUDIO K-wordmark en de donkere strip; zelfde hoogte (schermvullend) |
+| 21 | Lange tekstsecties (kennisartikels, diensten, sectoren, steden) | Lege linkerkolom met alleen een titel, daarnaast een muur van tekst | Nieuwe tekstsectie met home-componenten: links de titel met een groot koperkleurig sectienummer, rechts de eerste alinea als grote lead-zin (eerste zin donker, rest grijs) met koperen accentlijn en aanhalingsteken; de volgende alinea's als genummerde kaarten (01., 02. …) met de eerste zin vet. Wit, lichtgrijs paneel en donker wisselen af (nooit twee panelen na elkaar) |
+| 22 | Stadspagina's | Kaarten I en II lieten de derde plek leeg | Kaarten I–III staan rechts naast de titel: I en II naast elkaar, III eronder over de volle breedte |
+| 23 | Alle paginatypes | Zelfde soort gaten elders | Nieuw `scripts/gapcheck.mjs` meet op elke pagina elk raster en elke 2-koloms indeling. Gevonden en opgelost: FAQ's met een oneven aantal vragen (nu twee kolommen, eerste helft links), voorbeeldontwerpen met 2 ontwerpen in 3 kolommen (nu raster volgens het aantal), 5 werkwijzestappen op tablet (laatste over de volle breedte), lege kolom op de bedanktpagina (links nu naast de titel), prijskaart zonder prijs en knop (onderaan het embleemvlak van de hero-kaart). Resultaat: 0 gaten op 820, 1100 en 1440 px |
+
+Algemene regel in de code (`Blocks.tsx`): een raster verdeelt een onvolledige laatste rij altijd over de volle breedte (`span6`/`span2`), zodat er nergens nog een lege plek kan ontstaan.

@@ -33,7 +33,7 @@ const sentences = (t: string) => (t.match(/[^.!?]+[.!?]+/g) || [t]).map(x => x.t
 const initials = (t: string) => t.replace(/^(Bistro|Atelier|Kapsalon|Barbier|Tuinzorg|Dakwerken|Houtatelier)\s/, (m) => m).slice(0, 2).toUpperCase();
 const sizesPortrait = '(min-width: 1536px) 420px, (min-width: 1280px) 370px, (min-width: 1024px) 310px, (min-width: 640px) 400px, 360px';
 
-function Portrait({ alt }: { alt: string }) {
+export function Portrait({ alt }: { alt: string }) {
   const set = (e: string) => [360, 560, 760, 928].map(w => `/assets/img/hero-portret-${w}.${e} ${w}w`).join(', ');
   return (
     <div className="kw-portrait relative overflow-hidden select-none w-full max-w-[360px] sm:max-w-[400px] lg:max-w-none lg:w-[310px] xl:w-[370px] 2xl:w-[420px] aspect-[3/4]">
@@ -47,12 +47,14 @@ function Portrait({ alt }: { alt: string }) {
   );
 }
 
+export const HERO_ICONS = [PartnerZanticIcon, PartnerBookStoreIcon, PartnerWagerIcon, PartnerCronaIcon, PartnerMercuryIcon, PartnerWagerIcon, PartnerCronaIcon, PartnerBookStoreIcon];
+
 export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
   const L = s.lang; const ui = s.ui; const dd = (DD as any)[L];
   const [t0, t1, t2] = h.hero.trust;
   const sp = H1_SPLIT[L]; const h1ok = sp && sp.join(' ').replace(/ ,/g, ',').replace(/\s+/g, ' ').replace(/ ([,])/g, '$1') && (sp[0] + ' ' + sp[1] + sp[2] + ' ' + sp[3] + sp[4]).replace(/\s+/g, ' ').trim() === h.hero.h1;
   const demoCta = h.hero.ctas[0];
-  const icons = [PartnerZanticIcon, PartnerBookStoreIcon, PartnerWagerIcon, PartnerCronaIcon, PartnerMercuryIcon, PartnerWagerIcon, PartnerCronaIcon, PartnerBookStoreIcon];
+  const icons = HERO_ICONS;
   const slides = [split2(t1), split2(t0)];
   const works = h.werk.items; const nW = works.length;
   const sectors = h.vak.items;
@@ -373,40 +375,37 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
       {/* SECTION 6 & 7: DIENSTEN & WERKGEBIED */}
       <SectionReveal id="diensten" className="relative bg-[#070709] text-white rounded-t-[28px] sm:rounded-t-[40px] overflow-hidden -mt-4">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-14 pt-16 sm:pt-24 pb-16 sm:pb-24 relative">
-          <div className="hidden lg:flex items-center gap-2.5 justify-end text-[11.5px] text-[#929090] mb-6" aria-hidden="true">
-            <span className="text-right leading-tight">{dienstSent[0]}<br />{dienstSent.slice(1).join(' ')}</span>
-            <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-white"><Globe className="w-3.5 h-3.5" /></span>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <FadeIn className="lg:col-span-4 flex flex-col justify-between lg:min-h-[540px]">
-              <div>
-                <Badge dark>{h.diensten.badge}</Badge>
-                <h2 id={h.diensten.h2id} className="mt-4 text-[34px] sm:text-[44px] leading-[1.04] tracking-[-0.03em] font-normal text-white">{split2(h.diensten.h2)[0]}<br />{split2(h.diensten.h2)[1]}</h2>
-                <p className="mt-4 text-[13.5px] leading-relaxed text-[#929090]">{h.diensten.lead}</p>
-                <a href={h.diensten.btn.href} className="mt-7 inline-flex items-center gap-3 rounded-full bg-white hover:bg-[#F2F2F2] text-[#08080A] pl-5 pr-1.5 py-1.5 min-h-[42px] text-[12.5px] font-medium transition-colors cursor-pointer">
-                  <span>{h.diensten.btn.label}</span><span className="w-7 h-7 rounded-full bg-[#08080A] text-white flex items-center justify-center"><ArrowRight className="w-3.5 h-3.5" /></span>
-                </a>
-              </div>
-              <div className="mt-12 lg:mt-0"><p className="text-[11.5px] text-[#929090]">{dienstSent.slice(1).join(' ')}</p></div>
-            </FadeIn>
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <FadeIn className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-10 sm:mb-12">
+            <div className="lg:col-span-6">
+              <Badge dark>{h.diensten.badge}</Badge>
+              <h2 id={h.diensten.h2id} className="mt-4 text-[34px] sm:text-[44px] leading-[1.04] tracking-[-0.03em] font-normal text-white">{split2(h.diensten.h2)[0]}<br />{split2(h.diensten.h2)[1]}</h2>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8 flex flex-col items-start lg:items-end lg:text-right">
+              <p className="text-[13.5px] leading-relaxed text-[#929090] max-w-md">{h.diensten.lead}</p>
+              <a href={h.diensten.btn.href} className="mt-5 inline-flex items-center gap-3 rounded-full bg-white hover:bg-[#F2F2F2] text-[#08080A] pl-5 pr-1.5 py-1.5 min-h-[42px] text-[12.5px] font-medium transition-colors cursor-pointer">
+                <span>{h.diensten.btn.label}</span><span className="w-7 h-7 rounded-full bg-[#08080A] text-white flex items-center justify-center"><ArrowRight className="w-3.5 h-3.5" /></span>
+              </a>
+            </div>
+          </FadeIn>
+          <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {h.diensten.items.map((d: any, i: number) => {
                 const first = i === 0;
                 return (
-                  <Fragment key={d.id}>{(i === 0 || i === 3) && <div className="hidden sm:block" />}
-                    <FadeIn delay={0.05 + i * 0.045}>
-                      <div id={d.id} className={cx('group relative w-full text-left rounded-[20px] p-6 sm:p-7 min-h-[210px] sm:min-h-[230px] flex flex-col justify-between',
+                  <Fragment key={d.id}>
+                    <FadeIn delay={0.05 + i * 0.045} className="h-full">
+                      <div id={d.id} className={cx('group relative w-full h-full text-left rounded-[20px] p-6 sm:p-7 min-h-[230px] sm:min-h-[300px] flex flex-col justify-between',
                         first ? 'copper-panel-gradient transition-transform duration-200 hover:-translate-y-0.5' : 'bg-[#1C1C1E] hover:bg-[#262629] border border-white/10 transition-colors duration-200')}>
                         <a href={d.more.href} className="absolute inset-0 rounded-[20px]" aria-label={`${d.h}: ${d.more.label}`} />
                         <div>
                           <h3 className="text-[18px] font-medium text-white">{d.h}</h3>
                           <p className={first ? 'mt-2 text-[12px] text-white/90 leading-relaxed' : 'mt-2 text-[12.5px] text-[#D3D6DA]/90 leading-relaxed'}><Html html={d.d} /></p>
                         </div>
-                        <div className="flex items-end justify-between gap-2 pt-6">
+                        <div className="flex flex-col gap-4 pt-6">
                           <span aria-hidden="true" className={cx('font-title text-[56px] sm:text-[64px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', first ? 'text-white/90' : 'text-[#D47A3B]')}>0{i + 1}.</span>
-                          <div className={cx('text-right text-[11px] leading-snug', first ? 'text-white' : 'text-[#D3D6DA]')}>
+                          <div className={cx('text-[11px] leading-snug border-t pt-3 lg:min-h-[76px]', first ? 'text-white border-white/25' : 'text-[#D3D6DA] border-white/10')}>
                             <p className={cx('font-medium', !first && 'text-[#D47A3B]')}>{d.priceText}</p>
-                            {d.chips.length > 0 && <p className={cx('relative z-10 mt-0.5 ml-auto max-w-[230px] [text-wrap:balance]', first ? 'text-white/90' : 'text-[#D3D6DA]/85')}>
+                            {d.chips.length > 0 && <p className={cx('relative z-10 mt-0.5 [text-wrap:pretty]', first ? 'text-white/90' : 'text-[#D3D6DA]/85')}>
                               {d.chips.map((c: string, k: number) => <Fragment key={k}>{k > 0 && <span aria-hidden="true" className="opacity-60"> · </span>}<Html html={c} /></Fragment>)}
                             </p>}
                           </div>
@@ -724,6 +723,9 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
                   </div>
                 )}
               </div>
+              {!tier.cta && !tier.amt && (
+                <div aria-hidden="true" className={`mt-7 h-[132px] rounded-[18px] flex items-center justify-center ${obs || cop ? 'bg-black/30' : 'bg-[#040405]'}`}><ShowcaseEmblem /></div>
+              )}
               {tier.cta && (
                 <div className="mt-7 pt-2 flex items-center justify-between gap-3">
                   <A href={tier.cta.href} chat={tier.cta.href.includes('#contact')} data-pakket={tier.cta.pakket || undefined}
@@ -746,7 +748,7 @@ export function Steps({ items, chat, ui, extras = false }: { items: any[]; chat:
       {items.map((it: any, i: number) => {
         const on = i === 0;
         return (
-          <StaggerItem key={i} i={i}>
+          <StaggerItem key={i} i={i} className={cx(items.length % 2 === 1 && i === items.length - 1 && 'sm:col-span-2 lg:col-span-1')}>
             <div data-sel-to={i} data-sel-item={i} role="button" tabIndex={0} aria-label={`${ui.step} ${it.n.replace(/\D/g, '') || i + 1}`}
               {...sel(on, 'bg-[#070709] text-white border-[#B85D28] shadow-[0_14px_32px_rgba(7,7,9,0.14)]', 'bg-[#F2F2F2] hover:bg-[#EAEBEC] text-[#121214] border-[#D3D6DA]', 'h-full rounded-[22px] p-6 border flex flex-col justify-between transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]')}>
               <div>

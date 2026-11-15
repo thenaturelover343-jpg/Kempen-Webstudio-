@@ -105,8 +105,8 @@
    {
     "id": "kasterlee",
     "city": "Kasterlee & Kempen",
-    "x": 56,
-    "y": 30,
+    "x": 64,
+    "y": 12,
     "countryLabel": "Kemelbeekstraat 16, 2460 Kasterlee",
     "teamLabel": "Webstudio K",
     "subLabel": "Werkt in heel België"
@@ -114,8 +114,8 @@
    {
     "id": "turnhout-geel",
     "city": "Turnhout, Geel, Herentals & Mol",
-    "x": 64,
-    "y": 42,
+    "x": 77,
+    "y": 40,
     "countryLabel": "De Kempen, Antwerpen",
     "teamLabel": "Lokale ondernemers & vakmensen",
     "subLabel": "Persoonlijk per mail, telefoon of online"
@@ -123,8 +123,8 @@
    {
     "id": "leuven-gent",
     "city": "Gent & Leuven",
-    "x": 30,
-    "y": 46,
+    "x": 27,
+    "y": 40,
     "countryLabel": "Vlaanderen",
     "teamLabel": "KMO’s, horeca & vrije beroepen",
     "subLabel": "Persoonlijk voorstel binnen 1 werkdag"
@@ -132,7 +132,7 @@
    {
     "id": "kortrijk",
     "city": "Kortrijk & West-Vlaanderen",
-    "x": 18,
+    "x": 15,
     "y": 60,
     "countryLabel": "Heel België",
     "teamLabel": "Zelfstandigen & verenigingen",
@@ -290,8 +290,8 @@
    {
     "id": "kasterlee",
     "city": "Kasterlee & Campine",
-    "x": 56,
-    "y": 30,
+    "x": 64,
+    "y": 12,
     "countryLabel": "Kemelbeekstraat 16, 2460 Kasterlee",
     "teamLabel": "Webstudio K",
     "subLabel": "Actif dans toute la Belgique"
@@ -299,8 +299,8 @@
    {
     "id": "turnhout-geel",
     "city": "Turnhout, Geel, Herentals & Mol",
-    "x": 64,
-    "y": 42,
+    "x": 77,
+    "y": 40,
     "countryLabel": "Campine, Anvers",
     "teamLabel": "Entrepreneurs & artisans locaux",
     "subLabel": "Suivi personnel par e-mail, téléphone ou visio"
@@ -308,8 +308,8 @@
    {
     "id": "leuven-gent",
     "city": "Gand & Louvain",
-    "x": 30,
-    "y": 46,
+    "x": 27,
+    "y": 40,
     "countryLabel": "Flandre & Bruxelles",
     "teamLabel": "PME, horeca & professions libérales",
     "subLabel": "Devis personnalisé sous 1 jour ouvrable"
@@ -317,7 +317,7 @@
    {
     "id": "kortrijk",
     "city": "Courtrai & Flandre-Occidentale",
-    "x": 18,
+    "x": 15,
     "y": 60,
     "countryLabel": "Toute la Belgique",
     "teamLabel": "Indépendants & associations",
@@ -475,8 +475,8 @@
    {
     "id": "kasterlee",
     "city": "Kasterlee & Campine",
-    "x": 56,
-    "y": 30,
+    "x": 64,
+    "y": 12,
     "countryLabel": "Kemelbeekstraat 16, 2460 Kasterlee",
     "teamLabel": "Webstudio K",
     "subLabel": "Serving all of Belgium"
@@ -484,8 +484,8 @@
    {
     "id": "turnhout-geel",
     "city": "Turnhout, Geel, Herentals & Mol",
-    "x": 64,
-    "y": 42,
+    "x": 77,
+    "y": 40,
     "countryLabel": "Campine, Antwerp",
     "teamLabel": "Local businesses & tradespeople",
     "subLabel": "Personal contact by email, phone or online"
@@ -493,8 +493,8 @@
    {
     "id": "leuven-gent",
     "city": "Ghent & Leuven",
-    "x": 30,
-    "y": 46,
+    "x": 27,
+    "y": 40,
     "countryLabel": "Flanders & Brussels",
     "teamLabel": "SMEs, hospitality & liberal professions",
     "subLabel": "Personal proposal within 1 business day"
@@ -502,7 +502,7 @@
    {
     "id": "kortrijk",
     "city": "Kortrijk & West Flanders",
-    "x": 18,
+    "x": 15,
     "y": 60,
     "countryLabel": "All of Belgium",
     "teamLabel": "Sole traders & associations",

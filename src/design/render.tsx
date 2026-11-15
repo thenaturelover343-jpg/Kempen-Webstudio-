@@ -34,7 +34,7 @@ export function renderPage(m: any) {
   return renderToStaticMarkup(
     <Layout s={m.s} f={m.f} chatTitle={m.chatTitle}>
       <div className="w-full overflow-x-hidden">
-        {m.hero && <PageHero h={m.hero} />}
+        {m.hero && <PageHero h={m.hero} ui={m.s.ui} />}
         <Blocks blocks={m.blocks} s={m.s} />
       </div>
     </Layout>

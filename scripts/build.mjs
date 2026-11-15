@@ -147,6 +147,7 @@ for (const lang of ['nl', 'fr', 'en']) {
   const award = id => dd.awards.find(a => a.id === id);
   PER_LANG[lang] = {
     f, chatTitle: hm.contact ? hm.contact.h2 : '',
+    sectors: { title: hm.band.h2, chips: hm.band.chips },
     x: {
       metaDesc: homeDoc.querySelector('meta[name=description]').getAttribute('content'),
       replyNote: hm.steps.ctaNote.replace(/<[^>]+>/g, ''),
@@ -244,7 +245,7 @@ for (const rel of pages) {
   const s = shellModel(doc, url);
   let body;
   if (isHome) body = renderHome({ s, f: L.f, chatTitle: L.chatTitle, h: homeModel(doc), x: L.x });
-  else body = renderPage({ s, f: L.f, chatTitle: L.chatTitle, hero: heroModel(doc), blocks: blocksModel(doc) });
+  else body = renderPage({ s, f: L.f, chatTitle: L.chatTitle, hero: (() => { const hh = heroModel(doc); return hh && { ...hh, sectors: L.sectors }; })(), blocks: blocksModel(doc) });
 
   // ---- head (letterlijk uit de bron, behalve robots, iconen, stijl en script)
   const H = doc.head, get = q => H.querySelector(q);

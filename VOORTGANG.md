@@ -72,6 +72,15 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - onderpagina's: werkwijzeraster volgt het aantal stappen, korte tekst en elke tweede lange tekstsectie in het lichtgrijze paneel, juridische artikels als kaarten, 404/bedankt met de capsules van de home, 4 voorbeeldontwerpen naast elkaar, "??" in de stads-CTA hersteld, introzinnen met hoofdletter;
   - controles: tekstcontrole (alle oude teksten aanwezig), linkcheck/SEO 0 fouten, 105/105 URL's, geen "demo", Lighthouse mobiel home 99 / dienst 100 / FR 99, CLS 0.
 
+- [x] **Ronde 2 na Karims controle van de final-screenshots** (15-11-2026, details in `FOUTEN-HOME.md` #18–23):
+  - home: dienstkaarten in één evenwichtige rij van vier (geen leeg vlak, geen losse kaart); kaartlabel "Kasterlee & Kempen" niet meer achter de logocirkel;
+  - elke onderpagina-hero heeft nu de opbouw van de home-hero: portret, zwevende kaart met paginaspecifieke boodschap, sectorlijst, WEBSTUDIO K-wordmark, donkere strip, schermvullend;
+  - lange tekstsecties: groot sectienummer links, lead-zin met koperen accent rechts, overige alinea's als genummerde kaarten; wit, paneel en donker wisselen af;
+  - geen gaten meer in rasters: nieuwe controle `scripts/gapcheck.mjs` (alle pagina's, 820/1100/1440 px: 0 gaten, 0 lege kolommen);
+  - UI UX Pro Max gebruikt als controle (typeschaal, geen vaste hoogtes rond tekst, regellengte max. ~68 tekens);
+  - controles: tekstcontrole OK, linkcheck/SEO 0 fouten, 105/105 URL's, geen zichtbare "demo" (alleen bestaande ankernamen), test-home 57/57, beelden en zwevende knoppen OK op alle pagina's (1440 en 390), Lighthouse mobiel home 98 / dienst 100 / stad 100 / kennis 100 / FR 100, desktop 100, CLS 0;
+  - `http://localhost:5050` (Python-server op `dist-live`) toont de nieuwe build.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).

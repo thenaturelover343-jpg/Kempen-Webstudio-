@@ -15,14 +15,14 @@ try { await fetch(BASE + '/'); } catch { server = spawn(process.execPath, [path.
 const browser = await chromium.launch({ channel: 'chrome' });
 const stop = () => { try { server && server.kill(); } catch {} };
 process.on('exit', stop); process.on('SIGTERM', () => { stop(); process.exit(1); });
-const bad = [];
+const bad = []; const _push = bad.push.bind(bad); bad.push = (...a) => { a.forEach(x => console.error("PROBLEEM " + x)); return _push(...a); };
 let nImg = 0;
-for (const width of [1440, 390]) {
-  const ctx = await browser.newContext({ viewport: { width, height: width > 500 ? 900 : 844 }, isMobile: width < 500, hasTouch: width < 500 });
-  await ctx.addInitScript(() => { try { localStorage.setItem('kw_consent', JSON.stringify({ v: 1, t: Date.now(), s: false, m: false })); } catch (e) {} });
+for (const width of (process.env.W || "1440,390").split(",").map(Number)) {
+  const mk = async () => { const c = await browser.newContext({ viewport: { width, height: width > 500 ? 900 : 844 }, isMobile: width < 500, hasTouch: width < 500 }); await c.addInitScript(() => { try { localStorage.setItem('kw_consent', JSON.stringify({ v: 1, t: Date.now(), s: false, m: false })); } catch (e) {} }); return c; };
+  let ctx = await mk();
   let page = await ctx.newPage();
-  for (const u of urls) {
-   for (let poging = 1; poging <= 2; poging++) {
+  for (const u of urls.slice(+(process.env.FROM || 0))) {
+   for (let poging = 1; poging <= 3; poging++) {
    try {
     page.setDefaultTimeout(20000);
     await page.goto(BASE + u, { waitUntil: 'load', timeout: 30000 });
@@ -46,6 +46,7 @@ for (const width of [1440, 390]) {
         if (o) { bad.push(`${width} ${u} (scroll ${y}): knoppen over hero, ${o}`); break; }
       }
     }
+    if (urls.indexOf(u) % 25 === 0) console.error(`[${width}] ${urls.indexOf(u)}/${urls.length}`);
     const r = await page.evaluate(async () => {
       await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(res => { i.onload = i.onerror = res; setTimeout(res, 4000); })));
       return [...document.images].map(i => ({ s: i.currentSrc || i.src, ok: i.complete && i.naturalWidth > 0, vis: i.getClientRects().length > 0 }));
@@ -55,9 +56,9 @@ for (const width of [1440, 390]) {
     break;
    } catch (e) {
     // tabblad gecrasht of vastgelopen: nieuw tabblad en nog één poging
-    try { await page.close(); } catch {}
-    page = await ctx.newPage();
-    if (poging === 2) bad.push(`${width} ${u}: controle mislukt (${String(e.message).split(String.fromCharCode(10))[0]})`);
+    try { await ctx.close(); } catch {}
+    ctx = await mk(); page = await ctx.newPage();
+    if (poging === 3) bad.push(`${width} ${u}: controle mislukt (${String(e.message).split(String.fromCharCode(10))[0]})`);
    }
    }
   }
