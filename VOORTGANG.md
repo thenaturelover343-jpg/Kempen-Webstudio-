@@ -81,6 +81,14 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - controles: tekstcontrole OK, linkcheck/SEO 0 fouten, 105/105 URL's, geen zichtbare "demo" (alleen bestaande ankernamen), test-home 57/57, beelden en zwevende knoppen OK op alle pagina's (1440 en 390), Lighthouse mobiel home 98 / dienst 100 / stad 100 / kennis 100 / FR 100, desktop 100, CLS 0;
   - `http://localhost:5050` (Python-server op `dist-live`) toont de nieuwe build.
 
+- [x] **Ronde 3: foto's overal** (15-11-2026, details in `FOTOS-TODO.md`, `FOTO-BRONNEN.md`, `FOUTEN-HOME.md` #24–26):
+  - alle lege beeldvakken gevuld (vóór 338 meldingen, nu 0 op 107 pagina's, 1440 en 390): zwevende hero-kaart op home en 104 onderpagina's (beeld per pagina), echte screenshots van de 9 voorbeeldsites in de showcase (geen initialen meer), beeld in de kaartcirkel, fragmenten van de 3 klantsites bij de cases, beeldvak in de webshop-prijskaart;
+  - alleen bestaande beelden gebruikt (oude site, voorbeeldsites, eigen screenshots); geen downloads van Unsplash/Pexels nodig; licentiebron van de oude foto's staat nergens genoteerd (zie FOTO-BRONNEN);
+  - beelden via `src/site/fotos.mjs` + build: AVIF en WebP, srcset, width/height, lazy, alt-tekst NL/FR/EN;
+  - nieuwe controle `scripts/slotcheck.mjs`;
+  - eindcontrole: linkcheck/SEO 0 fouten (105/105 URL's), beeldcontrole 0 problemen (1440 en 390), slotcheck 0, test-home 57/57, geen zichtbare "demo", Lighthouse mobiel home 100 / dienst 100 / sector 99 / stad 100 / kennis 100 / FR 99 / EN 100, desktop 100, CLS 0;
+  - open punten in VOORTGANG/FOUTEN-HOME: technisch niets meer; wat overblijft zijn Karims beslissingen (zie Nog te doen).
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
@@ -94,6 +102,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
 - [ ] **Karim:** de bewuste afwijkingen goedkeuren (LEESMIJ):
   - sterren weg (geen reviews);
   - echte sectorfoto's in plaats van AI-portretten;
+  - echte beelden in alle vroegere embleemvakken, ook fragmenten van de 3 klantsites bij de cases (zie `FOTO-BRONNEN.md`);
   - kopertekst iets donkerder voor contrast;
   - navigatie en footer aangevuld.
 - [ ] **Karim:** het voorstel voor `site/_build/vertaal.mjs` beoordelen ("€… per maand" niet meer beschermen). Alleen nodig als de oude vertaalwerkwijze blijft bestaan.

@@ -195,6 +195,25 @@ async function smallVariants(doc) { // kleine beelden (cirkels): extra variant v
     img.setAttribute('srcset', `${v} ${w}w` + (img.getAttribute('srcset') ? ', ' + img.getAttribute('srcset') : ''));
   }
 }
+// beelden uit src/site/fotos.mjs: elk bestand /assets/img/f/<id>.<vorm>.<breedte>.<avif|webp> dat een pagina opvraagt, wordt hier gemaakt
+const FOTO_DONE = new Set();
+async function fotoFiles(doc) {
+  const { FOTOS, VORMEN } = await import(pathToFileURL(path.join(ROOT, 'src', 'site', 'fotos.mjs')).href);
+  const urls = new Set();
+  for (const e of doc.querySelectorAll('img[src], source[srcset], img[srcset]')) for (const a of ['src', 'srcset']) for (const m of (e.getAttribute(a) || '').matchAll(/\/assets\/img\/f\/[^\s,]+/g)) urls.add(m[0]);
+  for (const u of urls) {
+    if (FOTO_DONE.has(u)) continue; FOTO_DONE.add(u);
+    const m = u.match(/^\/assets\/img\/f\/(.+)\.(\w+)\.(\d+)\.(avif|webp)$/); if (!m) throw new Error('foto-url ' + u);
+    const [, id, vorm, w, ext] = m; const F = FOTOS[id], V = VORMEN[vorm]; if (!F || !V) throw new Error('foto onbekend ' + u);
+    const src = fs.readFileSync(path.join(ROOT, 'src', 'img', 'foto', 'bron', F.src));
+    const h = Math.round(+w * V.r[1] / V.r[0]);
+    const buf = await cached(`foto-${hash(src)}-${hash(JSON.stringify(F.crop || 0) + (F.pos || ''))}-${w}x${h}.${ext}`, () => {
+      let p = sharp(src); if (F.crop) p = p.extract(F.crop);
+      return p.resize({ width: +w, height: h, fit: 'cover', position: F.pos || 'centre' }).toFormat(ext, ext === 'avif' ? { quality: 55, effort: 5 } : { quality: 78, effort: 5 }).toBuffer();
+    });
+    write(u.slice(1), buf);
+  }
+}
 function upgradeImages(doc) {
   for (const img of doc.querySelectorAll('img')) {
     const src = img.getAttribute('src') || '';
@@ -245,7 +264,7 @@ for (const rel of pages) {
   const s = shellModel(doc, url);
   let body;
   if (isHome) body = renderHome({ s, f: L.f, chatTitle: L.chatTitle, h: homeModel(doc), x: L.x });
-  else body = renderPage({ s, f: L.f, chatTitle: L.chatTitle, hero: (() => { const hh = heroModel(doc); return hh && { ...hh, sectors: L.sectors }; })(), blocks: blocksModel(doc) });
+  else body = renderPage({ s, f: L.f, chatTitle: L.chatTitle, hero: (() => { const hh = heroModel(doc); return hh && { ...hh, sectors: L.sectors, path: baseOf(url), lang }; })(), blocks: blocksModel(doc) });
 
   // ---- head (letterlijk uit de bron, behalve robots, iconen, stijl en script)
   const H = doc.head, get = q => H.querySelector(q);
@@ -271,6 +290,7 @@ for (const rel of pages) {
   const { document: nd } = parseHTML(`<!doctype html><html><head></head><body>${body}</body></html>`);
   await smallVariants(nd);
   upgradeImages(nd);
+  await fotoFiles(nd);
   const B = nd.body;
   // teksten: alles van de oude pagina moet er staan
   const oldB = doc.body;

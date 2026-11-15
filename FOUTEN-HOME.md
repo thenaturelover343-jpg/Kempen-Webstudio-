@@ -4,7 +4,7 @@ Datum: 14-11-2026. Methode:
 - de home sectie per sectie naast het originele design (commit 8cc9567) gelegd, op 1440 en 390 px (`scripts/compare-sections.mjs`);
 - alles aangeklikt met `scripts/test-home.mjs`: cookiebanner, menu, Diensten-submenu, taalkeuze, sliders en keuzes, FAQ, contactvenster, formulier, zwevende knoppen, scrollen, beelden, links en ankers, JS-fouten (57 controles).
 
-Bewuste afwijkingen die blijven (zie LEESMIJ): geen sterren, echte sectorfoto's in plaats van AI-portretten, het embleem in plaats van fictieve personen, een aangevulde navigatie en footer.
+Bewuste afwijkingen die blijven (zie LEESMIJ): geen sterren, echte sectorfoto's in plaats van AI-portretten, echte beelden in plaats van fictieve personen (zie ronde 3), een aangevulde navigatie en footer.
 
 ## Home: gevonden en opgelost
 
@@ -49,3 +49,11 @@ De nieuwe designteksten (labels en slotregels van de werkwijze, de FAQ-ondertite
 | 23 | Alle paginatypes | Zelfde soort gaten elders | Nieuw `scripts/gapcheck.mjs` meet op elke pagina elk raster en elke 2-koloms indeling. Gevonden en opgelost: FAQ's met een oneven aantal vragen (nu twee kolommen, eerste helft links), voorbeeldontwerpen met 2 ontwerpen in 3 kolommen (nu raster volgens het aantal), 5 werkwijzestappen op tablet (laatste over de volle breedte), lege kolom op de bedanktpagina (links nu naast de titel), prijskaart zonder prijs en knop (onderaan het embleemvlak van de hero-kaart). Resultaat: 0 gaten op 820, 1100 en 1440 px |
 
 Algemene regel in de code (`Blocks.tsx`): een raster verdeelt een onvolledige laatste rij altijd over de volle breedte (`span6`/`span2`), zodat er nergens nog een lege plek kan ontstaan.
+
+## Ronde 3 (15-11-2026): foto's overal
+
+| # | Waar | Probleem (Karim) | Oplossing |
+|---|---|---|---|
+| 24 | Home en alle 104 onderpagina's | Zwarte vakken met alleen het embleem, initialen ("HO") in de voorbeeldontwerpen, embleem in de kaartcirkel en bij de cases | Elk vak gevuld met een passend beeld: screenshots van de 9 voorbeeldsites, de bestaande sector- en stadsfoto's, foto's uit de voorbeeldsites, fragmenten van de 3 klantsites. Inventaris in `FOTOS-TODO.md`, herkomst in `FOTO-BRONNEN.md` |
+| 25 | Webshop, vereniging | Beeld dat op de oude site stond, ontbrak | Staat nu in de hero-kaart |
+| 26 | Controle | Geen automatische controle op lege beeldvakken | Nieuw `scripts/slotcheck.mjs` (embleemvakken, initialen, niet geladen beelden, lege vlakken, ook in verborgen slides): 0 op 107 pagina's, 1440 en 390 px |

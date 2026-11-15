@@ -3,6 +3,8 @@
 // cursor) doet site.js via data-attributen. Teksten die alleen in het design bestaan: zie src/site/ui-text.mjs.
 import { Fragment } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronDown, Globe, Mail, MapPin, Phone } from 'lucide-react';
+import { Foto } from './Foto';
+import { CASE_FOTO, PLAATS_FOTO } from '../site/fotos.mjs';
 import { PartnerBookStoreIcon, PartnerCronaIcon, PartnerMercuryIcon, PartnerWagerIcon, PartnerZanticIcon, ShowcaseEmblem } from './brand';
 import { A, FadeIn, Html, Load, SectionReveal, StaggerGroup, StaggerItem, cx, sel } from './primitives';
 import { ContactForm } from './Contact';
@@ -30,6 +32,9 @@ export function split2(t: string): [string, string] {
 }
 const lastWord = (t: string): [string, string] => { const i = t.trim().lastIndexOf(' '); return i < 0 ? [t, ''] : [t.slice(0, i), t.slice(i + 1)]; };
 const sentences = (t: string) => (t.match(/[^.!?]+[.!?]+/g) || [t]).map(x => x.trim());
+const HERO_FOTO = ['vb-houtatelier', 'vb-kapsalon'];
+const shot = (href: string) => href.replace(/^\/(fr\/|en\/)?|\/$/g, '');
+const SHOT_ALT: Record<string, string> = { nl: 'Schermafbeelding van het voorbeeldontwerp', fr: 'Capture d’écran de l’exemple de design', en: 'Screenshot of the sample design' };
 const initials = (t: string) => t.replace(/^(Bistro|Atelier|Kapsalon|Barbier|Tuinzorg|Dakwerken|Houtatelier)\s/, (m) => m).slice(0, 2).toUpperCase();
 const sizesPortrait = '(min-width: 1536px) 420px, (min-width: 1280px) 370px, (min-width: 1024px) 310px, (min-width: 640px) 400px, 360px';
 
@@ -115,7 +120,9 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
 
             <Load delay={0.14} className="relative z-20 lg:col-span-4 lg:col-start-9 flex flex-col items-stretch lg:items-end justify-between lg:min-h-[395px] pt-1 lg:pt-2">
               <div data-sel="" data-sel-wrap="" className="order-2 lg:order-1 mt-6 lg:mt-0 mx-auto lg:mx-0 w-full max-w-[360px] xl:max-w-[392px] rounded-[24px] sm:rounded-[28px] p-3 sm:p-3.5 bg-gradient-to-br from-[#C4C5C8]/90 via-[#B8B9BC]/85 to-[#ABACB0]/90 border border-white/30 flex items-stretch gap-3.5 sm:gap-5 shadow-[0_12px_30px_rgba(0,0,0,0.04)] backdrop-blur-xs">
-                <div className="w-[126px] sm:w-[172px] h-[152px] sm:h-[176px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center"><ShowcaseEmblem /></div>
+                <div className="relative overflow-hidden w-[126px] sm:w-[172px] h-[152px] sm:h-[176px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405]">
+                  {slides.map((_, i) => <div key={i} data-sel-panel={i} hidden={i > 0} className="absolute inset-0"><Foto id={HERO_FOTO[i % HERO_FOTO.length]} vorm="kaart" lang={L} sizes="(min-width: 640px) 172px, 126px" className="absolute inset-0 block w-full h-full object-cover object-left-top" /></div>)}
+                </div>
                 <div className="flex-1 min-w-0 flex flex-col justify-between py-1 sm:py-1.5 pr-0.5 sm:pr-1">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-semibold text-[#18181B] tabular-nums">
@@ -238,7 +245,10 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
               <div className="my-10 sm:my-14 flex items-center justify-center relative">
                 {works.map((w: any, i: number) => (
                   <div key={i} data-sel-panel={i} hidden={i > 0} className="flex items-center justify-center gap-8 sm:gap-14">
-                    <span aria-hidden="true" className="font-title text-[28px] sm:text-[42px] font-semibold tracking-tight text-white text-center">{w.h.slice(0, 2).toUpperCase()}</span>
+                    <div className="w-[220px] sm:w-[420px] lg:w-[520px] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#1B1B1E] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
+                      <div aria-hidden="true" className="flex items-center gap-1.5 px-3 h-6 sm:h-7 bg-[#242426]"><span className="w-2 h-2 rounded-full bg-white/25" /><span className="w-2 h-2 rounded-full bg-white/25" /><span className="w-2 h-2 rounded-full bg-[#D47A3B]/80" /></div>
+                      <img src={`/assets/img/${shot(w.href)}-d640.webp`} srcSet={`/assets/img/${shot(w.href)}-d640.webp 640w, /assets/img/${shot(w.href)}-d1000.webp 1000w, /assets/img/${shot(w.href)}-d1600.webp 1600w`} sizes="(min-width: 1024px) 520px, (min-width: 640px) 420px, 220px" width={1600} height={1000} loading="lazy" decoding="async" alt={`${SHOT_ALT[L] || SHOT_ALT.nl} ${w.h}`} className="block w-full h-auto aspect-[16/10] object-cover object-top" />
+                    </div>
                     <a href={w.href} target="_blank" rel="noopener" aria-label={`${w.h} ${ui.newWindow}`} className="w-12 h-12 rounded-full bg-[#242426] hover:bg-[#B85D28] text-white flex items-center justify-center transition-colors duration-200 cursor-pointer shrink-0"><ArrowUpRight className="w-4 h-4" /></a>
                   </div>
                 ))}
@@ -436,7 +446,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
               ))}
               {places.map((p: any, i: number) => (
                 <div key={i} data-sel-panel={i} hidden={i > 0} className="relative z-20 flex flex-col items-center text-center max-w-[300px]">
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border border-white/20 bg-[#141416] shadow-2xl flex items-center justify-center"><ShowcaseEmblem /></div>
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border border-white/20 bg-[#141416] shadow-2xl"><Foto id={(PLAATS_FOTO as any)[p.id] || 'portret'} vorm="cirkel" lang={L} sizes="(min-width: 640px) 112px, 96px" className="absolute inset-0 block w-full h-full object-cover" /></div>
                   <p className="mt-3 text-[11px] text-[#929090]">{x.address}</p>
                   <p className="mt-2 text-[14px] font-medium text-white leading-snug">Kempen Webstudio<br /><span className="text-[#D3D6DA] font-normal">{x.regionLine}</span></p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
@@ -526,7 +536,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                     <article key={i} className={cx('relative rounded-[20px] p-6 sm:p-7 min-h-[290px] flex flex-col justify-between', dark ? 'bg-[#2C2C2E] text-white' : 'bg-[#F7F7F8] text-[#121214] border border-[#ECECEE]')}>
                       <div className="flex items-start justify-between gap-4">
                         <h3 className="text-[14px] font-semibold tracking-tight">{c.n} · <Html html={c.h} /></h3>
-                        <span aria-hidden="true" className="w-14 h-14 rounded-xl bg-[#141416] flex items-center justify-center shrink-0 [&_svg]:w-9 [&_svg]:h-9"><ShowcaseEmblem /></span>
+                        <span className="relative w-14 h-14 rounded-xl overflow-hidden bg-[#141416] shrink-0">{CASE_FOTO[i] ? <Foto id={CASE_FOTO[i]} vorm="mini" lang={L} sizes="56px" className="absolute inset-0 block w-full h-full object-cover" /> : <ShowcaseEmblem />}</span>
                       </div>
                       <p className={cx('my-6 text-[13.5px] leading-relaxed kw-link', dark ? 'text-[#E4E4E7]' : 'text-[#4C433F]')}><Html html={c.p} /></p>
                       <div className="flex items-end justify-between gap-3">
@@ -724,7 +734,7 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
                 )}
               </div>
               {!tier.cta && !tier.amt && (
-                <div aria-hidden="true" className={`mt-7 h-[132px] rounded-[18px] flex items-center justify-center ${obs || cop ? 'bg-black/30' : 'bg-[#040405]'}`}><ShowcaseEmblem /></div>
+                <div aria-hidden="true" className={`relative overflow-hidden mt-7 h-[132px] rounded-[18px] flex items-center justify-center ${obs || cop ? 'bg-black/30' : 'bg-[#040405]'}`}><Foto id="vb-webshop-breed" vorm="breed" decorative sizes="(min-width: 1024px) 305px, calc(100vw - 80px)" className="absolute inset-0 block w-full h-full object-cover object-top" /></div>
               )}
               {tier.cta && (
                 <div className="mt-7 pt-2 flex items-center justify-between gap-3">

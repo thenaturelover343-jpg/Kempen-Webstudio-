@@ -66,7 +66,8 @@ node scripts/imgcheck.mjs    # alle pagina's: alle afbeeldingen geladen, zwevend
 1. **Sterren in de hero weggelaten** (5 sterren naast "Prijzen vanaf €490"). Die suggereren klantbeoordelingen, en die zijn er nog niet (CLAUDE.md regel 4: geen verzonnen reviews).
 2. **Echte foto's in plaats van AI-portretten.**
    - De ronde sectorportretten tonen de bestaande sectorfoto's van de site.
-   - Op de werkgebiedkaart en bij de cases staat het merkembleem in plaats van een (fictieve) persoon.
+   - Op de werkgebiedkaart staat het portret uit de hero of een stadsfoto, bij de cases een fragment van de echte klantsite, in plaats van een (fictieve) persoon.
+   - Waar het design een zwart vak met het embleem of initialen toonde (zwevende hero-kaarten, voorbeeldontwerpen), staat nu een echt beeld: zie `FOTOS-TODO.md` en `FOTO-BRONNEN.md`.
 3. **Contrast (WCAG AA).** Koperkleurige tekst #B85D28 op lichtgrijs (#F2F2F2/#F7F7F8) wordt #9A4A1C waar de tekst klein is: FAQ-onderwerp, prijs per maand, stapnummers, prijslijsten. Op wit en op donker blijft de designkleur.
 4. **Navigatie aangevuld.**
    - Bovenaan: Home, Diensten (submenu), Voorbeelden, Werkwijze, Kosten, Uitleg, Contact.

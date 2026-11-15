@@ -7,6 +7,8 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, MapPin, Quote } from 'lucide-react
 import { A, FadeIn, Html, Load, SectionReveal, StaggerGroup, StaggerItem, cx, sel } from './primitives';
 import { FaqItem, HERO_ICONS, Steps, Tiers, split2 } from './Home';
 import { ShowcaseEmblem } from './brand';
+import { Foto } from './Foto';
+import { PAGINA_FOTO } from '../site/fotos.mjs';
 
 const W = 'max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10';
 const strip = (h: string) => (h || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -66,6 +68,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
     ...(msg ? [{ t: split2(msg), dup: true }] : []),
     ...(h.trust || []).slice(0, 2).map((t: string) => ({ t: split2(strip(t)), dup: false })),
   ];
+  const fid = (PAGINA_FOTO as any)[h.path] || '';
   const sec = h.sectors && h.sectors.chips && h.sectors.chips.length ? h.sectors : null;
   return (
     <SectionReveal immediate data-fl-hide="" aria-labelledby={h.sectionAria || undefined} className="relative hero-canvas overflow-hidden flex flex-col justify-between lg:min-h-[calc(100vh-76px)]">
@@ -98,7 +101,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
           <Load delay={0.14} className="relative z-20 lg:col-span-4 lg:col-start-9 flex flex-col items-stretch lg:items-end gap-8 lg:gap-14 lg:pt-6">
             {slides.length > 0 && (
               <div data-sel="" data-sel-wrap="" className="mx-auto lg:mx-0 w-full max-w-[360px] xl:max-w-[392px] rounded-[24px] sm:rounded-[28px] p-3 sm:p-3.5 bg-gradient-to-br from-[#C4C5C8]/90 via-[#B8B9BC]/85 to-[#ABACB0]/90 border border-white/30 flex items-stretch gap-3.5 sm:gap-5 shadow-[0_12px_30px_rgba(0,0,0,0.06)] backdrop-blur-xs">
-                <div className="w-[118px] sm:w-[160px] h-[146px] sm:h-[168px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center"><ShowcaseEmblem /></div>
+                <div className="relative overflow-hidden w-[118px] sm:w-[160px] h-[146px] sm:h-[168px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center">{fid ? <Foto id={fid} vorm="kaart" lang={h.lang} sizes="(min-width: 640px) 160px, 118px" className="absolute inset-0 block w-full h-full object-cover object-left-top" /> : <ShowcaseEmblem />}</div>
                 <div className="flex-1 min-w-0 flex flex-col justify-between py-1 sm:py-1.5 pr-0.5 sm:pr-1">
                   <span aria-hidden="true" className="text-[11px] font-semibold text-[#18181B] tabular-nums">
                     {slides.map((_, i) => <span key={i} data-sel-panel={i} hidden={i > 0}>0{i + 1}</span>)}
