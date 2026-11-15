@@ -12,6 +12,7 @@ async function open(p, u) {
   await p.goto(BASE + u, { waitUntil: 'networkidle', timeout: 30000 });
   await p.evaluate(async () => { document.querySelectorAll('.kw-fade, .kw-sec, .kw-sg').forEach(e => e.classList.add('kw-in')); for (let y = 0; y < document.documentElement.scrollHeight; y += 600) { scrollTo(0, y); await new Promise(r => setTimeout(r, 30)); } scrollTo(0, 0); });
   await p.evaluate(() => Promise.all([...document.images].filter(i => i.getClientRects().length).map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; setTimeout(r, 4000); }))));
+  await p.evaluate(async () => { document.querySelectorAll('img[loading="lazy"]').forEach(i => { i.loading = 'eager'; }); await Promise.all([...document.images].map(i => i.complete && i.naturalWidth ? 0 : new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); setTimeout(r, 10000); }))); await Promise.all([...document.images].map(i => i.decode ? i.decode().catch(() => 0) : 0)); });
   await p.waitForTimeout(700);
 }
 const shot = (p, n, opt = {}) => p.screenshot({ path: path.join(OUT, n), type: 'jpeg', quality: 82, ...opt });
