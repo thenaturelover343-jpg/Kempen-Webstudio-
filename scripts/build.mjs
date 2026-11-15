@@ -104,6 +104,41 @@ const MARK = (s = 28) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2
   write('site.webmanifest', JSON.stringify({ name: 'Kempen Webstudio', short_name: 'Kempen Webstudio', icons: [{ src: '/icons/kw-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icons/kw-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icons/kw.svg', sizes: 'any', type: 'image/svg+xml' }], theme_color: '#dcdde0', background_color: '#dcdde0', display: 'browser' }));
 }
 const OG_IMAGE = '/assets/og-v4.jpg';
+
+// ---------- gestructureerde gegevens aanvullen (SEO-ronde 15-11-2026) ----------
+// Home: Organization + ProfessionalService (LocalBusiness) met areaServed België + de steden met een eigen pagina, talen en contactpunt.
+// Dienstpagina's zonder Service krijgen er een; pagina's met veelgestelde vragen zonder FAQPage krijgen er een; Article krijgt het eigen deelbeeld.
+// sameAs blijft zoals het is (Facebook) tot er andere profielen zijn; geen openingsuren of geo zolang Karim die niet bevestigde.
+const LD_CITIES = ['Antwerpen', 'Brussel', 'Gent', 'Leuven', 'Mechelen', 'Hasselt', 'Brugge', 'Kortrijk', 'Turnhout', 'Geel', 'Herentals', 'Mol', 'Kasterlee', 'Liège', 'Namur', 'Charleroi'];
+const LD_SERVICE = {
+  '/logo-en-huisstijl/': { nl: 'Logo en huisstijl laten maken', fr: 'Création de logo et d’identité visuelle', en: 'Logo and visual identity design' },
+  '/toegankelijke-website/': { nl: 'Toegankelijke website laten maken', fr: 'Création de site internet accessible', en: 'Accessible website design' },
+  '/website-laten-maken-belgie/': { nl: 'Website laten maken in België', fr: 'Création de site internet en Belgique', en: 'Website design in Belgium' },
+  '/website-laten-vernieuwen/': { nl: 'Website laten vernieuwen', fr: 'Refonte de site internet', en: 'Website redesign' },
+  '/webshop-laten-maken/': { nl: 'Webshop laten maken', fr: 'Création de boutique en ligne', en: 'Online shop design' },
+};
+const ldTypes = o => [].concat(o['@type'] || []);
+function enrichLd(arr, { url, lang, isHome, ogImg, doc }) {
+  const ORG = ORIGIN + '/#organisatie';
+  const country = { '@type': 'Country', name: { nl: 'België', fr: 'Belgique', en: 'Belgium' }[lang], identifier: 'BE' };
+  for (const o of arr) {
+    if (isHome && o['@id'] === ORG) {
+      o['@type'] = ['Organization', 'ProfessionalService'];
+      o.areaServed = [country, ...LD_CITIES.map(name => ({ '@type': 'City', name }))];
+      o.knowsLanguage = ['nl', 'fr', 'en'];
+      o.contactPoint = { '@type': 'ContactPoint', contactType: 'customer service', telephone: '+32 14 71 80 80', email: 'info@kempenwebstudio.be', availableLanguage: ['nl', 'fr', 'en'], areaServed: 'BE' };
+      o.image = ORIGIN + ogImg;
+    }
+    if (ldTypes(o).includes('Article')) { o.image = ORIGIN + ogImg; if (!o.author) o.author = { '@id': ORG }; }
+  }
+  const sv = LD_SERVICE[baseOf(url)];
+  if (sv && !arr.some(o => ldTypes(o).includes('Service'))) arr.push({ '@context': 'https://schema.org', '@type': 'Service', '@id': ORIGIN + url + '#dienst', name: sv[lang], serviceType: sv[lang], provider: { '@id': ORG }, url: ORIGIN + url, areaServed: country });
+  if (!arr.some(o => ldTypes(o).includes('FAQPage'))) {
+    const qs = [...doc.querySelectorAll('main .fq6 details.fq')].map(d => [norm(d.querySelector('.fq-qt')?.textContent), norm(d.querySelector('.fq-a')?.textContent)]).filter(([q, a]) => q && a);
+    if (qs.length) arr.push({ '@context': 'https://schema.org', '@type': 'FAQPage', '@id': ORIGIN + url + '#faq', mainEntity: qs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
+  }
+  return arr;
+}
 write('assets/og-v4.jpg', fs.readFileSync(path.join(ROOT, 'src', 'img', 'og-v4.jpg')));
 
 // ---------- 4. renderer (TSX -> Node-module), CSS (Tailwind), JS ----------
@@ -271,10 +306,15 @@ for (const rel of pages) {
   // ---- head (letterlijk uit de bron, behalve robots, iconen, stijl en script)
   const H = doc.head, get = q => H.querySelector(q);
   const title = doc.title, desc = get('meta[name="description"]')?.getAttribute('content') || '', canon = get('link[rel="canonical"]')?.getAttribute('href') || '';
-  const metas = [...H.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')].map(m => { const k = m.getAttribute('property') ? 'property' : 'name', key = m.getAttribute(k); let v = m.getAttribute('content') || ''; if (key === 'og:image' || key === 'twitter:image') v = ORIGIN + OG_IMAGE; return `<meta ${k}="${esc(key)}" content="${esc(v)}">`; });
+  // deelbeeld per pagina (scripts/og-paginas.mjs), anders het algemene
+  const h1txt = norm(doc.querySelector('main h1')?.textContent || '').replace(/­/g, '');
+  const ogk = crypto.createHash('sha1').update(lang + '|' + h1txt).digest('hex').slice(0, 12);
+  const ogSrc = path.join(ROOT, 'src', 'img', 'og', ogk + '.jpg');
+  let ogImg = OG_IMAGE; if (h1txt && fs.existsSync(ogSrc)) { ogImg = `/assets/og/${ogk}.jpg`; write(ogImg.slice(1), fs.readFileSync(ogSrc)); }
+  const metas = [...H.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')].map(m => { const k = m.getAttribute('property') ? 'property' : 'name', key = m.getAttribute(k); let v = m.getAttribute('content') || ''; if (key === 'og:image' || key === 'twitter:image') v = ORIGIN + ogImg; if (key === 'og:image:alt' && ogImg !== OG_IMAGE) v = `${h1txt}, Kempen Webstudio`; return `<meta ${k}="${esc(key)}" content="${esc(v)}">`; });
   if (metas.length && !metas.some(m => m.includes('twitter:title'))) metas.push(`<meta name="twitter:title" content="${esc(title)}">`);
   const alts = [...H.querySelectorAll('link[rel="alternate"][hreflang]')].map(l => `<link rel="alternate" hreflang="${esc(l.getAttribute('hreflang'))}" href="${esc(l.getAttribute('href'))}">`);
-  const ld = [...doc.querySelectorAll('script[type="application/ld+json"]')].map(x => `<script type="application/ld+json">${x.textContent.trim()}</script>`);
+  const ld = enrichLd([...doc.querySelectorAll('script[type="application/ld+json"]')].map(x => JSON.parse(x.textContent)), { url, lang, isHome, ogImg, doc }).map(o => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`);
   const por = w => `/assets/img/hero-portret-${w}.avif ${w}w`;
   const head = [
     '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">',
@@ -314,7 +354,7 @@ for (const rel of pages) {
   for (const im of B.querySelectorAll('img')) if (!im.hasAttribute('alt')) warn.push(`img zonder alt op ${url}: ${im.getAttribute('src')}`);
   if (/Bijgewerkt op|Mis à jour le|Updated on/i.test(B.textContent)) warn.push('"Bijgewerkt op" op ' + url);
   if (/zenrixa|aistudio|webstudiok\.be/i.test(B.innerHTML)) warn.push('template-restant in ' + url);
-  if (robots === 'index,follow' && url !== '/404.html') { if (canon !== ORIGIN + url) warn.push(`canonical ${url}: ${canon || 'ontbreekt'}`); indexable.push({ url, base: baseOf(url), lang }); }
+  if (robots === 'index,follow' && url !== '/404.html') { if (canon !== ORIGIN + url) warn.push(`canonical ${url}: ${canon || 'ontbreekt'}`); indexable.push({ url, base: baseOf(url), lang, title, desc, hl: [...H.querySelectorAll('link[rel="alternate"][hreflang]')].map(l => [l.getAttribute('hreflang'), l.getAttribute('href')]), imgs: [...new Set([...B.querySelectorAll('img[src^="/assets/img/"]')].map(i => i.getAttribute('src')))].slice(0, 12) }); }
   const out = `<!doctype html>\n<html lang="${esc(doc.documentElement.getAttribute('lang') || LANGS[lang])}">\n<head>\n${head}\n</head>\n<body class="bg-[#dcdde0]">\n${B.innerHTML.trim()}\n</body>\n</html>\n`;
   write(rel, out); report.pages++; report.perPage.push({ url, bytes: Buffer.byteLength(out) });
 }
@@ -352,15 +392,36 @@ for (const rel of demoPages) {
 // ---------- 9. robots.txt en sitemap.xml ----------
 if (MODE === 'live') {
   write('robots.txt', CFG.robotsTxt);
+  // llms.txt: korte, feitelijke samenvatting voor AI-zoekmachines, met alle indexeerbare pagina's (titel + URL) per taal
+  {
+    const sec = (l, h) => ['', '## ' + h, ...indexable.filter(p => p.lang === l).sort((a, b) => a.url.localeCompare(b.url)).map(p => `- [${p.title}](${ORIGIN + p.url}): ${p.desc}`)];
+    write('llms.txt', [
+      '# Kempen Webstudio',
+      '',
+      '> Webstudio uit Kasterlee (België) die websites, webshops, SEO, logo en huisstijl en webtoegankelijkheid (WCAG 2.2 AA) maakt voor ondernemers, verenigingen en zelfstandigen in heel België. Werkt in het Nederlands, Frans en Engels.',
+      '',
+      '- Naam: Kempen Webstudio',
+      '- Adres: Kemelbeekstraat 16, 2460 Kasterlee, België',
+      '- Telefoon: +32 14 71 80 80',
+      '- E-mail: info@kempenwebstudio.be',
+      '- Ondernemingsnummer: BE 0897.577.919',
+      '- Werkwijze: eerst een vrijblijvend voorstel, daarna een schriftelijke offerte; één vast aanspreekpunt; overleg online, per e-mail of telefoon.',
+      '- Pakketten (excl. btw): Start vanaf €490 + vanaf €29/maand; Vakman vanaf €990 + vanaf €49/maand; Webshop vanaf €1.890 + vanaf €79/maand. Minimaal 12 maanden, daarna maandelijks opzegbaar.',
+      '- Losse diensten (excl. btw): SEO-optimalisatie vanaf €59 per pagina, SEO-audit vanaf €190, lokale SEO vanaf €149/maand, logo vanaf €190, huisstijl vanaf €490, toegankelijkheidscontrole vanaf €149.',
+      '- De voorbeeldontwerpen op de site hebben fictieve namen en gegevens; het zijn geen klanten.',
+      ...sec('nl', "Pagina's (Nederlands)"), ...sec('fr', 'Pages (français)'), ...sec('en', 'Pages (English)'), '',
+    ].join('\n'));
+  }
   // Cloudflare Pages / Netlify: lange cache voor bestanden met vaste of gehashte naam, basis-beveiligingsheaders
   write('_headers', ['/assets/fonts/*', '  Cache-Control: public, max-age=31536000, immutable', '/assets/site.*', '  Cache-Control: public, max-age=31536000, immutable',
     '/assets/img/*', '  Cache-Control: public, max-age=2592000', '/*', '  X-Content-Type-Options: nosniff', '  Referrer-Policy: strict-origin-when-cross-origin', ''].join(String.fromCharCode(10)));
   const online = fs.readFileSync(path.join(ROOT, 'config', 'sitemap-online.xml'), 'utf8');
   const order = [...online.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]); const rank = u => { const i = order.indexOf(u); return i < 0 ? 1e4 + u.length : i; };
   const byBase = {}; for (const p of indexable) (byBase[p.base] = byBase[p.base] || {})[p.lang] = ORIGIN + p.url;
-  const items = indexable.map(p => { const alts = byBase[p.base]; return { loc: ORIGIN + p.url, alts: Object.keys(alts).length > 1 ? alts : null, nl: alts.nl }; }).sort((a, b) => rank(a.nl || a.loc) - rank(b.nl || b.loc) || a.loc.localeCompare(b.loc));
-  const altXml = i => i.alts ? Object.entries(i.alts).map(([l, u]) => `<xhtml:link rel="alternate" hreflang="${LANGS[l]}" href="${u}"/>`).join('') + (i.alts.nl ? `<xhtml:link rel="alternate" hreflang="x-default" href="${i.alts.nl}"/>` : '') : '';
-  write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + items.map(i => `  <url><loc>${i.loc}</loc><lastmod>${today}</lastmod>${altXml(i)}</url>`).join('\n') + '\n</urlset>\n');
+  const items = indexable.map(p => { const alts = byBase[p.base]; return { loc: ORIGIN + p.url, alts: Object.keys(alts).length > 1 ? alts : null, nl: alts.nl, imgs: p.imgs, hl: p.hl }; }).sort((a, b) => rank(a.nl || a.loc) - rank(b.nl || b.loc) || a.loc.localeCompare(b.loc));
+  const altXml = i => i.hl && i.hl.length ? i.hl.map(([l, u]) => `<xhtml:link rel="alternate" hreflang="${l}" href="${u}"/>`).join('') : i.alts ? Object.entries(i.alts).map(([l, u]) => `<xhtml:link rel="alternate" hreflang="${LANGS[l]}" href="${u}"/>`).join('') + (i.alts.nl ? `<xhtml:link rel="alternate" hreflang="x-default" href="${i.alts.nl}"/>` : '') : '';
+  const imgXml = i => (i.imgs || []).map(s => `<image:image><image:loc>${ORIGIN}${s}</image:loc></image:image>`).join('');
+  write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + items.map(i => `  <url><loc>${i.loc}</loc><lastmod>${today}</lastmod>${altXml(i)}${imgXml(i)}</url>`).join('\n') + '\n</urlset>\n');
   report.sitemap = items.length;
 } else write('robots.txt', 'User-agent: *\nDisallow: /\n');
 
