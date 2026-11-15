@@ -210,6 +210,12 @@ export function blocksModel(doc) {
       out.push({ kind: 'legal', id, items: $$(sec, '.pv-r').map(r => ({ h: inner($(r, '.pv-h')), hid: $(r, '.pv-h')?.id || '', body: inner($(r, '.pv-t')) })) });
       continue;
     }
+    // ---- contactformulier op een eigen pagina (nieuw, SEO-ronde): tekst links, formulier rechts
+    if (c.contains('kw-form')) {
+      const h2 = $(sec, 'h2');
+      out.push({ kind: 'form', id, h2: inner(h2), h2id: h2?.id || '', badge: text($(sec, '.lbl')), html: inner($(sec, '.kw-form-txt')) });
+      continue;
+    }
     // ---- kaarten (diensten, factoren, gemeenten, artikels ...)
     const hd = headOf(sec);
     const grid = wrap && $(wrap, ':scope > .sv-g');

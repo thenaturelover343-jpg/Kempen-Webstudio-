@@ -17,26 +17,24 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Afsprakenplanner  _(op 1 pagina)_
 - Boekingssysteem  _(op 1 pagina)_
 - Dag 1  _(op 1 pagina)_
-- Diensten op een rij  _(op 1 pagina)_
 - Doorlopend  _(op 1 pagina)_
 - Duidelijk overzicht vooraf, zonder verrassingen  _(op 1 pagina)_
 - Duidelijke antwoorden over onze aanpak, vaste prijzen en oplevering.  _(op 1 pagina)_
 - Eén vast aanspreekpunt na lancering  _(op 1 pagina)_
-- Eén vast aanspreekpunt  _(op 1 pagina)_
 - Galerij  _(op 2 pagina's)_
 - Geoptimaliseerd voor gsm en computer  _(op 1 pagina)_
-- Heel België  _(op 42 pagina's)_
+- Heel België  _(op 60 pagina's)_
 - Helder  _(op 1 pagina)_
 - Heldere opbouw  _(op 1 pagina)_
 - Horeca ·  _(op 1 pagina)_
 - Ingetogen ontwerp  _(op 1 pagina)_
 - Kapsalons en barbershops ·  _(op 1 pagina)_
-- Kasterlee, BE · CET  _(op 78 pagina's)_
+- Kasterlee, BE · CET  _(op 114 pagina's)_
 - Lichte stijl  _(op 1 pagina)_
-- MENU  _(op 39 pagina's)_
+- MENU  _(op 57 pagina's)_
 - Menukaart  _(op 1 pagina)_
 - Mobile-first  _(op 1 pagina)_
-- Naar boven  _(op 39 pagina's)_
+- Naar boven  _(op 57 pagina's)_
 - Offerteaanvraag  _(op 1 pagina)_
 - Offerteformulier  _(op 1 pagina)_
 - Online boeken  _(op 1 pagina)_
@@ -48,10 +46,9 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Rustig palet  _(op 1 pagina)_
 - Schilders ·  _(op 1 pagina)_
 - Snel op gsm en computer  _(op 1 pagina)_
-- Snel  _(op 1 pagina)_
 - Start-pakket online  _(op 1 pagina)_
 - Taal  _(op 1 pagina)_
-- Tijd in België  _(op 39 pagina's)_
+- Tijd in België  _(op 57 pagina's)_
 - Tuinaannemers en hoveniers ·  _(op 1 pagina)_
 - Uitgesproken typografie  _(op 1 pagina)_
 - Vakmensen ·  _(op 1 pagina)_
@@ -61,12 +58,10 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Verfijnde stijl  _(op 1 pagina)_
 - Vier overzichtelijke stappen waarmee u altijd weet wat er gebeurt, wat het kost en wanneer uw nieuwe website online staat.  _(op 1 pagina)_
 - Website laten maken in heel België, voor elke zaak, vereniging of zelfstandige.  _(op 1 pagina)_
-- Webstudio K  _(op 39 pagina's)_
 - Werkgebied  _(op 2 pagina's)_
 - Werkt in heel België  _(op 5 pagina's)_
-- West-Vlaanderen  _(op 2 pagina's)_
 - Winkelmand  _(op 1 pagina)_
-- © 2026 Kempen Webstudio · Ondernemingsnummer BE 0897.577.919  _(op 39 pagina's)_
+- © 2026 Kempen Webstudio · Ondernemingsnummer BE 0897.577.919  _(op 57 pagina's)_
 - · Nog geen reviews  _(op 1 pagina)_
 
 ## FR
@@ -86,7 +81,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Agenda par soin  _(op 1 pagina)_
 - Aménagement  _(op 1 pagina)_
 - Bouton rendez-vous  _(op 1 pagina)_
-- Clair  _(op 1 pagina)_
 - Continu  _(op 1 pagina)_
 - Demande de devis  _(op 1 pagina)_
 - Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.  _(op 1 pagina)_
@@ -97,13 +91,13 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Flandre-Occidentale  _(op 2 pagina's)_
 - Forfait Start en ligne  _(op 1 pagina)_
 - Galerie  _(op 1 pagina)_
-- Haut de page  _(op 38 pagina's)_
-- Heure en Belgique  _(op 38 pagina's)_
+- Haut de page  _(op 55 pagina's)_
+- Heure en Belgique  _(op 55 pagina's)_
 - Intérieur  _(op 1 pagina)_
 - Itinéraire · Appeler · Site web  _(op 1 pagina)_
 - Jour 1  _(op 1 pagina)_
-- Kasterlee, BE · CET  _(op 76 pagina's)_
-- MENU  _(op 38 pagina's)_
+- Kasterlee, BE · CET  _(op 110 pagina's)_
+- MENU  _(op 55 pagina's)_
 - Mobile-first  _(op 1 pagina)_
 - Optimisé pour mobile et ordinateur  _(op 1 pagina)_
 - Paiement sécurisé  _(op 1 pagina)_
@@ -113,8 +107,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Prix fixe  _(op 1 pagina)_
 - Quatre étapes simples pour savoir à tout moment ce qui est fait, ce que cela coûte et quand votre site sera en ligne.  _(op 1 pagina)_
 - Rapide sur smartphone et PC  _(op 1 pagina)_
-- Rapide  _(op 1 pagina)_
-- Réponse habituelle sous 1 jour ouvrable  _(op 38 pagina's)_
+- Réponse habituelle sous 1 jour ouvrable  _(op 55 pagina's)_
 - Réponse personnelle sous 1 jour ouvrable  _(op 1 pagina)_
 - Réservation en ligne  _(op 2 pagina's)_
 - Services clairs  _(op 1 pagina)_
@@ -125,14 +118,13 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Surfaces sombres  _(op 1 pagina)_
 - Tons chaleureux  _(op 1 pagina)_
 - Tout est clair à l’avance, sans surprises  _(op 1 pagina)_
-- Toute la Belgique  _(op 41 pagina's)_
+- Toute la Belgique  _(op 58 pagina's)_
 - Typographie affirmée  _(op 1 pagina)_
 - Un interlocuteur unique après lancement  _(op 1 pagina)_
 - Un interlocuteur unique  _(op 1 pagina)_
-- Webstudio K  _(op 38 pagina's)_
 - Zone d’action  _(op 1 pagina)_
 - Zone d’intervention  _(op 1 pagina)_
-- © 2026 Kempen Webstudio · Numéro d’entreprise BE 0897.577.919  _(op 38 pagina's)_
+- © 2026 Kempen Webstudio · Numéro d’entreprise BE 0897.577.919  _(op 55 pagina's)_
 - · Pas encore d’avis  _(op 1 pagina)_
 - À partir de €490 + à partir de €29 par mois HTVA, proposition sans engagement.  _(op 1 pagina)_
 
@@ -148,8 +140,8 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - 08 / 09 · Hair salon  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5–10 bus. days  _(op 1 pagina)_
-- All of Belgium  _(op 41 pagina's)_
-- Back to top  _(op 38 pagina's)_
+- All of Belgium  _(op 55 pagina's)_
+- Back to top  _(op 52 pagina's)_
 - Bespoke work  _(op 1 pagina)_
 - Bold typography  _(op 1 pagina)_
 - Booking button  _(op 1 pagina)_
@@ -158,13 +150,11 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Calm palette  _(op 1 pagina)_
 - Clear answers about our approach, fixed pricing and delivery times.  _(op 1 pagina)_
 - Clear structure  _(op 1 pagina)_
-- Clear  _(op 1 pagina)_
 - Completed projects  _(op 1 pagina)_
 - Coverage area  _(op 1 pagina)_
 - Day 1  _(op 1 pagina)_
 - Directions · Call · Website  _(op 1 pagina)_
 - Fast on mobile and desktop  _(op 1 pagina)_
-- Fast  _(op 1 pagina)_
 - Fixed price  _(op 1 pagina)_
 - Four straightforward steps so you always know what happens next, what it costs and when your website goes live.  _(op 1 pagina)_
 - From €490 + from €29 per month excl. VAT, no-obligation proposal.  _(op 1 pagina)_
@@ -174,9 +164,9 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Hair salons and barbershops ·  _(op 1 pagina)_
 - Have a website built anywhere in Belgium, for every business, association or self-employed professional.  _(op 1 pagina)_
 - Hospitality ·  _(op 1 pagina)_
-- Kasterlee, BE · CET  _(op 76 pagina's)_
+- Kasterlee, BE · CET  _(op 104 pagina's)_
 - Light aesthetic  _(op 1 pagina)_
-- MENU  _(op 38 pagina's)_
+- MENU  _(op 52 pagina's)_
 - Menu showcase  _(op 1 pagina)_
 - Mobile friendly  _(op 1 pagina)_
 - Mobile-first  _(op 1 pagina)_
@@ -186,11 +176,10 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Per treatment  _(op 1 pagina)_
 - Personal reply within 1 business day  _(op 1 pagina)_
 - Photo gallery  _(op 1 pagina)_
-- Product pages  _(op 1 pagina)_
 - Quote form  _(op 1 pagina)_
 - Quote requests  _(op 1 pagina)_
 - Refined style  _(op 1 pagina)_
-- Reply usually within 1 business day  _(op 38 pagina's)_
+- Reply usually within 1 business day  _(op 52 pagina's)_
 - Secure checkout  _(op 1 pagina)_
 - Service Area  _(op 1 pagina)_
 - Service overview  _(op 1 pagina)_
@@ -201,10 +190,9 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-15). Alle andere teksten op 
 - Table booking  _(op 1 pagina)_
 - Table reservations  _(op 1 pagina)_
 - Tailored  _(op 1 pagina)_
-- Time in Belgium  _(op 38 pagina's)_
+- Time in Belgium  _(op 52 pagina's)_
 - Tradespeople ·  _(op 1 pagina)_
 - Understated layout  _(op 1 pagina)_
-- Webstudio K  _(op 38 pagina's)_
 - West Flanders  _(op 2 pagina's)_
-- © 2026 Kempen Webstudio · Company number BE 0897.577.919  _(op 38 pagina's)_
+- © 2026 Kempen Webstudio · Company number BE 0897.577.919  _(op 52 pagina's)_
 - · No reviews yet  _(op 1 pagina)_

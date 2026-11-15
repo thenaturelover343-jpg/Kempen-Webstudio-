@@ -8,6 +8,7 @@ import { A, FadeIn, Html, Load, SectionReveal, StaggerGroup, StaggerItem, cx, se
 import { FaqItem, HERO_ICONS, Steps, Tiers, split2 } from './Home';
 import { ShowcaseEmblem } from './brand';
 import { Foto } from './Foto';
+import { ContactForm } from './Contact';
 import { PAGINA_FOTO } from '../site/fotos.mjs';
 
 const W = 'max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10';
@@ -382,7 +383,7 @@ function ProseSection({ b, dark, panel }: { b: any; dark: boolean; panel: boolea
   );
 }
 
-export function Blocks({ blocks, s }: { blocks: any[]; s: any }) {
+export function Blocks({ blocks, s, f }: { blocks: any[]; s: any; f?: any }) {
   let prevDark = false; let n = 0; let firstCards = true; let prevPlainProse = false; let num = 0;
   const out: any[] = [];
   for (const b of blocks) {
@@ -395,13 +396,13 @@ export function Blocks({ blocks, s }: { blocks: any[]; s: any }) {
     if (b.kind === 'prose') { const plain = !dark && !b.fig; b.panel = plain && prevPlainProse; prevPlainProse = plain && !b.panel; } else prevPlainProse = b.kind === 'band' && !dark;
     if ((b.kind === 'prose' || b.kind === 'band') && b.h2) b.num = ++num;
     const props = { dark, afterDark: !dark && prevDark, first: n === 0 && !dark, id: b.id, aria: b.aria, k: n };
-    out.push(<Fragment key={n}>{render(b, props, s)}</Fragment>);
+    out.push(<Fragment key={n}>{render(b, props, s, f)}</Fragment>);
     prevDark = dark; n++;
   }
   return <>{out}</>;
 }
 
-function render(b: any, P: any, s: any) {
+function render(b: any, P: any, s: any, f?: any) {
   const dark = P.dark;
   switch (b.kind) {
     case 'band': {
@@ -542,6 +543,18 @@ function render(b: any, P: any, s: any) {
             <Prose html={b.html} dark={dark} className={cx('[&_.btn]:mt-6 [&_.btn]:inline-flex [&_.btn]:items-center [&_.btn]:rounded-full [&_.btn]:px-6 [&_.btn]:min-h-[46px] [&_.btn]:text-[13.5px] [&_.btn]:font-medium [&_.btn]:no-underline', dark ? '[&_.btn]:bg-white [&_.btn]:!text-[#121214]' : '[&_.btn]:bg-[#121214] [&_.btn]:text-white')} />
             {b.fig && <Figure html={b.fig} phone={b.figPhone} />}
           </FadeIn>
+        </div>
+      </Sec>
+    );
+    case 'form': return (
+      <Sec {...P}>
+        <div id="contact" className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start rounded-[28px] bg-[#121214] text-white p-7 sm:p-10 lg:p-14">
+          <FadeIn className="lg:col-span-5">
+            {b.badge && <Badge dark>{b.badge}</Badge>}
+            {b.h2 && <H2 html={b.h2} id={b.h2id} dark className={cx(b.badge && 'mt-3', '!text-[30px] sm:!text-[40px]')} />}
+            {b.html && <Prose html={b.html} dark className="mt-6" />}
+          </FadeIn>
+          <div className="lg:col-span-7">{f && <ContactForm f={f} idp="pagina" />}</div>
         </div>
       </Sec>
     );

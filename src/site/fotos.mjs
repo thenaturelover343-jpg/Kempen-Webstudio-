@@ -8,6 +8,7 @@ export const VORMEN = {
   cirkel: { r: [1, 1], w: [120, 240] },      // cirkel op de kaart van België (96-112 px)
   mini: { r: [1, 1], w: [64, 128] },         // casekaart (56 px)
   breed: { r: [305, 132], w: [320, 640] },   // beeldvak onderaan een prijskaart
+  kaart169: { r: [16, 9], w: [640, 1280] },  // statische kaart (contactpagina)
 };
 
 const vb = naam => ({ alt: { nl: `Voorbeeldontwerp ${naam} op een smartphone`, fr: `Exemple de design ${naam} sur un smartphone`, en: `Sample design ${naam} on a smartphone` } });
@@ -45,6 +46,7 @@ export const FOTOS = {
   'vb-kapsalon': { src: 'kapsalon-voorbeeld-m600.webp', crop: { left: 0, top: 340, width: 600, height: 630 }, ...vb('Kapsalon Ivelien') },
   'vb-barbier': { src: 'barbier-voorbeeld-m600.webp', crop: { left: 0, top: 270, width: 600, height: 630 }, ...vb('Barbier Kolvaard') },
   'vb-webshop-breed': { src: 'webshop-voorbeeld-d1000.webp', crop: { left: 0, top: 120, width: 1000, height: 433 }, alt: { nl: 'Voorbeeldontwerp Vennebrand, een webshop', fr: 'Exemple de design Vennebrand, une boutique en ligne', en: 'Sample design Vennebrand, an online shop' } },
+  kaart: { src: 'kaart-kasterlee.png', alt: { nl: 'Kaart van Kasterlee en omgeving, met Turnhout, Geel, Herentals en Mol', fr: 'Carte de Kasterlee et environs, avec Turnhout, Geel, Herentals et Mol', en: 'Map of Kasterlee and surroundings, with Turnhout, Geel, Herentals and Mol' } },
   // de drie cases: fragment van de echte site (zonder logo of cookiebanner), screenshot 15-11-2026
   'case-koelaanhangwagen': { src: 'case-koelaanhangwagen-d.png', crop: { left: 40, top: 70, width: 760, height: 760 }, alt: { nl: 'Fragment van koelaanhangwagenverhuur.be', fr: 'Extrait de koelaanhangwagenverhuur.be', en: 'Excerpt from koelaanhangwagenverhuur.be' } },
   'case-taponderhoud': { src: 'case-taponderhoud-d.png', crop: { left: 1000, top: 90, width: 440, height: 440 }, alt: { nl: 'Fragment van taponderhoud.be', fr: 'Extrait de taponderhoud.be', en: 'Excerpt from taponderhoud.be' } },
@@ -53,6 +55,23 @@ export const FOTOS = {
 
 /** beeld per onderpagina (pad zonder taalprefix) voor de zwevende hero-kaart */
 export const PAGINA_FOTO = {
+  // nieuwe pagina's (SEO-ronde 15-11-2026); sleutel = pad zonder taal (FR/EN zonder NL-tegenhanger: eigen pad zonder prefix)
+  '/website-laten-maken-antwerpen/': 'vb-horeca', '/website-laten-maken-brussel/': 'vb-schoonheid', '/website-laten-maken-mechelen/': 'vb-kleurwerk',
+  '/website-laten-maken-hasselt/': 'vb-webshop', '/website-laten-maken-brugge/': 'terras',
+  '/creation-site-internet-bruxelles/': 'vb-schoonheid', '/creation-site-internet-liege/': 'vb-dakwerken', '/creation-site-internet-namur/': 'vb-kapsalon',
+  '/creation-site-internet-charleroi/': 'vb-tuin', '/web-design-brussels/': 'vb-schoonheid',
+  '/website-laten-maken-belgie/': 'vb-houtatelier', '/creation-site-internet/': 'vb-houtatelier', '/website-design-belgium/': 'vb-houtatelier',
+  '/over-ons/': 'portret', '/a-propos/': 'portret', '/about-us/': 'portret', '/contact/': 'kaart',
+  '/voorbeeldontwerpen/houtatelier-nethe/': 'vb-houtatelier', '/exemples-de-sites/houtatelier-nethe/': 'vb-houtatelier',
+  '/voorbeeldontwerpen/bistro-tilvaar/': 'vb-horeca', '/exemples-de-sites/bistro-tilvaar/': 'vb-horeca',
+  '/voorbeeldontwerpen/vennebrand/': 'vb-webshop', '/exemples-de-sites/vennebrand/': 'vb-webshop',
+  '/voorbeeldontwerpen/dakwerken-hoogland/': 'vb-dakwerken', '/exemples-de-sites/dakwerken-hoogland/': 'vb-dakwerken',
+  '/voorbeeldontwerpen/atelier-kleurwerk/': 'vb-kleurwerk', '/exemples-de-sites/atelier-kleurwerk/': 'vb-kleurwerk',
+  '/voorbeeldontwerpen/tuinzorg-varelinde/': 'vb-tuin', '/exemples-de-sites/tuinzorg-varelinde/': 'vb-tuin',
+  '/voorbeeldontwerpen/velours/': 'vb-schoonheid', '/exemples-de-sites/velours/': 'vb-schoonheid',
+  '/voorbeeldontwerpen/kapsalon-ivelien/': 'vb-kapsalon', '/exemples-de-sites/kapsalon-ivelien/': 'vb-kapsalon',
+  '/voorbeeldontwerpen/barbier-kolvaard/': 'vb-barbier', '/exemples-de-sites/barbier-kolvaard/': 'vb-barbier',
+  '/seo-laten-doen/': 'starters', '/referencement-seo/': 'starters', '/seo-services/': 'starters',
   '/webshop-laten-maken/': 'vb-webshop', '/website-laten-vernieuwen/': 'vb-houtatelier', '/logo-en-huisstijl/': 'vb-barbier',
   '/toegankelijke-website/': 'vb-kapsalon', '/wat-kost-een-website/': 'vb-schoonheid', '/voorbeeldontwerpen/': 'vb-horeca',
   '/website-horeca/': 'horeca', '/website-kapsalon/': 'kapsalon', '/website-schilder/': 'schilder', '/website-starters/': 'starters',

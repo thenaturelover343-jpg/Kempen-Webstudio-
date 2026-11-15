@@ -237,3 +237,12 @@ html.kw-lock { overflow: hidden; }
   *, *::before, *::after { animation-duration: 0s !important; animation-delay: 0s !important; transition-duration: 0s !important; transition-delay: 0s !important; }
   html.js .kw-fade:not(.kw-in), html.js .kw-sec:not(.kw-in), html.js .kw-sg:not(.kw-in) > .kw-si { opacity: 1; transform: none; }
 }
+
+/* tabellen in tekstsecties (prijsgids): horizontaal scrollen op gsm in plaats van de pagina breder te maken */
+.kw-table { overflow-x: auto; margin: 1.25em 0; border-radius: 16px; border: 1px solid #e5e7eb; background: #fff; }
+.kw-table:focus-visible { outline: 2px solid #B85D28; outline-offset: 2px; }
+.kw-table table { min-width: 560px; margin: 0; }
+.kw-table caption { text-align: left; padding: .9em 1em .4em; font-size: .85em; color: #4C433F; }
+.kw-table th, .kw-table td { padding: .7em 1em; }
+.kw-table thead th { font-weight: 600; color: #121214; background: #F2F2F2; }
+.kw-table tbody th { font-weight: 500; color: #121214; }
