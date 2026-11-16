@@ -31,16 +31,16 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
               </div>
               <div>
                 <a href={cta.href} data-chat=""
-                  className="inline-flex items-center gap-2.5 rounded-full bg-[#08080A] hover:bg-[#4C433F] text-white px-5 py-2.5 min-h-[42px] text-[14px] font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap">
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#08080A] hover:bg-[#4C433F] text-white px-5 py-2.5 min-h-[42px] text-[15px] font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap">
                   <span>{cta.label}</span><ArrowUpRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8 text-[14px]">
+            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8 text-[15px]">
               {cols.map((c: any, ci: number) => (
                 <nav key={c.title} aria-label={c.aria || c.title}>
-                  <h2 className="text-[14px] font-semibold text-[#4C433F] mb-4" style={{ fontFamily: 'inherit' }}>{c.title}</h2>
+                  <h2 className="text-[15px] font-semibold text-[#4C433F] mb-4" style={{ fontFamily: 'inherit' }}>{c.title}</h2>
                   <ul className={ci === 0 ? 'flex flex-col gap-2.5' : 'flex flex-col gap-2.5 text-[#4C433F]'}>
                     {c.links.map((l: any) => (
                       <li key={l.href + l.label}>
@@ -60,7 +60,7 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
           </div>
         </FadeIn>
 
-        <div className="pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[14px] text-[#4C433F]">
+        <div className="pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[15px] text-[#4C433F]">
           <p>{copy} · {kbo}</p>
           <nav aria-label={cities ? cities.title : ''} className="flex flex-wrap items-center gap-3">
             {cities && cities.links.map((l: any, i: number) => (

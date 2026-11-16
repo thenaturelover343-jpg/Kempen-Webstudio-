@@ -16,7 +16,7 @@ export function LanguageSwitcher({ s, compact = false, fullWidth = false }: { s:
           <a key={l.short} href={l.href} hrefLang={l.hreflang} lang={l.hreflang} aria-current={l.current ? 'true' : undefined}
             aria-label={`${l.short} – ${l.label}`} title={l.label}
             className={cx('rounded-md font-semibold tracking-[0.04em] transition-colors duration-150 cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28] text-center',
-              fullWidth ? 'flex-1 py-2 text-[14px]' : 'inline-flex items-center px-2 sm:px-2.5 min-h-[32px] text-[14px] sm:text-[14px]',
+              fullWidth ? 'flex-1 py-2 text-[15px]' : 'inline-flex items-center px-2 sm:px-2.5 min-h-[32px] text-[15px] sm:text-[15px]',
               l.current ? 'bg-[#121214] text-white shadow-xs' : 'text-[#4C433F] hover:text-[#121214] hover:bg-white/60')}>
             {l.short}
           </a>
@@ -51,7 +51,7 @@ export function Header({ s }: { s: any }) {
           <span aria-hidden="true" className="font-title wordmark-gradient text-[17px] sm:text-[21px] font-semibold tracking-[-0.03em]">Webstudio K</span>
         </a>
 
-        <nav aria-label={s.navAria} className="hidden lg:flex items-start gap-6 xl:gap-8 text-[14px] font-normal text-[#1F1F23]">
+        <nav aria-label={s.navAria} className="hidden lg:flex items-start gap-6 xl:gap-8 text-[15px] font-normal text-[#1F1F23]">
           {items.map((item) => {
             const active = item.dd ? ddActive : isCur(item.href, s);
             if (item.dd) return (
@@ -66,7 +66,7 @@ export function Header({ s }: { s: any }) {
                   <div className="w-[270px] rounded-[20px] bg-[#F2F2F2] border border-[#D3D6DA] p-2 shadow-[0_12px_30px_rgba(0,0,0,0.08)] flex flex-col">
                     {s.services.items.map((i: L) => (
                       <a key={i.href + i.label} href={i.href} aria-current={isCur(i.href, s) ? 'page' : undefined}
-                        className="flex items-center justify-between gap-3 rounded-xl px-3.5 py-2.5 text-[14px] text-[#18181B] hover:bg-white transition-colors">
+                        className="flex items-center justify-between gap-3 rounded-xl px-3.5 py-2.5 text-[15px] text-[#18181B] hover:bg-white transition-colors">
                         <span>{i.label}</span><ArrowRight className="w-3.5 h-3.5 text-[#4C433F]" aria-hidden="true" />
                       </a>
                     ))}
@@ -90,13 +90,13 @@ export function Header({ s }: { s: any }) {
         <div className="flex items-center gap-2 sm:gap-3.5 shrink-0">
           <div className="hidden xl:flex items-center gap-4 border-l border-[#C5C6CA] pl-4">
             <div className="flex flex-col leading-tight">
-              <span className="text-[14px] text-[#4C433F] font-normal">{s.ui.region}</span>
-              <span className="text-[14px] text-[#18181B] font-medium tabular-nums mt-0.5 whitespace-nowrap min-w-[112px]" data-clock="">{s.ui.clockFallback}</span>
+              <span className="text-[15px] text-[#4C433F] font-normal">{s.ui.region}</span>
+              <span className="text-[15px] text-[#18181B] font-medium tabular-nums mt-0.5 whitespace-nowrap min-w-[112px]" data-clock="">{s.ui.clockFallback}</span>
             </div>
           </div>
           <LanguageSwitcher s={s} compact />
           <button type="button" data-menu-open="" aria-label={s.menuOpen} aria-expanded="false" aria-controls="kw-menu"
-            className="inline-flex items-center gap-2 rounded-lg border border-[#C7C8CC] bg-[#E3E4E7]/85 hover:bg-[#DADCE0] px-2.5 sm:px-4 min-h-[38px] sm:min-h-[40px] text-[14px] font-semibold tracking-[0.06em] text-[#18181B] transition-colors duration-150 cursor-pointer whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]">
+            className="inline-flex items-center gap-2 rounded-lg border border-[#C7C8CC] bg-[#E3E4E7]/85 hover:bg-[#DADCE0] px-2.5 sm:px-4 min-h-[38px] sm:min-h-[40px] text-[15px] font-semibold tracking-[0.06em] text-[#18181B] transition-colors duration-150 cursor-pointer whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]">
             <span className="flex flex-col gap-[3px]" aria-hidden="true">
               <span className="block w-3 h-[1.5px] bg-[#18181B]" />
               <span className="block w-3 h-[1.5px] bg-[#18181B]" />
@@ -125,7 +125,7 @@ export function Header({ s }: { s: any }) {
 
             <nav aria-label={s.navAria} className="mt-7 flex flex-col gap-2">
               {s.mob.map((item: any, idx: number) => {
-                const num = <span className="text-[14px] font-normal tabular-nums text-[#4C433F]">0{idx + 1}.</span>;
+                const num = <span className="text-[15px] font-normal tabular-nums text-[#4C433F]">0{idx + 1}.</span>;
                 if (item.items) return (
                   <div key="acc" className="kw-di" style={{ ['--i' as any]: idx }} data-acc="">
                     <button type="button" aria-expanded="false" aria-controls="kw-m-diensten" data-acc-btn=""
@@ -164,14 +164,14 @@ export function Header({ s }: { s: any }) {
             {s.mcl[0] && (
               <div className="mt-6 pt-5 border-t border-[#D3D6DA]">
                 <a href={s.mcl[0].href} data-chat=""
-                  className="w-full inline-flex items-center justify-between rounded-full bg-[#121214] hover:opacity-90 text-white px-5 py-3 min-h-[46px] text-[14px] font-medium transition-opacity cursor-pointer">
+                  className="w-full inline-flex items-center justify-between rounded-full bg-[#121214] hover:opacity-90 text-white px-5 py-3 min-h-[46px] text-[15px] font-medium transition-opacity cursor-pointer">
                   <span>{s.mcl[0].label}</span><ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             )}
           </div>
 
-          <div className="pt-6 mt-8 border-t border-[#D3D6DA] flex flex-col gap-3 text-[14px] text-[#4C433F]">
+          <div className="pt-6 mt-8 border-t border-[#D3D6DA] flex flex-col gap-3 text-[15px] text-[#4C433F]">
             <div>
               <p className="text-[16px] text-[#4C433F]">{s.ui.timeIn}</p>
               <p className="text-[16px] font-medium text-[#18181B] tabular-nums mt-0.5" data-clock="">{s.ui.clockFallback}</p>

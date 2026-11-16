@@ -14,7 +14,7 @@ import { PAGINA_FOTO } from '../site/fotos.mjs';
 const W = 'max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10';
 const strip = (h: string) => (h || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const Badge = ({ children, dark = false, light = false }: { children: any; dark?: boolean; light?: boolean }) => (
-  <span className={dark ? 'inline-block rounded-md bg-[#1D1D20] px-3 py-1 text-[14px] font-medium text-[#D3D6DA]' : light ? 'inline-block rounded-md bg-white/75 px-3 py-1 text-[14px] font-medium text-[#4C433F]' : 'inline-block rounded-md bg-[#F2F2F2] px-3 py-1 text-[14px] font-medium text-[#4C433F]'}>
+  <span className={dark ? 'inline-block rounded-md bg-[#1D1D20] px-3 py-1 text-[15px] font-medium text-[#D3D6DA]' : light ? 'inline-block rounded-md bg-white/75 px-3 py-1 text-[15px] font-medium text-[#4C433F]' : 'inline-block rounded-md bg-[#F2F2F2] px-3 py-1 text-[15px] font-medium text-[#4C433F]'}>
     <span aria-hidden="true">• </span>{children}
   </span>
 );
@@ -33,11 +33,11 @@ function Btns({ ctas }: { ctas: any[] }) {
   return (
     <div className="mt-8 flex flex-wrap items-center gap-2.5 sm:gap-3">
       {ctas.map((c, i) => i === 0 ? (
-        <A key={i} href={c.href} chat={c.href.includes('#contact')} className="kw-pop group inline-flex items-center gap-3 sm:gap-3.5 rounded-full bg-[#121214] hover:bg-[#232327] text-white pl-5 pr-1.5 py-1.5 min-h-[44px] text-[14px] font-medium transition-colors cursor-pointer max-w-full">
+        <A key={i} href={c.href} chat={c.href.includes('#contact')} className="kw-pop group inline-flex items-center gap-3 sm:gap-3.5 rounded-full bg-[#121214] hover:bg-[#232327] text-white pl-5 pr-1.5 py-1.5 min-h-[44px] text-[15px] font-medium transition-colors cursor-pointer max-w-full">
           <span>{c.label}</span><span className="w-8 h-8 rounded-full bg-white text-[#121214] flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:translate-x-0.5"><ArrowRight className="w-3.5 h-3.5 stroke-[2]" /></span>
         </A>
       ) : (
-        <A key={i} href={c.href} className="kw-pop inline-flex items-center justify-center rounded-full bg-[#4C433F] hover:bg-[#3A3330] text-white px-6 sm:px-7 min-h-[44px] text-[14px] font-medium transition-colors cursor-pointer text-center max-w-full">{c.label}</A>
+        <A key={i} href={c.href} className="kw-pop inline-flex items-center justify-center rounded-full bg-[#4C433F] hover:bg-[#3A3330] text-white px-6 sm:px-7 min-h-[44px] text-[15px] font-medium transition-colors cursor-pointer text-center max-w-full">{c.label}</A>
       ))}
     </div>
   );
@@ -77,12 +77,12 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           <FadeIn immediate className="relative z-20 lg:col-span-5 flex flex-col items-start">
             {h.crumbs ? (
-              <nav aria-label={h.crumbAria} className="inline-block rounded-md bg-white/75 px-3 py-1 text-[14px] font-medium text-[#4C433F]">
+              <nav aria-label={h.crumbAria} className="inline-block rounded-md bg-white/75 px-3 py-1 text-[15px] font-medium text-[#4C433F]">
                 <ol className="flex flex-wrap items-center gap-x-1.5">
                   <li aria-hidden="true">•</li>
                   {h.crumbs.map((c: any, i: number) => (
                     <li key={i} className={cx('inline-flex items-center gap-x-1.5', c.mid && 'hidden sm:inline-flex')}>
-                      {i > 0 && <span aria-hidden="true" className="text-[#929090]">/</span>}
+                      {i > 0 && <span aria-hidden="true" className="text-[#C8C8CC]">/</span>}
                       {c.current ? <span aria-current="page" className="text-[#121214]" dangerouslySetInnerHTML={{ __html: c.html }} /> : <a href={c.href} className="hover:text-[#121214] transition-colors">{c.label}</a>}
                     </li>
                   ))}
@@ -104,7 +104,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
               <div data-sel="" data-sel-wrap="" data-sel-auto="6500" className="mx-auto lg:mx-0 w-full max-w-[360px] xl:max-w-[392px] rounded-[24px] sm:rounded-[28px] p-3 sm:p-3.5 bg-gradient-to-br from-[#C4C5C8]/90 via-[#B8B9BC]/85 to-[#ABACB0]/90 border border-white/30 flex items-stretch gap-3.5 sm:gap-5 shadow-[0_12px_30px_rgba(0,0,0,0.06)] backdrop-blur-xs">
                 <div className="relative overflow-hidden w-[118px] sm:w-[160px] h-[146px] sm:h-[168px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center">{fid ? <Foto id={fid} vorm="kaart" lang={h.lang} sizes="(min-width: 640px) 160px, 118px" className="absolute inset-0 block w-full h-full object-cover object-left-top" /> : <ShowcaseEmblem />}</div>
                 <div className="flex-1 min-w-0 flex flex-col justify-between py-1 sm:py-1.5 pr-0.5 sm:pr-1">
-                  <span aria-hidden="true" className="text-[14px] font-semibold text-[#18181B] tabular-nums">
+                  <span aria-hidden="true" className="text-[15px] font-semibold text-[#18181B] tabular-nums">
                     {slides.map((_, i) => <span key={i} data-sel-panel={i} hidden={i > 0}>0{i + 1}</span>)}
                   </span>
                   <div className="my-auto pt-1 sm:pt-2" aria-live="polite">
@@ -131,7 +131,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
               <nav aria-label={strip(sec.title)} className="hidden sm:flex w-full lg:max-w-[408px] flex-col items-center lg:items-end">
                 <p className="text-[16px] font-medium text-[#18181B] mb-3 lg:text-right">{strip(sec.title)}</p>
                 {[sec.chips.slice(0, 4), sec.chips.slice(4, 8)].map((row: any[], r: number) => (
-                  <div key={r} className={cx('flex flex-wrap items-center justify-center lg:justify-end gap-x-4 sm:gap-x-5 gap-y-2 text-[14px] sm:text-[14px] text-[#4C433F]', r > 0 && 'mt-2')}>
+                  <div key={r} className={cx('flex flex-wrap items-center justify-center lg:justify-end gap-x-4 sm:gap-x-5 gap-y-2 text-[15px] sm:text-[15px] text-[#4C433F]', r > 0 && 'mt-2')}>
                     {row.map((c: any, i: number) => {
                       const Ico = HERO_ICONS[r * 4 + i];
                       return <a key={c.href} href={c.href} className="inline-flex items-center gap-1.5 whitespace-nowrap font-medium text-[#4C433F] hover:text-[#121214] transition-colors"><Ico /><span>{c.label}</span></a>;
@@ -150,7 +150,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
         </div>
         {h.trust && h.trust.length > 0 && (
           <div className={cx(W, 'relative z-[35] mt-3 sm:mt-4')}>
-            <ul className="w-full rounded-2xl sm:rounded-full bg-[#121214]/95 backdrop-blur-md text-[#E4E4E7] px-5 sm:px-8 lg:px-10 min-h-[48px] sm:h-[54px] py-3 sm:py-0 flex flex-wrap max-sm:flex-col max-sm:items-start sm:flex-nowrap items-center justify-between gap-x-4 gap-y-1.5 text-[14px] sm:text-[14px] lg:text-[14px] font-normal shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
+            <ul className="w-full rounded-2xl sm:rounded-full bg-[#121214]/95 backdrop-blur-md text-[#E4E4E7] px-5 sm:px-8 lg:px-10 min-h-[48px] sm:h-[54px] py-3 sm:py-0 flex flex-wrap max-sm:flex-col max-sm:items-start sm:flex-nowrap items-center justify-between gap-x-4 gap-y-1.5 text-[15px] sm:text-[15px] lg:text-[15px] font-normal shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
               {h.trust.map((t: string, i: number) => (
                 <li key={i} className="inline-flex items-center gap-2 sm:whitespace-nowrap"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><Html html={t} /></li>
               ))}
@@ -184,7 +184,7 @@ function Head({ b, dark = false, center = false }: { b: any; dark?: boolean; cen
         {b.badge && <Badge dark={dark}>{b.badge}</Badge>}
         {b.h2 && <H2 html={b.h2} id={b.h2id} tag={b.h2tag} dark={dark} className={b.badge ? 'mt-3' : ''} />}
       </div>
-      {side && <div className={cx('text-[16px] leading-relaxed max-w-md kw-link [&_.btn]:mt-4 [&_.btn]:inline-flex', dark ? 'text-[#929090]' : 'text-[#4C433F]', center && 'mx-auto mt-3')} dangerouslySetInnerHTML={{ __html: side }} />}
+      {side && <div className={cx('text-[16px] leading-relaxed max-w-md kw-link [&_.btn]:mt-4 [&_.btn]:inline-flex', dark ? 'text-[#C8C8CC]' : 'text-[#4C433F]', center && 'mx-auto mt-3')} dangerouslySetInnerHTML={{ __html: side }} />}
     </FadeIn>
   );
 }
@@ -197,19 +197,19 @@ const Card = ({ c, i, dark, articles }: { c: any; i: number; dark: boolean; arti
         <T className="text-[19px] font-medium leading-snug text-[#121214] group-hover:text-[#B85D28] transition-colors [&_a]:after:absolute [&_a]:after:inset-0 [&_a]:after:rounded-[22px]" dangerouslySetInnerHTML={{ __html: c.h }} />
         <div className="mt-2.5 text-[16px] leading-relaxed text-[#4C433F] kw-prose" dangerouslySetInnerHTML={{ __html: c.body }} />
       </div>
-      <div aria-hidden="true" className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#121214]"><ArrowUpRight className="w-3.5 h-3.5" /></div>
+      <div aria-hidden="true" className="mt-6 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#121214]"><ArrowUpRight className="w-3.5 h-3.5" /></div>
     </div>
   );
   if (dark || c.dark) return (
     <div id={c.id || undefined} className="h-full rounded-[24px] bg-[#161618] border border-white/10 p-7 flex flex-col">
-      <span aria-hidden="true" className="text-[14px] tabular-nums text-[#D47A3B] font-medium">{String(i + 1).padStart(2, '0')}.</span>
+      <span aria-hidden="true" className="text-[15px] tabular-nums text-[#F1A36A] font-medium">{String(i + 1).padStart(2, '0')}.</span>
       {c.h && <T id={c.hid || undefined} className="mt-4 text-[22px] font-medium tracking-[-0.02em] text-white" dangerouslySetInnerHTML={{ __html: c.h }} />}
-      <div className={cx('mt-2.5 text-[16px] leading-relaxed text-[#B4B4BA] kw-prose kw-link [&_a]:text-white', LIST.replace(/#121214/g, '#FFFFFF').replace(/#D3D6DA/g, '#2E2E33').replace(/#9A4A1C/g, '#D47A3B'))} dangerouslySetInnerHTML={{ __html: c.body }} />
+      <div className={cx('mt-2.5 text-[16px] leading-relaxed text-[#C8C8CC] kw-prose kw-link [&_a]:text-white', LIST.replace(/#121214/g, '#FFFFFF').replace(/#D3D6DA/g, '#2E2E33').replace(/#9A4A1C/g, '#D47A3B'))} dangerouslySetInnerHTML={{ __html: c.body }} />
     </div>
   );
   return (
     <div id={c.id || undefined} className="h-full rounded-[22px] bg-[#F2F2F2] hover:bg-[#EAEBEC] border border-[#D3D6DA] hover:border-[#B85D28]/60 p-6 flex flex-col transition-colors duration-200">
-      <span aria-hidden="true" className="text-[14px] tabular-nums font-semibold text-[#9A4A1C]">{String(i + 1).padStart(2, '0')}.</span>
+      <span aria-hidden="true" className="text-[15px] tabular-nums font-semibold text-[#9A4A1C]">{String(i + 1).padStart(2, '0')}.</span>
       {c.h && <T id={c.hid || undefined} className="mt-3 text-[18px] font-medium text-[#121214]" dangerouslySetInnerHTML={{ __html: c.h }} />}
       <div className={cx('mt-2.5 text-[16px] leading-relaxed text-[#4C433F] kw-prose kw-link', LIST)} dangerouslySetInnerHTML={{ __html: c.body }} />
     </div>
@@ -249,7 +249,7 @@ function Chips({ links, aria }: { links: any[]; aria?: string }) {
     <nav aria-label={aria || undefined}>
       <ul className="flex flex-wrap gap-2.5">
         {links.map((l: any) => (
-          <li key={l.href + l.label}><a href={l.href} className="inline-flex rounded-full bg-[#F2F2F2] hover:bg-[#121214] hover:text-white px-4 py-2 text-[14px] font-medium text-[#121214] transition-colors cursor-pointer">{l.label}</a></li>
+          <li key={l.href + l.label}><a href={l.href} className="inline-flex rounded-full bg-[#F2F2F2] hover:bg-[#121214] hover:text-white px-4 py-2 text-[15px] font-medium text-[#121214] transition-colors cursor-pointer">{l.label}</a></li>
         ))}
       </ul>
     </nav>
@@ -305,11 +305,11 @@ function Lead({ html, dark, size }: { html: string; dark: boolean; size: number 
   return (
     <div className="relative pl-5 sm:pl-7">
       <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] rounded-full bg-gradient-to-b from-[#D47A3B] via-[#B85D28] to-[#5E2A11]" />
-      <Quote aria-hidden="true" className={cx('w-6 h-6 mb-3', dark ? 'text-[#D47A3B]' : 'text-[#B85D28]')} />
+      <Quote aria-hidden="true" className={cx('w-6 h-6 mb-3', dark ? 'text-[#F1A36A]' : 'text-[#B85D28]')} />
       <p className={cx('font-title leading-[1.2] tracking-[-0.025em] font-normal [text-wrap:pretty] kw-link',
         size > 520 ? 'text-[18px] sm:text-[20px]' : size > 300 ? 'text-[20px] sm:text-[24px]' : 'text-[22px] sm:text-[30px]',
         dark ? 'text-white [&_a]:text-white' : 'text-[#121214]')}>
-        <Html html={a} />{b && <span className={dark ? 'text-[#B4B4BA]' : 'text-[#4C433F]'}> <Html html={b} /></span>}
+        <Html html={a} />{b && <span className={dark ? 'text-[#C8C8CC]' : 'text-[#4C433F]'}> <Html html={b} /></span>}
       </p>
     </div>
   );
@@ -327,8 +327,8 @@ function ParaCards({ items, dark, onPanel }: { items: Item[]; dark: boolean; onP
         return (
           <StaggerItem key={i} i={i} className={cx('h-full', span6(n, i), span2(n, i))}>
             <div className={cx('h-full rounded-[22px] p-6 sm:p-7 flex flex-col gap-5', dark ? 'bg-[#161618] border border-white/10' : onPanel ? 'bg-white border border-[#E5E7EB]' : 'bg-[#F2F2F2] border border-[#D3D6DA]')}>
-              <span aria-hidden="true" className={cx('font-title text-[40px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', dark ? 'text-[#D47A3B]' : 'text-[#B85D28]')}>{String(i + 1).padStart(2, '0')}.</span>
-              <div className={cx('text-[16px] leading-relaxed kw-prose kw-link max-w-[68ch]', LIST_DOT, dark ? 'text-[#B4B4BA] [&_a]:text-white [&_strong]:text-white' : 'text-[#4C433F] [&_strong]:text-[#121214]')}>
+              <span aria-hidden="true" className={cx('font-title text-[40px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', dark ? 'text-[#F1A36A]' : 'text-[#B85D28]')}>{String(i + 1).padStart(2, '0')}.</span>
+              <div className={cx('text-[16px] leading-relaxed kw-prose kw-link max-w-[68ch]', LIST_DOT, dark ? 'text-[#C8C8CC] [&_a]:text-white [&_strong]:text-white' : 'text-[#4C433F] [&_strong]:text-[#121214]')}>
                 {p ? (b ? <p><span className={cx('font-medium', dark ? 'text-white' : 'text-[#121214]')}><Html html={a} /></span> <Html html={b} /></p> : <p><Html html={a} /></p>) : <Html html={it.html.split(/(?=<ul|<ol)/)[0]} as="div" />}
                 {lists && <Html html={lists} as="div" />}
               </div>
@@ -343,12 +343,12 @@ function ParaCards({ items, dark, onPanel }: { items: Item[]; dark: boolean; onP
 /** knoppen uit de tekst (a.btn) als de capsule-knop van de home */
 function BtnRow({ els, dark }: { els: string[]; dark: boolean }) {
   if (!els.length) return null;
-  return <div className={cx('mt-8 flex flex-wrap gap-3 [&_a]:inline-flex [&_a]:items-center [&_a]:rounded-full [&_a]:px-6 [&_a]:min-h-[46px] [&_a]:text-[14px] [&_a]:font-medium [&_a]:no-underline [&_p]:m-0', dark ? '[&_a]:bg-white [&_a]:!text-[#121214]' : '[&_a]:bg-[#121214] [&_a]:!text-white')} dangerouslySetInnerHTML={{ __html: els.join('') }} />;
+  return <div className={cx('mt-8 flex flex-wrap gap-3 [&_a]:inline-flex [&_a]:items-center [&_a]:rounded-full [&_a]:px-6 [&_a]:min-h-[46px] [&_a]:text-[15px] [&_a]:font-medium [&_a]:no-underline [&_p]:m-0', dark ? '[&_a]:bg-white [&_a]:!text-[#121214]' : '[&_a]:bg-[#121214] [&_a]:!text-white')} dangerouslySetInnerHTML={{ __html: els.join('') }} />;
 }
 
 /** groot sectienummer links (zoals de 01.-04. van de dienstkaarten): vult de linkerkolom onder de titel */
 const BigNum = ({ n, dark }: { n: number; dark: boolean }) => n ? (
-  <span aria-hidden="true" className={cx('hidden lg:block font-title text-[120px] xl:text-[150px] leading-[0.8] font-normal tracking-[-0.05em] tabular-nums select-none', dark ? 'text-[#D47A3B]/[0.28]' : 'text-[#B85D28]/[0.2]')}>{String(n).padStart(2, '0')}</span>
+  <span aria-hidden="true" className={cx('hidden lg:block font-title text-[120px] xl:text-[150px] leading-[0.8] font-normal tracking-[-0.05em] tabular-nums select-none', dark ? 'text-[#F1A36A]/[0.28]' : 'text-[#B85D28]/[0.2]')}>{String(n).padStart(2, '0')}</span>
 ) : null;
 
 /** tekstsectie: titel + groot nummer links, lead-zin rechts, overige alinea's als genummerde kaarten */
@@ -373,7 +373,7 @@ function ProseSection({ b, dark, panel }: { b: any; dark: boolean; panel: boolea
         </FadeIn>
         <FadeIn delay={0.08} className="lg:col-span-7 flex flex-col justify-center">
           {first && <Lead html={first} dark={dark} size={strip(first).length} />}
-          {solo && <div className={cx('mt-6 pl-5 sm:pl-7 text-[16px] leading-relaxed kw-link [&_strong]:font-medium', dark ? 'text-[#B4B4BA] [&_a]:text-white [&_strong]:text-white' : 'text-[#4C433F] [&_strong]:text-[#121214]')} dangerouslySetInnerHTML={{ __html: solo }} />}
+          {solo && <div className={cx('mt-6 pl-5 sm:pl-7 text-[16px] leading-relaxed kw-link [&_strong]:font-medium', dark ? 'text-[#C8C8CC] [&_a]:text-white [&_strong]:text-white' : 'text-[#4C433F] [&_strong]:text-[#121214]')} dangerouslySetInnerHTML={{ __html: solo }} />}
           {!items.length && <BtnRow els={btns} dark={dark} />}
         </FadeIn>
       </div>
@@ -540,7 +540,7 @@ function render(b: any, P: any, s: any, f?: any) {
             {b.h2 && <H2 html={b.h2} id={b.h2id} tag={b.h2tag} dark={dark} className={cx(b.badge && 'mt-3', '!text-[30px] sm:!text-[40px]')} />}
           </FadeIn>
           <FadeIn delay={0.08} className="lg:col-span-7 flex flex-col gap-8">
-            <Prose html={b.html} dark={dark} className={cx('[&_.btn]:mt-6 [&_.btn]:inline-flex [&_.btn]:items-center [&_.btn]:rounded-full [&_.btn]:px-6 [&_.btn]:min-h-[46px] [&_.btn]:text-[14px] [&_.btn]:font-medium [&_.btn]:no-underline', dark ? '[&_.btn]:bg-white [&_.btn]:!text-[#121214]' : '[&_.btn]:bg-[#121214] [&_.btn]:text-white')} />
+            <Prose html={b.html} dark={dark} className={cx('[&_.btn]:mt-6 [&_.btn]:inline-flex [&_.btn]:items-center [&_.btn]:rounded-full [&_.btn]:px-6 [&_.btn]:min-h-[46px] [&_.btn]:text-[15px] [&_.btn]:font-medium [&_.btn]:no-underline', dark ? '[&_.btn]:bg-white [&_.btn]:!text-[#121214]' : '[&_.btn]:bg-[#121214] [&_.btn]:text-white')} />
             {b.fig && <Figure html={b.fig} phone={b.figPhone} />}
           </FadeIn>
         </div>
@@ -562,7 +562,7 @@ function render(b: any, P: any, s: any, f?: any) {
       <Sec {...P}>
         <FadeIn className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div>
-            {b.badge && <span className="inline-block rounded-md bg-[#B85D28]/10 border border-[#B85D28]/20 px-3 py-1 text-[14px] font-medium text-[#5E2A11]"><span aria-hidden="true">• </span>{b.badge}</span>}
+            {b.badge && <span className="inline-block rounded-md bg-[#B85D28]/10 border border-[#B85D28]/20 px-3 py-1 text-[15px] font-medium text-[#5E2A11]"><span aria-hidden="true">• </span>{b.badge}</span>}
             <h2 id={b.h2id || undefined} className={cx(b.badge && 'mt-4', 'text-[34px] sm:text-[44px] leading-[1.04] tracking-[-0.03em] font-normal text-[#121214] max-w-2xl [text-wrap:balance]')} dangerouslySetInnerHTML={{ __html: b.h2 }} />
           </div>
         </FadeIn>
@@ -570,7 +570,7 @@ function render(b: any, P: any, s: any, f?: any) {
         {(b.after || b.cta) && (
           <div className="mt-6 rounded-[20px] bg-[#F2F2F2] border border-[#D3D6DA] px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <p className="text-[16px] text-[#4C433F] kw-link" dangerouslySetInnerHTML={{ __html: b.after || b.ctaNote }} />
-            {b.cta && <A href={b.cta.href} chat={b.cta.href.includes('#contact')} className="inline-flex items-center gap-2 rounded-full copper-pill-gradient hover:opacity-90 text-white px-5 py-2.5 text-[14px] font-medium transition-opacity cursor-pointer whitespace-nowrap shrink-0"><span>{b.cta.label}</span><ArrowRight className="w-3.5 h-3.5" /></A>}
+            {b.cta && <A href={b.cta.href} chat={b.cta.href.includes('#contact')} className="inline-flex items-center gap-2 rounded-full copper-pill-gradient hover:opacity-90 text-white px-5 py-2.5 text-[15px] font-medium transition-opacity cursor-pointer whitespace-nowrap shrink-0"><span>{b.cta.label}</span><ArrowRight className="w-3.5 h-3.5" /></A>}
           </div>
         )}
       </Sec>
@@ -579,14 +579,14 @@ function render(b: any, P: any, s: any, f?: any) {
       <Sec {...P}>
         <Head b={b} center />
         <Tiers tiers={b.tiers} />
-        {b.term.length > 0 && <div className="mt-8 text-center text-[14px] text-[#4C433F] max-w-2xl mx-auto kw-link">{b.term.map((t: string, i: number) => <p key={i} dangerouslySetInnerHTML={{ __html: t }} />)}</div>}
+        {b.term.length > 0 && <div className="mt-8 text-center text-[16px] leading-relaxed text-[#4C433F] max-w-2xl mx-auto kw-link">{b.term.map((t: string, i: number) => <p key={i} dangerouslySetInnerHTML={{ __html: t }} />)}</div>}
         {b.terms2 && (
           <div className="mt-6 rounded-[20px] bg-[#F2F2F2] border border-[#D3D6DA] px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h3 className="text-[17px] font-medium text-[#121214]" style={{ fontFamily: 'inherit' }} dangerouslySetInnerHTML={{ __html: b.terms2.h }} />
               <p className="text-[16px] text-[#4C433F] mt-0.5 kw-link" dangerouslySetInnerHTML={{ __html: b.terms2.p }} />
             </div>
-            {b.terms2.btn && <A href={b.terms2.btn.href} chat={b.terms2.btn.href.includes('#contact')} className="inline-flex items-center gap-2 rounded-full copper-pill-gradient hover:opacity-90 text-white px-5 py-2.5 text-[14px] font-medium transition-opacity cursor-pointer whitespace-nowrap shrink-0"><span>{b.terms2.btn.label}</span><ArrowRight className="w-3.5 h-3.5" /></A>}
+            {b.terms2.btn && <A href={b.terms2.btn.href} chat={b.terms2.btn.href.includes('#contact')} className="inline-flex items-center gap-2 rounded-full copper-pill-gradient hover:opacity-90 text-white px-5 py-2.5 text-[15px] font-medium transition-opacity cursor-pointer whitespace-nowrap shrink-0"><span>{b.terms2.btn.label}</span><ArrowRight className="w-3.5 h-3.5" /></A>}
           </div>
         )}
       </Sec>
@@ -612,11 +612,11 @@ function render(b: any, P: any, s: any, f?: any) {
             </div>
             {b.card && (
               <div className="mt-6 rounded-[20px] bg-[#F2F2F2] px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="text-[14px] text-[#4C433F] kw-link">
+                <div className="text-[15px] text-[#4C433F] kw-link">
                   {b.card.h && <h3 className="text-[17px] font-medium text-[#121214]" style={{ fontFamily: 'inherit' }} dangerouslySetInnerHTML={{ __html: b.card.h }} />}
                   {b.card.all.map((t: string, i: number) => <p key={i} className={i ? 'mt-1' : ''} dangerouslySetInnerHTML={{ __html: t }} />)}
                 </div>
-                {b.card.cta && <A href={b.card.cta.href} chat={b.card.cta.href.includes('#contact')} className="inline-flex items-center gap-2 text-[14px] font-medium text-[#121214] hover:text-[#B85D28] transition-colors cursor-pointer whitespace-nowrap shrink-0"><span>{b.card.cta.label}</span><ArrowRight className="w-3.5 h-3.5" /></A>}
+                {b.card.cta && <A href={b.card.cta.href} chat={b.card.cta.href.includes('#contact')} className="inline-flex items-center gap-2 text-[15px] font-medium text-[#121214] hover:text-[#B85D28] transition-colors cursor-pointer whitespace-nowrap shrink-0"><span>{b.card.cta.label}</span><ArrowRight className="w-3.5 h-3.5" /></A>}
               </div>
             )}
           </div>
@@ -628,20 +628,20 @@ function render(b: any, P: any, s: any, f?: any) {
         <FadeIn className="rounded-[28px] bg-[#070709] text-white p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-2xl">
             {b.also && (
-              <nav aria-label={b.also.aria || undefined} className="flex flex-wrap items-center gap-3 text-[14px] text-[#D3D6DA] mb-3">
+              <nav aria-label={b.also.aria || undefined} className="flex flex-wrap items-center gap-3 text-[15px] text-[#D3D6DA] mb-3">
                 <span>{b.also.label}</span>
                 {b.also.links.map((l: any) => (
-                  <a key={l.href} href={l.href} className="inline-flex items-center gap-1.5 hover:text-white transition-colors"><MapPin className="w-3 h-3 text-[#D47A3B]" /><span>{l.label}</span></a>
+                  <a key={l.href} href={l.href} className="inline-flex items-center gap-1.5 hover:text-white transition-colors"><MapPin className="w-3 h-3 text-[#F1A36A]" /><span>{l.label}</span></a>
                 ))}
               </nav>
             )}
             <h2 id={b.h2id || undefined} className="text-[26px] sm:text-[34px] font-normal tracking-[-0.03em]" dangerouslySetInnerHTML={{ __html: b.h2 }} />
             {b.p.map((t: string, i: number) => <p key={i} className="mt-3 text-[16px] leading-relaxed text-[#D3D6DA] kw-link [&_a]:text-white" dangerouslySetInnerHTML={{ __html: t }} />)}
-            {b.alt.map((t: string, i: number) => <p key={i} className="mt-2 text-[16px] leading-relaxed text-[#929090] kw-link [&_a]:text-white" dangerouslySetInnerHTML={{ __html: t }} />)}
+            {b.alt.map((t: string, i: number) => <p key={i} className="mt-2 text-[16px] leading-relaxed text-[#C8C8CC] kw-link [&_a]:text-white" dangerouslySetInnerHTML={{ __html: t }} />)}
           </div>
           {b.btn && (
             <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <A href={b.btn.href} chat={b.btn.href.includes('#contact')} className="inline-flex items-center gap-2.5 rounded-full copper-pill-gradient hover:opacity-90 text-white px-6 min-h-[46px] text-[14px] font-medium transition-opacity cursor-pointer">
+              <A href={b.btn.href} chat={b.btn.href.includes('#contact')} className="inline-flex items-center gap-2.5 rounded-full copper-pill-gradient hover:opacity-90 text-white px-6 min-h-[46px] text-[15px] font-medium transition-opacity cursor-pointer">
                 <span>{b.btn.label}</span><ArrowRight className="w-4 h-4" />
               </A>
             </div>
@@ -663,7 +663,7 @@ function render(b: any, P: any, s: any, f?: any) {
                     <p className="mt-3 text-[16px] leading-relaxed text-[#4C433F]" dangerouslySetInnerHTML={{ __html: d.p }} />
                   </div>
                 </div>
-                <div className="mt-5 pt-4 border-t border-[#D3D6DA] text-[14px] text-[#9A4A1C] font-medium inline-flex items-center gap-1.5"><span dangerouslySetInnerHTML={{ __html: d.l }} /><ArrowUpRight className="w-3.5 h-3.5" /></div>
+                <div className="mt-5 pt-4 border-t border-[#D3D6DA] text-[15px] text-[#9A4A1C] font-medium inline-flex items-center gap-1.5"><span dangerouslySetInnerHTML={{ __html: d.l }} /><ArrowUpRight className="w-3.5 h-3.5" /></div>
               </a>
             </StaggerItem>
           ))}

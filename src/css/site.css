@@ -244,7 +244,8 @@ html.kw-lock { overflow: hidden; }
 .kw-table { overflow-x: auto; margin: 1.25em 0; border-radius: 16px; border: 1px solid #e5e7eb; background: #fff; }
 .kw-table:focus-visible { outline: 2px solid #B85D28; outline-offset: 2px; }
 .kw-table table { min-width: 560px; margin: 0; }
-.kw-table caption { text-align: left; padding: .9em 1em .4em; font-size: .85em; color: #4C433F; }
+.kw-table caption { text-align: left; padding: .9em 1em .4em; font-size: 15px; color: #4C433F; }
+.kw-prose table { font-size: 16px; }
 .kw-table th, .kw-table td { padding: .7em 1em; }
 .kw-table thead th { font-weight: 600; color: #121214; background: #F2F2F2; }
 .kw-table tbody th { font-weight: 500; color: #121214; }
@@ -284,4 +285,13 @@ html.kw-lock { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .kw-map-line { animation: none; stroke-dashoffset: 0; opacity: .35; }
   .kw-map-pin, .kw-map-ring, .kw-map-ring-home, .kw-map-glow { animation: none; }
+}
+
+/* leesbaarheid (Karim 16-11): lopende tekst 16px op gsm, 17px vanaf desktop; regelhoogte 1.6 voor alle alinea's */
+main p, main li, footer p { line-height: 1.6; }
+@media (min-width: 1024px) {
+  .text-\[16px\]:not([class*="md:text-["]):not([class*="lg:text-["]):not([class*="xl:text-["]):not([class*="sm:text-["]),
+  [class*="sm:text-[16px]"]:not([class*="lg:text-["]):not([class*="xl:text-["]) { font-size: 17px; }
+  .kw-prose:not([class*="lg:text-["]) { font-size: 17px; }
+  main p.lead:not([class*="text-["]) { font-size: 17px; }
 }
