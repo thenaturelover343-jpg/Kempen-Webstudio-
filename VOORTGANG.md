@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 16-11-2026 (on-site SEO-audit). Branch `nieuwe-website`.
+Laatst bijgewerkt: 16-11-2026 (humanizer-ronde).
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -123,6 +123,12 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Stadspagina's: overlap 50-60% → max. 44% (varianten in `steden.mjs`). Contextuele links naar logo/SEO/webshop/vernieuwen op dienst-, sector- en kennispagina's.
   - 41/43 zoekwoorden uit volumes.csv hebben een doelpagina. Controles groen, Lighthouse 100 mobiel en desktop, CLS 0.
   - Open voor Karim: reviews/Bedrijfsprofiel, echte cases, algemene voorwaarden, sameAs-URL's, Shopify ja/nee.
+
+- [x] **Humanizer-ronde** (16-11-2026, Karim): skill blader/humanizer v4.0.0 nagelezen (alleen Markdown, manifesten en een lokaal validatiescript, niets verdachts) en geïnstalleerd in ~/.claude/skills/humanizer. Tag `voor-humanizer`.
+  - 322 zinswijzigingen op 62 pagina's (194 unieke zinnen), NL/FR/EN; voorbeelden in `HUMANIZER-WIJZIGINGEN.md`. Teksten van de live site ongemoeid (buildcontrole), feiten, prijzen, zoekwoorden, titles en H1 behouden.
+  - Twee correcties: "Persoonlijk voorstel binnen 1 werkdag" → "Antwoord doorgaans binnen 1 werkdag"; EN-contact "Usually a reply".
+  - Controles: SEO-audit 0 fouten, seocheck 0, linkcheck 0 (live en test), geen demo/gratis/tevreden, 0 lege vakken, 0 rastergaten, nergens horizontaal scrollen (390/1440, `overflow.mjs` slaat nu doorverwijspagina's over), tekstaudit 0, home 51/51, autoplay in orde, Lighthouse perf 99-100 en a11y/bp/seo 100, CLS 0.
+  - Test-build (noindex, Disallow) en live-build opnieuw gebouwd voor de testlink van Gusje.
 
 ## Bezig
 

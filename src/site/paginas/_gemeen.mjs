@@ -53,4 +53,4 @@ export const DELIVERY = {
 export const HOME_LABEL = { nl: 'Home', fr: 'Accueil', en: 'Home' };
 export const HUB_LABEL = { nl: 'Regio\'s', fr: 'Régions', en: 'Regions' };
 /** standaard slot: CTA met mail/telefoon en buursteden */
-export const cta = (lang, h2, also) => ({ t: 'cta', h2, p: { nl: 'Vraag een vrijblijvend voorstel aan voor uw eigen zaak. U zit nergens aan vast. ', fr: 'Demandez une proposition sans engagement pour votre propre entreprise. Vous n’êtes engagé à rien. ', en: 'Ask for a no-obligation proposal for your own business. You are not committed to anything. ' }[lang] + REPLY[lang], btn: [CTA[lang], ASK[lang]], alt: ALT[lang], also });
+export const cta = (lang, h2, also) => ({ t: 'cta', h2, p: { nl: 'Vraag een vrijblijvend voorstel aan voor uw zaak. U beslist pas als u de prijs kent. ', fr: 'Demandez une proposition sans engagement pour votre entreprise. Vous décidez une fois le prix connu. ', en: 'Ask for a no-obligation proposal for your business. You decide once you know the price. ' }[lang] + REPLY[lang], btn: [CTA[lang], ASK[lang]], alt: ALT[lang], also });

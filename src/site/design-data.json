@@ -127,7 +127,7 @@
     "y": 40,
     "countryLabel": "Vlaanderen",
     "teamLabel": "KMO’s, horeca & vrije beroepen",
-    "subLabel": "Persoonlijk voorstel binnen 1 werkdag"
+    "subLabel": "Overleg online of aan de telefoon"
    },
    {
     "id": "kortrijk",
@@ -136,21 +136,21 @@
     "y": 60,
     "countryLabel": "Heel België",
     "teamLabel": "Zelfstandigen & verenigingen",
-    "subLabel": "Antwoord binnen 1 werkdag"
+    "subLabel": "Antwoord doorgaans binnen 1 werkdag"
    }
   ],
   "awards": [
    {
     "id": "voorstel",
     "title": "Vast tarief",
-    "subtitle": "Vooraf duidelijk, zonder verrassingen",
+    "subtitle": "U kent de prijs vooraf",
     "variant": "light",
     "positionClass": "lg:top-4 lg:left-[12%]"
    },
    {
     "id": "prijzen",
     "title": "Vanaf €490",
-    "subtitle": "Duidelijke prijzen excl. btw",
+    "subtitle": "Vanaf-prijzen excl. btw",
     "variant": "dark",
     "positionClass": "lg:top-28 lg:left-[23%]"
    },
@@ -312,7 +312,7 @@
     "y": 40,
     "countryLabel": "Flandre & Bruxelles",
     "teamLabel": "PME, horeca & professions libérales",
-    "subLabel": "Devis personnalisé sous 1 jour ouvrable"
+    "subLabel": "Échanges en ligne ou par téléphone"
    },
    {
     "id": "kortrijk",
@@ -321,21 +321,21 @@
     "y": 60,
     "countryLabel": "Toute la Belgique",
     "teamLabel": "Indépendants & associations",
-    "subLabel": "Réponse sous 1 jour ouvrable"
+    "subLabel": "Réponse en général sous 1 jour ouvrable"
    }
   ],
   "awards": [
    {
     "id": "voorstel",
     "title": "Prix fixe",
-    "subtitle": "Clair dès le départ, sans surprise",
+    "subtitle": "Prix connu d’avance",
     "variant": "light",
     "positionClass": "lg:top-4 lg:left-[12%]"
    },
    {
     "id": "prijzen",
     "title": "Dès €490",
-    "subtitle": "Tarifs transparents HTVA",
+    "subtitle": "Prix de départ HTVA",
     "variant": "dark",
     "positionClass": "lg:top-28 lg:left-[23%]"
    },
@@ -381,7 +381,7 @@
    },
    "bistro-tilvaar": {
     "disciplines": [
-     "Menu showcase",
+     "Menu",
      "Terrace & groups",
      "Table booking"
     ],
@@ -497,7 +497,7 @@
     "y": 40,
     "countryLabel": "Flanders & Brussels",
     "teamLabel": "SMEs, hospitality & liberal professions",
-    "subLabel": "Personal proposal within 1 business day"
+    "subLabel": "Meetings online or by phone"
    },
    {
     "id": "kortrijk",
@@ -506,21 +506,21 @@
     "y": 60,
     "countryLabel": "All of Belgium",
     "teamLabel": "Sole traders & associations",
-    "subLabel": "Reply within 1 business day"
+    "subLabel": "Usually a reply within 1 working day"
    }
   ],
   "awards": [
    {
     "id": "voorstel",
     "title": "Fixed pricing",
-    "subtitle": "Clear upfront, zero surprises",
+    "subtitle": "Price known up front",
     "variant": "light",
     "positionClass": "lg:top-4 lg:left-[12%]"
    },
    {
     "id": "prijzen",
     "title": "From €490",
-    "subtitle": "Transparent rates excl. VAT",
+    "subtitle": "Starting prices excl. VAT",
     "variant": "dark",
     "positionClass": "lg:top-28 lg:left-[23%]"
    },

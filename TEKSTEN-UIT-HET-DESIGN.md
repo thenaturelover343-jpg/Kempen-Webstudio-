@@ -15,6 +15,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5–10 werkdagen  _(op 1 pagina)_
 - Afsprakenplanner  _(op 1 pagina)_
+- Antwoorden over onze aanpak, de prijzen en wanneer uw site online staat.  _(op 1 pagina)_
 - Architecten  _(op 1 pagina)_
 - Bakkers  _(op 1 pagina)_
 - Barbiers  _(op 1 pagina)_
@@ -25,14 +26,11 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Coaches  _(op 1 pagina)_
 - Dag 1  _(op 1 pagina)_
 - Doorlopend  _(op 1 pagina)_
-- Duidelijk overzicht vooraf, zonder verrassingen  _(op 1 pagina)_
-- Duidelijke antwoorden over onze aanpak, vaste prijzen en oplevering.  _(op 1 pagina)_
 - Eventbureaus  _(op 1 pagina)_
-- Eén vast aanspreekpunt na lancering  _(op 1 pagina)_
+- Eén vast aanspreekpunt na de lancering  _(op 1 pagina)_
 - Fotografen  _(op 1 pagina)_
 - Galerij  _(op 2 pagina's)_
 - Garages  _(op 1 pagina)_
-- Geoptimaliseerd voor gsm en computer  _(op 1 pagina)_
 - Grenzen: © EuroGeographics  _(op 1 pagina)_
 - Heel België  _(op 58 pagina's)_
 - Helder  _(op 1 pagina)_
@@ -56,7 +54,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Oost-Vlaanderen  _(op 1 pagina)_
 - Op maat  _(op 1 pagina)_
 - Per behandeling  _(op 1 pagina)_
-- Persoonlijk antwoord binnen 1 werkdag  _(op 1 pagina)_
 - Productpagina’s  _(op 1 pagina)_
 - Rijscholen  _(op 1 pagina)_
 - Route · Bellen · Website  _(op 1 pagina)_
@@ -73,18 +70,19 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Tuinaannemers en hoveniers ·  _(op 1 pagina)_
 - Uitgesproken typografie  _(op 1 pagina)_
 - Vakmensen ·  _(op 1 pagina)_
+- Van het eerste gesprek tot uw website online staat, in vier stappen. Bij elke stap weet u wat er gebeurt en wat het kost.  _(op 1 pagina)_
 - Vanaf €490 excl. btw, prijs vooraf, één aanspreekpunt.  _(op 1 pagina)_
 - Vaste prijs  _(op 1 pagina)_
 - Veilig afrekenen  _(op 1 pagina)_
 - Verfijnde stijl  _(op 1 pagina)_
 - Verhuurbedrijven  _(op 1 pagina)_
-- Vier overzichtelijke stappen waarmee u altijd weet wat er gebeurt, wat het kost en wanneer uw nieuwe website online staat.  _(op 1 pagina)_
 - Voorbeeldontwerpen in beeld  _(op 1 pagina)_
 - Waals-Brabant  _(op 1 pagina)_
 - Webshops  _(op 1 pagina)_
 - Website laten maken in België: webdesign op maat voor uw zaak, eerst een vrijblijvend voorstel.  _(op 1 pagina)_
 - Werkgebied  _(op 2 pagina's)_
 - Werkt in heel België  _(op 2 pagina's)_
+- Werkt vlot op gsm en computer  _(op 1 pagina)_
 - Winkelmand  _(op 1 pagina)_
 - Zes van onze voorbeeldontwerpen, elk voor een andere sector. Namen en gegevens zijn fictief; klik door voor de doelgroep, de keuzes en de functies.  _(op 1 pagina)_
 - © 2026 Kempen Webstudio · Ondernemingsnummer BE 0897.577.919  _(op 57 pagina's)_
@@ -118,18 +116,20 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Bouton rendez-vous  _(op 1 pagina)_
 - Bruges  _(op 2 pagina's)_
 - Chambres d  _(op 1 pagina)_
+- Clair  _(op 1 pagina)_
 - Clubs sportifs  _(op 1 pagina)_
 - Coachs  _(op 1 pagina)_
 - Comptables  _(op 1 pagina)_
 - Continu  _(op 1 pagina)_
 - Création de site internet en Belgique par une agence web de Kasterlee : un site sur mesure, avec d’abord une proposition sans engagement.  _(op 1 pagina)_
 - Demande de devis  _(op 2 pagina's)_
-- Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.  _(op 1 pagina)_
 - Design épuré  _(op 1 pagina)_
+- Du premier échange à la mise en ligne, en quatre étapes. À chaque étape, vous savez ce qui se passe et ce que cela coûte.  _(op 1 pagina)_
 - Dès €490 HTVA.  _(op 1 pagina)_
 - Entrepreneurs de jardins et jardiniers-paysagistes ·  _(op 1 pagina)_
 - Entreprises de construction  _(op 1 pagina)_
 - Fiches produits  _(op 1 pagina)_
+- Fonctionne bien sur smartphone et ordinateur  _(op 1 pagina)_
 - Forfait Start en ligne  _(op 1 pagina)_
 - Galerie  _(op 2 pagina's)_
 - Garages  _(op 1 pagina)_
@@ -155,8 +155,8 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Mobile-first  _(op 1 pagina)_
 - Namen  _(op 1 pagina)_
 - Nos exemples de sites en images  _(op 1 pagina)_
+- Nos réponses sur la méthode, les prix et le délai de mise en ligne.  _(op 1 pagina)_
 - Oost-Vlaanderen  _(op 1 pagina)_
-- Optimisé pour mobile et ordinateur  _(op 1 pagina)_
 - Paiement sécurisé  _(op 1 pagina)_
 - Palette apaisante  _(op 1 pagina)_
 - Panier  _(op 1 pagina)_
@@ -164,26 +164,25 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Photographes  _(op 1 pagina)_
 - Pour chaque activité  _(op 1 pagina)_
 - Prix fixe  _(op 1 pagina)_
-- Quatre étapes simples pour savoir à tout moment ce qui est fait, ce que cela coûte et quand votre site sera en ligne.  _(op 1 pagina)_
 - Rapide sur smartphone et PC  _(op 1 pagina)_
+- Réponse en général sous 1 jour ouvrable  _(op 1 pagina)_
 - Réponse habituelle sous 1 jour ouvrable  _(op 55 pagina's)_
-- Réponse personnelle sous 1 jour ouvrable  _(op 1 pagina)_
 - Réservation en ligne  _(op 2 pagina's)_
 - Salons de coiffure et barbershops ·  _(op 1 pagina)_
 - Services clairs  _(op 1 pagina)_
-- Six de nos exemples de design, chacun pour un autre secteur. Les noms et données sont fictifs ; cliquez pour le public, les choix et les fonctions.  _(op 1 pagina)_
+- Six de nos exemples de design, chacun pour un autre secteur. Les noms et données sont fictifs ; cliquez pour voir à qui chaque site s’adresse, les choix et les fonctions.  _(op 1 pagina)_
 - Structure claire  _(op 1 pagina)_
 - Style lumineux  _(op 1 pagina)_
 - Style raffiné  _(op 1 pagina)_
 - Sur mesure  _(op 2 pagina's)_
 - Surfaces sombres  _(op 1 pagina)_
 - Tons chaleureux  _(op 1 pagina)_
-- Tout est clair à l’avance, sans surprises  _(op 1 pagina)_
 - Traiteurs  _(op 1 pagina)_
 - Typographie affirmée  _(op 1 pagina)_
-- Un interlocuteur unique après lancement  _(op 1 pagina)_
 - Un interlocuteur unique  _(op 1 pagina)_
+- Un seul interlocuteur après le lancement  _(op 1 pagina)_
 - Vlaams-Brabant  _(op 1 pagina)_
+- Vous connaissez le prix avant de décider  _(op 1 pagina)_
 - Waals-Brabant  _(op 1 pagina)_
 - West-Vlaanderen  _(op 1 pagina)_
 - Zone d’action  _(op 1 pagina)_
@@ -206,6 +205,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - 5–10 bus. days  _(op 1 pagina)_
 - Accountants  _(op 1 pagina)_
 - All of Belgium  _(op 53 pagina's)_
+- Answers about how we work, our prices and when your site goes live.  _(op 1 pagina)_
 - Architects  _(op 1 pagina)_
 - Back to top  _(op 52 pagina's)_
 - Bakers  _(op 1 pagina)_
@@ -223,8 +223,8 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Calm palette  _(op 1 pagina)_
 - Carpentry  _(op 1 pagina)_
 - Caterers  _(op 1 pagina)_
-- Clear answers about our approach, fixed pricing and delivery times.  _(op 1 pagina)_
 - Clear structure  _(op 1 pagina)_
+- Clear  _(op 1 pagina)_
 - Coaches  _(op 1 pagina)_
 - Completed projects  _(op 1 pagina)_
 - Coverage area  _(op 1 pagina)_
@@ -234,9 +234,8 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Event agencies  _(op 1 pagina)_
 - Fast on mobile and desktop  _(op 1 pagina)_
 - Fixed price  _(op 1 pagina)_
-- Four straightforward steps so you always know what happens next, what it costs and when your website goes live.  _(op 1 pagina)_
+- From the first conversation to your site going live, in four steps. At each step you know what happens and what it costs.  _(op 1 pagina)_
 - From €490 excl. VAT, price up front.  _(op 1 pagina)_
-- Full clarity upfront, with zero surprises  _(op 1 pagina)_
 - Gallery  _(op 1 pagina)_
 - Garages  _(op 1 pagina)_
 - Garden contractors and landscape gardeners ·  _(op 1 pagina)_
@@ -253,18 +252,15 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Luik  _(op 1 pagina)_
 - Luxemburg  _(op 1 pagina)_
 - MENU  _(op 52 pagina's)_
-- Menu showcase  _(op 1 pagina)_
 - Mobile friendly  _(op 1 pagina)_
 - Mobile-first  _(op 1 pagina)_
 - Namen  _(op 1 pagina)_
-- One dedicated contact after launch  _(op 1 pagina)_
+- One point of contact after launch  _(op 1 pagina)_
 - Online shops  _(op 1 pagina)_
 - Oost-Vlaanderen  _(op 1 pagina)_
-- Optimized for phone and desktop  _(op 1 pagina)_
 - Our sample designs at a glance  _(op 1 pagina)_
 - Painters ·  _(op 1 pagina)_
 - Per treatment  _(op 1 pagina)_
-- Personal reply within 1 business day  _(op 1 pagina)_
 - Photo gallery  _(op 1 pagina)_
 - Photographers  _(op 1 pagina)_
 - Physiotherapists  _(op 1 pagina)_
@@ -290,8 +286,11 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Time in Belgium  _(op 52 pagina's)_
 - Tradespeople ·  _(op 1 pagina)_
 - Understated layout  _(op 1 pagina)_
+- Usually a reply within 1 working day  _(op 1 pagina)_
 - Vlaams-Brabant  _(op 1 pagina)_
 - Waals-Brabant  _(op 1 pagina)_
 - West-Vlaanderen  _(op 1 pagina)_
+- Works well on phone and desktop  _(op 1 pagina)_
+- You know the price before you decide  _(op 1 pagina)_
 - © 2026 Kempen Webstudio · Company number BE 0897.577.919  _(op 52 pagina's)_
 - · No reviews yet  _(op 1 pagina)_
