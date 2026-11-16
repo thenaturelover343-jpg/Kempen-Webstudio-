@@ -12,9 +12,9 @@ function Layout({ s, f, chatTitle, children }: { s: any; f: any; chatTitle: stri
   const cta = s.cta || s.floating[0] || { label: 'Contact', href: '/#contact' };
   return (
     <>
-      <a href="#main" className="kw-skip rounded-full bg-[#121214] text-white px-4 py-2 text-[13px] font-medium">{s.skip}</a>
+      <a href="#main" className="kw-skip rounded-full bg-[#121214] text-white px-4 py-2 text-[15px] font-medium">{s.skip}</a>
       <ScrollProgressBar />
-      <div id="top" className="min-h-screen w-full hero-canvas flex flex-col justify-between overflow-x-hidden">
+      <div id="top" className="min-h-screen w-full hero-canvas flex flex-col justify-between overflow-x-clip">
         <Header s={s} />
         <main id="main" className="flex-1 w-full">{children}</main>
         <Footer s={s} cta={cta} />
@@ -33,7 +33,7 @@ export function renderHome(m: any) {
 export function renderPage(m: any) {
   return renderToStaticMarkup(
     <Layout s={m.s} f={m.f} chatTitle={m.chatTitle}>
-      <div className="w-full overflow-x-hidden">
+      <div className="w-full overflow-x-clip">
         {m.hero && <PageHero h={m.hero} ui={m.s.ui} />}
         <Blocks blocks={m.blocks} s={m.s} f={m.f} />
       </div>

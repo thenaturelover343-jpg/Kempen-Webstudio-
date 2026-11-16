@@ -23,7 +23,7 @@ export function FloatingCta({ s }: { s: any }) {
         </a>
       )}
       <a href={demo.href} data-chat=""
-        className="kw-pop inline-flex items-center gap-2.5 rounded-full bg-[#121214] hover:bg-[#1E1E22] text-white border border-white/15 pl-2 pr-4 py-2 min-h-[46px] text-[13px] font-medium shadow-[0_14px_34px_rgba(7,7,9,0.28)] transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]">
+        className="kw-pop inline-flex items-center gap-2.5 rounded-full bg-[#121214] hover:bg-[#1E1E22] text-white border border-white/15 pl-2 pr-4 py-2 min-h-[46px] text-[14px] font-medium shadow-[0_14px_34px_rgba(7,7,9,0.28)] transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]">
         <span className="w-8 h-8 rounded-full copper-pill-gradient flex items-center justify-center shrink-0"><MessageSquare className="w-4 h-4 text-white" /></span>
         <span>{demo.label}</span>
       </a>
@@ -33,18 +33,18 @@ export function FloatingCta({ s }: { s: any }) {
 
 export function CookieBanner({ s }: { s: any }) {
   const c = s.cookie; if (!c) return null;
-  const btn = 'min-h-[38px] rounded-full px-4 text-[12.5px] font-medium transition-colors cursor-pointer';
+  const btn = 'min-h-[38px] rounded-full px-4 text-[14px] font-medium transition-colors cursor-pointer';
   return (
     <div id="ck" hidden role="region" aria-labelledby="ck-t"
       className="fixed left-3 right-3 bottom-3 sm:left-auto sm:right-6 sm:bottom-6 z-[60] sm:w-full sm:max-w-md overflow-hidden rounded-2xl bg-[#121214]/95 backdrop-blur-md text-white border border-[#B85D28]/45 shadow-[0_18px_42px_rgba(7,7,9,0.32)] px-4 py-4">
-      <h2 id="ck-t" className="text-[13.5px] font-medium text-white leading-snug" style={{ fontFamily: 'inherit' }}>{c.title}</h2>
-      <p id="ck-d" className="mt-1 text-[12px] text-[#D3D6DA] leading-relaxed kw-link" dangerouslySetInnerHTML={{ __html: c.text }} />
+      <h2 id="ck-t" className="text-[14px] font-medium text-white leading-snug" style={{ fontFamily: 'inherit' }}>{c.title}</h2>
+      <p id="ck-d" className="mt-1 text-[16px] text-[#D3D6DA] leading-relaxed kw-link" dangerouslySetInnerHTML={{ __html: c.text }} />
       <div id="ck-set" hidden className="mt-3 flex flex-col">
         {c.rows.map((r: any) => (
           <label key={r.title} className="flex items-center justify-between gap-4 py-2.5 border-t border-white/10 cursor-pointer">
             <span className="flex flex-col">
-              <span className="text-[12.5px] font-medium text-white">{r.title}</span>
-              <span className="text-[11.5px] text-[#D3D6DA]">{r.small}</span>
+              <span className="text-[14px] font-medium text-white">{r.title}</span>
+              <span className="text-[14px] text-[#D3D6DA]">{r.small}</span>
             </span>
             <input type="checkbox" id={r.id || undefined} defaultChecked={r.disabled || r.checked} disabled={r.disabled} className="w-4 h-4 accent-[#B85D28] shrink-0" />
           </label>

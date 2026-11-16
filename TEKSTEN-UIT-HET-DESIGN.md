@@ -15,39 +15,61 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5–10 werkdagen  _(op 1 pagina)_
 - Afsprakenplanner  _(op 1 pagina)_
+- Architecten  _(op 1 pagina)_
+- Bakkers  _(op 1 pagina)_
+- Barbiers  _(op 1 pagina)_
+- Boekhouders  _(op 1 pagina)_
 - Boekingssysteem  _(op 1 pagina)_
+- Bouwbedrijven  _(op 1 pagina)_
+- Cateraars  _(op 1 pagina)_
+- Coaches  _(op 1 pagina)_
 - Dag 1  _(op 1 pagina)_
 - Doorlopend  _(op 1 pagina)_
 - Duidelijk overzicht vooraf, zonder verrassingen  _(op 1 pagina)_
 - Duidelijke antwoorden over onze aanpak, vaste prijzen en oplevering.  _(op 1 pagina)_
+- Eventbureaus  _(op 1 pagina)_
 - Eén vast aanspreekpunt na lancering  _(op 1 pagina)_
+- Fotografen  _(op 1 pagina)_
 - Galerij  _(op 2 pagina's)_
+- Garages  _(op 1 pagina)_
 - Geoptimaliseerd voor gsm en computer  _(op 1 pagina)_
-- Heel België  _(op 60 pagina's)_
+- Grenzen: © EuroGeographics  _(op 1 pagina)_
+- Heel België  _(op 58 pagina's)_
 - Helder  _(op 1 pagina)_
 - Heldere opbouw  _(op 1 pagina)_
+- Henegouwen  _(op 1 pagina)_
 - Horeca ·  _(op 1 pagina)_
 - Ingetogen ontwerp  _(op 1 pagina)_
 - Kapsalons en barbershops ·  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 114 pagina's)_
+- Kies uw stad  _(op 1 pagina)_
 - Lichte stijl  _(op 1 pagina)_
+- Luik  _(op 3 pagina's)_
+- Luxemburg  _(op 1 pagina)_
 - MENU  _(op 57 pagina's)_
 - Menukaart  _(op 1 pagina)_
 - Mobile-first  _(op 1 pagina)_
 - Naar boven  _(op 57 pagina's)_
+- Namen  _(op 3 pagina's)_
 - Offerteaanvraag  _(op 1 pagina)_
 - Offerteformulier  _(op 1 pagina)_
 - Online boeken  _(op 1 pagina)_
+- Oost-Vlaanderen  _(op 1 pagina)_
 - Op maat  _(op 1 pagina)_
 - Per behandeling  _(op 1 pagina)_
 - Persoonlijk antwoord binnen 1 werkdag  _(op 1 pagina)_
 - Productpagina’s  _(op 1 pagina)_
+- Rijscholen  _(op 1 pagina)_
 - Route · Bellen · Website  _(op 1 pagina)_
 - Rustig palet  _(op 1 pagina)_
 - Schilders ·  _(op 1 pagina)_
+- Schoonheidssalons  _(op 1 pagina)_
+- Slagers  _(op 1 pagina)_
 - Snel op gsm en computer  _(op 1 pagina)_
+- Sportclubs  _(op 1 pagina)_
 - Start-pakket online  _(op 1 pagina)_
 - Taal  _(op 1 pagina)_
+- Therapeuten  _(op 1 pagina)_
 - Tijd in België  _(op 57 pagina's)_
 - Tuinaannemers en hoveniers ·  _(op 1 pagina)_
 - Uitgesproken typografie  _(op 1 pagina)_
@@ -56,11 +78,16 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Vaste prijs  _(op 1 pagina)_
 - Veilig afrekenen  _(op 1 pagina)_
 - Verfijnde stijl  _(op 1 pagina)_
+- Verhuurbedrijven  _(op 1 pagina)_
 - Vier overzichtelijke stappen waarmee u altijd weet wat er gebeurt, wat het kost en wanneer uw nieuwe website online staat.  _(op 1 pagina)_
+- Voorbeeldontwerpen in beeld  _(op 1 pagina)_
+- Waals-Brabant  _(op 1 pagina)_
+- Webshops  _(op 1 pagina)_
 - Website laten maken in België: webdesign op maat voor uw zaak, eerst een vrijblijvend voorstel.  _(op 1 pagina)_
 - Werkgebied  _(op 2 pagina's)_
-- Werkt in heel België  _(op 5 pagina's)_
+- Werkt in heel België  _(op 2 pagina's)_
 - Winkelmand  _(op 1 pagina)_
+- Zes van onze voorbeeldontwerpen, elk voor een andere sector. Namen en gegevens zijn fictief; klik door voor de doelgroep, de keuzes en de functies.  _(op 1 pagina)_
 - © 2026 Kempen Webstudio · Ondernemingsnummer BE 0897.577.919  _(op 57 pagina's)_
 - · Nog geen reviews  _(op 1 pagina)_
 
@@ -76,34 +103,65 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - 08 / 09 · Salon de coiffure  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5–10 jours ouvr.  _(op 1 pagina)_
-- Actif dans toute la Belgique  _(op 5 pagina's)_
+- Actif dans toute la Belgique  _(op 2 pagina's)_
 - Adapté mobile  _(op 1 pagina)_
+- Agenda en ligne  _(op 1 pagina)_
 - Agenda par soin  _(op 1 pagina)_
 - Aménagement  _(op 1 pagina)_
+- Architectes  _(op 1 pagina)_
+- Artisans ·  _(op 1 pagina)_
+- Auto-écoles  _(op 1 pagina)_
+- Barbiers  _(op 1 pagina)_
+- Boucheries  _(op 1 pagina)_
+- Boulangeries  _(op 1 pagina)_
+- Boutiques en ligne  _(op 1 pagina)_
 - Bouton rendez-vous  _(op 1 pagina)_
+- Bruges  _(op 2 pagina's)_
+- Chambres d  _(op 1 pagina)_
+- Clubs sportifs  _(op 1 pagina)_
+- Coachs  _(op 1 pagina)_
+- Comptables  _(op 1 pagina)_
 - Continu  _(op 1 pagina)_
 - Création de site internet en Belgique : un site sur mesure pour votre entreprise, avec d’abord une proposition sans engagement.  _(op 1 pagina)_
-- Création de site internet à la Campine  _(op 1 pagina)_
-- Demande de devis  _(op 1 pagina)_
+- Demande de devis  _(op 2 pagina's)_
 - Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.  _(op 1 pagina)_
 - Design épuré  _(op 1 pagina)_
 - Dès €490 HTVA.  _(op 1 pagina)_
+- Entrepreneurs de jardins et jardiniers-paysagistes ·  _(op 1 pagina)_
+- Entreprises de construction  _(op 1 pagina)_
 - Fiches produits  _(op 1 pagina)_
-- Flandre-Occidentale  _(op 2 pagina's)_
 - Forfait Start en ligne  _(op 1 pagina)_
-- Galerie  _(op 1 pagina)_
+- Galerie  _(op 2 pagina's)_
+- Garages  _(op 1 pagina)_
+- Hasselt  _(op 2 pagina's)_
 - Haut de page  _(op 55 pagina's)_
+- Henegouwen  _(op 1 pagina)_
 - Heure en Belgique  _(op 55 pagina's)_
+- Horeca ·  _(op 1 pagina)_
+- Instituts de beauté  _(op 1 pagina)_
 - Intérieur  _(op 1 pagina)_
 - Itinéraire · Appeler · Site web  _(op 1 pagina)_
+- Jardiniers  _(op 1 pagina)_
 - Jour 1  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 110 pagina's)_
+- Kinés  _(op 1 pagina)_
+- Limburg  _(op 1 pagina)_
+- Limites : © EuroGeographics  _(op 1 pagina)_
+- Location  _(op 1 pagina)_
+- Luik  _(op 1 pagina)_
+- Luxemburg  _(op 1 pagina)_
 - MENU  _(op 55 pagina's)_
+- Malines  _(op 2 pagina's)_
 - Mobile-first  _(op 1 pagina)_
+- Namen  _(op 1 pagina)_
+- Nos exemples de sites en images  _(op 1 pagina)_
+- Oost-Vlaanderen  _(op 1 pagina)_
 - Optimisé pour mobile et ordinateur  _(op 1 pagina)_
 - Paiement sécurisé  _(op 1 pagina)_
 - Palette apaisante  _(op 1 pagina)_
 - Panier  _(op 1 pagina)_
+- Peintres ·  _(op 1 pagina)_
+- Photographes  _(op 1 pagina)_
 - Pour chaque activité  _(op 1 pagina)_
 - Prix fixe  _(op 1 pagina)_
 - Quatre étapes simples pour savoir à tout moment ce qui est fait, ce que cela coûte et quand votre site sera en ligne.  _(op 1 pagina)_
@@ -111,7 +169,9 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Réponse habituelle sous 1 jour ouvrable  _(op 55 pagina's)_
 - Réponse personnelle sous 1 jour ouvrable  _(op 1 pagina)_
 - Réservation en ligne  _(op 2 pagina's)_
+- Salons de coiffure et barbershops ·  _(op 1 pagina)_
 - Services clairs  _(op 1 pagina)_
+- Six de nos exemples de design, chacun pour un autre secteur. Les noms et données sont fictifs ; cliquez pour le public, les choix et les fonctions.  _(op 1 pagina)_
 - Structure claire  _(op 1 pagina)_
 - Style lumineux  _(op 1 pagina)_
 - Style raffiné  _(op 1 pagina)_
@@ -119,13 +179,18 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Surfaces sombres  _(op 1 pagina)_
 - Tons chaleureux  _(op 1 pagina)_
 - Tout est clair à l’avance, sans surprises  _(op 1 pagina)_
+- Traiteurs  _(op 1 pagina)_
 - Typographie affirmée  _(op 1 pagina)_
 - Un interlocuteur unique après lancement  _(op 1 pagina)_
 - Un interlocuteur unique  _(op 1 pagina)_
+- Vlaams-Brabant  _(op 1 pagina)_
+- Waals-Brabant  _(op 1 pagina)_
+- West-Vlaanderen  _(op 1 pagina)_
 - Zone d’action  _(op 1 pagina)_
 - Zone d’intervention  _(op 1 pagina)_
 - © 2026 Kempen Webstudio · Numéro d’entreprise BE 0897.577.919  _(op 55 pagina's)_
 - · Pas encore d’avis  _(op 1 pagina)_
+- Événementiel  _(op 1 pagina)_
 
 ## EN
 
@@ -139,60 +204,90 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - 08 / 09 · Hair salon  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5–10 bus. days  _(op 1 pagina)_
-- All of Belgium  _(op 55 pagina's)_
+- Accountants  _(op 1 pagina)_
+- All of Belgium  _(op 53 pagina's)_
+- Architects  _(op 1 pagina)_
 - Back to top  _(op 52 pagina's)_
+- Bakers  _(op 1 pagina)_
+- Beauty salons  _(op 1 pagina)_
 - Bespoke work  _(op 1 pagina)_
 - Bold typography  _(op 1 pagina)_
 - Booking button  _(op 1 pagina)_
 - Booking calendar  _(op 1 pagina)_
 - Booking system  _(op 1 pagina)_
+- Boundaries: © EuroGeographics  _(op 1 pagina)_
+- Bs  _(op 1 pagina)_
+- Builders  _(op 1 pagina)_
+- Butchers  _(op 1 pagina)_
 - Calm palette  _(op 1 pagina)_
+- Caterers  _(op 1 pagina)_
 - Clear answers about our approach, fixed pricing and delivery times.  _(op 1 pagina)_
 - Clear structure  _(op 1 pagina)_
+- Coaches  _(op 1 pagina)_
 - Completed projects  _(op 1 pagina)_
 - Coverage area  _(op 1 pagina)_
 - Day 1  _(op 1 pagina)_
 - Directions · Call · Website  _(op 1 pagina)_
+- Driving schools  _(op 1 pagina)_
+- Event agencies  _(op 1 pagina)_
 - Fast on mobile and desktop  _(op 1 pagina)_
 - Fixed price  _(op 1 pagina)_
 - Four straightforward steps so you always know what happens next, what it costs and when your website goes live.  _(op 1 pagina)_
 - From €490 excl. VAT, price up front.  _(op 1 pagina)_
 - Full clarity upfront, with zero surprises  _(op 1 pagina)_
 - Gallery  _(op 1 pagina)_
+- Garages  _(op 1 pagina)_
 - Garden contractors and landscape gardeners ·  _(op 1 pagina)_
 - Hair salons and barbershops ·  _(op 1 pagina)_
 - Have a website built in Belgium: a custom design for your business, starting with a no-obligation proposal.  _(op 1 pagina)_
-- Have a website built in the Kempen  _(op 1 pagina)_
+- Henegouwen  _(op 1 pagina)_
 - Hospitality ·  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 104 pagina's)_
+- Lawyers  _(op 1 pagina)_
+- Liberal professions  _(op 1 pagina)_
 - Light aesthetic  _(op 1 pagina)_
+- Luik  _(op 1 pagina)_
+- Luxemburg  _(op 1 pagina)_
 - MENU  _(op 52 pagina's)_
 - Menu showcase  _(op 1 pagina)_
 - Mobile friendly  _(op 1 pagina)_
 - Mobile-first  _(op 1 pagina)_
+- Namen  _(op 1 pagina)_
 - One dedicated contact after launch  _(op 1 pagina)_
+- Online shops  _(op 1 pagina)_
+- Oost-Vlaanderen  _(op 1 pagina)_
 - Optimized for phone and desktop  _(op 1 pagina)_
+- Our sample designs at a glance  _(op 1 pagina)_
 - Painters ·  _(op 1 pagina)_
 - Per treatment  _(op 1 pagina)_
 - Personal reply within 1 business day  _(op 1 pagina)_
 - Photo gallery  _(op 1 pagina)_
+- Photographers  _(op 1 pagina)_
+- Physiotherapists  _(op 1 pagina)_
 - Quote form  _(op 1 pagina)_
 - Quote requests  _(op 1 pagina)_
 - Refined style  _(op 1 pagina)_
+- Rental companies  _(op 1 pagina)_
 - Reply usually within 1 business day  _(op 52 pagina's)_
 - Secure checkout  _(op 1 pagina)_
 - Service Area  _(op 1 pagina)_
 - Service overview  _(op 1 pagina)_
-- Serving all of Belgium  _(op 5 pagina's)_
+- Serving all of Belgium  _(op 2 pagina's)_
 - Shopping cart  _(op 1 pagina)_
 - Single point of contact  _(op 1 pagina)_
+- Six of our sample designs, each for a different sector. Names and details are fictional; click through for the audience, choices and features.  _(op 1 pagina)_
+- Sports clubs  _(op 1 pagina)_
 - Start package online  _(op 1 pagina)_
+- Start-ups  _(op 1 pagina)_
 - Table booking  _(op 1 pagina)_
 - Table reservations  _(op 1 pagina)_
 - Tailored  _(op 1 pagina)_
+- Therapists  _(op 1 pagina)_
 - Time in Belgium  _(op 52 pagina's)_
 - Tradespeople ·  _(op 1 pagina)_
 - Understated layout  _(op 1 pagina)_
-- West Flanders  _(op 2 pagina's)_
+- Vlaams-Brabant  _(op 1 pagina)_
+- Waals-Brabant  _(op 1 pagina)_
+- West-Vlaanderen  _(op 1 pagina)_
 - © 2026 Kempen Webstudio · Company number BE 0897.577.919  _(op 52 pagina's)_
 - · No reviews yet  _(op 1 pagina)_

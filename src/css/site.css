@@ -192,7 +192,9 @@ html.js .kw-sec:not(.kw-in) { opacity: 0; transform: translateY(24px); }
 html.js .kw-sg:not(.kw-in) > .kw-si { opacity: 0; transform: translateY(18px); }
 .kw-sg > .kw-si { transition: opacity .55s cubic-bezier(.16, 1, .3, 1) calc(.05s + var(--i, 0) * .08s), transform .55s cubic-bezier(.16, 1, .3, 1) calc(.05s + var(--i, 0) * .08s); }
 .kw-sg.kw-load-g > .kw-si { animation: kw-up .55s cubic-bezier(.16, 1, .3, 1) calc(.05s + var(--i, 0) * .08s) both; --y: 18px; transition: none; }
-.kw-swap { animation: kw-up .28s cubic-bezier(.16, 1, .3, 1) both; --y: 8px; }
+.kw-swap { animation: kw-up .6s cubic-bezier(.16, 1, .3, 1) both; --y: 10px; }
+@keyframes kw-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+[data-sel-bar] { transform: scaleX(0); transform-origin: left center; }
 /* zwevende knoppen: veilige ruimte onderaan (iPhone), pas zichtbaar na de hero (site.js zet .kw-on) */
 .kw-fl { margin-bottom: env(safe-area-inset-bottom, 0px); transition: opacity .3s ease, visibility .3s; }
 html.js .kw-fl:not(.kw-on) { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -246,3 +248,40 @@ html.kw-lock { overflow: hidden; }
 .kw-table th, .kw-table td { padding: .7em 1em; }
 .kw-table thead th { font-weight: 600; color: #121214; background: #F2F2F2; }
 .kw-table tbody th { font-weight: 500; color: #121214; }
+
+/* lopende rijen met sectoren (home): rustig, pauze bij hover/focus, stil bij "minder beweging" */
+@keyframes kw-mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.kw-mq-track { animation: kw-mq 60s linear infinite; }
+.kw-mq-track.kw-mq-rev { animation-direction: reverse; animation-duration: 70s; }
+.kw-marquee:hover .kw-mq-track, .kw-marquee:focus-within .kw-mq-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .kw-mq-track { animation: none; flex-wrap: wrap; width: auto; }
+  .kw-mq-dup { display: none; }
+  .kw-mq-row { -webkit-mask-image: none; mask-image: none; }
+}
+
+/* kaart van België (home): provincies, lijnen vanuit Kasterlee, pins die na elkaar oplichten */
+.kw-map-prov { fill: #141416; stroke: rgba(255,255,255,.22); stroke-width: 1; stroke-linejoin: round; transition: fill .3s; }
+.kw-map-prov:hover { fill: #1C1C1F; }
+.kw-map-line { fill: none; stroke: #D47A3B; stroke-width: 1.3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: .5; animation: kw-map-draw 8.8s ease-in-out infinite; }
+.kw-map-pin { fill: #F1A36A; transform-box: fill-box; transform-origin: center; animation: kw-map-pin 8.8s ease-in-out infinite; }
+.kw-map-ring { fill: none; stroke: #D47A3B; stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: center; animation: kw-map-ping 8.8s ease-out infinite; }
+.kw-map-lbl { fill: #E4E4E7; font: 500 14px 'Inter Tight', sans-serif; paint-order: stroke; stroke: #070709; stroke-width: 3px; stroke-linejoin: round; transition: fill .2s; }
+.kw-map-city { cursor: pointer; outline: none; }
+.kw-map-city:hover .kw-map-lbl, .kw-map-city:focus-visible .kw-map-lbl { fill: #F1A36A; }
+.kw-map-city:hover .kw-map-pin, .kw-map-city:focus-visible .kw-map-pin { fill: #FB4D27; }
+.kw-map-city:focus-visible .kw-map-ring { opacity: 1; stroke-width: 2.5; animation: none; }
+.kw-map-pin-home { fill: #FB4D27; animation: none; }
+.kw-map-ring-home { animation: kw-map-home 2.8s ease-out infinite; }
+.kw-map-lbl-home { fill: #fff; font-weight: 600; font-size: 15px; }
+.kw-map-glow { animation: kw-map-glow 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes kw-map-draw { 0% { stroke-dashoffset: 1; opacity: 0; } 8% { opacity: .9; } 16% { stroke-dashoffset: 0; opacity: .9; } 60% { stroke-dashoffset: 0; opacity: .35; } 100% { stroke-dashoffset: 0; opacity: .25; } }
+@keyframes kw-map-pin { 0%, 10% { transform: scale(1); fill: #F1A36A; } 16% { transform: scale(1.7); fill: #FB4D27; } 30%, 100% { transform: scale(1); fill: #F1A36A; } }
+@keyframes kw-map-ping { 0%, 12% { opacity: 0; transform: scale(.4); } 16% { opacity: .95; transform: scale(.6); } 34% { opacity: 0; transform: scale(2.2); } 100% { opacity: 0; } }
+@keyframes kw-map-home { 0% { opacity: .9; transform: scale(.5); } 100% { opacity: 0; transform: scale(2.4); } }
+@keyframes kw-map-glow { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+@media (max-width: 639px) { .kw-map-lbl { display: none; } .kw-map-lbl-home { display: inline; font-size: 22px; } }
+@media (prefers-reduced-motion: reduce) {
+  .kw-map-line { animation: none; stroke-dashoffset: 0; opacity: .35; }
+  .kw-map-pin, .kw-map-ring, .kw-map-ring-home, .kw-map-glow { animation: none; }
+}

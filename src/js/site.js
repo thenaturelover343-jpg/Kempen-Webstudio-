@@ -50,6 +50,25 @@
       var t = e.target.closest('[data-sel-to][role=button]'); if (!t || (e.key !== 'Enter' && e.key !== ' ')) return; e.preventDefault(); set(+t.getAttribute('data-sel-to'));
     });
     own('[data-sel-to]').forEach(function (b) { if (b.tagName === 'BUTTON') b.setAttribute('aria-pressed', +b.getAttribute('data-sel-to') === 0); });
+    /* automatisch afspelen ([data-sel-auto]=ms): rustig na elkaar, voortgangsbalk [data-sel-bar], pauze bij hover/focus
+       en buiten beeld, klikken blijft kan; niets bij "minder beweging" */
+    var auto = +g.getAttribute('data-sel-auto');
+    if (auto && n > 1 && !reduced) {
+      var paused = false, inView = false, t = 0, bars = own('[data-sel-bar]');
+      var run = function () {
+        clearTimeout(t); var go = !paused && inView;
+        bars.forEach(function (b) { b.style.animation = 'none'; void b.offsetWidth; b.style.animation = go ? 'kw-bar ' + auto + 'ms linear forwards' : ''; });
+        if (go) t = setTimeout(function () { set(cur + 1, 1); run(); }, auto);
+      };
+      g.addEventListener('mouseenter', function () { paused = true; run(); });
+      g.addEventListener('mouseleave', function () { paused = false; run(); });
+      g.addEventListener('focusin', function () { paused = true; run(); });
+      g.addEventListener('focusout', function (e) { if (!e.relatedTarget || !g.contains(e.relatedTarget)) { paused = false; run(); } });
+      g.addEventListener('click', function () { setTimeout(run, 0); });
+      if ('IntersectionObserver' in W) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; run(); }, { threshold: 0.35 }).observe(g);
+      else { inView = true; run(); }
+      d.addEventListener('visibilitychange', function () { inView = !d.hidden && inView; run(); });
+    }
   });
 
   /* ---------- FAQ: filter op onderwerp + één vraag tegelijk open ---------- */

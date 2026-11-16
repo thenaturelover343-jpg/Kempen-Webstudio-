@@ -101,6 +101,17 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
 
 - [x] **16-11-2026:** prijsgids-screenshot gecorrigeerd (de twee vlakken bevatten echte beelden; het screenshot-script wachtte niet op lazy beelden), beeldcontrole uitgebreid met pixelcontrole op grote effen vlakken en lege kaders (`scripts/slotcheck.mjs`), openingsuren doorgevoerd.
 
+- [x] **Feedback Karim 16-11-2026** (terugzetpunt: git-tag `voor-feedback-karim-16-11`):
+  1. Voorbeeldontwerpen, voor/na, sectoren en de hero-kaarten (home en onderpagina's) spelen vanzelf af (5-6,5 s, zachte overgang, voortgangsbalk), pauze bij hover/focus en buiten beeld, klikken blijft; stil bij "minder beweging" (`site.js`, `[data-sel-auto]`; test `scripts/autoplaytest.mjs`).
+  2. Sectoren: "Alle sectoren" in de cirkel, nieuwe titel en label (NL/FR/EN), twee lopende rijen met 34 sectoren (gelinkt waar een sectorpagina bestaat); horeca- en kapsalonfoto vervangen door het zonnige terras en de kapper met schaar.
+  3. Leesbaarheid: 183 tekstgroottes opgetrokken (`scripts/leesbaar.mjs`): lopende tekst minstens 16px, tussenkoppen 17px, labels/knoppen 14px; Lighthouse-toegankelijkheid 100.
+  4. Voor/na wisselt vanzelf (5 s), pauze bij hover.
+  5. Werkgebied: geanimeerde kaart van België (inline SVG, echte contour en provincies uit Eurostat GISCO NUTS 2021, `scripts/belgie-kaart.mjs`), 16 steden die na elkaar oplichten met pulserende ringen en lijnen vanuit Kasterlee, link naar de stadspagina per taal, stedenlijst ernaast.
+  6. Alle formuleringen "pas betalen als u tevreden bent"/"gratis demo" weg in NL/FR/EN, ook in meta en JSON-LD en verborgen ankers (`scripts/geen-gratis.mjs`); werkwijze: "Eerst een vrijblijvend voorstel. Daarna beslist u."; werkwijzekaarten in koper, donker, warm grijs en lichtgrijs.
+  7. De 6 cirkels onder "Realisaties & Voorbeelden" vervangen door een showcase met screenshots in browserframes, naam, sector en link naar de detailpagina (kwamen alleen op de home voor).
+  8. Dubbele scrollbalk: oorzaak `overflow-x: hidden` op de paginawrapper (maakt er een scrollcontainer van); nu `overflow-x: clip`. Getest in headed Chrome op alle 156 pagina's (`scripts/scrollcheck.mjs`): alleen het document scrollt.
+  - Controles: linkcheck/SEO 0 fouten, seocheck 0, redirects in orde, lege beeldvakken 0 (1440 en 390), rastergaten 0, test-home 51/51, autoplaytest in orde, geen "demo"/"gratis"/"tevreden" over ons aanbod, Lighthouse mobiel 99-100, CLS 0.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
