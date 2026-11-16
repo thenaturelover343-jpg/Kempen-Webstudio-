@@ -12,7 +12,7 @@ Een Bedrijfsprofiel kan alleen de eigenaar zelf aanmaken en verifiëren, op busi
 | Servicegebied | België; eventueel de provincies Antwerpen, Limburg, Vlaams-Brabant, Brussel, Oost- en West-Vlaanderen, en Luik, Namen en Henegouwen |
 | Telefoon | +32 14 71 80 80 |
 | Website | `https://www.kempenwebstudio.be/?utm_source=gbp&utm_medium=organic` |
-| Openingsuren | **Nog door u te bepalen.** Wat u hier invult, zet ik daarna ook op de contactpagina en in het schema. Die moeten exact gelijk zijn. |
+| Openingsuren | maandag t/m zaterdag 09:00–20:00, zondag gesloten (zo staan ze ook op de site, in de footer en in het schema: houd ze overal gelijk) |
 | Openingsdatum | Het jaar en de maand van de start van Kempen Webstudio (KBO) |
 
 ## Categorieën
@@ -52,7 +52,7 @@ Een Bedrijfsprofiel kan alleen de eigenaar zelf aanmaken en verifiëren, op busi
 
 - het logo (vierkant) en een omslagfoto;
 - screenshots van voorbeeldontwerpen, telkens met de vermelding dat het een voorbeeld is;
-- uw eigen foto's van de werkplek. Die hebt u volgens uw antwoord ("2. Ja"). Stuur ze door, dan zet ik ze ook op de site, op de Over-ons-pagina en in de hero-kaarten.
+- er zijn geen eigen foto's; gebruik het logo en screenshots van de voorbeeldontwerpen (met de vermelding dat het voorbeelden zijn).
 
 ## Eerste vier posts
 

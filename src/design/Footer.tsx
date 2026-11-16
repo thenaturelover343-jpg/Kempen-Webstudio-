@@ -9,7 +9,7 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
   const home = s.mob.find((m: any) => !m.items);
   const cols = f.cols.filter((c: any) => !/Website laten maken in|Faire créer un site web à|Have a website built in/i.test(c.title));
   const cities = f.cols.find((c: any) => /Website laten maken in|Faire créer un site web à|Have a website built in/i.test(c.title));
-  const [copy, kbo, address] = f.bottom;
+  const [copy, kbo, address, hours] = f.bottom;
   return (
     <footer className="relative bg-[#F2F2F2] text-[#18181B] overflow-hidden border-t border-[#D3D6DA]">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[340px] flex items-center justify-center opacity-50">
@@ -52,6 +52,7 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
                       <li><button type="button" className="ck-open hover:text-[#18181B] transition-colors cursor-pointer text-left">{f.cookieBtn}</button></li>
                     )}
                     {/Contact/i.test(c.title) && address && <li className="text-[#4C433F]">{address}</li>}
+                    {/Contact/i.test(c.title) && hours && <li className="text-[#4C433F]">{hours}</li>}
                   </ul>
                 </nav>
               ))}

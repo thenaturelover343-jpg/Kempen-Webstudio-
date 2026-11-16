@@ -10,10 +10,13 @@ Dit zijn de SEO-taken die alleen u zelf kunt doen: accounts, verificaties, klant
 | 4 | `4-search-console-en-bing.md` | na de publicatie: Search Console, Bing en het testen van de redirects | 30 min |
 | 5 | `5-backlinks-outreach.md` | lijst en sjablonen voor links | doorlopend |
 
-## Wat ik nog van u nodig heb
+## Uw antwoorden (16-11-2026), verwerkt
 
-1. **Openingsuren:** die staan nergens vast. Ik heb ze daarom niet op de contactpagina of in het schema gezet. Geef ze door, dan komen ze overal identiek te staan (site, schema, Bedrijfsprofiel).
-2. **Eigen foto's van de werkplek of van Kasterlee:** u antwoordde "Ja". Stuur ze door; ze vervangen dan de voorbeeldsites in de hero-kaarten van de Kempense stadspagina's en komen op de Over-ons-pagina.
-3. **Profiel-URL's** (Bedrijfsprofiel, LinkedIn, Trustlocal, Sortlist ...): die gaan naar `sameAs` in het schema.
-4. **Cases:** u schreef "We zijn nieuw dus nog geen cases". De nieuwe pagina's tonen daarom geen cases; de realisatiepagina toont enkel de 9 voorbeeldontwerpen, duidelijk als fictief vermeld. Op de home staat wel nog de bestaande sectie "Websites die wij bouwden" met koelaanhangwagenverhuur.be, taponderhoud.be en barlicious.be (tekst van de huidige site). Mag die blijven, of moet die weg?
-5. **Goedkeuring en publicatie:** de nieuwe pagina's, titels en FR-adressen gaan pas online na uw OK.
+1. **Openingsuren:** maandag t/m zaterdag 09:00–20:00, zondag gesloten. Staan nu op de contactpagina, Over ons en in de footer (NL/FR/EN), in het schema (openingHoursSpecification), in llms.txt en in de tekst voor het Bedrijfsprofiel.
+2. **Eigen foto's:** geen; de huidige beelden blijven.
+3. **"Websites die wij bouwden"** op de home blijft staan.
+
+## Nog van u nodig
+
+1. **Profiel-URL's** (Bedrijfsprofiel, LinkedIn, Trustlocal, Sortlist ...) voor `sameAs` in het schema, zodra ze bestaan.
+2. **Goedkeuring en publicatie:** de nieuwe pagina's, titels en FR-adressen gaan pas online na uw OK.

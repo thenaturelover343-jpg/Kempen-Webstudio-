@@ -8,6 +8,7 @@ import path from 'node:path';
 
 const C = path.resolve('content');
 const DEMO = new Set(JSON.parse(fs.readFileSync('config/live-config.json', 'utf8')).demoFolders);
+const UREN = { nl: 'Open: ma–za 09:00–20:00, zo gesloten', fr: 'Ouvert : lun.–sam. 09h00–20h00, dim. fermé', en: 'Open: Mon–Sat 09:00–20:00, Sun closed' };
 const L = {
   nl: { pre: '', contact: '/contact/', over: '/over-ons/', overL: 'Over ons', seo: '/seo-laten-doen/', colOld: 'Website laten maken in', col: 'Website laten maken in', hub: ['/website-laten-maken-belgie/', 'Alle regio\'s'],
     cities: [['/website-laten-maken-antwerpen/', 'Antwerpen'], ['/website-laten-maken-brussel/', 'Brussel'], ['/website-laten-maken-gent/', 'Gent'], ['/website-laten-maken-leuven/', 'Leuven'], ['/website-laten-maken-mechelen/', 'Mechelen'], ['/website-laten-maken-hasselt/', 'Hasselt'], ['/website-laten-maken-brugge/', 'Brugge'], ['/website-laten-maken-kortrijk/', 'Kortrijk'], ['/website-laten-maken-kempen/', 'de Kempen'], ['/website-laten-maken-turnhout/', 'Turnhout'], ['/website-laten-maken-geel/', 'Geel'], ['/website-laten-maken-herentals/', 'Herentals'], ['/website-laten-maken-mol/', 'Mol'], ['/website-laten-maken-kasterlee/', 'Kasterlee']],
@@ -34,6 +35,9 @@ for (const f of files) {
   s = s.split(`href="${t.pre}/#seo"`).join(`href="${t.seo}"`);
   // footer: contactformulier
   s = s.replace(`<a href="${t.pre}/#contact">${t.contactCol}</a>`, `<a href="${t.contact}">${t.contactCol}</a>`);
+  // footer: openingsuren (vierde span in de onderste regel, na het adres), één keer
+  s = s.replace(/<span class="kw-uren">[^<]*<\/span>/g, '');
+  s = s.replace(/(<div class="ftr-bot">(?:<span>[^<]*<\/span>){3})/, `$1<span class="kw-uren">${UREN[lang]}</span>`);
   // footer: steden
   s = s.replace(new RegExp(`<nav class="ftr-n" aria-label="(${t.colOld}|${t.col})">[\\s\\S]*?</nav>`), `<nav class="ftr-n" aria-label="${t.col}">\n      <h2>${t.col}</h2>\n      ${t.cities.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}<a href="${t.hub[0]}">${t.hub[1]}</a>\n    </nav>`);
   // footer: pagina's (Over ons en Contact vooraan, één keer)

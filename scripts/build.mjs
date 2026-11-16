@@ -108,7 +108,7 @@ const OG_IMAGE = '/assets/og-v4.jpg';
 // ---------- gestructureerde gegevens aanvullen (SEO-ronde 15-11-2026) ----------
 // Home: Organization + ProfessionalService (LocalBusiness) met areaServed België + de steden met een eigen pagina, talen en contactpunt.
 // Dienstpagina's zonder Service krijgen er een; pagina's met veelgestelde vragen zonder FAQPage krijgen er een; Article krijgt het eigen deelbeeld.
-// sameAs blijft zoals het is (Facebook) tot er andere profielen zijn; geen openingsuren of geo zolang Karim die niet bevestigde.
+// sameAs blijft zoals het is (Facebook) tot er andere profielen zijn. Openingsuren ma-za 09:00-20:00 (Karim, 16-11-2026); geen geo.
 const LD_CITIES = ['Antwerpen', 'Brussel', 'Gent', 'Leuven', 'Mechelen', 'Hasselt', 'Brugge', 'Kortrijk', 'Turnhout', 'Geel', 'Herentals', 'Mol', 'Kasterlee', 'Liège', 'Namur', 'Charleroi'];
 const LD_SERVICE = {
   '/logo-en-huisstijl/': { nl: 'Logo en huisstijl laten maken', fr: 'Création de logo et d’identité visuelle', en: 'Logo and visual identity design' },
@@ -127,6 +127,7 @@ function enrichLd(arr, { url, lang, isHome, ogImg, doc }) {
       o.areaServed = [country, ...LD_CITIES.map(name => ({ '@type': 'City', name }))];
       o.knowsLanguage = ['nl', 'fr', 'en'];
       o.contactPoint = { '@type': 'ContactPoint', contactType: 'customer service', telephone: '+32 14 71 80 80', email: 'info@kempenwebstudio.be', availableLanguage: ['nl', 'fr', 'en'], areaServed: 'BE' };
+      o.openingHoursSpecification = [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '09:00', closes: '20:00' }];
       o.image = ORIGIN + ogImg;
     }
     if (ldTypes(o).includes('Article')) { o.image = ORIGIN + ogImg; if (!o.author) o.author = { '@id': ORG }; }
@@ -405,6 +406,7 @@ if (MODE === 'live') {
       '- Telefoon: +32 14 71 80 80',
       '- E-mail: info@kempenwebstudio.be',
       '- Ondernemingsnummer: BE 0897.577.919',
+      '- Openingsuren: maandag tot en met zaterdag 09:00-20:00, zondag gesloten',
       '- Werkwijze: eerst een vrijblijvend voorstel, daarna een schriftelijke offerte; één vast aanspreekpunt; overleg online, per e-mail of telefoon.',
       '- Pakketten (excl. btw): Start vanaf €490 + vanaf €29/maand; Vakman vanaf €990 + vanaf €49/maand; Webshop vanaf €1.890 + vanaf €79/maand. Minimaal 12 maanden, daarna maandelijks opzegbaar.',
       '- Losse diensten (excl. btw): SEO-optimalisatie vanaf €59 per pagina, SEO-audit vanaf €190, lokale SEO vanaf €149/maand, logo vanaf €190, huisstijl vanaf €490, toegankelijkheidscontrole vanaf €149.',

@@ -5,10 +5,11 @@ import { foto } from '../fotos.mjs';
 
 const pic = (id, vorm, lang, sizes) => { const f = foto(id, vorm, lang); return `<picture><source type="image/avif" srcset="${f.avif}" sizes="${sizes}"><img src="${f.src}" srcset="${f.webp}" sizes="${sizes}" width="${f.width}" height="${f.height}" alt="${f.alt}" loading="lazy" decoding="async"></picture>`; };
 const alt3 = k => ({ nl: P[k].nl, fr: P[k].fr, en: P[k].en });
+const UREN = {"nl":"Maandag tot en met zaterdag van 09:00 tot 20:00. Zondag gesloten.","fr":"Du lundi au samedi de 09h00 à 20h00. Fermé le dimanche.","en":"Monday to Saturday from 09:00 to 20:00. Closed on Sunday."};
 const NAP = {
-  nl: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Telefoon: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Ondernemingsnummer: BE 0897.577.919</li></ul>`,
-  fr: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Téléphone : <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail : <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Numéro d’entreprise : BE 0897.577.919</li></ul>`,
-  en: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee, Belgium</li><li>Phone: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>Email: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Company number: BE 0897.577.919</li></ul>`,
+  nl: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Telefoon: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Ondernemingsnummer: BE 0897.577.919</li><li>Openingsuren: maandag tot en met zaterdag 09:00–20:00, zondag gesloten</li></ul>`,
+  fr: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Téléphone : <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail : <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Numéro d’entreprise : BE 0897.577.919</li><li>Heures d’ouverture : du lundi au samedi 09h00–20h00, fermé le dimanche</li></ul>`,
+  en: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee, Belgium</li><li>Phone: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>Email: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Company number: BE 0897.577.919</li><li>Opening hours: Monday to Saturday 09:00–20:00, closed on Sunday</li></ul>`,
 };
 
 // ------------------------------------------------------------------------------------------------ REGIO-HUB
@@ -197,10 +198,12 @@ const contact = {
         ['Telefoon', '<a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>. Krijgt u ons niet meteen te pakken, laat dan een bericht na of stuur een e-mail.'],
         ['E-mail', '<a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a>. ' + REPLY.nl],
         ['Adres', 'Kempen Webstudio, Kemelbeekstraat 16, 2460 Kasterlee. Ondernemingsnummer BE 0897.577.919.'],
+        ['Openingsuren', UREN.nl + ' ' + 'Buiten de openingsuren kunt u altijd een bericht sturen.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="bericht-t" class="sec kw-form"><div class="wrap"><p class="lbl">Contactformulier</p><h2 id="bericht-t">Stuur ons een bericht</h2><div class="kw-form-txt"><p>Vertel kort wat voor zaak u hebt en wat u zoekt: een nieuwe website, een webshop, een vernieuwing of hulp met uw vindbaarheid. Wij maken eerst een vrijblijvend voorstel, u zit nergens aan vast.</p><p>${REPLY.nl}</p></div></div></section>` },
       { t: 'band', id: 'waar', intro: ['In Kasterlee, voor heel België.', 'Overleg online, per e-mail of telefoon.'], h2: 'Waar wij zitten', lead: [`Kempen Webstudio zit in Kasterlee, in de Kempen, tussen Turnhout, Geel en Herentals. Kennismaking en overleg verlopen online, per e-mail of telefoon. Zo werken wij net zo vlot voor zaken in <a href="/website-laten-maken-antwerpen/">Antwerpen</a>, <a href="/website-laten-maken-gent/">Gent</a> of <a href="/website-laten-maken-brussel/">Brussel</a> als in de <a href="/website-laten-maken-kempen/">Kempen</a>.`, 'Kaart: © OpenStreetMap-bijdragers.'], fig: mapFig('nl') },
       { t: 'faq', id: 'faq-contact', h2: 'Veelgestelde vragen over contact', items: [
+        ['Wat zijn de openingsuren?', UREN.nl],
         ['Hoe snel krijg ik antwoord?', REPLY.nl + ' Bij een vraag over een nieuwe website maken wij daarna een vrijblijvend voorstel.'],
         ['Moet ik langskomen in Kasterlee?', 'Nee. Kennismaking en overleg verlopen online, per e-mail of telefoon. Wilt u liever afspreken, vermeld het gerust in uw bericht.'],
         ['Wat zet ik in mijn bericht?', 'Uw naam, uw zaak en wat u zoekt is genoeg. Hebt u al een website, vermeld dan het adres.'],
@@ -217,10 +220,12 @@ const contact = {
         ['Téléphone', '<a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>. Si vous ne nous joignez pas tout de suite, laissez un message ou envoyez un e-mail.'],
         ['E-mail', '<a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a>. ' + REPLY.fr],
         ['Adresse', 'Kempen Webstudio, Kemelbeekstraat 16, 2460 Kasterlee. Numéro d’entreprise BE 0897.577.919.'],
+        ['Heures d’ouverture', UREN.fr + ' ' + 'En dehors de ces heures, vous pouvez toujours envoyer un message.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="message-t" class="sec kw-form"><div class="wrap"><p class="lbl">Formulaire de contact</p><h2 id="message-t">Envoyez-nous un message</h2><div class="kw-form-txt"><p>Dites-nous brièvement quel type d’entreprise vous avez et ce que vous cherchez : un nouveau site, une boutique en ligne, une refonte ou de l’aide pour être trouvé. Nous préparons d’abord une proposition sans engagement.</p><p>${REPLY.fr}</p></div></div></section>` },
       { t: 'band', id: 'ou', intro: ['À Kasterlee, pour toute la Belgique.', 'Suivi en ligne, par e-mail ou par téléphone.'], h2: 'Où nous trouver', lead: [`Kempen Webstudio est établi à Kasterlee, en Campine anversoise, entre Turnhout, Geel et Herentals. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Nous travaillons donc aussi facilement pour des entreprises à <a href="/fr/creation-site-internet-bruxelles/">Bruxelles</a>, <a href="/fr/creation-site-internet-liege/">Liège</a> ou <a href="/fr/creation-site-internet-namur/">Namur</a>.`, 'Carte : © les contributeurs d’OpenStreetMap.'], fig: mapFig('fr') },
       { t: 'faq', id: 'faq-contact', h2: 'Questions fréquentes sur le contact', items: [
+        ['Quelles sont vos heures d’ouverture ?', UREN.fr],
         ['En combien de temps recevrai-je une réponse ?', REPLY.fr + ' Pour un nouveau site, nous préparons ensuite une proposition sans engagement.'],
         ['Dois-je me rendre à Kasterlee ?', 'Non. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Si vous préférez un rendez-vous, indiquez-le dans votre message.'],
         ['Que dois-je mettre dans mon message ?', 'Votre nom, votre entreprise et ce que vous cherchez suffisent. Si vous avez déjà un site, indiquez son adresse.'],
@@ -237,10 +242,12 @@ const contact = {
         ['Phone', '<a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>. If you cannot reach us straight away, leave a message or send an email.'],
         ['Email', '<a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a>. ' + REPLY.en],
         ['Address', 'Kempen Webstudio, Kemelbeekstraat 16, 2460 Kasterlee, Belgium. Company number BE 0897.577.919.'],
+        ['Opening hours', UREN.en + ' ' + 'Outside these hours you can always send a message.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="message-en-t" class="sec kw-form"><div class="wrap"><p class="lbl">Contact form</p><h2 id="message-en-t">Send us a message</h2><div class="kw-form-txt"><p>Tell us briefly about your business and what you are looking for: a new website, an online shop, a redesign or help getting found. We start with a no-obligation proposal.</p><p>${REPLY.en}</p></div></div></section>` },
       { t: 'band', id: 'where', intro: ['In Kasterlee, for all of Belgium.', 'Meetings online, by email or phone.'], h2: 'Where we are', lead: [`Kempen Webstudio is based in Kasterlee, in the Kempen region, between Turnhout, Geel and Herentals. Introductions and meetings take place online, by email or phone, so we work just as easily for businesses in <a href="/en/web-design-brussels/">Brussels</a> or <a href="/en/website-laten-maken-gent/">Ghent</a>.`, 'Map: © OpenStreetMap contributors.'], fig: mapFig('en') },
       { t: 'faq', id: 'faq-contact', h2: 'Frequently asked questions about contact', items: [
+        ['What are your opening hours?', UREN.en],
         ['How quickly will I get a reply?', REPLY.en],
         ['Do I need to come to Kasterlee?', 'No. Introductions and meetings take place online, by email or phone.'],
         ['What happens to my details?', 'We only use your details to answer your question. See our <a href="/en/privacyverklaring/">privacy statement</a>.'],

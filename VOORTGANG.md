@@ -99,6 +99,8 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Werkwijze: `npm run paginas` (generator `scripts/paginas.mjs` uit `src/site/paginas/*.mjs`, `scripts/shell.mjs` voor menu/footer, `scripts/og-paginas.mjs` voor deelbeelden) en daarna `npm run build`.
   - Eindcontrole: linkcheck/SEO 0 fouten (test en live, 154 URL's in de sitemap), seocheck 0, redirects in orde (37 oude paden, geen ketens, geen interne links naar oude paden), beeldcontrole 0 problemen (156 pagina's, 1440 en 390), lege beeldvakken 0, rastergaten 0, test-home 57/57, geen zichtbare "demo", Lighthouse mobiel 99-100 (home 99, alle andere 100; ook Antwerpen, prijsgids, contact, voorbeelddetail, Liège, over ons), desktop 100, CLS 0. `http://localhost:5050` toont de nieuwe build.
 
+- [x] **16-11-2026:** prijsgids-screenshot gecorrigeerd (de twee vlakken bevatten echte beelden; het screenshot-script wachtte niet op lazy beelden), beeldcontrole uitgebreid met pixelcontrole op grote effen vlakken en lege kaders (`scripts/slotcheck.mjs`), openingsuren doorgevoerd.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
@@ -116,7 +118,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - kopertekst iets donkerder voor contrast;
   - navigatie en footer aangevuld.
 - [ ] **Karim:** het voorstel voor `site/_build/vertaal.mjs` beoordelen ("€… per maand" niet meer beschermen). Alleen nodig als de oude vertaalwerkwijze blijft bestaan.
-- [ ] **Karim:** de acties in `SEO-ACTIES-KARIM/` (Bedrijfsprofiel, reviews, gidsen, Search Console/Bing na publicatie, backlinks) en de vragen in `SEO-ACTIES-KARIM/0-LEESMIJ.md` (openingsuren, eigen foto's, profiel-URL's, cases op de home).
+- [ ] **Karim:** de acties in `SEO-ACTIES-KARIM/` (Bedrijfsprofiel, reviews, gidsen, Search Console/Bing na publicatie, backlinks) en de profiel-URL's voor sameAs. Antwoorden van 16-11 verwerkt: openingsuren ma-za 09:00-20:00 (Contact, Over ons, footer, schema, llms.txt), geen eigen foto's, "Websites die wij bouwden" blijft.
 - [ ] **Karim:** de nieuwe pagina's, titels en FR-adressen nalezen.
 - [ ] **Na Karims OK:** de volledige inhoud van `dist-live/` publiceren (`npm run build` en `npm run check` vooraf). Daarna één testaanvraag via het formulier doen en de oude bestanden op de server opruimen (`assets/lab4/*`, `assets/kw-fx.js`, `assets/kw-gedeeld.css`).
 
