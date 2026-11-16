@@ -210,6 +210,13 @@ export function blocksModel(doc) {
       out.push({ kind: 'legal', id, items: $$(sec, '.pv-r').map(r => ({ h: inner($(r, '.pv-h')), hid: $(r, '.pv-h')?.id || '', body: inner($(r, '.pv-t')) })) });
       continue;
     }
+    // ---- galerij met beeldkaarten (nieuw): li > a[href][data-foto|data-shot] met .t (titel) en .l (label)
+    if (c.contains('kw-gallery')) {
+      const h2 = $(sec, 'h2');
+      out.push({ kind: 'gallery', id, h2: inner(h2), h2id: h2?.id || '', h2tag: 'h2', badge: text($(sec, '.lbl')), lead: $(sec, '.kw-gallery-lead') ? $(sec, '.kw-gallery-lead').outerHTML : '',
+        items: $$(sec, 'li > a').map(a => ({ href: a.getAttribute('href'), foto: a.getAttribute('data-foto') || '', shot: a.getAttribute('data-shot') || '', title: text($(a, '.t')), label: text($(a, '.l')) })) });
+      continue;
+    }
     // ---- contactformulier op een eigen pagina (nieuw, SEO-ronde): tekst links, formulier rechts
     if (c.contains('kw-form')) {
       const h2 = $(sec, 'h2');

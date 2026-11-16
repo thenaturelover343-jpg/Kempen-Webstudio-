@@ -42,7 +42,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Ingetogen ontwerp  _(op 1 pagina)_
 - Kapsalons en barbershops ·  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 114 pagina's)_
-- Kies uw stad  _(op 1 pagina)_
 - Lichte stijl  _(op 1 pagina)_
 - Luik  _(op 3 pagina's)_
 - Luxemburg  _(op 1 pagina)_
@@ -114,6 +113,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Barbiers  _(op 1 pagina)_
 - Boucheries  _(op 1 pagina)_
 - Boulangeries  _(op 1 pagina)_
+- Boutique en ligne  _(op 2 pagina's)_
 - Boutiques en ligne  _(op 1 pagina)_
 - Bouton rendez-vous  _(op 1 pagina)_
 - Bruges  _(op 2 pagina's)_
@@ -209,6 +209,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Architects  _(op 1 pagina)_
 - Back to top  _(op 52 pagina's)_
 - Bakers  _(op 1 pagina)_
+- Beauty Salon  _(op 1 pagina)_
 - Beauty salons  _(op 1 pagina)_
 - Bespoke work  _(op 1 pagina)_
 - Bold typography  _(op 1 pagina)_
@@ -220,6 +221,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Builders  _(op 1 pagina)_
 - Butchers  _(op 1 pagina)_
 - Calm palette  _(op 1 pagina)_
+- Carpentry  _(op 1 pagina)_
 - Caterers  _(op 1 pagina)_
 - Clear answers about our approach, fixed pricing and delivery times.  _(op 1 pagina)_
 - Clear structure  _(op 1 pagina)_
@@ -238,10 +240,12 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Gallery  _(op 1 pagina)_
 - Garages  _(op 1 pagina)_
 - Garden contractors and landscape gardeners ·  _(op 1 pagina)_
+- Hair Salon  _(op 1 pagina)_
 - Hair salons and barbershops ·  _(op 1 pagina)_
 - Have a website built in Belgium: a custom design for your business, starting with a no-obligation proposal.  _(op 1 pagina)_
 - Henegouwen  _(op 1 pagina)_
 - Hospitality ·  _(op 1 pagina)_
+- Joinery  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 104 pagina's)_
 - Lawyers  _(op 1 pagina)_
 - Liberal professions  _(op 1 pagina)_

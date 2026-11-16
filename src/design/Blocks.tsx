@@ -10,6 +10,50 @@ import { ShowcaseEmblem } from './brand';
 import { Foto } from './Foto';
 import { ContactForm } from './Contact';
 import { PAGINA_FOTO } from '../site/fotos.mjs';
+import { baseOf } from '../site/slugs.mjs';
+import DD from '../site/design-data.json';
+
+// ---------- galerij: beeldkaarten (screenshots van voorbeeldsites of foto's) met label, titel en link ----------
+const DEMO_SHOT: Record<string, string> = { 'houtatelier-nethe': 'houtatelier-nethe', 'bistro-tilvaar': 'horeca-voorbeeld', vennebrand: 'webshop-voorbeeld', 'dakwerken-hoogland': 'dakwerken-hoogland', 'atelier-kleurwerk': 'kleurwerk-voorbeeld', 'tuinzorg-varelinde': 'tuin-voorbeeld', velours: 'schoonheidssalon-voorbeeld', 'kapsalon-ivelien': 'kapsalon-voorbeeld', 'barbier-kolvaard': 'barbier-voorbeeld' };
+const DEMO_NAME: Record<string, string> = { 'houtatelier-nethe': 'Houtatelier Nethe', 'bistro-tilvaar': 'Bistro Tilvaar', vennebrand: 'Vennebrand', 'dakwerken-hoogland': 'Dakwerken Hoogland', 'atelier-kleurwerk': 'Atelier Kleurwerk', 'tuinzorg-varelinde': 'Tuinzorg Varelinde', velours: 'Velours', 'kapsalon-ivelien': 'Kapsalon Ivelien', 'barbier-kolvaard': 'Barbier Kolvaard' };
+const DEMO_BASE: Record<string, string> = { nl: '/voorbeeldontwerpen/', fr: '/fr/exemples-de-sites/', en: '/en/voorbeeldontwerpen/' };
+// welke voorbeelden passen bij welke pagina (sector of dienst); anders een algemene mix
+const PAGE_DEMOS: Record<string, string[]> = {
+  '/website-horeca/': ['bistro-tilvaar', 'vennebrand', 'velours'], '/website-kapsalon/': ['kapsalon-ivelien', 'barbier-kolvaard', 'velours'], '/website-zorg/': ['velours', 'kapsalon-ivelien', 'houtatelier-nethe'],
+  '/website-schilder/': ['atelier-kleurwerk', 'dakwerken-hoogland', 'houtatelier-nethe'], '/website-tuinaannemer/': ['tuinzorg-varelinde', 'dakwerken-hoogland', 'atelier-kleurwerk'], '/website-vakmensen/': ['dakwerken-hoogland', 'houtatelier-nethe', 'atelier-kleurwerk'],
+  '/webshop-laten-maken/': ['vennebrand', 'bistro-tilvaar', 'velours'], '/website-winkel/': ['vennebrand', 'kapsalon-ivelien', 'houtatelier-nethe'],
+};
+const ALG_DEMOS = ['houtatelier-nethe', 'bistro-tilvaar', 'kapsalon-ivelien'];
+const isShowcase = (b: any) => b.kind === 'prose' && /^(voorbeelden|voorbeeld|exemples|exemple|examples|sample)/i.test(strip(b.h2 || '')) && /voorbeeldontwerp|exemples-de-sites|exemple|sample design/i.test(b.html || '');
+function demoItems(b: any, s: any) {
+  const lang = s.lang || 'nl';
+  const found = [...(b.html || '').matchAll(/\/(?:voorbeeldontwerpen|exemples-de-sites)\/([a-z-]+)\//g)].map(m => m[1]).filter(k => DEMO_SHOT[k]);
+  const want = [...new Set([...found, ...(PAGE_DEMOS[baseOf(s.url || '/')] || []), ...ALG_DEMOS])].slice(0, 3);
+  return want.map(k => ({ href: DEMO_BASE[lang] + k + '/', title: DEMO_NAME[k], label: ((DD as any)[lang]?.demos?.[k]?.category) || '', shot: DEMO_SHOT[k] }));
+}
+function Gallery({ items, dark, lang }: { items: any[]; dark: boolean; lang: string }) {
+  return (
+    <StaggerGroup className={cx('grid grid-cols-1 sm:grid-cols-2 gap-5', items.length >= 3 && 'lg:grid-cols-3')}>
+      {items.map((it: any, i: number) => (
+        <StaggerItem key={i} i={i} className={cx('h-full', items.length === 3 && i === 2 && 'sm:col-span-2 lg:col-span-1')}>
+          <a href={it.href} className={cx('group block h-full rounded-[22px] p-3 transition-colors cursor-pointer border', dark ? 'bg-[#141416] border-white/10 hover:border-[#B85D28]/60' : 'bg-[#F2F2F2] border-[#D3D6DA] hover:border-[#B85D28]/60')}>
+            <div className={cx('relative rounded-[14px] overflow-hidden aspect-[16/10]', dark ? 'bg-[#1B1B1E]' : 'bg-[#E7E8EB]')}>
+              {it.shot ? <img src={`/assets/img/${it.shot}-d640.webp`} srcSet={`/assets/img/${it.shot}-d640.webp 640w, /assets/img/${it.shot}-d1000.webp 1000w`} sizes="(min-width: 1024px) 420px, (min-width: 640px) 46vw, 92vw" width={1600} height={1000} loading="lazy" decoding="async" alt="" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+                : it.foto ? <Foto id={it.foto} vorm="tegel" lang={lang} decorative sizes="(min-width: 1024px) 420px, (min-width: 640px) 46vw, 92vw" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" /> : null}
+            </div>
+            <div className="px-2 pt-4 pb-2 flex items-end justify-between gap-3">
+              <div>
+                {it.label && <p className={cx('text-[15px] font-medium', dark ? 'text-[#F1A36A]' : 'text-[#9A4A1C]')}>{it.label}</p>}
+                <h3 className={cx('mt-1 text-[20px] font-medium tracking-[-0.02em] leading-snug', dark ? 'text-white' : 'text-[#121214]')}>{it.title}</h3>
+              </div>
+              <span aria-hidden="true" className={cx('w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors', dark ? 'bg-white/10 group-hover:bg-[#B85D28] text-white' : 'bg-white group-hover:bg-[#121214] group-hover:text-white text-[#121214]')}><ArrowUpRight className="w-4 h-4" /></span>
+            </div>
+          </a>
+        </StaggerItem>
+      ))}
+    </StaggerGroup>
+  );
+}
 
 const W = 'max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10';
 const strip = (h: string) => (h || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -191,15 +235,16 @@ function Head({ b, dark = false, center = false }: { b: any; dark?: boolean; cen
 
 const Card = ({ c, i, dark, articles }: { c: any; i: number; dark: boolean; articles?: boolean }) => {
   const T = (c.htag || 'h3') as any;
-  if (articles) return (
-    <div className="group relative w-full h-full text-left rounded-[22px] bg-[#F2F2F2] hover:bg-[#E7E8EB] p-6 sm:p-7 flex flex-col justify-between transition-colors duration-200">
-      <div>
+  if (articles) { const href = (c.h.match(/href="([^"]+)"/) || [])[1] || ''; const fid = href ? (PAGINA_FOTO as any)[baseOf(href)] : ''; return (
+    <div className="group relative w-full h-full text-left rounded-[22px] bg-[#F2F2F2] hover:bg-[#E7E8EB] border border-[#D3D6DA] hover:border-[#B85D28]/60 p-3 flex flex-col justify-between transition-colors duration-200">
+      {fid && <div className="relative rounded-[14px] overflow-hidden aspect-[16/10] bg-[#E7E8EB]"><Foto id={fid} vorm="tegel" decorative sizes="(min-width: 1024px) 420px, (min-width: 640px) 46vw, 92vw" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" /></div>}
+      <div className="px-3 pt-4 sm:px-4">
         <T className="text-[19px] font-medium leading-snug text-[#121214] group-hover:text-[#B85D28] transition-colors [&_a]:after:absolute [&_a]:after:inset-0 [&_a]:after:rounded-[22px]" dangerouslySetInnerHTML={{ __html: c.h }} />
         <div className="mt-2.5 text-[16px] leading-relaxed text-[#4C433F] kw-prose" dangerouslySetInnerHTML={{ __html: c.body }} />
       </div>
-      <div aria-hidden="true" className="mt-6 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#121214]"><ArrowUpRight className="w-3.5 h-3.5" /></div>
+      <div aria-hidden="true" className="mt-5 mb-2 mx-3 sm:mx-4 w-10 h-10 rounded-full bg-white group-hover:bg-[#121214] group-hover:text-white text-[#121214] flex items-center justify-center transition-colors"><ArrowUpRight className="w-4 h-4" /></div>
     </div>
-  );
+  ); }
   if (dark || c.dark) return (
     <div id={c.id || undefined} className="h-full rounded-[24px] bg-[#161618] border border-white/10 p-7 flex flex-col">
       <span aria-hidden="true" className="text-[15px] tabular-nums text-[#F1A36A] font-medium">{String(i + 1).padStart(2, '0')}.</span>
@@ -236,11 +281,11 @@ function Figure({ html, phone }: { html: string; phone?: boolean }) {
 
 const CAPS = ['bg-[#F2F2F2] hover:bg-[#E7E8EB] text-[#121214]', 'copper-pill-gradient text-white', 'bg-[#08080A] text-white', 'bg-[#D3D6DA] hover:bg-[#C7CACE] text-[#121214]'];
 function Chips({ links, aria }: { links: any[]; aria?: string }) {
-  if (links.length >= 2 && links.length <= 4) return (
+  if (links.length >= 2 && links.length <= 6) return (
     <nav aria-label={aria || undefined}>
-      <ul className={cx('grid grid-cols-1 gap-3 sm:gap-4', links.length === 4 ? 'sm:grid-cols-2' : links.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2')}>
+      <ul className={cx('grid grid-cols-1 gap-3 sm:gap-4', links.length >= 5 ? 'sm:grid-cols-6' : links.length === 4 ? 'sm:grid-cols-2' : links.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2')}>
         {links.map((l: any, i: number) => (
-          <li key={l.href + l.label}><a href={l.href} className={cx('font-title w-full h-[72px] sm:h-[88px] rounded-full flex items-center justify-center text-[20px] sm:text-[24px] font-normal tracking-[-0.03em] transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]', CAPS[i % 4])}>{l.label}</a></li>
+          <li key={l.href + l.label} className={links.length >= 5 ? (links.length % 3 === 2 && i >= links.length - 2 ? 'sm:col-span-3' : links.length % 3 === 1 && i === links.length - 1 ? 'sm:col-span-6' : 'sm:col-span-2') : undefined}><a href={l.href} className={cx('font-title w-full h-[72px] sm:h-[88px] rounded-full flex items-center justify-center text-[20px] sm:text-[24px] font-normal tracking-[-0.03em] transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B85D28]', CAPS[i % 4])}>{l.label}</a></li>
         ))}
       </ul>
     </nav>
@@ -404,6 +449,25 @@ export function Blocks({ blocks, s, f }: { blocks: any[]; s: any; f?: any }) {
 
 function render(b: any, P: any, s: any, f?: any) {
   const dark = P.dark;
+  // "Voorbeelden van ons werk" was alleen tekst: nu met drie screenshots van passende voorbeeldontwerpen (Karim 16-11: premium)
+  if (isShowcase(b)) return (
+    <Sec {...P}>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+        <div className="lg:col-span-5"><Head b={b} dark={dark} /></div>
+        <Prose html={b.html} dark={dark} className="lg:col-span-7" />
+      </div>
+      <div className="mt-10"><Gallery items={demoItems(b, s)} dark={dark} lang={s.lang || 'nl'} /></div>
+    </Sec>
+  );
+  if (b.kind === 'gallery') return (
+    <Sec {...P}>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+        <div className="lg:col-span-5"><Head b={b} dark={dark} /></div>
+        {b.lead && <Prose html={b.lead} dark={dark} className="lg:col-span-7" />}
+      </div>
+      <div className="mt-10"><Gallery items={b.items} dark={dark} lang={s.lang || 'nl'} /></div>
+    </Sec>
+  );
   switch (b.kind) {
     case 'band': {
       const romans = b.cards.length > 0 && !b.cards.some((c: any) => c.h);

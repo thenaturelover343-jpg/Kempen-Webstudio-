@@ -8,7 +8,8 @@ export const VORMEN = {
   cirkel: { r: [1, 1], w: [120, 240] },      // cirkel op de kaart van België (96-112 px)
   mini: { r: [1, 1], w: [64, 128] },         // casekaart (56 px)
   breed: { r: [305, 132], w: [320, 640] },   // beeldvak onderaan een prijskaart
-  kaart169: { r: [16, 9], w: [640, 1280] },  // statische kaart (contactpagina)
+  kaart169: { r: [16, 9], w: [640, 1280] },
+  tegel: { r: [16, 10], w: [480, 800] },     // beeld bovenaan een artikel- of galerijkaart  // statische kaart (contactpagina)
 };
 
 const vb = naam => ({ alt: { nl: `Voorbeeldontwerp ${naam} op een smartphone`, fr: `Exemple de design ${naam} sur un smartphone`, en: `Sample design ${naam} on a smartphone` } });

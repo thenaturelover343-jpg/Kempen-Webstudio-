@@ -251,9 +251,9 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
               <div className="my-10 sm:my-14 flex items-center justify-center relative">
                 {works.map((w: any, i: number) => (
                   <div key={i} data-sel-panel={i} hidden={i > 0} className="flex items-center justify-center gap-8 sm:gap-14">
-                    <div className="w-[220px] sm:w-[420px] lg:w-[520px] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#1B1B1E] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
+                    <div className="w-[240px] sm:w-[460px] lg:w-[680px] xl:w-[760px] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#1B1B1E] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
                       <div aria-hidden="true" className="flex items-center gap-1.5 px-3 h-6 sm:h-7 bg-[#242426]"><span className="w-2 h-2 rounded-full bg-white/25" /><span className="w-2 h-2 rounded-full bg-white/25" /><span className="w-2 h-2 rounded-full bg-[#D47A3B]/80" /></div>
-                      <img src={`/assets/img/${shot(w.href)}-d640.webp`} srcSet={`/assets/img/${shot(w.href)}-d640.webp 640w, /assets/img/${shot(w.href)}-d1000.webp 1000w, /assets/img/${shot(w.href)}-d1600.webp 1600w`} sizes="(min-width: 1024px) 520px, (min-width: 640px) 420px, 220px" width={1600} height={1000} loading="lazy" decoding="async" alt={`${SHOT_ALT[L] || SHOT_ALT.nl} ${w.h}`} className="block w-full h-auto aspect-[16/10] object-cover object-top" />
+                      <img src={`/assets/img/${shot(w.href)}-d640.webp`} srcSet={`/assets/img/${shot(w.href)}-d640.webp 640w, /assets/img/${shot(w.href)}-d1000.webp 1000w, /assets/img/${shot(w.href)}-d1600.webp 1600w`} sizes="(min-width: 1280px) 760px, (min-width: 1024px) 680px, (min-width: 640px) 460px, 240px" width={1600} height={1000} loading="lazy" decoding="async" alt={`${SHOT_ALT[L] || SHOT_ALT.nl} ${w.h}`} className="block w-full h-auto aspect-[16/10] object-cover object-top" />
                     </div>
                     <a href={w.href} target="_blank" rel="noopener" aria-label={`${w.h} ${ui.newWindow}`} className="w-12 h-12 rounded-full bg-[#242426] hover:bg-[#B85D28] text-white flex items-center justify-center transition-colors duration-200 cursor-pointer shrink-0"><ArrowUpRight className="w-4 h-4" /></a>
                   </div>

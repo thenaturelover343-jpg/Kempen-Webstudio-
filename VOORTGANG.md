@@ -112,6 +112,11 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   8. Dubbele scrollbalk: oorzaak `overflow-x: hidden` op de paginawrapper (maakt er een scrollcontainer van); nu `overflow-x: clip`. Getest in headed Chrome op alle 156 pagina's (`scripts/scrollcheck.mjs`): alleen het document scrollt.
   - Controles: linkcheck/SEO 0 fouten, seocheck 0, redirects in orde, lege beeldvakken 0 (1440 en 390), rastergaten 0, test-home 51/51, autoplaytest in orde, geen "demo"/"gratis"/"tevreden" over ons aanbod, Lighthouse mobiel 99-100, CLS 0.
 
+- [x] **Leesbaarheid en premiumcontrole** (16-11-2026, Karim):
+  - Leesbaarheid gemeten op alle 156 pagina's met `scripts/textaudit.mjs` (grootte, kleur, echte achtergrond, contrast): 21.683 → 0 teksten onder de norm. Lopende tekst 16px gsm / 17px desktop, regelhoogte 1,6; labels, pills, footer 15px; grijs op donker #C8C8CC, koper op donker #F1A36A. Overzicht vóór/na in `LEESBAARHEID.md`.
+  - Premiumcontrole per paginagroep in `PREMIUM-CHECK.md` (16 punten, alle opgelost): voorbeelden-showcase met screenshots op steden/sectoren/diensten, regio-capsules, kennisoverzicht met thumbnails, "Lees ook" op kennisartikels, capsules op bedankt/404, CTA's zonder "eerst zien", grotere showcase op de home.
+  - Controles: linkcheck/SEO 0, seocheck 0, redirects in orde, lege beeldvakken 0, rastergaten 0, geen tweede scrollbalk (headed Chrome), test-home 51/51, autoplay in orde, Lighthouse mobiel 99-100, CLS 0.
+
 ## Bezig
 
 - Niets. Ik wacht op Karim (zie Nog te doen).
