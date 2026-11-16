@@ -15,13 +15,20 @@ const ART = ['/kennis/google-bedrijfsprofiel-aanmaken/', '/kennis/hoe-lang-duurt
 const REGIO = {
   nl: { id: 'in-uw-regio', h2: 'Website laten maken in uw regio', lead: `Kempen Webstudio maakt websites voor zaken in heel België. Kies uw stad, of lees meer over <a href="/">een website laten maken</a> en <a href="${P.prijs.nl}">wat een website kost</a>.`, chips: [['/website-laten-maken-antwerpen/', 'Antwerpen'], ['/website-laten-maken-brussel/', 'Brussel'], ['/website-laten-maken-gent/', 'Gent'], ['/website-laten-maken-leuven/', 'Leuven'], ['/website-laten-maken-kempen/', 'De Kempen'], [P.hub.nl, 'Alle regio\'s']], aria: 'Steden' },
   fr: { id: 'dans-votre-region', h2: 'Création de site internet dans votre région', lead: `Kempen Webstudio crée des sites pour des entreprises dans toute la Belgique. Choisissez votre ville, ou découvrez la <a href="/fr/">création de site internet</a> et le <a href="${P.prijs.fr}">prix d’un site internet</a>.`, chips: [['/fr/creation-site-internet-bruxelles/', 'Bruxelles'], ['/fr/creation-site-internet-liege/', 'Liège'], ['/fr/creation-site-internet-namur/', 'Namur'], ['/fr/creation-site-internet-charleroi/', 'Charleroi'], ['/fr/creation-site-internet-gand/', 'Gand'], [P.hub.fr, 'Toutes les régions']], aria: 'Villes' },
-  en: { id: 'in-your-region', h2: 'Website design in your region', lead: `Kempen Webstudio builds websites for businesses across Belgium. Choose your city, or read more about <a href="/en/">having a website built</a> and <a href="${P.prijs.en}">what a website costs</a>.`, chips: [['/en/web-design-brussels/', 'Brussels'], ['/en/website-laten-maken-gent/', 'Ghent'], ['/en/website-laten-maken-leuven/', 'Leuven'], ['/en/website-laten-maken-kempen/', 'The Kempen'], ['/en/website-laten-maken-kortrijk/', 'Kortrijk'], [P.hub.en, 'All regions']], aria: 'Cities' },
+  en: { id: 'in-your-region', h2: 'Website design in your region', lead: `Kempen Webstudio builds websites for businesses across Belgium. Choose your city, or read more about <a href="/en/">having a website built</a>, <a href="${P.prijs.en}">what a website costs</a> and <a href="${P.over.en}">who we are</a>.`, chips: [['/en/web-design-brussels/', 'Brussels'], ['/en/website-laten-maken-gent/', 'Ghent'], ['/en/website-laten-maken-leuven/', 'Leuven'], ['/en/website-laten-maken-kempen/', 'The Kempen'], ['/en/website-laten-maken-kortrijk/', 'Kortrijk'], [P.hub.en, 'All regions']], aria: 'Cities' },
 };
 const LEES = { nl: ['Lees ook', 'Meer uitleg in gewone taal over uw website.', 'Uitleg'], fr: ['À lire aussi', 'D’autres explications claires sur votre site.', 'Conseils'], en: ['Read more', 'More plain-language guides about your website.', 'Guide'] };
 const h1Of = p => { const f = path.join('content', ...p.split('/').filter(Boolean), 'index.html'); const m = fs.existsSync(f) && fs.readFileSync(f, 'utf8').match(/<h1[^>]*>([\s\S]*?)<\/h1>/); return m ? m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() : ''; };
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
-const regio = lang => { const r = REGIO[lang]; return { t: 'band', id: r.id, intro: [], h2: r.h2, lead: [r.lead], chips: { aria: r.aria, links: r.chips } }; };
+// tweede zin: contextuele links naar de diensten (niet naar de pagina zelf), zodat ook logo en SEO inhoudelijke links krijgen
+const DIENSTEN = {
+  nl: ['Ook nodig voor uw zaak:', [[P.webshop.nl, 'een webshop laten maken'], [P.logo.nl, 'logo en huisstijl'], [P.seo.nl, 'SEO laten doen'], [P.vernieuwen.nl, 'uw website laten vernieuwen']]],
+  fr: ['Aussi utile pour votre entreprise :', [[P.webshop.fr, 'création de boutique en ligne'], [P.logo.fr, 'création de logo et d’identité visuelle'], [P.seo.fr, 'référencement SEO'], [P.vernieuwen.fr, 'refonte de site internet']]],
+  en: ['Also useful for your business:', [[P.webshop.en, 'having an online shop built'], [P.logo.en, 'logo and visual identity design'], [P.seo.en, 'SEO services'], [P.vernieuwen.en, 'a website redesign']]],
+};
+const lijst = (lang, xs) => xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + { nl: ' en ', fr: ' et ', en: ' and ' }[lang] + xs.at(-1);
+const regio = (lang, self) => { const r = REGIO[lang]; const [pre, ls] = DIENSTEN[lang]; const d = ls.filter(([h]) => h !== self).map(([h, l]) => `<a href="${h}">${l}</a>`); return { t: 'band', id: r.id, intro: [], h2: r.h2, lead: [r.lead, `${pre} ${lijst(lang, d)}.`], chips: { aria: r.aria, links: r.chips } }; };
 function leesOok(lang, base) {
   const i = ART.indexOf(base); const pick = [1, 2, 3].map(k => ART[(i + k) % ART.length]);
   const [h2, lead, label] = LEES[lang];
@@ -29,6 +36,6 @@ function leesOok(lang, base) {
   return { t: 'raw', html: `<section aria-labelledby="lees-ook-t" class="sec kw-gallery"><div class="wrap"><h2 id="lees-ook-t">${h2}</h2><p class="kw-gallery-lead">${lead}</p><ul>${items}</ul></div></section>` };
 }
 export default ['nl', 'fr', 'en'].flatMap(lang => [
-  ...DIENST.map(b => ({ path: pathIn(lang, b), lang, aanvul: true, insert: [{ before: 'main section.fq6, main section.ct6', sections: [regio(lang)] }] })),
-  ...ART.map(b => ({ path: pathIn(lang, b), lang, aanvul: true, insert: [{ before: 'main section.fq6, main section.ct6', sections: [leesOok(lang, b), regio(lang)] }] })),
+  ...DIENST.map(b => ({ path: pathIn(lang, b), lang, aanvul: true, insert: [{ before: 'main section.fq6, main section.ct6', sections: [regio(lang, pathIn(lang, b))] }] })),
+  ...ART.map(b => ({ path: pathIn(lang, b), lang, aanvul: true, insert: [{ before: 'main section.fq6, main section.ct6', sections: [leesOok(lang, b), regio(lang, pathIn(lang, b))] }] })),
 ]);

@@ -109,8 +109,13 @@ function aanvul(p) {
   const H = d.head;
   d.querySelectorAll('[data-kw-extra]').forEach(e => e.remove());
   if (!H.querySelector('meta[name="kw-gegenereerd"]')) H.insertAdjacentHTML('afterbegin', '<meta name="kw-gegenereerd" content="scripts/paginas.mjs (aangevuld)">');
-  const set = (sel, attr, v) => { const e = H.querySelector(sel); if (e) attr ? e.setAttribute(attr, v) : (e.textContent = v); };
-  if (p.title) { set('title', null, p.title); set('meta[property="og:title"]', 'content', p.title); }
+  // bestaat de tag niet (bv. twitter:description op oudere pagina's), dan maken wij hem aan
+  const set = (sel, attr, v) => {
+    let e = H.querySelector(sel);
+    if (!e && attr) { const m = sel.match(/^meta\[(name|property)="([^"]+)"\]$/); if (m) { H.insertAdjacentHTML('beforeend', `<meta ${m[1]}="${m[2]}" content="">`); e = H.querySelector(sel); } }
+    if (e) attr ? e.setAttribute(attr, v) : (e.textContent = v);
+  };
+  if (p.title) { set('title', null, p.title); set('meta[property="og:title"]', 'content', p.title); set('meta[name="twitter:title"]', 'content', p.title); }
   if (p.desc) { set('meta[name="description"]', 'content', p.desc); set('meta[property="og:description"]', 'content', p.desc); set('meta[name="twitter:description"]', 'content', p.desc); }
   if (p.h1) d.querySelector('main h1').innerHTML = p.h1;
   if (p.slogan) d.querySelector('main .hero-slogan').innerHTML = p.slogan;
@@ -146,6 +151,8 @@ const merged = new Map();
 for (const p of pages) {
   const q = merged.get(p.path);
   if (!q) { merged.set(p.path, { ...p }); continue; }
+  // een volledig gegenereerde pagina kan extra secties krijgen vóór de veelgestelde vragen (p.voorFaq)
+  if (!q.aanvul && (p.voorFaq || p.faqExtra)) { const secs = q.sections.map(x => x.t === 'faq' && p.faqExtra ? { ...x, items: [...x.items, ...p.faqExtra] } : x); const i = secs.findIndex(x => x.t === 'faq'); secs.splice(i < 0 ? secs.length : i, 0, ...(p.voorFaq || [])); merged.set(p.path, { ...q, sections: secs }); continue; }
   if (!q.aanvul || !p.aanvul) throw new Error('dubbel pad ' + p.path);
   merged.set(p.path, { ...q, ...p, insert: [...(q.insert || []), ...(p.insert || [])], faqExtra: [...(q.faqExtra || []), ...(p.faqExtra || [])] });
 }

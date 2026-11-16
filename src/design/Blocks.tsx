@@ -28,7 +28,7 @@ const isShowcase = (b: any) => b.kind === 'prose' && /^(voorbeelden|voorbeeld|ex
 function demoItems(b: any, s: any) {
   const lang = s.lang || 'nl';
   const found = [...(b.html || '').matchAll(/\/(?:voorbeeldontwerpen|exemples-de-sites)\/([a-z-]+)\//g)].map(m => m[1]).filter(k => DEMO_SHOT[k]);
-  const want = [...new Set([...found, ...(PAGE_DEMOS[baseOf(s.url || '/')] || []), ...ALG_DEMOS])].slice(0, 3);
+  const want = [...new Set([...(PAGE_DEMOS[baseOf(s.url || '/')] || []), ...found, ...ALG_DEMOS])].slice(0, 3);
   return want.map(k => ({ href: DEMO_BASE[lang] + k + '/', title: DEMO_NAME[k], label: ((DD as any)[lang]?.demos?.[k]?.category) || '', shot: DEMO_SHOT[k] }));
 }
 function Gallery({ items, dark, lang }: { items: any[]; dark: boolean; lang: string }) {

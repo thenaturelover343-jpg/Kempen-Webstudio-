@@ -2,40 +2,85 @@
 // typische sectoren, bereikbaarheid en eigen vragen. Alleen algemeen bekende, controleerbare feiten; geen cijfers of klanten.
 import { P, TRUST, ASK, CTA, DELIVERY, HOME_LABEL, HUB_LABEL, cta, demo } from './_gemeen.mjs';
 
+// Gedeelde blokken in drie varianten (on-site audit 16-11: minder dubbele tekst tussen stadspagina's).
+// V[stad] = [a, b]: a kiest de variant voor samenwerken en voorstel, b voor intro, prijs en oplevering. Zo deelt geen paar steden alles.
+const V = { antwerpen: [0, 0], brussel: [1, 1], mechelen: [2, 2], hasselt: [0, 1], brugge: [2, 0], bruxelles: [0, 0], liege: [1, 1], namur: [2, 2], charleroi: [1, 0] };
 const T = {
   nl: {
-    intro: ['Zo weet u wat uw website wordt, nog voor u iets beslist.', 'U zit nergens aan vast.'],
-    voorstel: 'Een vrijblijvend voorstel toont wat uw website bevat en wat ze kost. U kent de inhoud, de opbouw en de prijs nog voor u iets beslist.',
-    samen: s => ({ t: 'prose', h2: 'Zo werken wij samen, ook op afstand', id: 'samen-' + s, html: `<p>Kempen Webstudio zit in Kasterlee, in de Kempen. Kennismaking en overleg verlopen online, per e-mail of telefoon. U hoeft dus niet langs te komen, en u hebt toch één vast aanspreekpunt dat uw zaak en uw website kent. Teksten, foto's en wijzigingen stuurt u gewoon door; wij zetten ze voor u online.</p><p>Wilt u weten hoe wij werken en waarom? Lees meer <a href="${P.over.nl}">over Kempen Webstudio</a> of neem <a href="${P.contact.nl}">contact</a> op.</p>` }),
-    prijs: (stad, s) => ({ t: 'pricing', id: 'prijs-' + s, h2: `Wat kost een website laten maken in ${stad}?`, side: `U betaalt in ${stad} dezelfde prijzen als overal in België.`, term: `Na een kort gesprek krijgt u een schriftelijke offerte. U beslist pas als u de prijs kent. Alle prijzen, ook voor onderhoud en extra's, staan in onze prijsgids <a href="${P.prijs.nl}">wat kost een website laten maken in 2026</a>.` }),
-    online: s => ({ t: 'prose', id: 'online-' + s, h2: 'Wanneer staat uw website online?', html: `<p>${DELIVERY.nl} Daarna stuurt u wijzigingen gewoon door, en wij passen ze aan.</p>` }),
+    intro: [
+      ['Zo weet u wat uw website wordt, nog voor u iets beslist.', 'U zit nergens aan vast.'],
+      [stad => `Eerst ziet u wat uw website in ${stad} wordt.`, 'Daarna beslist u zelf.'],
+      [stad => `U kent inhoud en prijs van uw site in ${stad} vooraf.`, 'Zonder verplichting.'],
+    ],
+    voorstel: [
+      'Een vrijblijvend voorstel toont wat uw website bevat en wat ze kost. U kent de inhoud, de opbouw en de prijs nog voor u iets beslist.',
+      stad => `Voor uw zaak in ${stad} maken wij eerst een vrijblijvend voorstel: welke pagina's er komen, wat erop staat en wat het kost. Pas daarna beslist u.`,
+      stad => `Wij beginnen met een vrijblijvend voorstel op maat van uw zaak in ${stad}, met de opbouw van de site en de prijs erbij. U beslist met alles op tafel.`,
+    ],
+    samen: [
+      (s, stad) => ({ t: 'prose', h2: 'Zo werken wij samen, ook op afstand', id: 'samen-' + s, html: `<p>Kempen Webstudio zit in Kasterlee, in de Kempen. Kennismaking en overleg verlopen online, per e-mail of telefoon. U hoeft dus niet langs te komen, en u hebt toch één vast aanspreekpunt dat uw zaak en uw website kent. Teksten, foto's en wijzigingen stuurt u gewoon door; wij zetten ze voor u online.</p><p>Wilt u weten hoe wij werken en waarom? Lees meer <a href="${P.over.nl}">over Kempen Webstudio</a> of neem <a href="${P.contact.nl}">contact</a> op.</p>` }),
+      (s, stad) => ({ t: 'prose', h2: `Persoonlijk contact, ook vanuit ${stad}`, id: 'samen-' + s, html: `<p>Wij werken vanuit Kasterlee en spreken af wanneer het u past: online, aan de telefoon of per e-mail. Voor uw website in ${stad} hoeft u dus niet te rijden, en u spreekt altijd met dezelfde persoon. Nieuwe foto's, een aangepaste prijslijst of andere openingsuren mailt u door, en wij passen ze aan.</p><p>Wie wij zijn en hoe wij werken, leest u bij <a href="${P.over.nl}">over Kempen Webstudio</a>. Liever meteen iets vragen? Neem <a href="${P.contact.nl}">contact</a> op.</p>` }),
+      (s, stad) => ({ t: 'prose', h2: `Samenwerken met een zaak in ${stad}`, id: 'samen-' + s, html: `<p>Ook al zit uw zaak in ${stad} en wij in Kasterlee, het contact blijft persoonlijk. Na een eerste gesprek online of telefonisch maken wij het voorstel, en daarna hebt u één aanspreekpunt dat uw zaak kent, ook na de lancering. Een wijziging stuurt u per e-mail; wij zetten ze online.</p><p>Meer over onze aanpak vindt u bij <a href="${P.over.nl}">over Kempen Webstudio</a>, of <a href="${P.contact.nl}">neem contact op</a>.</p>` }),
+    ],
+    prijs: [
+      (stad, s) => ({ t: 'pricing', id: 'prijs-' + s, h2: `Wat kost een website laten maken in ${stad}?`, side: `U betaalt in ${stad} dezelfde prijzen als overal in België.`, term: `Na een kort gesprek krijgt u een schriftelijke offerte. U beslist pas als u de prijs kent. Alle prijzen, ook voor onderhoud en extra's, staan in onze prijsgids <a href="${P.prijs.nl}">wat kost een website laten maken in 2026</a>.` }),
+      (stad, s) => ({ t: 'pricing', id: 'prijs-' + s, h2: `Wat kost een website laten maken in ${stad}?`, side: `Een zaak in ${stad} betaalt bij ons niet meer dan een zaak elders.`, term: `Het exacte bedrag voor uw site in ${stad} staat in een schriftelijke offerte, die u krijgt na een kort gesprek. Onderhoud en extra's vindt u in de <a href="${P.prijs.nl}">prijsgids voor 2026</a>.` }),
+      (stad, s) => ({ t: 'pricing', id: 'prijs-' + s, h2: `Wat kost een website laten maken in ${stad}?`, side: `Vaste vanaf-prijzen, ook in ${stad}, en de maandprijs staat erbij.`, term: `U krijgt eerst een schriftelijke offerte en beslist daarna. Wat onderhoud, een extra taal of een extra pagina kost, leest u in onze <a href="${P.prijs.nl}">prijsgids: wat kost een website laten maken</a>.` }),
+    ],
+    online: [
+      (s, stad) => ({ t: 'prose', id: 'online-' + s, h2: 'Wanneer staat uw website online?', html: `<p>${DELIVERY.nl} Daarna stuurt u wijzigingen gewoon door, en wij passen ze aan.</p>` }),
+      (s, stad) => ({ t: 'prose', id: 'online-' + s, h2: `Hoe snel staat uw website in ${stad} online?`, html: `<p>Een site met het pakket Start staat binnen 5 werkdagen online, Vakman binnen 10 werkdagen en een webshop in 3 tot 4 weken. Wij tellen vanaf uw goedkeuring van het voorstel en vanaf het moment dat wij uw logo en eventuele foto's hebben. Na de lancering blijft u voor wijzigingen bij hetzelfde aanspreekpunt.</p>` }),
+      (s, stad) => ({ t: 'prose', id: 'online-' + s, h2: 'Hoe lang duurt het voor uw site live staat?', html: `<p>Voor uw zaak in ${stad} geldt dezelfde planning als overal: 5 werkdagen voor Start, 10 werkdagen voor Vakman en 3 tot 4 weken voor een webshop. De teller start zodra u het voorstel goedkeurt en wij alles hebben wat nodig is, zoals uw logo. Lees ook <a href="${P.duur.nl}">hoe lang het duurt om een website te laten maken</a>.</p>` }),
+    ],
     voorbeeld: (s, txt) => ({ t: 'prose', id: 'voorbeelden-' + s, spd: true, h2: 'Voorbeelden van ons werk', html: `<p>Bekijk onze <a href="${P.demos.nl}">voorbeeldontwerpen</a>. Dit zijn ontwerpen met fictieve namen en gegevens, zodat u ziet hoe een site voor uw sector eruit kan zien. ${txt} Uw eigen website ontwerpen wij volledig op maat van uw zaak.</p>` }),
     ctaH: stad => `Een website voor uw zaak in ${stad}?`, also: 'Ook actief in',
   },
   fr: {
-    intro: ['Vous savez ce que sera votre site avant de décider quoi que ce soit.', 'Sans aucun engagement.'],
-    voorstel: 'Une proposition sans engagement montre ce que contient votre site et ce qu’il coûte. Vous connaissez le contenu, la structure et le prix avant de décider.',
-    samen: s => ({ t: 'prose', h2: 'Travailler ensemble, même à distance', id: 'ensemble-' + s, html: `<p>Kempen Webstudio est établi à Kasterlee, en Campine anversoise. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Vous n’avez donc pas besoin de vous déplacer, et vous gardez un seul interlocuteur qui connaît votre entreprise et votre site. Vous envoyez vos textes, vos photos et vos modifications, et nous les mettons en ligne pour vous.</p><p>Envie de savoir comment nous travaillons ? Découvrez <a href="${P.over.fr}">qui nous sommes</a> ou <a href="${P.contact.fr}">contactez-nous</a>.</p>` }),
-    prijs: (ville, s) => ({ t: 'pricing', id: 'prix-' + s, h2: `Quel est le prix d’un site internet à ${ville} ?`, side: `À ${ville}, vous payez les mêmes prix que partout en Belgique.`, term: `Après un court entretien, vous recevez une offre écrite. Vous décidez seulement quand vous connaissez le prix. Tous les prix, aussi pour la maintenance et les options, figurent dans notre guide <a href="${P.prijs.fr}">prix d’un site internet en Belgique en 2026</a>.` }),
-    online: s => ({ t: 'prose', id: 'en-ligne-' + s, h2: 'Quand votre site est-il en ligne ?', html: `<p>${DELIVERY.fr} Ensuite, vous nous envoyez simplement vos modifications et nous les appliquons.</p>` }),
+    intro: [
+      ['Vous savez ce que sera votre site avant de décider quoi que ce soit.', 'Sans aucun engagement.'],
+      [ville => `Vous voyez d’abord ce que sera votre site à ${ville}.`, 'Ensuite, vous décidez.'],
+      [ville => `Contenu et prix de votre site à ${ville}, connus d’avance.`, 'Sans obligation.'],
+    ],
+    voorstel: [
+      'Une proposition sans engagement montre ce que contient votre site et ce qu’il coûte. Vous connaissez le contenu, la structure et le prix avant de décider.',
+      ville => `Pour votre entreprise à ${ville}, nous préparons d’abord une proposition sans engagement : les pages prévues, leur contenu et le prix. Vous décidez ensuite.`,
+      ville => `Nous commençons par une proposition sans engagement adaptée à votre entreprise à ${ville}, avec la structure du site et le prix. Vous décidez en connaissance de cause.`,
+    ],
+    samen: [
+      (s, ville) => ({ t: 'prose', h2: 'Travailler ensemble, même à distance', id: 'ensemble-' + s, html: `<p>Kempen Webstudio est établi à Kasterlee, en Campine anversoise. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Vous n’avez donc pas besoin de vous déplacer, et vous gardez un seul interlocuteur qui connaît votre entreprise et votre site. Vous envoyez vos textes, vos photos et vos modifications, et nous les mettons en ligne pour vous.</p><p>Envie de savoir comment nous travaillons ? Découvrez <a href="${P.over.fr}">qui nous sommes</a> ou <a href="${P.contact.fr}">contactez-nous</a>.</p>` }),
+      (s, ville) => ({ t: 'prose', h2: `Un contact personnel, aussi depuis ${ville}`, id: 'ensemble-' + s, html: `<p>Nous travaillons depuis Kasterlee et convenons d’un moment qui vous arrange : en ligne, par téléphone ou par e-mail. Pour votre site à ${ville}, vous n’avez pas à vous déplacer, et vous parlez toujours à la même personne. De nouvelles photos, des tarifs ou des horaires modifiés : envoyez-les par e-mail, nous les mettons à jour.</p><p>Qui nous sommes et comment nous travaillons : lisez <a href="${P.over.fr}">à propos de Kempen Webstudio</a>, ou <a href="${P.contact.fr}">contactez-nous</a>.</p>` }),
+      (s, ville) => ({ t: 'prose', h2: `Travailler avec une entreprise à ${ville}`, id: 'ensemble-' + s, html: `<p>Votre entreprise est à ${ville} et nous à Kasterlee, mais le contact reste personnel. Après un premier échange en ligne ou par téléphone, nous préparons la proposition. Ensuite, vous avez un seul interlocuteur qui connaît votre entreprise, aussi après le lancement. Une modification ? Envoyez-la par e-mail, nous la mettons en ligne.</p><p>Découvrez notre approche <a href="${P.over.fr}">à propos de Kempen Webstudio</a>, ou <a href="${P.contact.fr}">prenez contact</a>.</p>` }),
+    ],
+    prijs: [
+      (ville, s) => ({ t: 'pricing', id: 'prix-' + s, h2: `Quel est le prix d’un site internet à ${ville} ?`, side: `À ${ville}, vous payez les mêmes prix que partout en Belgique.`, term: `Après un court entretien, vous recevez une offre écrite. Vous décidez seulement quand vous connaissez le prix. Tous les prix, aussi pour la maintenance et les options, figurent dans notre guide <a href="${P.prijs.fr}">prix d’un site internet en Belgique en 2026</a>.` }),
+      (ville, s) => ({ t: 'pricing', id: 'prix-' + s, h2: `Quel est le prix d’un site internet à ${ville} ?`, side: `Une entreprise de ${ville} ne paie pas plus chez nous qu’ailleurs.`, term: `Le montant exact de votre site à ${ville} figure dans une offre écrite, envoyée après un court entretien. Maintenance et options : voir le <a href="${P.prijs.fr}">guide des prix 2026</a>.` }),
+      (ville, s) => ({ t: 'pricing', id: 'prix-' + s, h2: `Quel est le prix d’un site internet à ${ville} ?`, side: `Des prix de départ fixes, aussi à ${ville}, avec l’abonnement mensuel indiqué.`, term: `Vous recevez d’abord une offre écrite, puis vous décidez. Le coût de la maintenance, d’une langue ou d’une page en plus se trouve dans notre <a href="${P.prijs.fr}">guide : prix d’un site internet</a>.` }),
+    ],
+    online: [
+      (s, ville) => ({ t: 'prose', id: 'en-ligne-' + s, h2: 'Quand votre site est-il en ligne ?', html: `<p>${DELIVERY.fr} Ensuite, vous nous envoyez simplement vos modifications et nous les appliquons.</p>` }),
+      (s, ville) => ({ t: 'prose', id: 'en-ligne-' + s, h2: `En combien de temps votre site à ${ville} est-il en ligne ?`, html: `<p>Un site avec la formule Start est en ligne en 5 jours ouvrables, Vakman en 10 jours ouvrables et une boutique en ligne en 3 à 4 semaines. Nous comptons à partir de votre accord sur la proposition et du moment où nous avons votre logo et vos éventuelles photos. Après le lancement, vous gardez le même interlocuteur pour chaque modification.</p>` }),
+      (s, ville) => ({ t: 'prose', id: 'en-ligne-' + s, h2: 'Combien de temps avant la mise en ligne ?', html: `<p>Pour votre entreprise à ${ville}, le planning est le même que partout : 5 jours ouvrables pour Start, 10 jours ouvrables pour Vakman et 3 à 4 semaines pour une boutique en ligne. Le délai commence dès votre accord et dès que nous avons tout ce qu’il faut, comme votre logo. Lisez aussi <a href="${P.duur.fr}">le délai de création d’un site internet</a>.</p>` }),
+    ],
     voorbeeld: (s, txt) => ({ t: 'prose', id: 'exemples-' + s, spd: true, h2: 'Exemples de notre travail', html: `<p>Découvrez nos <a href="${P.demos.fr}">exemples de sites</a>. Ce sont des designs avec des noms et des données fictifs, pour que vous voyiez à quoi peut ressembler un site pour votre secteur. ${txt} Votre propre site, nous le concevons entièrement sur mesure.</p>` }),
     ctaH: ville => `Un site internet pour votre entreprise à ${ville} ?`, also: 'Également actif à',
   },
 };
+const fx = (x, ...a) => typeof x === 'function' ? x(...a) : x;
 
 function stad(lang, o) {
   const t = T[lang];
+  const [va, vb] = V[o.s] || [0, 0];
   return {
     path: o.path, lang, alt: o.alt || null, title: o.title, desc: o.desc, h1: o.h1, crumbCur: o.crumb,
     crumbs: [[P.home[lang], HOME_LABEL[lang]], [P.hub[lang], HUB_LABEL[lang]]],
     slogan: o.slogan, ctas: [[CTA[lang], ASK[lang]], [P.demos[lang], lang === 'fr' ? 'Voir les exemples de sites' : 'Bekijk de voorbeeldontwerpen']], trust: TRUST[lang],
     service: { name: o.h1, type: lang === 'fr' ? 'Création de site internet' : 'Website laten maken', area: { '@type': 'City', name: o.city } },
     sections: [
-      { t: 'band', id: 'keuze-' + o.s, intro: t.intro, h2: o.bandH2, lead: [o.bandLead, t.voorstel] },
+      { t: 'band', id: 'keuze-' + o.s, intro: t.intro[vb].map(x => fx(x, o.city)), h2: o.bandH2, lead: [o.bandLead, fx(t.voorstel[va], o.city)] },
       { t: 'cards', id: 'wijken-' + o.s, h2: o.wijkenH2, items: o.wijken },
       { t: 'prose', id: 'ondernemen-' + o.s, h2: o.ondH2, html: o.ond },
       { t: 'cards', id: 'sectoren-' + o.s, h2: o.secH2, items: o.sectoren },
-      t.samen(o.s), t.prijs(o.city, o.s), t.online(o.s), t.voorbeeld(o.s, o.vb),
+      t.samen[va](o.s, o.city), t.prijs[vb](o.city, o.s), t.online[vb](o.s, o.city), t.voorbeeld(o.s, o.vb),
       { t: 'faq', id: 'faq-' + o.s, h2: o.faqH2, items: o.faq },
       { ...cta(lang, t.ctaH(o.city), [t.also, o.also]), id: 'cta-' + o.s },
     ],
@@ -167,7 +212,7 @@ export default [
       ['In de regio', `Veel Hasseltse ondernemers werken ook in Genk, Diepenbeek, Zonhoven, Herk-de-Stad of Lummen. Op uw site staat dan duidelijk welke gemeenten u bedient, zonder voor elke gemeente een aparte pagina.`],
     ],
     ondH2: 'Ondernemen in Hasselt: wie uw klanten zijn',
-    ond: `<p>Hasselt is het bestuurlijke en commerciële centrum van Limburg. De stad staat bekend om haar winkelstraten en mode, om jenever, met het Jenevermuseum en de jaarlijkse Jeneverfeesten, en om de Japanse Tuin. Met de Universiteit Hasselt en de Corda Campus in Kiewit is er ook een groeiende groep jonge bedrijven en dienstverleners. Een website voor een modezaak in het centrum vraagt dus een andere aanpak dan een site voor een IT-dienstverlener of een vakman in Kuringen.</p><p>Wie in Hasselt een zaak zoekt, kijkt vaak op de kaart wat het dichtst bij ligt of typt de deelgemeente mee. Wij zetten uw adres, werkgebied en openingsuren in gewone tekst op uw site, met dezelfde gegevens als in uw Google Bedrijfsprofiel. Komen veel klanten met de wagen, dan zetten wij parkeren en de weg naar uw zaak duidelijk op de contactpagina.</p>`,
+    ond: `<p>Hasselt is het bestuurlijke en commerciële centrum van Limburg. De stad staat bekend om haar winkelstraten en mode, om jenever, met het Jenevermuseum en de jaarlijkse Jeneverfeesten, en om de Japanse Tuin. Met de Universiteit Hasselt en de Corda Campus in Kiewit is er ook een groeiende groep jonge bedrijven en dienstverleners. Een website voor een modezaak in het centrum vraagt dus een andere aanpak dan een site voor een IT-dienstverlener of een vakman in Kuringen.</p><p>Wie in Hasselt een zaak zoekt, kijkt vaak op de kaart wat het dichtst bij ligt of typt de deelgemeente mee. Adres, werkgebied en openingsuren komen in leesbare tekst op uw site, en ze kloppen met wat in uw Google Bedrijfsprofiel staat. Komen veel klanten met de wagen, dan zetten wij parkeren en de weg naar uw zaak duidelijk op de contactpagina.</p>`,
     secH2: 'Sectoren waarvoor wij in Hasselt websites maken',
     sectoren: [
       ['Winkels en mode', `Uw collectie, openingsuren en de weg naar uw winkel, of meteen een kleine webshop. Zie <a href="${nl('winkel')}">winkels</a> en <a href="${nl('webshop')}">webshop laten maken</a>.`],
@@ -177,8 +222,8 @@ export default [
     vb: `Voor Hasseltse zaken zijn bijvoorbeeld <a href="${demo('nl', 'vennebrand')}">Vennebrand</a> (een kleine webshop) en <a href="${demo('nl', 'velours')}">Velours</a> (een schoonheidssalon met afsprakenplanner) een goed vertrekpunt.`,
     faqH2: 'Veelgestelde vragen over een website in Hasselt',
     faq: [
-      ['Maken jullie ook websites voor zaken in Kermt, Kuringen of Stokrooie?', 'Ja. Wij maken websites voor zaken in heel Hasselt en de deelgemeenten, en ook in de gemeenten rond de stad. Op uw site vermelden wij in gewone zinnen waar u werkt.'],
-      ['Moet ik naar Kasterlee komen?', 'Nee. Kennismaking en overleg verlopen online, per e-mail of telefoon. U hebt één vast aanspreekpunt.'],
+      ['Maken jullie ook websites voor zaken in Kermt, Kuringen of Stokrooie?', 'Ja. Wij maken websites voor zaken in heel Hasselt en de deelgemeenten, en ook in de gemeenten rond de stad. Uw site noemt de deelgemeenten en buurgemeenten waar u werkt.'],
+      ['Hoe verloopt het contact vanuit Hasselt?', 'Volledig op afstand: een eerste gesprek online of aan de telefoon, daarna stuurt u wijzigingen per e-mail. U hebt één vast aanspreekpunt.'],
       ['Wat kost een website laten maken in Hasselt?', 'Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs vanaf €29, €49 of €79. U krijgt vooraf een vrijblijvend voorstel.'],
       ['Kan ik ook online verkopen?', `Ja. Met het pakket Webshop verkoopt u tot 50 producten online, met veilig betalen met bankkaart of kredietkaart. Meer bij <a href="${nl('webshop')}">webshop laten maken</a>.`],
       ['Kunnen klanten online een afspraak maken?', 'Ja. Vanaf het pakket Vakman koppelen wij uw website aan uw boekingssysteem, zodat klanten zelf een moment kiezen.'],
@@ -304,7 +349,7 @@ export default [
     wijkenH2: 'Des sites pour les entreprises de la ville et des sections',
     wijken: [
       ['Au centre-ville', `Entre la gare, la rue de Fer, la place d’Armes et le pied de la citadelle, les commerces et l’horeca accueillent habitants, étudiants et visiteurs. Horaires, offre et adresse doivent être clairs tout de suite. Voir <a href="${fr('winkel')}">sites pour les commerces</a> et <a href="${fr('horeca')}">sites pour l’horeca</a>.`],
-      ['Dans les sections', `Vous travaillez depuis Jambes, Salzinnes, Saint-Servais, Bouge, Erpent ou Wépion ? Vos clients cherchent souvent par quartier. Nous indiquons en phrases simples où vous travaillez, en accord avec votre fiche Google Business. Voir aussi <a href="${fr('vakmensen')}">sites pour les artisans</a>.`],
+      ['Dans les sections', `Vous travaillez depuis Jambes, Salzinnes, Saint-Servais, Bouge, Erpent ou Wépion ? Vos clients cherchent souvent par quartier. Votre site cite ces quartiers en texte clair, comme sur votre fiche Google Business. Voir aussi <a href="${fr('vakmensen')}">sites pour les artisans</a>.`],
       ['Dans la province', `Beaucoup d’indépendants namurois travaillent aussi à Gembloux, Dinant, Andenne ou Fosses-la-Ville. Votre site indique clairement les communes desservies, sans une page vide pour chacune.`],
     ],
     ondH2: 'Entreprendre à Namur : qui sont vos clients',
@@ -318,8 +363,8 @@ export default [
     vb: `Pour une entreprise namuroise, <a href="${demo('fr', 'kapsalon-ivelien')}">Kapsalon Ivelien</a> (un salon avec bouton rendez-vous) et <a href="${demo('fr', 'tuinzorg-varelinde')}">Tuinzorg Varelinde</a> (un jardinier) sont de bons points de départ.`,
     faqH2: 'Questions fréquentes sur un site internet à Namur',
     faq: [
-      ['Créez-vous aussi des sites pour Jambes ou Salzinnes ?', 'Oui. Nous créons des sites pour des entreprises dans tout Namur, dans ses sections et dans la province. Votre site indique en phrases simples où vous travaillez.'],
-      ['Dois-je me rendre à Kasterlee ?', 'Non. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Vous avez un seul interlocuteur.'],
+      ['Créez-vous aussi des sites pour Jambes ou Salzinnes ?', 'Oui. Nous créons des sites pour des entreprises dans tout Namur, dans ses sections et dans la province. Nous mentionnons sur votre site les quartiers et communes que vous desservez.'],
+      ['Comment se passe le suivi depuis Namur ?', 'Entièrement à distance : un premier échange en ligne ou par téléphone, puis vos modifications par e-mail. Vous gardez un seul interlocuteur.'],
       ['Quel est le prix d’un site internet à Namur ?', 'Start à partir de €490, Vakman à partir de €990 et Webshop à partir de €1.890, chaque fois en une fois et HTVA, plus un abonnement mensuel à partir de €29, €49 ou €79. Vous recevez d’abord une proposition sans engagement.'],
       ['Mes clients peuvent-ils prendre rendez-vous en ligne ?', 'Oui. À partir de la formule Vakman, nous relions votre site à votre système de réservation, pour que vos clients choisissent eux-mêmes un moment.'],
       ['Un site internet est-il déductible fiscalement ?', `En règle générale, les frais d’un site professionnel sont déductibles. Nous l’expliquons en détail dans notre article <a href="${fr('fiscaal')}">site internet déductible fiscalement</a>.`],
@@ -339,8 +384,8 @@ export default [
     wijkenH2: 'Des sites pour les entreprises de la ville et des sections',
     wijken: [
       ['À la Ville Haute et la Ville Basse', `Autour de la place Charles II, de la Ville Basse et du centre commercial Rive Gauche, commerces et horeca accueillent habitants et navetteurs. Horaires, offre et adresse doivent être clairs en quelques secondes. Voir <a href="${fr('winkel')}">sites pour les commerces</a> et <a href="${fr('horeca')}">sites pour l’horeca</a>.`],
-      ['Dans les sections', `Vous travaillez depuis Gosselies, Jumet, Marcinelle, Montignies-sur-Sambre, Marchienne-au-Pont ou Couillet ? Vos clients cherchent souvent par section. Nous indiquons en phrases simples où vous travaillez, en accord avec votre fiche Google Business. Voir aussi <a href="${fr('vakmensen')}">sites pour les artisans</a>.`],
-      ['Dans la région', `Beaucoup d’indépendants carolos travaillent aussi à Châtelet, Fleurus, Fontaine-l’Évêque ou Courcelles. Votre site indique clairement les communes desservies, sans une page vide pour chacune.`],
+      ['Dans les sections', `Vous travaillez depuis Gosselies, Jumet, Marcinelle, Montignies-sur-Sambre, Marchienne-au-Pont ou Couillet ? Vos clients cherchent souvent par section. Votre site nomme les sections où vous intervenez, avec les mêmes données que votre fiche Google Business. Voir aussi <a href="${fr('vakmensen')}">sites pour les artisans</a>.`],
+      ['Dans la région', `Beaucoup d’indépendants carolos travaillent aussi à Châtelet, Fleurus, Fontaine-l’Évêque ou Courcelles. Nous citons ces communes dans un texte normal, plutôt que de créer une page presque vide par commune.`],
     ],
     ondH2: 'Entreprendre à Charleroi : qui sont vos clients',
     ond: `<p>Charleroi est la plus grande ville de Wallonie. Son passé industriel, lié au charbon et à l’acier, fait place à de nouvelles activités : l’Aéropôle de Gosselies accueille des entreprises technologiques et de biotechnologie, et l’aéroport de Brussels South Charleroi attire des voyageurs de tout le pays. Le centre-ville a été largement rénové, avec de nouveaux commerces et lieux de sortie. Un site pour un indépendant qui démarre à Marcinelle demande donc une autre approche qu’un site pour une entreprise de services qui travaille pour l’industrie.</p><p>Les Carolos cherchent souvent avec leur section ou consultent la carte pour trouver l’adresse la plus proche. Nous plaçons votre adresse, votre zone d’intervention et vos horaires en texte clair sur votre site, avec les mêmes données que votre fiche Google Business, et nous indiquons l’accès en métro léger, en bus ou en voiture quand c’est utile.</p>`,
@@ -353,8 +398,8 @@ export default [
     vb: `Pour une entreprise carolorégienne, <a href="${demo('fr', 'dakwerken-hoogland')}">Dakwerken Hoogland</a> (un couvreur avec formulaire de devis) et <a href="${demo('fr', 'vennebrand')}">Vennebrand</a> (une petite boutique en ligne) sont de bons points de départ.`,
     faqH2: 'Questions fréquentes sur un site internet à Charleroi',
     faq: [
-      ['Créez-vous aussi des sites pour Gosselies, Jumet ou Marcinelle ?', 'Oui. Nous créons des sites pour des entreprises dans tout Charleroi, dans ses sections et dans la région. Votre site indique en phrases simples où vous travaillez.'],
-      ['Dois-je me rendre à Kasterlee ?', 'Non. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Vous avez un seul interlocuteur.'],
+      ['Créez-vous aussi des sites pour Gosselies, Jumet ou Marcinelle ?', 'Oui. Nous créons des sites pour des entreprises dans tout Charleroi, dans ses sections et dans la région. Les sections et communes où vous travaillez figurent clairement sur votre site.'],
+      ['Faut-il se rencontrer en personne ?', 'Ce n’est pas nécessaire. Depuis Charleroi, tout se règle en ligne, par téléphone ou par e-mail, avec toujours la même personne de contact.'],
       ['Quel est le prix d’un site internet à Charleroi ?', 'Start à partir de €490, Vakman à partir de €990 et Webshop à partir de €1.890, chaque fois en une fois et HTVA, plus un abonnement mensuel à partir de €29, €49 ou €79. Vous recevez d’abord une proposition sans engagement.'],
       ['Je démarre mon activité. Quelle formule choisir ?', `Pour démarrer, la formule Start suffit souvent : un site qui fonctionne sur smartphone et ordinateur, avec formulaire de contact et bouton d’appel. Voir <a href="${fr('starters')}">site internet pour jeunes entreprises</a>.`],
       ['Puis-je vendre en ligne ?', `Oui. Avec la formule Webshop, vous vendez jusqu’à 50 produits en ligne, avec paiement sécurisé par carte bancaire ou carte de crédit. Voir <a href="${fr('webshop')}">création de boutique en ligne</a>.`],

@@ -17,8 +17,8 @@ const detail = lang => ({
 // ------------------------------------------------------------------ prijsgids
 const G = {
   nl: {
-    title: 'Wat kost een website laten maken in België? Prijzen 2026', desc: 'Wat kost een website laten maken in België in 2026? Prijzen per type site, marktprijzen, freelancer, bureau of zelf bouwen, onderhoud en verborgen kosten.',
-    h1: 'Wat kost een website laten maken in België (2026)?',
+    title: 'Prijs website laten maken: wat kost een website in 2026?', desc: 'Prijs website laten maken in België in 2026: wat kost een website per type site, marktprijzen, freelancer of bureau, onderhoud en verborgen kosten.',
+    h1: 'Wat kost een website laten maken? Prijzen in België (2026)',
     secs: [
       { t: 'table', id: 'prijsvorken', h2: 'Prijzen per type website in 2026', caption: 'Prijzen van Kempen Webstudio per type website, exclusief btw', head: ['Type website', 'Eenmalig', 'Per maand', 'Online binnen'], rows: [
         ['Eenvoudige website (Start)', 'vanaf €490', 'vanaf €29', '5 werkdagen'], ['Professionele website (Vakman)', 'vanaf €990', 'vanaf €49', '10 werkdagen'], ['Webshop tot 50 producten (Webshop)', 'vanaf €1.890', 'vanaf €79', '3 à 4 weken'],
@@ -54,11 +54,13 @@ const G = {
       ['Is een freelancer goedkoper dan een webbureau?', 'Soms bij de start, maar vergelijk ook de lopende kosten, wie het onderhoud doet en wat er gebeurt als die ene persoon niet beschikbaar is. Wij combineren één vast aanspreekpunt met vaste pakketten.'],
       ['Wat kost een website per jaar?', 'Bij ons betaalt u na de bouw de maandprijs van uw pakket: op jaarbasis vanaf €348 voor Start, €588 voor Vakman en €948 voor Webshop, excl. btw. Daarin zitten domein, hosting, back-ups, updates en aanpassingen.'],
       ['Welke verborgen kosten heeft een website?', 'Let op een domeinnaam die niet op uw naam staat, betalende licenties, teksten die u zelf moet schrijven, lange contracten en wijzigingen die u per keer betaalt.'],
+      ['Kan ik gratis een website laten maken?', `Een website laten maken door een bureau is nooit gratis. Websitebouwers hebben wel gratis abonnementen, maar dan staat uw site meestal op een adres van die bouwer en niet op uw eigen domeinnaam, vaak met hun reclame erbij. Voor een zaak is een eigen .be-domein betrouwbaarder. Bij ons begint een website vanaf €490 excl. btw. Wat zelf bouwen op termijn kost, leest u in <a href="${P.zelf.nl}">website laten maken of zelf bouwen</a>.`],
+      ['Wat is de goedkoopste manier om een website te laten maken?', 'Begin klein: één duidelijke site met uw diensten, uw werkgebied en uw contactgegevens. Bij ons is dat het pakket Start, vanaf €490 eenmalig en vanaf €29 per maand excl. btw. Later kunt u pagina\'s, een tweede taal of een webshop toevoegen.'],
       ['Kan ik de kosten van mijn website fiscaal inbrengen?', `Meestal wel, als beroepskost of via afschrijving. De regels leest u in ons artikel <a href="${P.fiscaal.nl}">is een website fiscaal aftrekbaar</a>.`],
     ],
   },
   fr: {
-    title: 'Prix d’un site internet en Belgique : tarifs 2026', desc: 'Prix d’un site internet en Belgique en 2026 : tarifs par type de site, prix du marché, freelance, agence ou DIY, maintenance et coûts cachés.',
+    title: 'Prix création site internet en Belgique : tarifs 2026', desc: 'Prix de la création d’un site internet en Belgique en 2026 : tarifs par type de site, prix du marché, freelance ou agence, maintenance, coûts cachés.',
     h1: 'Combien coûte la création d’un site internet en Belgique (2026) ?',
     secs: [
       { t: 'table', id: 'fourchettes', h2: 'Prix par type de site en 2026', caption: 'Prix de Kempen Webstudio par type de site, HTVA', head: ['Type de site', 'Une fois', 'Par mois', 'En ligne en'], rows: [
@@ -95,6 +97,8 @@ const G = {
       ['Un freelance est-il moins cher qu’une agence ?', 'Parfois au départ, mais comparez aussi les coûts récurrents, qui assure la maintenance et ce qui se passe si cette seule personne n’est pas disponible.'],
       ['Combien coûte un site par an ?', 'Chez nous, après la création, vous payez l’abonnement de votre formule : sur une année à partir de €348 pour Start, €588 pour Vakman et €948 pour Webshop, HTVA.'],
       ['Quels sont les coûts cachés d’un site ?', 'Un domaine qui n’est pas à votre nom, des licences payantes, des textes à rédiger vous-même, des contrats longs et des modifications payées à la pièce.'],
+      ['Peut-on créer un site internet gratuitement ?', `Faire créer un site par une agence n’est jamais gratuit. Les créateurs de sites proposent des formules gratuites, mais votre site se trouve alors en général sur une adresse de ce service et pas sur votre propre nom de domaine, souvent avec leur publicité. Pour une entreprise, un domaine .be à votre nom inspire plus confiance. Chez nous, un site commence dès €490 HTVA. Ce que coûte un site fait soi-même sur 5 ans, vous le lisez dans <a href="${P.zelf.fr}">créer son site soi-même ou le faire créer</a>.`],
+      ['Quelle est la façon la moins chère de faire créer un site internet ?', 'Commencez simplement : un site clair avec vos services, votre zone d’intervention et vos coordonnées. Chez nous, c’est la formule Start, dès €490 en une fois et dès €29 par mois HTVA. Plus tard, vous pouvez ajouter des pages, une deuxième langue ou une boutique en ligne.'],
       ['Un site internet est-il déductible fiscalement ?', `Le plus souvent oui, comme frais professionnel ou par amortissement. Voir notre article <a href="${P.fiscaal.fr}">site internet déductible fiscalement</a>.`],
     ],
   },

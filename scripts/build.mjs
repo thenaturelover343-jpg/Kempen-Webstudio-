@@ -120,8 +120,11 @@ const LD_SERVICE = {
 const ldTypes = o => [].concat(o['@type'] || []);
 function enrichLd(arr, { url, lang, isHome, ogImg, doc }) {
   const ORG = ORIGIN + '/#organisatie';
+  // één organisatie voor alle talen (FR/EN hadden een eigen @id zonder adres en openingsuren)
+  arr = JSON.parse(JSON.stringify(arr).replace(/https:\/\/www\.kempenwebstudio\.be\/(?:fr|en)\/#organisatie/g, ORG));
   const country = { '@type': 'Country', name: { nl: 'België', fr: 'Belgique', en: 'Belgium' }[lang], identifier: 'BE' };
-  for (const o of arr) {
+  // ook knopen binnen een @graph
+  for (const o of arr.flatMap(x => x['@graph'] ? [x, ...x['@graph']] : [x])) {
     if (isHome && o['@id'] === ORG) {
       o['@type'] = ['Organization', 'ProfessionalService'];
       o.areaServed = [country, ...LD_CITIES.map(name => ({ '@type': 'City', name }))];
@@ -130,6 +133,12 @@ function enrichLd(arr, { url, lang, isHome, ogImg, doc }) {
       o.openingHoursSpecification = [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '09:00', closes: '20:00' }];
       o.image = ORIGIN + ogImg;
     }
+    // op andere pagina's een gedeeltelijke kopie van de organisatie: altijd met adres en ondernemingsnummer (geldige LocalBusiness)
+    if (!isHome && o['@id'] === ORG && ldTypes(o).some(t => /Service|Business/.test(t))) {
+      o.address = o.address || { '@type': 'PostalAddress', streetAddress: 'Kemelbeekstraat 16', addressLocality: 'Kasterlee', postalCode: '2460', addressCountry: 'BE' };
+      o.vatID = o.vatID || 'BE0897577919';
+    }
+    if (isHome && o['@id'] === ORG) o.priceRange = '€€';
     if (ldTypes(o).includes('Article')) { o.image = ORIGIN + ogImg; if (!o.author) o.author = { '@id': ORG }; }
   }
   const sv = LD_SERVICE[baseOf(url)];
@@ -314,6 +323,7 @@ for (const rel of pages) {
   let ogImg = OG_IMAGE; if (h1txt && fs.existsSync(ogSrc)) { ogImg = `/assets/og/${ogk}.jpg`; write(ogImg.slice(1), fs.readFileSync(ogSrc)); }
   const metas = [...H.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')].map(m => { const k = m.getAttribute('property') ? 'property' : 'name', key = m.getAttribute(k); let v = m.getAttribute('content') || ''; if (key === 'og:image' || key === 'twitter:image') v = ORIGIN + ogImg; if (key === 'og:image:alt' && ogImg !== OG_IMAGE) v = `${h1txt}, Kempen Webstudio`; return `<meta ${k}="${esc(key)}" content="${esc(v)}">`; });
   if (metas.length && !metas.some(m => m.includes('twitter:title'))) metas.push(`<meta name="twitter:title" content="${esc(title)}">`);
+  if (metas.length && !metas.some(m => m.includes('"twitter:description"')) && desc) metas.push(`<meta name="twitter:description" content="${esc(desc)}">`);
   const alts = [...H.querySelectorAll('link[rel="alternate"][hreflang]')].map(l => `<link rel="alternate" hreflang="${esc(l.getAttribute('hreflang'))}" href="${esc(l.getAttribute('href'))}">`);
   const ld = enrichLd([...doc.querySelectorAll('script[type="application/ld+json"]')].map(x => JSON.parse(x.textContent)), { url, lang, isHome, ogImg, doc }).map(o => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`);
   const por = w => `/assets/img/hero-portret-${w}.avif ${w}w`;

@@ -122,7 +122,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-16). Alle andere teksten op 
 - Coachs  _(op 1 pagina)_
 - Comptables  _(op 1 pagina)_
 - Continu  _(op 1 pagina)_
-- Création de site internet en Belgique : un site sur mesure pour votre entreprise, avec d’abord une proposition sans engagement.  _(op 1 pagina)_
+- Création de site internet en Belgique par une agence web de Kasterlee : un site sur mesure, avec d’abord une proposition sans engagement.  _(op 1 pagina)_
 - Demande de devis  _(op 2 pagina's)_
 - Des réponses claires sur notre approche, nos prix fixes et les délais de mise en ligne.  _(op 1 pagina)_
 - Design épuré  _(op 1 pagina)_

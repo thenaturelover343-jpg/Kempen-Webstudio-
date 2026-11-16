@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 16-11-2026. Branch `nieuwe-website`.
+Laatst bijgewerkt: 16-11-2026 (on-site SEO-audit). Branch `nieuwe-website`.
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -116,6 +116,13 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Leesbaarheid gemeten op alle 156 pagina's met `scripts/textaudit.mjs` (grootte, kleur, echte achtergrond, contrast): 21.683 → 0 teksten onder de norm. Lopende tekst 16px gsm / 17px desktop, regelhoogte 1,6; labels, pills, footer 15px; grijs op donker #C8C8CC, koper op donker #F1A36A. Overzicht vóór/na in `LEESBAARHEID.md`.
   - Premiumcontrole per paginagroep in `PREMIUM-CHECK.md` (16 punten, alle opgelost): voorbeelden-showcase met screenshots op steden/sectoren/diensten, regio-capsules, kennisoverzicht met thumbnails, "Lees ook" op kennisartikels, capsules op bedankt/404, CTA's zonder "eerst zien", grotere showcase op de home.
   - Controles: linkcheck/SEO 0, seocheck 0, redirects in orde, lege beeldvakken 0, rastergaten 0, geen tweede scrollbalk (headed Chrome), test-home 51/51, autoplay in orde, Lighthouse mobiel 99-100, CLS 0.
+
+- [x] **On-site SEO-audit** (16-11-2026, Karim: "Is alles volledig SEO-gemaximaliseerd?"): rapport in `SEO-ONSITE-AUDIT.md`, herhaalbaar met `node scripts/seo-audit.mjs dist-live --info`.
+  - 47 fouten → 0 op 154 indexeerbare pagina's: twitter-tags, één organisatie-ID voor alle talen met adres/ondernemingsnummer, prijs- en webshoptitels, FR "agence web".
+  - Inhoud: Kempense stadspagina's +prijsblok/lokaal/2 vragen (576-707 → 861-1.005 woorden), webshop 1.215 → 1.503, Belgiëpagina, SEO-pagina (Antwerpen), EN-hub en EN-SEO; PAA-vragen in de prijsgids.
+  - Stadspagina's: overlap 50-60% → max. 44% (varianten in `steden.mjs`). Contextuele links naar logo/SEO/webshop/vernieuwen op dienst-, sector- en kennispagina's.
+  - 41/43 zoekwoorden uit volumes.csv hebben een doelpagina. Controles groen, Lighthouse 100 mobiel en desktop, CLS 0.
+  - Open voor Karim: reviews/Bedrijfsprofiel, echte cases, algemene voorwaarden, sameAs-URL's, Shopify ja/nee.
 
 ## Bezig
 
