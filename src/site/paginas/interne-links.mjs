@@ -21,14 +21,21 @@ const LEES = { nl: ['Lees ook', 'Meer uitleg in gewone taal over uw website.', '
 const h1Of = p => { const f = path.join('content', ...p.split('/').filter(Boolean), 'index.html'); const m = fs.existsSync(f) && fs.readFileSync(f, 'utf8').match(/<h1[^>]*>([\s\S]*?)<\/h1>/); return m ? m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() : ''; };
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
-// tweede zin: contextuele links naar de diensten (niet naar de pagina zelf), zodat ook logo en SEO inhoudelijke links krijgen
+// tweede zin: contextuele links naar de diensten (niet naar de pagina zelf), als gewone zin (audit 17-11):
+// "Kempen Webstudio maakt ook webshops, een logo en huisstijl, doet SEO en vernieuwt bestaande websites."
+// [href, groep ('maak' deelt het werkwoord), tekst met link]
 const DIENSTEN = {
-  nl: ['Ook nodig voor uw zaak:', [[P.webshop.nl, 'een webshop laten maken'], [P.logo.nl, 'logo en huisstijl'], [P.seo.nl, 'SEO laten doen'], [P.vernieuwen.nl, 'uw website laten vernieuwen']]],
-  fr: ['Aussi utile pour votre entreprise :', [[P.webshop.fr, 'création de boutique en ligne'], [P.logo.fr, 'création de logo et d’identité visuelle'], [P.seo.fr, 'référencement SEO'], [P.vernieuwen.fr, 'refonte de site internet']]],
-  en: ['Also useful for your business:', [[P.webshop.en, 'having an online shop built'], [P.logo.en, 'logo and visual identity design'], [P.seo.en, 'SEO services'], [P.vernieuwen.en, 'a website redesign']]],
+  nl: { ook: 'maakt ook', items: [[P.webshop.nl, 'maak', 'webshops'], [P.logo.nl, 'maak', 'een logo en huisstijl'], [P.seo.nl, 'doet', 'SEO'], [P.vernieuwen.nl, 'vernieuwt', 'bestaande websites']] },
+  fr: { ook: 'crée aussi', items: [[P.webshop.fr, 'maak', 'des boutiques en ligne'], [P.logo.fr, 'maak', 'un logo et une identité visuelle'], [P.seo.fr, 'fait du', 'référencement SEO'], [P.vernieuwen.fr, 'refait', 'des sites existants']] },
+  en: { ook: 'also builds', items: [[P.webshop.en, 'maak', 'online shops'], [P.logo.en, 'maak', 'a logo and visual identity'], [P.seo.en, 'does', 'SEO'], [P.vernieuwen.en, 'redesigns', 'existing websites']] },
 };
 const lijst = (lang, xs) => xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + { nl: ' en ', fr: ' et ', en: ' and ' }[lang] + xs.at(-1);
-const regio = (lang, self) => { const r = REGIO[lang]; const [pre, ls] = DIENSTEN[lang]; const d = ls.filter(([h]) => h !== self).map(([h, l]) => `<a href="${h}">${l}</a>`); return { t: 'band', id: r.id, intro: [], h2: r.h2, lead: [r.lead, `${pre} ${lijst(lang, d)}.`], chips: { aria: r.aria, links: r.chips } }; };
+const dienstZin = (lang, self) => {
+  const D = DIENSTEN[lang]; let eerste = true;
+  const parts = D.items.filter(([h]) => h !== self).map(([h, g, t]) => { const l = `<a href="${h}">${t}</a>`; if (g === 'maak') { const r = eerste ? `${D.ook} ${l}` : l; eerste = false; return r; } return `${g} ${l}`; });
+  return `Kempen Webstudio ${lijst(lang, parts)}.`;
+};
+const regio = (lang, self) => { const r = REGIO[lang]; return { t: 'band', id: r.id, intro: [], h2: r.h2, lead: [r.lead, dienstZin(lang, self)], chips: { aria: r.aria, links: r.chips } }; };
 function leesOok(lang, base) {
   const i = ART.indexOf(base); const pick = [1, 2, 3].map(k => ART[(i + k) % ART.length]);
   const [h2, lead, label] = LEES[lang];

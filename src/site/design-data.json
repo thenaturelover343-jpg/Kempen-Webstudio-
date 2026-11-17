@@ -164,7 +164,7 @@
    {
     "id": "mobiel",
     "title": "Mobile-first",
-    "subtitle": "Snel op gsm en computer",
+    "subtitle": "Vlot op gsm en computer",
     "variant": "glass",
     "positionClass": "lg:top-10 lg:right-[11%]"
    },

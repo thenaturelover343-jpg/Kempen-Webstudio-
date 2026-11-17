@@ -17,71 +17,52 @@ const detail = lang => ({
 // ------------------------------------------------------------------ prijsgids
 const G = {
   nl: {
-    title: 'Prijs website laten maken: wat kost een website in 2026?', desc: 'Prijs website laten maken in België in 2026: wat kost een website per type site, marktprijzen, freelancer of bureau, onderhoud en verborgen kosten.',
+    title: 'Prijs website laten maken: wat kost een website in 2026?', desc: 'Prijs website laten maken in België in 2026: wat kost een website per type site, per maand en per jaar, met onderhoud en verborgen kosten.',
     h1: 'Wat kost een website laten maken? Prijzen in België (2026)',
     secs: [
       { t: 'table', id: 'prijsvorken', h2: 'Prijzen per type website in 2026', caption: 'Prijzen van Kempen Webstudio per type website, exclusief btw', head: ['Type website', 'Eenmalig', 'Per maand', 'Online binnen'], rows: [
         ['Eenvoudige website (Start)', 'vanaf €490', 'vanaf €29', '5 werkdagen'], ['Professionele website (Vakman)', 'vanaf €990', 'vanaf €49', '10 werkdagen'], ['Webshop tot 50 producten (Webshop)', 'vanaf €1.890', 'vanaf €79', '3 à 4 weken'],
         ['Landingspagina (één pagina)', 'vanaf €290', '–', 'in overleg'], ['Extra pagina', 'vanaf €79 per pagina', '–', 'in overleg'], ['Logo / huisstijl', 'vanaf €190 / €490', '–', 'in overleg']],
         before: '<p>Dit zijn onze vanaf-prijzen per type site. Het exacte bedrag staat in de schriftelijke offerte die u na een kort gesprek krijgt.</p>',
-        after: `<p>Op de websites van andere Belgische webbureaus zagen wij in november 2026 instapprijzen van ongeveer €700 tot €2.200 voor een website, en vanaf ongeveer €5.000 voor een webshop op maat. Die bedragen verschillen sterk per bureau en per wat er in de prijs zit. Vergelijk daarom altijd wat inbegrepen is: teksten, ontwerp, hosting, onderhoud en het aantal aanpassingen.</p>` },
-      { t: 'table', id: 'vergelijking', h2: 'Zelf bouwen, een freelancer of een webbureau?', caption: 'Vergelijking tussen zelf bouwen, een freelancer en een webbureau', head: ['', 'Zelf bouwen', 'Freelancer', 'Webbureau'], rows: [
-        ['Kosten bij de start', 'Laag: een abonnement bij een websitebouwer', 'Wisselend, vaak per uur of per project', 'Hoger, met vaste pakketten of een offerte'],
-        ['Lopende kosten', 'Maandabonnement, extra\'s apart', 'Hosting en onderhoud vaak apart', 'Vaak een vaste maandprijs voor hosting en onderhoud'],
-        ['Uw eigen tijd', 'Veel: ontwerp, teksten, techniek', 'Gemiddeld', 'Weinig'],
-        ['Ontwerp', 'Sjabloon', 'Afhankelijk van de freelancer', 'Meestal een eigen ontwerp'],
-        ['Teksten en vindbaarheid', 'Zelf doen', 'Soms inbegrepen', 'Vaak inbegrepen of als aparte dienst'],
-        ['Aanspreekpunt', 'Helpdesk van het platform', 'Eén persoon', 'Soms meerdere mensen'],
-        ['Risico', 'Een site die niet gevonden wordt', 'Afhankelijk van één persoon', 'Lange contracten of verborgen kosten']],
-        after: `<p>Kempen Webstudio zit daartussen: u hebt één vast aanspreekpunt, zoals bij een freelancer, met vaste pakketten en openbare prijzen, zoals bij een bureau. Meer over de afweging leest u in ons artikel <a href="${P.zelf.nl}">website laten maken of zelf bouwen</a>.</p>` },
-      { t: 'cards', id: 'onderhoudskosten', h2: 'Wat kost onderhoud van een website?', side: 'Met onderhoud blijft uw site veilig en up-to-date. Bij ons zit het meeste daarvan in de maandprijs.', items: [
+        after: `<p>Bij Kempen Webstudio kost een website vanaf €490 en een webshop vanaf €1.890 eenmalig, plus een maandprijs vanaf €29, €49 of €79, telkens excl. btw.</p><p>U hebt één vast aanspreekpunt, vaste pakketten en openbare prijzen. Meer over de afweging leest u in <a href="${P.zelf.nl}">website laten maken of zelf bouwen</a>.</p>` },
+      { t: 'cards', id: 'onderhoudskosten', h2: 'Wat kost onderhoud van een website?', side: 'Met onderhoud blijft uw site veilig en up-to-date. Het meeste daarvan zit in de maandprijs van uw pakket.', items: [
         ['In de maandprijs', 'Uw .be-domein, hosting, back-ups, updates en aanpassingen: 15 minuten per maand bij Start, 30 minuten bij Vakman en Webshop, plus twee keer per jaar een controle van snelheid en vindbaarheid vanaf Vakman.'],
         ['Per jaar', 'Op jaarbasis is dat vanaf €348 voor Start, €588 voor Vakman en €948 voor Webshop, telkens excl. btw.'],
         ['Een site die wij niet bouwden', 'Met Onderhoud los, vanaf €29 per maand excl. btw: updates, een wekelijkse back-up, een maandelijkse controle en 15 minuten aanpassingen. Maandelijks opzegbaar.'],
-        ['Grotere wijzigingen', `Werk dat buiten de minuten van uw pakket valt, rekenen wij aan ons uurtarief van €60 excl. btw, altijd na uw akkoord. Lees ook over de <a href="${P.kosten.nl}">terugkerende kosten van een website</a>.`],
+        ['Grotere wijzigingen', `Werk dat buiten de minuten van uw pakket valt, rekenen wij aan ons uurtarief vanaf €60 excl. btw, altijd na uw akkoord. Lees ook over de <a href="${P.kosten.nl}">terugkerende kosten van een website</a>.`],
       ] },
       { t: 'cards', id: 'verborgen-kosten', h2: 'Verborgen kosten waar u op let', side: 'Vraag bij elke offerte naar deze punten. Zo ziet u wat een website echt kost.', items: [
-        ['Domeinnaam op naam van de bouwer', 'Staat uw domein op naam van uw webbouwer, dan kost overstappen later geld en tijd. Bij ons staat uw domeinnaam altijd op uw eigen naam.'],
+        ['Domeinnaam op naam van de bouwer', 'Staat uw domein op naam van uw webbouwer, dan kost overstappen later geld en tijd. Bij Kempen Webstudio staat uw domeinnaam altijd op uw eigen naam.'],
         ['Licenties en plug-ins', 'Sommige sites hangen af van betalende thema\'s of plug-ins met een jaarlicentie. Vraag of die in de prijs zitten.'],
-        ['Teksten en foto\'s', 'Een lage prijs gaat soms uit van teksten die u zelf aanlevert. Bij ons schrijven wij de teksten na een gesprek.'],
+        ['Teksten en foto\'s', 'Een lage prijs gaat soms uit van teksten die u zelf aanlevert. Kempen Webstudio schrijft de teksten na een gesprek.'],
         ['Lange contracten', 'Let op de looptijd en de opzegtermijn. Onze pakketten lopen minimaal 12 maanden en zijn daarna maandelijks opzegbaar.'],
-        ['Elke wijziging apart betalen', 'Zonder inbegrepen aanpassingen betaalt u voor elke kleine tekstwijziging. Bij ons zitten er minuten aanpassingen in de maandprijs.'],
-        ['Extra talen en functies', 'Een tweede taal, online afspraken of een webshop vragen extra werk. Wij noemen die kosten vooraf in het voorstel.'],
+        ['Elke wijziging apart betalen', 'Zonder inbegrepen aanpassingen betaalt u voor elke kleine tekstwijziging. Bij Kempen Webstudio zitten er aanpassingsminuten in de maandprijs.'],
+        ['Extra talen en functies', 'Een tweede taal, online afspraken of een webshop vragen extra werk. Wij noemen die kosten vooraf in de offerte.'],
       ] },
     ],
     faq: [
-      ['Wat kost een website laten maken in België gemiddeld?', 'Dat hangt sterk af van wat de site moet doen. Op websites van Belgische bureaus zagen wij in november 2026 instapprijzen van ongeveer €700 tot €2.200 voor een website en vanaf ongeveer €5.000 voor een webshop op maat. Bij Kempen Webstudio begint een website vanaf €490 en een webshop vanaf €1.890, excl. btw.'],
-      ['Is een freelancer goedkoper dan een webbureau?', 'Soms bij de start, maar vergelijk ook de lopende kosten, wie het onderhoud doet en wat er gebeurt als die ene persoon niet beschikbaar is. Wij combineren één vast aanspreekpunt met vaste pakketten.'],
-      ['Wat kost een website per jaar?', 'Bij ons betaalt u na de bouw de maandprijs van uw pakket: op jaarbasis vanaf €348 voor Start, €588 voor Vakman en €948 voor Webshop, excl. btw. Daarin zitten domein, hosting, back-ups, updates en aanpassingen.'],
+      ['Wat kost een website laten maken in België gemiddeld?', 'Dat hangt af van wat de site moet doen. Bij Kempen Webstudio begint een website vanaf €490 en een webshop vanaf €1.890, eenmalig en excl. btw.'],
+      ['Wat kost een website per jaar?', 'Na de bouw betaalt u bij Kempen Webstudio de maandprijs van uw pakket, op jaarbasis vanaf €348 voor Start, €588 voor Vakman en €948 voor Webshop, excl. btw. Daarin zitten domein, hosting, back-ups, updates en aanpassingen.'],
       ['Welke verborgen kosten heeft een website?', 'Let op een domeinnaam die niet op uw naam staat, betalende licenties, teksten die u zelf moet schrijven, lange contracten en wijzigingen die u per keer betaalt.'],
-      ['Kan ik gratis een website laten maken?', `Een website laten maken door een bureau is nooit gratis. Websitebouwers hebben wel gratis abonnementen, maar dan staat uw site meestal op een adres van die bouwer en niet op uw eigen domeinnaam, vaak met hun reclame erbij. Voor een zaak is een eigen .be-domein betrouwbaarder. Bij ons begint een website vanaf €490 excl. btw. Wat zelf bouwen op termijn kost, leest u in <a href="${P.zelf.nl}">website laten maken of zelf bouwen</a>.`],
-      ['Wat is de goedkoopste manier om een website te laten maken?', 'Begin klein: één duidelijke site met uw diensten, uw werkgebied en uw contactgegevens. Bij ons is dat het pakket Start, vanaf €490 eenmalig en vanaf €29 per maand excl. btw. Later kunt u pagina\'s, een tweede taal of een webshop toevoegen.'],
+      ['Kan ik gratis een website laten maken?', `Een website laten maken door een bureau is nooit gratis. Websitebouwers hebben wel gratis abonnementen, maar dan staat uw site meestal op een adres van die bouwer en niet op uw eigen domeinnaam, vaak met hun reclame erbij. Voor een zaak is een eigen .be-domein betrouwbaarder. Bij Kempen Webstudio begint een website vanaf €490 excl. btw. Wat zelf bouwen op termijn kost, leest u in <a href="${P.zelf.nl}">website laten maken of zelf bouwen</a>.`],
+      ['Wat is de goedkoopste manier om een website te laten maken?', 'Begin met één duidelijke site met uw diensten, uw werkgebied en uw contactgegevens. Bij Kempen Webstudio is dat het pakket Start, vanaf €490 eenmalig en vanaf €29 per maand excl. btw. Later kunt u pagina\'s, een tweede taal of een webshop toevoegen.'],
       ['Kan ik de kosten van mijn website fiscaal inbrengen?', `Meestal wel, als beroepskost of via afschrijving. De regels leest u in ons artikel <a href="${P.fiscaal.nl}">is een website fiscaal aftrekbaar</a>.`],
     ],
   },
   fr: {
-    title: 'Prix création site internet en Belgique : tarifs 2026', desc: 'Prix de la création d’un site internet en Belgique en 2026 : tarifs par type de site, prix du marché, freelance ou agence, maintenance, coûts cachés.',
+    title: 'Prix création site internet en Belgique : tarifs 2026', desc: 'Prix de la création d’un site internet en Belgique en 2026 : tarifs par type de site, par mois et par an, avec maintenance et coûts cachés.',
     h1: 'Combien coûte la création d’un site internet en Belgique (2026) ?',
     secs: [
       { t: 'table', id: 'fourchettes', h2: 'Prix par type de site en 2026', caption: 'Prix de Kempen Webstudio par type de site, HTVA', head: ['Type de site', 'Une fois', 'Par mois', 'En ligne en'], rows: [
         ['Site simple (Start)', 'à partir de €490', 'à partir de €29', '5 jours ouvrables'], ['Site professionnel (Vakman)', 'à partir de €990', 'à partir de €49', '10 jours ouvrables'], ['Boutique jusqu’à 50 produits (Webshop)', 'à partir de €1.890', 'à partir de €79', '3 à 4 semaines'],
         ['Landing page (une page)', 'à partir de €290', '–', 'à convenir'], ['Page supplémentaire', 'à partir de €79 par page', '–', 'à convenir'], ['Logo / identité visuelle', 'à partir de €190 / €490', '–', 'à convenir']],
         before: '<p>Voici nos prix de départ par type de site. Le montant exact figure dans l’offre écrite que vous recevez après un court entretien.</p>',
-        after: '<p>Sur les sites d’autres agences web belges, nous avons relevé en novembre 2026 des prix d’entrée d’environ €700 à €2.200 pour un site, et à partir d’environ €5.000 pour une boutique sur mesure. Ces montants varient fortement selon l’agence et ce qui est compris. Comparez donc toujours ce qui est inclus : textes, design, hébergement, maintenance et nombre de modifications.</p>' },
-      { t: 'table', id: 'comparaison', h2: 'Le faire soi-même, un freelance ou une agence web ?', caption: 'Comparaison entre le faire soi-même, un freelance et une agence', head: ['', 'Soi-même', 'Freelance', 'Agence web'], rows: [
-        ['Coût de départ', 'Faible : un abonnement à un créateur de sites', 'Variable, souvent à l’heure ou au projet', 'Plus élevé, avec des formules fixes ou un devis'],
-        ['Coûts récurrents', 'Abonnement mensuel, options en plus', 'Hébergement et maintenance souvent en plus', 'Souvent un prix mensuel fixe pour l’hébergement et la maintenance'],
-        ['Votre temps', 'Beaucoup : design, textes, technique', 'Moyen', 'Peu'],
-        ['Design', 'Modèle', 'Selon le freelance', 'Le plus souvent un design propre'],
-        ['Textes et visibilité', 'À faire soi-même', 'Parfois compris', 'Souvent compris ou en service séparé'],
-        ['Interlocuteur', 'Support de la plateforme', 'Une personne', 'Parfois plusieurs personnes'],
-        ['Risque', 'Un site que personne ne trouve', 'Dépendre d’une seule personne', 'Contrats longs ou coûts cachés']],
-        after: `<p>Kempen Webstudio se situe entre les deux : un seul interlocuteur comme chez un freelance, avec des formules fixes et des prix publics comme dans une agence. Plus d’informations dans notre article <a href="${P.zelf.fr}">faire créer ou créer soi-même</a>.</p>` },
+        after: `<p>Chez Kempen Webstudio, un site coûte à partir de €490 et une boutique à partir de €1.890 une seule fois, plus un abonnement à partir de €29, €49 ou €79 par mois, HTVA.</p><p>Vous avez un seul interlocuteur, des formules fixes et des prix publics. Plus d’informations dans <a href="${P.zelf.fr}">faire créer ou créer soi-même</a>.</p>` },
       { t: 'cards', id: 'maintenance', h2: 'Combien coûte la maintenance d’un site ?', side: 'La maintenance garde votre site sûr et à jour. Chez nous, l’essentiel est compris dans l’abonnement mensuel.', items: [
         ['Dans l’abonnement mensuel', 'Votre domaine .be, l’hébergement, les sauvegardes, les mises à jour et des modifications : 15 minutes par mois avec Start, 30 minutes avec Vakman et Webshop, et deux contrôles par an de la vitesse et de la visibilité à partir de Vakman.'],
         ['Par an', 'Sur une année, cela fait à partir de €348 pour Start, €588 pour Vakman et €948 pour Webshop, HTVA.'],
         ['Un site que nous n’avons pas créé', 'Avec la maintenance seule, à partir de €29 par mois HTVA : mises à jour, sauvegarde hebdomadaire, contrôle mensuel et 15 minutes de modifications. Résiliable chaque mois.'],
-        ['Modifications plus importantes', `Le travail au-delà des minutes de votre formule est facturé à notre tarif horaire de €60 HTVA, toujours après votre accord. Voir aussi les <a href="${P.kosten.fr}">coûts récurrents d’un site internet</a>.`],
+        ['Modifications plus importantes', `Le travail au-delà des minutes de votre formule est facturé à notre tarif horaire à partir de €60 HTVA, toujours après votre accord. Voir aussi les <a href="${P.kosten.fr}">coûts récurrents d’un site internet</a>.`],
       ] },
       { t: 'cards', id: 'couts-caches', h2: 'Les coûts cachés à surveiller', side: 'Posez ces questions pour chaque offre. Vous voyez ainsi le vrai coût d’un site.', items: [
         ['Nom de domaine au nom du prestataire', 'Si votre domaine est au nom de votre prestataire, changer plus tard coûte du temps et de l’argent. Chez nous, il est toujours à votre nom.'],
@@ -93,8 +74,7 @@ const G = {
       ] },
     ],
     faq: [
-      ['Combien coûte en moyenne un site internet en Belgique ?', 'Cela dépend fortement de ce que le site doit faire. Sur les sites d’agences belges, nous avons relevé en novembre 2026 des prix d’entrée d’environ €700 à €2.200 pour un site et à partir d’environ €5.000 pour une boutique sur mesure. Chez Kempen Webstudio, un site commence à €490 et une boutique à €1.890, HTVA.'],
-      ['Un freelance est-il moins cher qu’une agence ?', 'Parfois au départ, mais comparez aussi les coûts récurrents, qui assure la maintenance et ce qui se passe si cette seule personne n’est pas disponible.'],
+      ['Combien coûte en moyenne un site internet en Belgique ?', 'Cela dépend de ce que le site doit faire. Chez Kempen Webstudio, un site coûte à partir de €490 et une boutique à partir de €1.890, une seule fois et HTVA.'],
       ['Combien coûte un site par an ?', 'Chez nous, après la création, vous payez l’abonnement de votre formule : sur une année à partir de €348 pour Start, €588 pour Vakman et €948 pour Webshop, HTVA.'],
       ['Quels sont les coûts cachés d’un site ?', 'Un domaine qui n’est pas à votre nom, des licences payantes, des textes à rédiger vous-même, des contrats longs et des modifications payées à la pièce.'],
       ['Peut-on créer un site internet gratuitement ?', `Faire créer un site par une agence n’est jamais gratuit. Les créateurs de sites proposent des formules gratuites, mais votre site se trouve alors en général sur une adresse de ce service et pas sur votre propre nom de domaine, souvent avec leur publicité. Pour une entreprise, un domaine .be à votre nom inspire plus confiance. Chez nous, un site commence dès €490 HTVA. Ce que coûte un site fait soi-même sur 5 ans, vous le lisez dans <a href="${P.zelf.fr}">créer son site soi-même ou le faire créer</a>.`],
@@ -103,28 +83,19 @@ const G = {
     ],
   },
   en: {
-    title: 'What does a website cost in Belgium? 2026 prices', desc: 'What does a website cost in Belgium in 2026? Prices per type of site, market prices, freelancer vs agency vs DIY, maintenance costs and hidden costs.',
+    title: 'What does a website cost in Belgium? 2026 prices', desc: 'What does a website cost in Belgium in 2026? Prices per type of site, per month and per year, with maintenance costs and hidden costs.',
     h1: 'What does it cost to have a website built in Belgium (2026)?',
     secs: [
       { t: 'table', id: 'price-ranges', h2: 'Prices per type of website in 2026', caption: 'Kempen Webstudio prices per type of website, excluding VAT', head: ['Type of website', 'One-off', 'Per month', 'Live within'], rows: [
         ['Simple website (Start)', 'from €490', 'from €29', '5 working days'], ['Professional website (Vakman)', 'from €990', 'from €49', '10 working days'], ['Online shop up to 50 products (Webshop)', 'from €1,890', 'from €79', '3 to 4 weeks'],
         ['Landing page (one page)', 'from €290', '–', 'by agreement'], ['Extra page', 'from €79 per page', '–', 'by agreement'], ['Logo / visual identity', 'from €190 / €490', '–', 'by agreement']],
         before: '<p>These are our starting prices per type of site. The exact amount is in the written quote you receive after a short conversation.</p>',
-        after: '<p>On the websites of other Belgian web agencies we saw entry prices of roughly €700 to €2,200 for a website in November 2026, and from roughly €5,000 for a custom online shop. Those amounts vary widely by agency and by what is included, so always compare what you get: copy, design, hosting, maintenance and the number of changes.</p>' },
-      { t: 'table', id: 'comparison', h2: 'DIY, a freelancer or a web agency?', caption: 'Comparison of DIY, a freelancer and a web agency', head: ['', 'DIY', 'Freelancer', 'Web agency'], rows: [
-        ['Cost at the start', 'Low: a website builder subscription', 'Varies, often hourly or per project', 'Higher, with fixed packages or a quote'],
-        ['Running costs', 'Monthly subscription, extras on top', 'Hosting and maintenance often extra', 'Often a fixed monthly fee for hosting and maintenance'],
-        ['Your own time', 'A lot: design, copy, technology', 'Moderate', 'Little'],
-        ['Design', 'Template', 'Depends on the freelancer', 'Usually a custom design'],
-        ['Copy and findability', 'Do it yourself', 'Sometimes included', 'Often included or a separate service'],
-        ['Point of contact', 'Platform helpdesk', 'One person', 'Sometimes several people'],
-        ['Risk', 'A site nobody finds', 'Depending on one person', 'Long contracts or hidden costs']],
-        after: `<p>Kempen Webstudio sits in between: one point of contact, like a freelancer, with fixed packages and public prices, like an agency. Read more in our article <a href="${P.zelf.en}">having a website built or building it yourself</a>.</p>` },
+        after: `<p>At Kempen Webstudio a website costs from €490 and an online shop from €1,890 one-off, plus a monthly fee from €29, €49 or €79, excl. VAT.</p><p>You have one point of contact, fixed packages and public prices. Read more in <a href="${P.zelf.en}">having a website built or building it yourself</a>.</p>` },
       { t: 'cards', id: 'maintenance-costs', h2: 'What does website maintenance cost?', side: 'Maintenance keeps your site secure and up to date. With us, most of it is included in the monthly fee.', items: [
         ['In the monthly fee', 'Your .be domain, hosting, backups, updates and changes: 15 minutes a month with Start, 30 minutes with Vakman and Webshop, plus a speed and findability check twice a year from Vakman.'],
         ['Per year', 'Over a year that is from €348 for Start, €588 for Vakman and €948 for Webshop, excl. VAT.'],
         ['A site we did not build', 'Maintenance only, from €29 per month excl. VAT: updates, a weekly backup, a monthly check and 15 minutes of changes. Cancel monthly.'],
-        ['Larger changes', `Work beyond the minutes in your package is charged at our hourly rate of €60 excl. VAT, always after your approval. See also the <a href="${P.kosten.en}">recurring costs of a website</a>.`],
+        ['Larger changes', `Work beyond the minutes in your package is charged at our hourly rate from €60 excl. VAT, always after your approval. See also the <a href="${P.kosten.en}">recurring costs of a website</a>.`],
       ] },
       { t: 'cards', id: 'hidden-costs', h2: 'Hidden costs to watch out for', side: 'Ask about these points with every quote, so you see what a website really costs.', items: [
         ['Domain in the builder\'s name', 'If your domain is registered to your web builder, switching later costs time and money. With us, your domain is always in your own name.'],
@@ -136,8 +107,7 @@ const G = {
       ] },
     ],
     faq: [
-      ['What does a website cost in Belgium on average?', 'It depends heavily on what the site needs to do. On Belgian agency websites we saw entry prices of roughly €700 to €2,200 for a website in November 2026 and from roughly €5,000 for a custom shop. With Kempen Webstudio a website starts from €490 and a shop from €1,890, excl. VAT.'],
-      ['Is a freelancer cheaper than an agency?', 'Sometimes at the start, but also compare running costs, who handles maintenance and what happens if that one person is unavailable.'],
+      ['What does a website cost in Belgium on average?', 'It depends on what the site needs to do. At Kempen Webstudio a website costs from €490 and an online shop from €1,890, one-off and excl. VAT.'],
       ['What does a website cost per year?', 'With us you pay your package\'s monthly fee after the build: from €348 a year for Start, €588 for Vakman and €948 for Webshop, excl. VAT.'],
       ['What hidden costs does a website have?', 'A domain not in your name, paid licences, copy you have to write yourself, long contracts and changes billed one by one.'],
     ],
@@ -150,7 +120,7 @@ for (const lang of ['nl', 'fr', 'en']) {
   pages.push({ path: P.prijs[lang], lang, aanvul: true, title: g.title, desc: g.desc, h1: g.h1, insert: [{ after: 'section#losse-diensten', sections: g.secs }], faqExtra: g.faq });
   pages.push({ path: P.demos[lang], lang, aanvul: true,
     title: { nl: 'Voorbeeldprojecten: 9 voorbeeldontwerpen van websites', fr: 'Exemples de projets : 9 designs de sites internet', en: 'Sample projects: 9 website designs' }[lang],
-    desc: { nl: 'Bekijk 9 voorbeeldontwerpen van Kempen Webstudio voor horeca, vakmensen, salons en een webshop, elk met doelgroep, keuzes, functies en schermafbeeldingen.', fr: 'Découvrez 9 exemples de design de Kempen Webstudio pour l’horeca, les artisans, les salons et une boutique, avec public, choix, fonctions et captures.', en: 'See 9 sample designs by Kempen Webstudio for hospitality, tradespeople, salons and an online shop, each with audience, choices, features and screenshots.' }[lang],
+    desc: { nl: 'Bekijk 9 voorbeeldontwerpen van Kempen Webstudio voor horeca, vakmensen, salons en een webshop, elk met doelgroep, keuzes, functies en schermafbeeldingen.', fr: '9 exemples de design de Kempen Webstudio pour l’horeca, les artisans, les salons et une boutique, avec public, choix, fonctions et captures.', en: 'See 9 sample designs by Kempen Webstudio for hospitality, tradespeople, salons and an online shop, each with audience, choices, features and screenshots.' }[lang],
     insert: [{ after: 5, sections: [detail(lang)] }] });
 }
 export default pages;

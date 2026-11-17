@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 16-11-2026 (humanizer-ronde).
+Laatst bijgewerkt: 17-11-2026 (audit 17-11 verwerkt).
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -129,6 +129,12 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Twee correcties: "Persoonlijk voorstel binnen 1 werkdag" → "Antwoord doorgaans binnen 1 werkdag"; EN-contact "Usually a reply".
   - Controles: SEO-audit 0 fouten, seocheck 0, linkcheck 0 (live en test), geen demo/gratis/tevreden, 0 lege vakken, 0 rastergaten, nergens horizontaal scrollen (390/1440, `overflow.mjs` slaat nu doorverwijspagina's over), tekstaudit 0, home 51/51, autoplay in orde, Lighthouse perf 99-100 en a11y/bp/seo 100, CLS 0.
   - Test-build (noindex, Disallow) en live-build opnieuw gebouwd voor de testlink van Gusje.
+
+- [x] **Audit 17-11 verwerkt** (Karim, humanizer-audit testsite, 291 punten): `AUDIT-17-11-VERWERKT.md`, tag `voor-audit-17-11`.
+  - Nieuw verloop overal: kennismaking, vrijblijvende offerte, bouw (NL/FR/EN, ook meta en JSON-LD). Alle demo-resten weg; "U beslist pas als u de prijs kent" max. 1x per pagina.
+  - Prijsvergelijkingen, freelancer/bureau-tabel, FAQ 17 en ranking-disclaimers geschrapt. Gedeelde blokken (CTA, trust-strip als één zin, footer-uren als zin, kruislinkblok, 5 tot 10 werkdagen). Prijsvormen, EN-notatie, Wilt u, jullie, snel, genderneutraal, dubbelpunt-koppen, tailored.
+  - FAQPage-JSON-LD wordt nu opgebouwd uit de vragen op de pagina (geen verouderde vragen meer).
+  - Controles: SEO 0 fouten, links 0 (live en test), redirects in orde, tekstaudit 0, rastergaten 0, geen horizontaal scrollen, home 51/51, autoplay in orde, Lighthouse perf 99-100 en a11y/bp/seo 100, CLS 0. Beeldcontrole: 1 effen vlak op /wat-kost-een-website/ (ongewijzigde sectie, zie rapport).
 
 ## Bezig
 

@@ -347,7 +347,7 @@ for (const rel of pages) {
   const B = nd.body;
   // teksten: alles van de oude pagina moet er staan
   const oldB = doc.body;
-  const oldSeg = segments(oldB, '.mcta6, .reel, .hero-fb, .pre, #ck .ck-sw, .hp, #fok, #fmail');
+  const oldSeg = segments(oldB, '.mcta6, .reel, .hero-fb, .pre, #ck .ck-sw, .hp, #fok, #fmail, .hero-trust');
   const attrs = [...B.querySelectorAll('[aria-label],[title],[placeholder]')].map(e => (e.getAttribute('aria-label') || '') + ' ' + (e.getAttribute('title') || '') + ' ' + (e.getAttribute('placeholder') || '')).join(' ');
   const Bv = B.cloneNode(true); Bv.querySelectorAll('[aria-hidden="true"]').forEach(e => e.parentNode.removeChild(e));
   const newFlat = flat(Bv.textContent + ' ' + attrs), newSpaced = flat(textSpaced(Bv) + ' ' + attrs);

@@ -55,7 +55,7 @@ export function ContactForm({ f, idp = 'home' }: { f: any; idp?: string }) {
   );
 }
 
-/** contactvenster (opent bij elke "Vrijblijvend voorstel aanvragen"-knop, zoals onOpenChat in het design) */
+/** contactvenster (opent bij elke "Vrijblijvende offerte aanvragen"-knop, zoals onOpenChat in het design) */
 export function ChatModal({ f, s, title }: { f: any; s: any; title: string }) {
   const inp = 'w-full rounded-xl border border-[#C9CACD] bg-white px-4 py-3 text-[15px] text-[#18181B] placeholder:text-[#5E544F] focus:outline-none focus:border-[#121214] aria-[invalid=true]:border-[#FB4D27]';
   return (

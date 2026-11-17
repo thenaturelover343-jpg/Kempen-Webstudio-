@@ -12,13 +12,15 @@ import { PartnerBookStoreIcon, PartnerCronaIcon, PartnerMercuryIcon, PartnerWage
 import { A, FadeIn, Html, Load, SectionReveal, StaggerGroup, StaggerItem, cx, sel } from './primitives';
 import { ContactForm } from './Contact';
 import DD from '../site/design-data.json';
+/** trust-strip als één zin zonder bolletjes (audit 17-11) */
+const trustLine = (trust: string[]) => { const t = trust.map(x => x.replace(/<[^>]+>/g, '').trim()); const lc1 = (x: string) => x.charAt(0).toLowerCase() + x.slice(1); return t.length >= 3 ? `${t[1]}, ${lc1(t[2])}, ${lc1(t[0])}.` : t.join(', ') + '.'; };
 
 const DEMO_ID: Record<string, string> = { '/houtatelier-nethe/': 'houtatelier-nethe', '/horeca-voorbeeld/': 'bistro-tilvaar', '/webshop-voorbeeld/': 'vennebrand', '/dakwerken-hoogland/': 'dakwerken-hoogland', '/kleurwerk-voorbeeld/': 'atelier-kleurwerk', '/tuin-voorbeeld/': 'tuinzorg-varelinde', '/schoonheidssalon-voorbeeld/': 'velours', '/kapsalon-voorbeeld/': 'kapsalon-ivelien', '/barbier-voorbeeld/': 'barbier-kolvaard' };
 const SECTOR_ID: Record<string, string> = { 'website-vakmensen': 'vakmensen', 'website-horeca': 'horeca', 'website-kapsalon': 'kapsalons', 'website-schilder': 'schilders', 'website-tuinaannemer': 'tuinaannemers' };
 const H1_SPLIT: Record<string, string[]> = {
   nl: ['Website laten', 'maken, ', 'op maat', 'van ', 'uw zaak'],
   fr: ['Création de', 'site internet, ', 'sur mesure', 'pour ', 'votre entreprise'],
-  en: ['Have a website', 'built, ', 'tailored', 'to ', 'your business'],
+  en: ['Have a website', 'built ', 'for', '', 'your business'],
 };
 const Badge = ({ children, dark = false, copper = false }: { children: any; dark?: boolean; copper?: boolean }) => (
   <span className={copper ? 'inline-block rounded-md bg-[#B85D28]/10 border border-[#B85D28]/20 px-3 py-1 text-[15px] font-medium text-[#5E2A11]'
@@ -179,9 +181,8 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
           </div>
           <div className="relative z-[35] w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 mt-3 sm:mt-4">
             <ul className="w-full rounded-2xl sm:rounded-full bg-[#121214]/95 backdrop-blur-md text-[#E4E4E7] px-5 sm:px-8 lg:px-10 min-h-[48px] sm:h-[54px] py-3 sm:py-0 flex flex-wrap max-sm:flex-col max-sm:items-start sm:flex-nowrap items-center justify-between gap-x-4 gap-y-1.5 text-[15px] sm:text-[15px] lg:text-[15px] font-normal shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
-              <li className="inline-flex items-center gap-2 whitespace-nowrap"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><span>{t0}</span></li>
-              <li className="inline-flex items-center gap-2 whitespace-nowrap"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><span>{t1}</span></li>
-              <li><a href="#intro" className="inline-flex items-center gap-2 whitespace-nowrap hover:text-white transition-colors cursor-pointer"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><span>{s.skip}</span></a></li>
+              <li className="sm:whitespace-nowrap">{trustLine(h.hero.trust)}</li>
+              <li><a href="#intro" className="inline-flex items-center gap-2 whitespace-nowrap hover:text-white transition-colors cursor-pointer"><span>{s.skip}</span></a></li>
             </ul>
           </div>
         </div>
@@ -308,7 +309,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                     const d = dd.sectors[SECTOR_ID[baseOf(m.href).replace(/\//g, '')]];
                     return (
                       <div key={i} data-sel-panel={i} hidden={i > 0} className="mt-6 max-w-sm">
-                        <h3 className="text-[17px] font-medium text-[#121214]" style={{ fontFamily: 'inherit' }}>{m.h}{d && <> · <span className="text-[#4C433F] font-normal">{d.experience}</span></>}</h3>
+                        <h3 className="text-[17px] font-medium text-[#121214]" style={{ fontFamily: 'inherit' }}>{m.h}</h3>
                         <p className="mt-1.5 text-[16px] leading-relaxed text-[#4C433F]"><Html html={m.p} /></p>
                         <a href={m.href} className="mt-4 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#B85D28] hover:text-[#121214] transition-colors cursor-pointer"><span>{m.arr}</span><ArrowRight className="w-3.5 h-3.5" /></a>
                       </div>

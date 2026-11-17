@@ -34,11 +34,11 @@ export const P = {
 export const demo = (lang, slug) => P.demos[lang] + slug + '/';
 export const CTA = { nl: '/#contact', fr: '/fr/#contact', en: '/en/#contact' };
 export const TRUST = {
-  nl: ['Prijzen vanaf €490 excl. btw', 'Vrijblijvend voorstel, prijs vooraf', 'Eén aanspreekpunt'],
-  fr: ['Prix à partir de €490 HTVA', 'Proposition sans engagement, prix connu d’avance', 'Un seul interlocuteur'],
-  en: ['Prices from €490 excl. VAT', 'No-obligation proposal, price up front', 'A single point of contact'],
+  nl: ['Kennismaking en vrijblijvende offerte', 'Eén aanspreekpunt', 'Prijzen vanaf €490 excl. btw'],
+  fr: ['Prise de contact et devis sans engagement', 'Un seul interlocuteur', 'Prix à partir de €490 HTVA'],
+  en: ['Introductory conversation and no-obligation quote', 'A single point of contact', 'Prices from €490 excl. VAT'],
 };
-export const ASK = { nl: 'Vraag uw vrijblijvend voorstel aan', fr: 'Demandez votre proposition sans engagement', en: 'Request your no-obligation proposal' };
+export const ASK = { nl: 'Vraag een vrijblijvende offerte aan', fr: 'Demandez un devis sans engagement', en: 'Request a no-obligation quote' };
 export const ALT = {
   nl: 'Of mail naar <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a> of bel <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>.',
   fr: 'Ou écrivez à <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a> ou appelez le <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>.',
@@ -46,11 +46,11 @@ export const ALT = {
 };
 export const REPLY = { nl: 'Op een bericht antwoorden wij doorgaans binnen 1 werkdag.', fr: 'Nous répondons généralement à un message dans un délai d’un jour ouvrable.', en: 'We usually reply to a message within 1 working day.' };
 export const DELIVERY = {
-  nl: 'Start staat binnen 5 werkdagen online, Vakman binnen 10 werkdagen en een Webshop in 3 tot 4 weken. Die termijn loopt vanaf uw goedkeuring van het voorstel en het moment dat wij alles hebben wat nodig is, zoals uw logo en eventueel uw foto\'s.',
-  fr: 'La formule Start est en ligne en 5 jours ouvrables, Vakman en 10 jours ouvrables et une Webshop en 3 à 4 semaines. Ce délai court à partir de votre accord sur la proposition et du moment où nous avons tout ce qu’il faut, comme votre logo et éventuellement vos photos.',
-  en: 'Start goes live within 5 working days, Vakman within 10 working days and a Webshop in 3 to 4 weeks. That period runs from your approval of the proposal and the moment we have everything we need, such as your logo and any photos.',
+  nl: 'Start staat binnen 5 werkdagen online, Vakman binnen 10 werkdagen en een Webshop in 3 tot 4 weken. Die termijn loopt vanaf uw goedkeuring van de offerte en het moment dat wij alles hebben wat nodig is, zoals uw logo en eventueel uw foto\'s.',
+  fr: 'La formule Start est en ligne en 5 jours ouvrables, Vakman en 10 jours ouvrables et une Webshop en 3 à 4 semaines. Ce délai court à partir de votre accord sur le devis et du moment où nous avons tout ce qu’il faut, comme votre logo et éventuellement vos photos.',
+  en: 'Start goes live within 5 working days, Vakman within 10 working days and a Webshop in 3 to 4 weeks. That period runs from your approval of the quote and the moment we have everything we need, such as your logo and any photos.',
 };
 export const HOME_LABEL = { nl: 'Home', fr: 'Accueil', en: 'Home' };
 export const HUB_LABEL = { nl: 'Regio\'s', fr: 'Régions', en: 'Regions' };
 /** standaard slot: CTA met mail/telefoon en buursteden */
-export const cta = (lang, h2, also) => ({ t: 'cta', h2, p: { nl: 'Vraag een vrijblijvend voorstel aan voor uw zaak. U beslist pas als u de prijs kent. ', fr: 'Demandez une proposition sans engagement pour votre entreprise. Vous décidez une fois le prix connu. ', en: 'Ask for a no-obligation proposal for your business. You decide once you know the price. ' }[lang] + REPLY[lang], btn: [CTA[lang], ASK[lang]], alt: ALT[lang], also });
+export const cta = (lang, h2, also) => ({ t: 'cta', h2, p: { nl: 'Na een kennismaking krijgt u een vrijblijvende offerte. U beslist pas als u de prijs kent. ', fr: 'Après une prise de contact, vous recevez un devis sans engagement. Vous décidez une fois le prix connu. ', en: 'After an introductory conversation you receive a no-obligation quote. You decide once you know the price. ' }[lang] + REPLY[lang], btn: [CTA[lang], ASK[lang]], alt: ALT[lang], also });

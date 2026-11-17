@@ -129,12 +129,12 @@ function aanvul(p) {
   if (p.faqExtra && p.faqExtra.length) {
     const g = d.querySelector('main .fq6 .fq-g');
     g.insertAdjacentHTML('beforeend', p.faqExtra.map(([q, a]) => `<details class="fq" name="fq6" data-kw-extra=""><summary class="fq-btn"><h3 class="fq-q"><span class="fq-qt">${q}</span></h3><span aria-hidden="true" class="fq-i"></span></summary><div class="fq-a">${/^\s*<p/.test(a) ? a : `<p>${a}</p>`}</div></details>`).join(''));
-    for (const sc of H.querySelectorAll('script[type="application/ld+json"]')) {
-      const j = JSON.parse(sc.textContent); if (j['@type'] !== 'FAQPage') continue;
-      j.mainEntity = j.mainEntity.filter(q => !q.kwExtra && !p.faqExtra.some(([fq]) => strip(fq) === q.name));
-      for (const [q, a] of p.faqExtra) j.mainEntity.push({ '@type': 'Question', name: strip(q), acceptedAnswer: { '@type': 'Answer', text: strip(a) } });
-      sc.textContent = JSON.stringify(j);
-    }
+  }
+  // FAQPage altijd opnieuw opbouwen uit de vragen die echt op de pagina staan (audit 17-11: geen verouderde vragen in JSON-LD)
+  for (const sc of H.querySelectorAll('script[type="application/ld+json"]')) {
+    const j = JSON.parse(sc.textContent); if (j['@type'] !== 'FAQPage') continue;
+    const qs = [...d.querySelectorAll('main .fq6 details.fq')].map(x => ({ '@type': 'Question', name: strip(x.querySelector('.fq-qt')?.innerHTML || ''), acceptedAnswer: { '@type': 'Answer', text: strip(x.querySelector('.fq-a')?.innerHTML || '') } })).filter(q => q.name && q.acceptedAnswer.text);
+    if (qs.length) { j.mainEntity = qs; sc.textContent = JSON.stringify(j); }
   }
   return '<!doctype html>\n' + d.documentElement.outerHTML + '\n';
 }

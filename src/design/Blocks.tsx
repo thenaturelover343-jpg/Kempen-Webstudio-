@@ -105,6 +105,9 @@ function SubPortrait() {
 
 /** hero van elke onderpagina: dezelfde opbouw en beeldtaal als de home-hero (portret, zwevende kaart, sectorlijst,
  *  WEBSTUDIO K-wordmark, donkere strip). Tekst, kruimelpad en knoppen uit de bestaande pagina. */
+/** trust-strip als één zin zonder bolletjes (audit 17-11): "Kennismaking en vrijblijvende offerte, één aanspreekpunt, prijzen vanaf €490 excl. btw." */
+const lc1 = (t: string) => t.charAt(0).toLowerCase() + t.slice(1);
+export function trustLine(trust: string[]) { const t = trust.map(x => strip(x)); return t.length >= 3 ? `${t[0]}, ${lc1(t[1])}, ${lc1(t[2])}.` : t.join(', ') + '.'; }
 export function PageHero({ h, ui }: { h: any; ui?: any }) {
   const h1t = strip(h.h1);
   const cur = h.crumbs ? strip((h.crumbs.find((c: any) => c.current) || {}).html || '') : strip(h.tag || '');
@@ -194,11 +197,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
         </div>
         {h.trust && h.trust.length > 0 && (
           <div className={cx(W, 'relative z-[35] mt-3 sm:mt-4')}>
-            <ul className="w-full rounded-2xl sm:rounded-full bg-[#121214]/95 backdrop-blur-md text-[#E4E4E7] px-5 sm:px-8 lg:px-10 min-h-[48px] sm:h-[54px] py-3 sm:py-0 flex flex-wrap max-sm:flex-col max-sm:items-start sm:flex-nowrap items-center justify-between gap-x-4 gap-y-1.5 text-[15px] sm:text-[15px] lg:text-[15px] font-normal shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
-              {h.trust.map((t: string, i: number) => (
-                <li key={i} className="inline-flex items-center gap-2 sm:whitespace-nowrap"><span aria-hidden="true" className="text-[#E4E4E7]">•</span><Html html={t} /></li>
-              ))}
-            </ul>
+            <p className="w-full rounded-2xl sm:rounded-full bg-[#121214]/95 backdrop-blur-md text-[#E4E4E7] px-5 sm:px-8 lg:px-10 min-h-[48px] sm:h-[54px] py-3 sm:py-0 flex items-center text-[15px] sm:text-[15px] lg:text-[15px] font-normal shadow-[0_12px_30px_rgba(0,0,0,0.12)]">{trustLine(h.trust)}</p>
           </div>
         )}
       </div>
