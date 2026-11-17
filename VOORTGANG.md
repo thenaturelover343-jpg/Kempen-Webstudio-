@@ -139,7 +139,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Restanten opgeruimd (Karim 17-11):
     - Hero-regel op de home: de komma die alleen voor schermlezers bedoeld was, is weg. Er staat nu één schone regel, bv. "Prijzen vanaf €490 excl. btw · Eén aanspreekpunt" (FR en EN idem). Hetzelfde geldt voor het label in de prijskaarten.
     - Trust-strip: "eén" is nu "één" (stond op 56 pagina's) (functie `lc1` in Home.tsx en Blocks.tsx).
-    - In Blocks.tsx stonden twee lijstdetecties met een backspace-teken in plaats van ``. Die zijn hersteld; de uitvoer verandert daardoor niet.
+    - In Blocks.tsx stonden twee lijstdetecties met een backspace-teken in plaats van `\b`. Die zijn hersteld; de uitvoer verandert daardoor niet.
     - Nieuwe controle: `npm run restcheck` (scripts/restcheck.mjs). Die zoekt op alle 226 pagina's naar " · ,", ", ,", dubbele spaties, zinnen die met een kleine letter beginnen, "eén", lege lijst-items en dubbele leestekens, in tekst, schermlezertekst, title, meta, alt en JSON-LD. Resultaat: 0 in test en live.
 
 ## Bezig
