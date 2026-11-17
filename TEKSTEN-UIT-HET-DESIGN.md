@@ -14,7 +14,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-17). Alle andere teksten op 
 - 08 / 09 · Kapsalon  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5 tot 10 werkdagen  _(op 1 pagina)_
-- Aanvraag ontvangen, eén aanspreekpunt, antwoord binnen 1 werkdag.  _(op 1 pagina)_
+- Aanvraag ontvangen, één aanspreekpunt, antwoord binnen 1 werkdag.  _(op 1 pagina)_
 - Afsprakenplanner  _(op 1 pagina)_
 - Antwoorden over onze aanpak, de prijzen en wanneer uw site online staat.  _(op 1 pagina)_
 - Architecten  _(op 1 pagina)_
@@ -38,8 +38,8 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-17). Alle andere teksten op 
 - Henegouwen  _(op 1 pagina)_
 - Ingetogen ontwerp  _(op 1 pagina)_
 - Kasterlee, BE · CET  _(op 114 pagina's)_
-- Kennismaking en vrijblijvende offerte, eén aanspreekpunt, antwoord doorgaans binnen 1 werkdag.  _(op 11 pagina's)_
-- Kennismaking en vrijblijvende offerte, eén aanspreekpunt, prijzen vanaf €490 excl. btw.  _(op 44 pagina's)_
+- Kennismaking en vrijblijvende offerte, één aanspreekpunt, antwoord doorgaans binnen 1 werkdag.  _(op 11 pagina's)_
+- Kennismaking en vrijblijvende offerte, één aanspreekpunt, prijzen vanaf €490 excl. btw.  _(op 44 pagina's)_
 - Lichte stijl  _(op 1 pagina)_
 - Luik  _(op 3 pagina's)_
 - Luxemburg  _(op 1 pagina)_
@@ -50,9 +50,11 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-17). Alle andere teksten op 
 - Namen  _(op 3 pagina's)_
 - Offerteformulier  _(op 1 pagina)_
 - Online boeken  _(op 1 pagina)_
+- Onze aanrader · Vakman  _(op 17 pagina's)_
 - Oost-Vlaanderen  _(op 1 pagina)_
 - Op maat  _(op 1 pagina)_
 - Per behandeling  _(op 1 pagina)_
+- Prijzen vanaf €490 excl. btw · Eén aanspreekpunt  _(op 1 pagina)_
 - Productpagina’s  _(op 1 pagina)_
 - Rijscholen  _(op 1 pagina)_
 - Route · Bellen · Website  _(op 1 pagina)_
@@ -149,6 +151,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-17). Alle andere teksten op 
 - Namen  _(op 1 pagina)_
 - Nos exemples de sites en images  _(op 1 pagina)_
 - Nos réponses sur la méthode, les prix et le délai de mise en ligne.  _(op 1 pagina)_
+- Notre recommandation · Vakman  _(op 10 pagina's)_
 - Oost-Vlaanderen  _(op 1 pagina)_
 - Paiement sécurisé  _(op 1 pagina)_
 - Palette apaisante  _(op 1 pagina)_
@@ -158,6 +161,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-17). Alle andere teksten op 
 - Prise de contact et devis sans engagement, un seul interlocuteur, prix à partir de €490 HTVA.  _(op 43 pagina's)_
 - Prise de contact et devis sans engagement, un seul interlocuteur, réponse en général sous 1 jour ouvrable.  _(op 11 pagina's)_
 - Prix fixe  _(op 1 pagina)_
+- Prix à partir de €490 HTVA · Un seul interlocuteur  _(op 1 pagina)_
 - Rapide sur smartphone et PC  _(op 1 pagina)_
 - Réponse habituelle sous 1 jour ouvrable  _(op 55 pagina's)_
 - Réservation en ligne  _(op 2 pagina's)_
@@ -247,10 +251,12 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-17). Alle andere teksten op 
 - One point of contact after launch  _(op 1 pagina)_
 - Online shops  _(op 1 pagina)_
 - Oost-Vlaanderen  _(op 1 pagina)_
+- Our recommendation · Vakman  _(op 7 pagina's)_
 - Our sample designs at a glance  _(op 1 pagina)_
 - Per treatment  _(op 1 pagina)_
 - Photographers  _(op 1 pagina)_
 - Physiotherapists  _(op 1 pagina)_
+- Prices from €490 excl. VAT · A single point of contact  _(op 1 pagina)_
 - Quote form  _(op 1 pagina)_
 - Refined style  _(op 1 pagina)_
 - Rental companies  _(op 1 pagina)_
