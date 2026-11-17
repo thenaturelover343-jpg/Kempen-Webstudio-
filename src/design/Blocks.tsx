@@ -106,7 +106,7 @@ function SubPortrait() {
 /** hero van elke onderpagina: dezelfde opbouw en beeldtaal als de home-hero (portret, zwevende kaart, sectorlijst,
  *  WEBSTUDIO K-wordmark, donkere strip). Tekst, kruimelpad en knoppen uit de bestaande pagina. */
 /** trust-strip als één zin zonder bolletjes (audit 17-11): "Kennismaking en vrijblijvende offerte, één aanspreekpunt, prijzen vanaf €490 excl. btw." */
-const lc1 = (t: string) => t.charAt(0).toLowerCase() + t.slice(1);
+const lc1 = (t: string) => /^E[eé]n\s/.test(t) ? "één" + t.slice(3) : t.charAt(0).toLowerCase() + t.slice(1);
 export function trustLine(trust: string[]) { const t = trust.map(x => strip(x)); return t.length >= 3 ? `${t[0]}, ${lc1(t[1])}, ${lc1(t[2])}.` : t.join(', ') + '.'; }
 export function PageHero({ h, ui }: { h: any; ui?: any }) {
   const h1t = strip(h.h1);
@@ -402,7 +402,7 @@ function ProseSection({ b, dark, panel }: { b: any; dark: boolean; panel: boolea
   const btns = els.filter(isBtn), body = els.filter(e => !isBtn(e));
   const first = body[0] && isP(body[0]) ? innerP(body[0]) : '';
   const items0 = toItems(first ? body.slice(1) : body);
-  const solo = first && items0.length === 1 && !/<(ul|ol)/.test(items0[0].html) ? items0[0].html : '';
+  const solo = first && items0.length === 1 && !/<(ul|ol)\b/.test(items0[0].html) ? items0[0].html : '';
   const items = solo ? [] : items0;
   const onPanel = panel && !dark;
   return (
@@ -501,7 +501,7 @@ function render(b: any, P: any, s: any, f?: any) {
         const lead = useLead ? innerP(els[0]) : '';
         const rest0 = useLead ? els.slice(1) : els;
         const btns = rest0.filter(isBtn), items = toItems(rest0.filter(e => !isBtn(e)));
-        const tail1 = items.length === 1 && !/<(ul|ol)/.test(items[0].html) ? items[0].html : '';
+        const tail1 = items.length === 1 && !/<(ul|ol)\b/.test(items[0].html) ? items[0].html : '';
         const cards = tail1 ? [] : items;
         const chipsRight = !!b.chips && !cardsRight && b.intro.length === 0 && !lead && !tail1 && !b.introBtn && !btns.length && !cards.length;
         return (

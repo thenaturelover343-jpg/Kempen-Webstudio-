@@ -13,7 +13,7 @@ import { A, FadeIn, Html, Load, SectionReveal, StaggerGroup, StaggerItem, cx, se
 import { ContactForm } from './Contact';
 import DD from '../site/design-data.json';
 /** trust-strip als één zin zonder bolletjes (audit 17-11) */
-const trustLine = (trust: string[]) => { const t = trust.map(x => x.replace(/<[^>]+>/g, '').trim()); const lc1 = (x: string) => x.charAt(0).toLowerCase() + x.slice(1); return t.length >= 3 ? `${t[1]}, ${lc1(t[2])}, ${lc1(t[0])}.` : t.join(', ') + '.'; };
+const trustLine = (trust: string[]) => { const t = trust.map(x => x.replace(/<[^>]+>/g, '').trim()); const lc1 = (x: string) => /^E[eé]n\s/.test(x) ? "één" + x.slice(3) : x.charAt(0).toLowerCase() + x.slice(1); return t.length >= 3 ? `${t[1]}, ${lc1(t[2])}, ${lc1(t[0])}.` : t.join(', ') + '.'; };
 
 const DEMO_ID: Record<string, string> = { '/houtatelier-nethe/': 'houtatelier-nethe', '/horeca-voorbeeld/': 'bistro-tilvaar', '/webshop-voorbeeld/': 'vennebrand', '/dakwerken-hoogland/': 'dakwerken-hoogland', '/kleurwerk-voorbeeld/': 'atelier-kleurwerk', '/tuin-voorbeeld/': 'tuinzorg-varelinde', '/schoonheidssalon-voorbeeld/': 'velours', '/kapsalon-voorbeeld/': 'kapsalon-ivelien', '/barbier-voorbeeld/': 'barbier-kolvaard' };
 const SECTOR_ID: Record<string, string> = { 'website-vakmensen': 'vakmensen', 'website-horeca': 'horeca', 'website-kapsalon': 'kapsalons', 'website-schilder': 'schilders', 'website-tuinaannemer': 'tuinaannemers' };
@@ -110,7 +110,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                 <Html html={h.hero.slogan} />
               </Load>
               <Load y={16} duration={0.55} delay={0.34} className="mt-4 sm:mt-5 flex flex-wrap items-center gap-3 sm:gap-3.5">
-                <span className="text-[15px] sm:text-[15px] text-[#4C433F] font-normal tracking-[-0.01em]">{t0}<span aria-hidden="true"> · </span><span className="kw-sr">, </span>{t2}</span>
+                <span className="text-[15px] sm:text-[15px] text-[#4C433F] font-normal tracking-[-0.01em]">{t0} · {t2}</span>
               </Load>
               <Load y={16} duration={0.55} delay={0.42} className="mt-5 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <A href={demoCta.href} chat className="kw-pop group inline-flex items-center gap-3 sm:gap-3.5 rounded-full bg-[#121214] hover:bg-[#232327] text-white pl-5 pr-1.5 py-1.5 min-h-[44px] text-[15px] font-medium transition-colors cursor-pointer whitespace-nowrap shrink-0">
@@ -801,7 +801,7 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
             <article className={`h-full rounded-[24px] p-7 sm:p-8 flex flex-col justify-between ${surface}`}>
               <div>
                 <div className="flex items-center justify-between gap-2">
-                  <span className={`rounded-full border px-3.5 py-1 text-[15px] font-medium ${badge}`}><span aria-hidden="true">• </span>{tier.badge ? <>{tier.badge}<span aria-hidden="true"> · </span><span className="kw-sr">: </span>{hTxt}</> : hTxt}</span>
+                  <span className={`rounded-full border px-3.5 py-1 text-[15px] font-medium ${badge}`}><span aria-hidden="true">• </span>{tier.badge ? <>{tier.badge} · {hTxt}</> : hTxt}</span>
                   {delivery && delivery[i] && <span className={`text-[15px] ${soft}`}>{delivery[i]}</span>}
                 </div>
                 <div className="mt-6">

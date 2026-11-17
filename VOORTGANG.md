@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 17-11-2026 (audit 17-11 verwerkt).
+Laatst bijgewerkt: 17-11-2026 (audit 17-11 verwerkt, restanten op de home opgeruimd).
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -136,6 +136,11 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - FAQPage-JSON-LD wordt nu opgebouwd uit de vragen op de pagina (geen verouderde vragen meer).
   - Controles: SEO 0 fouten, links 0 (live en test), redirects in orde, tekstaudit 0, rastergaten 0, geen horizontaal scrollen, home 51/51, autoplay in orde, Lighthouse perf 99-100 en a11y/bp/seo 100, CLS 0. Beeldcontrole: 1 effen vlak op /wat-kost-een-website/ (ongewijzigde sectie, zie rapport).
   - Nacontrole hele verslag (Karim 17-11): alle 291 punten hebben een status (254 letterlijk, 18 geschrapt, 13 vorm, 6 met toelichting, 0 niet verwerkt); 96 punten na regel 573 per pagina nagekeken (59 controles, 0 ontbrekend). Rest FR en EN letterlijk gemaakt (stappenkaarten, sectorpagina's, salon, refonte/redesign, prijsgids).
+  - Restanten opgeruimd (Karim 17-11):
+    - Hero-regel op de home: de komma die alleen voor schermlezers bedoeld was, is weg. Er staat nu één schone regel, bv. "Prijzen vanaf €490 excl. btw · Eén aanspreekpunt" (FR en EN idem). Hetzelfde geldt voor het label in de prijskaarten.
+    - Trust-strip: "eén" is nu "één" (functie `lc1` in Home.tsx en Blocks.tsx).
+    - In Blocks.tsx stonden twee lijstdetecties met een backspace-teken in plaats van ``. Die zijn hersteld; de uitvoer verandert daardoor niet.
+    - Nieuwe controle: `npm run restcheck` (scripts/restcheck.mjs). Die zoekt op alle 226 pagina's naar " · ,", ", ,", dubbele spaties, zinnen die met een kleine letter beginnen, "eén", lege lijst-items en dubbele leestekens, in tekst, schermlezertekst, title, meta, alt en JSON-LD. Resultaat: 0 in test en live.
 
 ## Bezig
 

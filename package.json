@@ -19,7 +19,8 @@
     "lighthouse": "node scripts/lighthouse.mjs",
     "screens": "node scripts/screens.mjs",
     "seocheck": "node scripts/seocheck.mjs dist-live",
-    "redirectcheck": "node scripts/redirectcheck.mjs"
+    "redirectcheck": "node scripts/redirectcheck.mjs",
+    "restcheck": "node scripts/restcheck.mjs dist-live && node scripts/restcheck.mjs dist-test"
   },
   "devDependencies": {
     "@fontsource-variable/inter-tight": "^5.2.7",
