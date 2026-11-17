@@ -135,6 +135,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Prijsvergelijkingen, freelancer/bureau-tabel, FAQ 17 en ranking-disclaimers geschrapt. Gedeelde blokken (CTA, trust-strip als één zin, footer-uren als zin, kruislinkblok, 5 tot 10 werkdagen). Prijsvormen, EN-notatie, Wilt u, jullie, snel, genderneutraal, dubbelpunt-koppen, tailored.
   - FAQPage-JSON-LD wordt nu opgebouwd uit de vragen op de pagina (geen verouderde vragen meer).
   - Controles: SEO 0 fouten, links 0 (live en test), redirects in orde, tekstaudit 0, rastergaten 0, geen horizontaal scrollen, home 51/51, autoplay in orde, Lighthouse perf 99-100 en a11y/bp/seo 100, CLS 0. Beeldcontrole: 1 effen vlak op /wat-kost-een-website/ (ongewijzigde sectie, zie rapport).
+  - Nacontrole hele verslag (Karim 17-11): alle 291 punten hebben een status (254 letterlijk, 18 geschrapt, 13 vorm, 6 met toelichting, 0 niet verwerkt); 96 punten na regel 573 per pagina nagekeken (59 controles, 0 ontbrekend). Rest FR en EN letterlijk gemaakt (stappenkaarten, sectorpagina's, salon, refonte/redesign, prijsgids).
 
 ## Bezig
 

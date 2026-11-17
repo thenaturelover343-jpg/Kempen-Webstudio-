@@ -1,14 +1,35 @@
 # Audit 17-11-2026: verwerking
 
-**Bron:** humanizer-audit van de testsite door Karim (185 pagina's, 291 punten).
+**Bron:** humanizer-audit van de testsite door Karim (891 regels, 116 pagina's met bevindingen, 291 punten). Het hele verslag is uitgevoerd, ook het deel na regel 573: de rest van FR en heel EN (96 punten).
 **Terugzetten:** git-tag `voor-audit-17-11`.
 
-**Resultaat:** alle 291 punten zijn verwerkt.
-- 220 met de tekst uit het verslag.
-- 70 met een eigen formulering of als schrapping. De oude tekst is weg, maar de nieuwe zin wijkt licht af, bijvoorbeeld door de regel "maximaal één keer per pagina".
-- 1 met een bewuste uitzondering.
+## Telling: elk punt heeft een status
 
-Een script controleerde per punt of het oude citaat nog op de pagina staat, in body, title, meta en JSON-LD. Van de 291 citaten staat er nog 0 op de pagina. De enige uitzondering is "tailored to your business" in de Gentse H1, die volgens het verslag zelf één keer mag blijven.
+| Status | Aantal |
+|---|---|
+| Verwerkt met de tekst uit het verslag (op de pagina nagekeken) | 254 |
+| Verwerkt: geschrapt of ingekort zoals gevraagd (oude tekst staat niet meer op de pagina) | 18 |
+| Verwerkt: vorm aangepast zoals gevraagd (labels, notatie €1,890, dubbele komma's) | 13 |
+| Verwerkt met toelichting (zie hieronder) | 6 |
+| Niet verwerkt | 0 |
+| **Totaal** | **291** |
+
+- Punten in het verslag: 291, waarvan 195 vóór en 96 na regel 573.
+- Pagina's met bevindingen: 116. Allemaal staan ze in de lijst "Per punt".
+- Statussen in de lijst hieronder: 291.
+
+Hoe het nagekeken is:
+- Per punt controleert een script of het oude citaat nog op de pagina staat, in body, title, meta en JSON-LD. Dat geeft 0 treffers, op de bewuste uitzondering in de Gentse H1 na.
+- Een tweede script kijkt voor alle punten na regel 573 of de voorgestelde nieuwe tekst letterlijk op de pagina staat. Dat zijn 59 pagina-controles, met 0 ontbrekend.
+
+## De 6 punten met toelichting
+
+1. **Home FAQ 01 (NL/FR/EN):** de nieuwe tekst is overgenomen, zonder de bijzin "en u beslist pas als u de prijs kent". Die zin staat al in de slot-CTA, en hij mag maar één keer per pagina.
+2. **Home FAQ 16 (NL/FR/EN):** idem.
+3. **/webshop-laten-maken/:** "Na een kennismaking krijgt u een vrijblijvende offerte." staat er, zonder de bijzin, om dezelfde reden.
+4. **/en/webshop-laten-maken/:** idem.
+5. **/fr/creation-boutique-en-ligne/:** idem.
+6. **/en/website-laten-maken-gent/:** "tailored to your business" blijft één keer staan in de H1, zoals het verslag zelf vraagt. Elders op de pagina is het weg.
 
 ## Nieuw verloop: kennismaking → vrijblijvende offerte → bouw
 
@@ -52,18 +73,18 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - **Dubbelpunt-labels in koppen:** "Ondernemen in X:" is nu "Wie uw klanten in X zijn" (en FR/EN); "Ook nodig voor uw zaak:" en "Per pagina:" zijn weg.
 - **EN "tailored":** blijft alleen één keer staan, in de Gentse H1 en de Leuvense title, zoals het verslag vraagt.
 
-## Niet of anders verwerkt, met reden
+## Bewust niet aangepast (staat niet in het verslag)
 
-- **Home FAQ 01 en 16 (NL/FR/EN), FR-boutique en EN-webshop:** de voorgestelde tekst bevatte "u beslist pas als u de prijs kent". Die bijzin is daar weggelaten, omdat de zin al in het slot-CTA-blok van dezelfde pagina staat. Zo blijft de regel "maximaal één keer per pagina" gerespecteerd.
-- **Gentse H1 (EN):** "tailored to your business" blijft één keer staan, zoals het verslag aangeeft.
-- **Bewust niet aangepast (staat niet in het verslag):**
-  - de logo-ontwerpvoorstellen ("2 voorstellen", "2 propositions", "2 proposals"), want dat is een echte dienst;
-  - "rustig" als ontwerpbeschrijving;
-  - de fictieve teksten op de voorbeeldsites ("gratis verzending", "In deze demo");
-  - de kennisartikels over een gratis Google-profiel;
-  - de FAQ "Kan ik gratis een website laten maken?", die uitlegt dat het bij een bureau nooit gratis is;
-  - artikeltitels met een dubbelpunt ("WordPress of maatwerk: …").
-- **Beeldcontrole:** op /wat-kost-een-website/ meldt de controle op 1440 px één effen vlak. Het gaat om de donkere linkerkolom onder de kop "Wat kost een website gemiddeld…". Die sectie is inhoudelijk en qua opmaak identiek aan de versie van voor de audit (zelfde tekst, zelfde beeld). Ze staat alleen hoger op de pagina, omdat de vergelijkingstabel weg is. Een afzonderlijke run op die pagina geeft 0. Het design is niet aangepast, omdat het gelijk moest blijven.
+- De logo-ontwerpvoorstellen ("2 voorstellen", "2 propositions", "2 proposals"), want dat is een echte dienst.
+- "Rustig" als ontwerpbeschrijving.
+- De fictieve teksten op de voorbeeldsites ("gratis verzending", "In deze demo").
+- De kennisartikels over een gratis Google-profiel.
+- De FAQ "Kan ik gratis een website laten maken?", die uitlegt dat het bij een bureau nooit gratis is.
+- Artikeltitels met een dubbelpunt ("WordPress of maatwerk: …").
+
+## Beeldcontrole
+
+Op /wat-kost-een-website/ meldt de volledige controle op 1440 px één effen vlak: de donkere linkerkolom onder "Wat kost een website gemiddeld…". Die sectie is ongewijzigd (zelfde tekst, zelfde beeld) en staat alleen hoger, omdat de vergelijkingstabel weg is. Een afzonderlijke run op die pagina geeft 0. Het design is niet aangepast, omdat het gelijk moest blijven.
 
 ## Technisch
 
@@ -74,13 +95,13 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Elke zaak een eigen gezicht. / Voor alle sectoren, ook de uwe. / Alles bij één aanspreekpunt.
   **verwerkt (tekst uit het verslag)**
 - Vakmensen · Offerteaanvraag (en 5 andere koppen met ·-label)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Websites op maat · Websites vernieuwen · Landingspagina's · Kleine webshops · Onderhoud (4 zulke ·-rijen)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - 07. / Diensten Vernieuwt u ook een bestaande website?
   **verwerkt (tekst uit het verslag)**
 - Wilt u later ook online verkopen, dan kan dat met het pakket Webshop.
@@ -90,17 +111,17 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - zodat uw site vlot laadt en prettig leest op elk toestel.
   **verwerkt (tekst uit het verslag)**
 - Wat zit erin (label boven elke pakketlijst)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 - Gaat u akkoord met het voorstel, dan werken wij de site volledig af.
   **verwerkt (tekst uit het verslag)**
 - Wij maken een vrijblijvend voorstel voor uw zaak. (stap 2) / H2 'Eerst een vrijblijvend voorstel. Daarna beslist u.'
   **verwerkt (tekst uit het verslag)**
 - 01. Wat houdt het vrijblijvend voorstel in? / Wij maken vooraf een vrijblijvend voorstel voor uw eigen zaak. U bekijkt het rustig, en een kort antwoor…
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt; de bijzin "en u beslist pas als u de prijs kent" is weggelaten omdat die zin al in de slot-CTA van de home staat (max. 1x per pagina)**
 - Hero: 'Wij maken eerst een vrijblijvend voorstel voor uw zaak. U beslist daarna of u verdergaat.'
   **verwerkt (tekst uit het verslag)**
 - 16. … Kempen Webstudio maakt eerst een vrijblijvend voorstel voor uw zaak. U bekijkt het, zit nergens aan vast en beslist daarna, met de prijs vooraf.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt; de bijzin "en beslist u pas als u de prijs kent" is weggelaten omdat die zin al in de slot-CTA van de home staat (max. 1x per pagina; FR en EN idem)**
 
 ### /contact/
 - 02. Hoe snel krijg ik antwoord?
@@ -132,7 +153,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /kennis/terugkerende-kosten-website/
 - Hieronder leest u welke posten terugkomen, waar ze voor dienen en wat u daarvoor bij Kempen Webstudio betaalt.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 
 ### /kennis/wat-moet-er-op-een-website-staan/
 - Wilt u zien hoe uw eigen site eruit kan zien, stuur dan een korte e-mail.
@@ -200,7 +221,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /voorbeeldontwerpen/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Op deze pagina staan negen voorbeeldontwerpen, elk voor een ander vak.
   **verwerkt (tekst uit het verslag)**
 - Zo weet u wat u mag verwachten als u bij ons een website laat maken.
@@ -214,7 +235,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /wat-kost-een-website/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Begin klein: één duidelijke site met uw diensten, uw werkgebied en uw contactgegevens. Bij ons is dat het pakket Start, …
   **verwerkt (tekst uit het verslag)**
 - Bij ons betaalt u na de bouw de maandprijs van uw pakket: op jaarbasis vanaf €348 …
@@ -236,11 +257,11 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - Op de websites van andere Belgische webbureaus zagen wij in november 2026 instapprijzen van ongeveer €700 tot €2.200 … Vergelijk daarom altijd wat inb…
   **verwerkt (tekst uit het verslag)**
 - H2 'Zelf bouwen, een freelancer of een webbureau?' + vergelijkingstabel + 'Kempen Webstudio zit daartussen: …'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 - 16. … Op websites van Belgische bureaus zagen wij in november 2026 instapprijzen van ongeveer €700 tot €2.200 …
   **verwerkt (tekst uit het verslag)**
 - 17. Is een freelancer goedkoper dan een webbureau? + antwoord
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - …rekenen wij aan ons uurtarief van €60 excl. btw, …
   **verwerkt (tekst uit het verslag)**
 - U bekijkt het rustig en laat ons weten of het u bevalt. / Zo weet u vooraf wat u krijgt en wat het kost en daarna beslist u.
@@ -248,7 +269,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /webshop-laten-maken/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Een webshop die snel laadt en eenvoudig afrekent, verkoopt beter.
   **verwerkt (tekst uit het verslag)**
 - Wilt u later toch online verkopen, dan stapt u over naar het pakket Webshop.
@@ -262,7 +283,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - 08. Wat kost een webshop laten maken bij een webbureau gemiddeld? + 'Dat verschilt sterk per bureau. Op websites van Belgische bureaus …'
   **verwerkt (tekst uit het verslag)**
 - U bekijkt het rustig, zit nergens aan vast en beslist daarna, met de prijs vooraf.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt; de bijzin "en u beslist pas als u de prijs kent" is weggelaten omdat die zin al in het CTA-blok van de pagina staat (max. 1x per pagina)**
 
 ### /webshop-voorbeeld/
 - Elke week in kleine hoeveelheden gebrand en snel bij u thuis.
@@ -342,13 +363,13 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /website-laten-maken-gent/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Ondernemen in Gent: wie uw klanten zijn (H2)
   **verwerkt (tekst uit het verslag)**
 - Wie in Gent een zaak zoekt, typt vaak zijn wijk of deelgemeente mee, …
   **verwerkt (tekst uit het verslag)**
 - Dat moet in een paar seconden duidelijk zijn.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Ook buiten Gent kunt u bij ons een website laten maken, overal in België.
   **verwerkt (tekst uit het verslag)**
 - Zo weet u wat uw website wordt, nog voor u iets beslist. U zit nergens aan vast. / Een vrijblijvend voorstel toont wat uw website bevat en wat ze kost…
@@ -394,7 +415,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /website-laten-maken-kortrijk/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Ondernemen in Kortrijk: van vlas en meubels tot ontwerp (H2)
   **verwerkt (tekst uit het verslag)**
 - Zo ziet een klant meteen of u tot bij hem werkt.
@@ -402,7 +423,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /website-laten-maken-leuven/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Ondernemen in Leuven: universiteit, ziekenhuis en kmo's (H2)
   **verwerkt (tekst uit het verslag)**
 
@@ -430,7 +451,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /website-laten-vernieuwen/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - …nieuwe teksten en een snelle site, zonder te verliezen wat werkt. (meta)
   **verwerkt (tekst uit het verslag)**
 - Wilt u dat wij de site daarna onderhouden, dan kan dat met los onderhoud, …
@@ -440,7 +461,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /website-schilder/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Wie zijn huis wil laten schilderen, bekijkt eerst wat u eerder afwerkte.
   **verwerkt (tekst uit het verslag)**
 - Zo herkent de bezoeker zijn eigen klus.
@@ -460,7 +481,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /website-tuinaannemer/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - …wil weten of u in zijn buurt komt.
   **verwerkt (tekst uit het verslag)**
 - In de winter bereikt ze wie zijn tuin voor het voorjaar wil laten aanleggen, …
@@ -476,7 +497,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /website-vakmensen/
 - U zit nergens aan vast.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - Wie een vakman zoekt, wil in één oogopslag zien wat u doet, waar u werkt en hoe hij een offerte vraagt.
   **verwerkt (tekst uit het verslag)**
 - Zo ziet de klant of u zijn werk doet.
@@ -546,15 +567,15 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /fr/conseils/delai-creation-site-internet/
 - Si vous acceptez/approuvez la proposition, nous finalisons alors le site complètement.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 
 ### /fr/conseils/faire-creer-ou-creer-soi-meme/
 - Start coûte €490 pour la réalisation et soixante fois €29,, ensemble à partir de €2.230. …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 
 ### /fr/creation-boutique-en-ligne/
 - H2 'Voir à quoi peut ressembler votre boutique en ligne ?' / Vous l’examinez tranquillement, sans aucun engagement et vous décidez ensuite, …
-  **verwerkt (tekst uit het verslag)**
+  **verwerkt; "et décidez une fois le prix connu" weggelaten omdat die zin al in het CTA-blok staat (max. 1x per pagina)**
 
 ### /fr/creation-site-internet-bruxelles/
 - Entreprendre à Bruxelles : qui sont vos clients (H2)
@@ -568,7 +589,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /fr/creation-site-internet-campine/
 - Carte d’étape: '… que vous consultez tranquillement' + 'du site web complet si vous souhaitez poursuivre.'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/creation-site-internet-charleroi/
 - Entreprendre à Charleroi : qui sont vos clients (H2)
@@ -590,15 +611,15 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /fr/creation-site-internet-geel/
 - Carte d’étape: '… que vous consultez tranquillement' + 'du site web complet si vous souhaitez poursuivre.'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/creation-site-internet-herentals/
 - Carte d’étape: '… que vous consultez tranquillement' + 'du site web complet si vous souhaitez poursuivre.'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/creation-site-internet-kasterlee/
 - Carte d’étape: '… que vous consultez tranquillement' + 'du site web complet si vous souhaitez poursuivre.'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/creation-site-internet-liege/
 - Entreprendre à Liège : qui sont vos clients (H2)
@@ -614,9 +635,9 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /fr/creation-site-internet-mol/
 - Envoyez-nous quelques phrases, nous établissons alors une proposition sans engagement.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 - Carte d’étape: '… que vous consultez tranquillement' + 'du site web complet si vous souhaitez poursuivre.'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/creation-site-internet-namur/
 - Entreprendre à Namur : qui sont vos clients (H2)
@@ -630,7 +651,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /fr/creation-site-internet-turnhout/
 - Carte d’étape: '… que vous consultez tranquillement' + 'du site web complet si vous souhaitez poursuivre.'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/creation-site-internet/
 - …d’abord une proposition sans engagement, ensuite un design propre …
@@ -646,11 +667,11 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - Sur les sites d’autres agences web belges, nous avons relevé en novembre 2026 des prix d’entrée … Comparez donc toujours …
   **verwerkt (tekst uit het verslag)**
 - H2 'Le faire soi-même, un freelance ou une agence web ?' + tableau + 'Kempen Webstudio se situe entre les deux : …'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 - 16. … Sur les sites d’agences belges … Chez Kempen Webstudio, un site commence à €490 et une boutique à €1.890, HTVA.
   **verwerkt (tekst uit het verslag)**
 - 17. Un freelance est-il moins cher qu’une agence ? + réponse
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - …facturé à notre tarif horaire de €60 HTVA, …
   **verwerkt (tekst uit het verslag)**
 - H2 'Voir à quoi peut ressembler votre site web ?' / Vous la consultez tranquillement et vous nous dites si elle vous convient.
@@ -664,53 +685,53 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /fr/refonte-site-internet/
 - Vous la consultez tranquillement.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 
 ### /fr/site-internet-artisans/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-association/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-commerce/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-horeca/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-jardinier/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-jeunes-entreprises/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-peintre/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-profession-liberale/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-salon-de-coiffure/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /fr/site-internet-soins-bien-etre/
 - …une proposition sans engagement, adaptée à vos services (carte, activités, style…) / Vous la consultez tranquillement …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/
 - Have a website built, tailored to your business (H1)
   **verwerkt (tekst uit het verslag)**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 - If you accept the proposal, we then finish the site in full. (stap 3) / FAQ 'What does the no-obligation proposal involve?'
   **verwerkt (tekst uit het verslag)**
 
@@ -720,21 +741,21 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /en/kennis/
 - …a no-obligation proposal, tailored to your services and your style.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/kennis/google-bedrijfsprofiel-aanmaken/
 - …a no-obligation proposal, tailored to your services and your style.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/kennis/hoe-lang-duurt-website-laten-maken/
 - …a no-obligation proposal, tailored to your services and your style.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 - If you approve the proposal, we then finish the site in full. / You can review it at your leisure.
   **verwerkt (tekst uit het verslag)**
 
 ### /en/kennis/terugkerende-kosten-website/
 - Start costs in the first year from €838,, … Vakman … from €1.578 … Webshop … from €2.838 …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 
 ### /en/kennis/wat-moet-er-op-een-website-staan/
 - If you want to see what your own site can look like, send a short email …
@@ -742,7 +763,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /en/kennis/website-laten-maken-of-zelf-bouwen/
 - Start costs €490 for the build and sixty times €29,, together from €2.230. …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 
 ### /en/seo-services/
 - … We never promise a fixed position.
@@ -756,23 +777,23 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - On the websites of other Belgian web agencies we saw entry prices of roughly €700 to €2,200 … so always compare what you get: …
   **verwerkt (tekst uit het verslag)**
 - H2 'DIY, a freelancer or a web agency?' + table + 'Kempen Webstudio sits in between: …'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 - 16. … On Belgian agency websites we saw entry prices … With Kempen Webstudio a website starts from €490 and a shop from €1,890, excl. VAT.
   **verwerkt (tekst uit het verslag)**
 - 17. Is a freelancer cheaper than an agency? + answer
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (geschrapt of ingekort zoals gevraagd; oude tekst staat niet meer op de pagina)**
 - …charged at our hourly rate of €60 excl. VAT, …
   **verwerkt (tekst uit het verslag)**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 
 ### /en/web-design-brussels/
 - Doing business in Brussels: who your customers are (H2)
   **verwerkt (tekst uit het verslag)**
 - …a no-obligation proposal, tailored to your services and your style.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 - Know what your website will be before you decide. / A no-obligation proposal shows what your website will contain and what it costs …
   **verwerkt (tekst uit het verslag)**
 
@@ -780,15 +801,15 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - Have an online shop built in Belgium, tailored to you (H1 + title)
   **verwerkt (tekst uit het verslag)**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 - You look at it at your leisure, you are under no obligation and then you decide, with the price known up front.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt; de bijzin "and you decide once you know the price" is weggelaten omdat die zin al in het CTA-blok van de pagina staat (max. 1x per pagina)**
 
 ### /en/website-design-belgium/
 - Set the price against what is included. You can check these points with any web designer, including us.
   **verwerkt (tekst uit het verslag)**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 - …a no-obligation proposal first, then a custom design …
   **verwerkt (tekst uit het verslag)**
 
@@ -798,11 +819,11 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /en/website-kapsalon/
 - …a no-obligation proposal, tailored to your services (menu, range, style…) / You look at it at your leisure …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 
 ### /en/website-laten-maken-geel/
 - Step card: '… which you can review at your leisure' + '… of the full website if you wish to go ahead'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/website-laten-maken-gent/
 - Doing business in Ghent: who your customers are (H2)
@@ -810,27 +831,27 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - tailored to your business (5x: title, meta, H1, H2, body)
   **verwerkt, met bewuste uitzondering: "tailored to your business" blijft één keer staan in de H1 (en de daarvan afgeleide paginanaam), zoals het verslag zelf vraagt.**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 - You thus know what your website will be … / You thus see in advance what your website will be like. / A no-obligation proposal shows … / You look at i…
   **verwerkt (tekst uit het verslag)**
 
 ### /en/website-laten-maken-herentals/
 - Step card: '… which you can review at your leisure' + '… of the full website if you wish to go ahead'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/website-laten-maken-kasterlee/
 - Step card: '… which you can review at your leisure' + '… of the full website if you wish to go ahead'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/website-laten-maken-kempen/
 - Step card: '… which you can review at your leisure' + '… of the full website if you wish to go ahead'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/website-laten-maken-kortrijk/
 - Doing business in Kortrijk: from flax and furniture to design (H2)
   **verwerkt (tekst uit het verslag)**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 
 ### /en/website-laten-maken-leuven/
 - Doing business in Leuven: university, hospital and SMEs (H2)
@@ -838,21 +859,21 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 - tailored (5x: title, meta, H2, 2x body)
   **verwerkt (tekst uit het verslag)**
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 
 ### /en/website-laten-maken-mol/
 - Step card: '… which you can review at your leisure' + '… of the full website if you wish to go ahead'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/website-laten-maken-turnhout/
 - Step card: '… which you can review at your leisure' + '… of the full website if you wish to go ahead'
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag; per pagina nagekeken, kop + alinea of hoofdletter)**
 
 ### /en/website-laten-vernieuwen/
 - €1.890 (prijskaart Webshop)
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (vorm aangepast zoals gevraagd)**
 - You look at it at your leisure.
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 
 ### /en/website-schilder/
 - …a no-obligation proposal, tailored to your services (menu, range, style…) / You look at it at your leisure …
@@ -864,7 +885,7 @@ Een script controleerde per punt of het oude citaat nog op de pagina staat, in b
 
 ### /en/website-tuinaannemer/
 - …a no-obligation proposal, tailored to your services (menu, range, style…) / You look at it at your leisure …
-  **verwerkt (oude tekst weg; eigen formulering of geschrapt)**
+  **verwerkt (tekst uit het verslag)**
 
 ### /en/website-vakmensen/
 - …a no-obligation proposal, tailored to your services (menu, range, style…) / You look at it at your leisure …
