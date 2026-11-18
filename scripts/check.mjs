@@ -142,7 +142,7 @@ for (const rel of htmlFiles) {
   if (/Bijgewerkt op|Mis à jour le|Updated on/i.test(body)) err('tekst', `${url}: "Bijgewerkt op"`);
   const raw = fs.readFileSync(path.join(DIR, rel), 'utf8');
   if (/zenrixa|aistudio|webstudiok\.be|gemini|surge\.sh/i.test(raw)) err('template', `${url}: restant van het template of testdomein`);
-  if (/Webstudio K\b/.test(doc.title)) err('naam', `${url}: titel gebruikt "Webstudio K" in plaats van Kempen Webstudio`);
+  if (/Kempen Webstudio/.test(doc.title)) err('naam', `${url}: titel gebruikt de oude naam Kempen Webstudio in plaats van Webstudio K (PDF Karim 18-11)`);
 }
 // hreflang wederkerig + x-default
 let nPairs = 0;

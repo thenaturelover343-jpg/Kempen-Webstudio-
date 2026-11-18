@@ -7,9 +7,9 @@ const pic = (id, vorm, lang, sizes) => { const f = foto(id, vorm, lang); return 
 const alt3 = k => ({ nl: P[k].nl, fr: P[k].fr, en: P[k].en });
 const UREN = {"nl":"Maandag tot en met zaterdag van 09:00 tot 20:00. Zondag gesloten.","fr":"Du lundi au samedi de 09h00 à 20h00. Fermé le dimanche.","en":"Monday to Saturday from 09:00 to 20:00. Closed on Sunday."};
 const NAP = {
-  nl: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Telefoon: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Ondernemingsnummer: BE 0897.577.919</li><li>Open van maandag tot zaterdag, van 9 tot 20 uur. Op zondag gesloten.</li></ul>`,
-  fr: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Téléphone : <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail : <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Numéro d’entreprise : BE 0897.577.919</li><li>Ouvert du lundi au samedi de 9 h à 20 h, fermé le dimanche.</li></ul>`,
-  en: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Phone: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>Email: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Company number: BE 0897.577.919</li><li>Open Monday to Saturday from 9:00 to 20:00, closed on Sunday.</li></ul>`,
+  nl: `<ul><li><strong>Webstudio K</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Telefoon: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Ondernemingsnummer: BE 0897.577.919</li><li>Open van maandag tot zaterdag, van 9 tot 20 uur. Op zondag gesloten.</li></ul>`,
+  fr: `<ul><li><strong>Webstudio K</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Téléphone : <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail : <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Numéro d’entreprise : BE 0897.577.919</li><li>Ouvert du lundi au samedi de 9 h à 20 h, fermé le dimanche.</li></ul>`,
+  en: `<ul><li><strong>Webstudio K</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Phone: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>Email: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Company number: BE 0897.577.919</li><li>Open Monday to Saturday from 9:00 to 20:00, closed on Sunday.</li></ul>`,
 };
 
 // ------------------------------------------------------------------------------------------------ REGIO-HUB
@@ -17,7 +17,7 @@ const hub = {
   nl: {
     path: P.hub.nl, title: 'Website laten maken in België | Alle steden en regio\'s', desc: 'Website laten maken in heel België: kies uw provincie of stad, van Antwerpen en Gent tot Brussel en Hasselt. Webdesign vanaf €490 excl. btw, prijs vooraf.',
     h1: 'Website laten maken in heel België', crumbCur: 'Regio\'s',
-    slogan: 'Kempen Webstudio werkt voor zaken in heel België. Kies hieronder uw stad of regio.',
+    slogan: 'Webstudio K werkt voor zaken in heel België. Kies hieronder uw stad of regio.',
     sections: [
       { t: 'band', id: 'heel-belgie', intro: ['Eén webstudio voor zaken in heel België.', 'Wij overleggen online, met één vast aanspreekpunt.'], h2: 'Webdesign voor elke provincie', lead: [`Waar uw zaak ook staat, de aanpak en de prijzen zijn dezelfde, met eerst een kennismaking en een vrijblijvende offerte en daarna een eigen ontwerp dat vlot laadt en voor iedereen bruikbaar is. Op de stadspagina's leest u wat er in die stad anders is. Algemene info over <a href="/">een website laten maken</a> vindt u op onze startpagina.`, 'Kennismaking en overleg verlopen online, per e-mail of telefoon. U hoeft dus nergens langs te komen.'] },
       { t: 'cards', id: 'provincies', h2: 'Kies uw provincie of stad', items: [
@@ -35,9 +35,9 @@ const hub = {
       ] },
       { t: 'pricing', id: 'prijs-hub', h2: 'Overal in België dezelfde prijzen', side: 'Uw stad bepaalt de prijs niet. U kiest een pakket en kent het bedrag vooraf.', term: `Na een kort gesprek krijgt u een schriftelijke offerte. Alle prijzen staan in onze prijsgids <a href="${P.prijs.nl}">wat kost een website laten maken in 2026</a>.` },
       { t: 'faq', id: 'faq-hub', h2: 'Veelgestelde vragen over een website laten maken in België', items: [
-        ['Werkt Kempen Webstudio echt in heel België?', 'Ja. Wij werken online, dus de afstand speelt geen rol. Op de stadspagina\'s leest u hoe wij rekening houden met de klanten en de buurt van uw zaak.'],
+        ['Werkt Webstudio K echt in heel België?', 'Ja. Wij werken online, dus de afstand speelt geen rol. Op de stadspagina\'s leest u hoe wij rekening houden met de klanten en de buurt van uw zaak.'],
         ['Is een website in een grote stad duurder?', 'Nee. Wij rekenen overal dezelfde prijzen: Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs.'],
-        ['Maakt Kempen Webstudio ook Franstalige websites?', 'Ja. Wij werken in het Nederlands, het Frans en het Engels. Welke talen uw site nodig heeft, bespreken wij vooraf.'],
+        ['Maakt Webstudio K ook Franstalige websites?', 'Ja. Wij werken in het Nederlands, het Frans en het Engels. Welke talen uw site nodig heeft, bespreken wij vooraf.'],
         ['Hoe lang duurt het voor mijn website online staat?', DELIVERY.nl],
       ] },
       cta('nl', 'Een website voor uw zaak, waar in België ook?', ['Populaire steden', [['/website-laten-maken-antwerpen/', 'Antwerpen'], ['/website-laten-maken-gent/', 'Gent'], ['/website-laten-maken-brussel/', 'Brussel'], ['/website-laten-maken-leuven/', 'Leuven'], ['/website-laten-maken-kempen/', 'de Kempen']]]),
@@ -46,7 +46,7 @@ const hub = {
   fr: {
     path: P.hub.fr, title: 'Création site internet en Belgique : villes et régions', desc: 'Création de site internet dans toute la Belgique : choisissez votre ville, de Bruxelles et Liège à Namur et Charleroi. Dès €490 HTVA, prix connu d’avance.',
     h1: 'Création de site internet dans toute la Belgique', crumbCur: 'Régions',
-    slogan: 'Kempen Webstudio travaille pour des entreprises dans toute la Belgique. Choisissez votre ville ou votre région.',
+    slogan: 'Webstudio K travaille pour des entreprises dans toute la Belgique. Choisissez votre ville ou votre région.',
     sections: [
       { t: 'band', id: 'toute-la-belgique', intro: ['Un studio web pour les entreprises de toute la Belgique.', 'Le suivi se fait en ligne, avec un seul interlocuteur.'], h2: 'Créer un site web, quelle que soit votre région', lead: [`Où que se trouve votre entreprise, la méthode et les prix ne changent pas : d’abord une prise de contact et un devis sans engagement, ensuite un design propre, rapide et accessible à tous. Les pages de ville expliquent ce qui change d’une ville à l’autre. Pour tout savoir sur la <a href="/fr/">création de site internet</a>, rendez-vous sur notre page d’accueil.`, 'La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Vous n’avez donc pas besoin de vous déplacer.'] },
       { t: 'cards', id: 'regions', h2: 'Choisissez votre région ou votre ville', items: [
@@ -73,7 +73,7 @@ const hub = {
   en: {
     path: P.hub.en, title: 'Website design in Belgium | All cities and regions', desc: 'Website design across Belgium: choose your city, from Brussels and Antwerp to Ghent and Leuven. Websites from €490 excl. VAT, price agreed up front.',
     h1: 'Website design across Belgium', crumbCur: 'Regions',
-    slogan: 'Kempen Webstudio builds websites for businesses all over Belgium. Choose your city or region below.',
+    slogan: 'Webstudio K builds websites for businesses all over Belgium. Choose your city or region below.',
     sections: [
       { t: 'band', id: 'all-belgium', intro: ['One web studio for businesses across Belgium.', 'We meet online, with one point of contact.'], h2: 'Website design for every region', lead: [`Wherever your business is, the approach and the prices are the same: an introductory conversation and a no-obligation quote first, then a custom design that loads fast and that everyone can use. The city pages explain what is different in each city. For more about <a href="/en/">having a website built</a>, see our home page.`, 'Introductions and meetings take place online, by email or phone, so you never need to travel.'] },
       { t: 'cards', id: 'regions-en', h2: 'Choose your city', items: [
@@ -96,11 +96,11 @@ const hub = {
 // ------------------------------------------------------------------------------------------------ OVER ONS
 const over = {
   nl: {
-    path: P.over.nl, pageType: 'AboutPage', title: 'Over Kempen Webstudio | Kasterlee, voor heel België', desc: 'Kempen Webstudio is een jonge webstudio in Kasterlee. Wij maken lichte, toegankelijke websites voor kmo\'s, verenigingen en zelfstandigen in heel België.',
-    h1: 'Over Kempen Webstudio', crumbCur: 'Over ons',
-    slogan: 'Kempen Webstudio is een jonge webstudio die websites maakt voor zaken in heel België, met prijzen vooraf en één vast aanspreekpunt.',
+    path: P.over.nl, pageType: 'AboutPage', title: 'Over Webstudio K | Kasterlee, voor heel België', desc: 'Webstudio K is een jonge webstudio in Kasterlee. Wij maken lichte, toegankelijke websites voor kmo\'s, verenigingen en zelfstandigen in heel België.',
+    h1: 'Over Webstudio K', crumbCur: 'Over ons',
+    slogan: 'Webstudio K is een jonge webstudio die websites maakt voor zaken in heel België, met prijzen vooraf en één vast aanspreekpunt.',
     sections: [
-      { t: 'band', id: 'wie-wij-zijn', intro: ['Een jonge webstudio.', 'Wij maken websites voor zaken in heel België.'], h2: 'Wie wij zijn', lead: [`Kempen Webstudio is een jonge webstudio. Wij maken websites en webshops voor ondernemers, verenigingen en zelfstandigen in heel België. Daarnaast werken wij aan uw vindbaarheid in Google en ontwerpen wij logo's en huisstijlen.`, `Wij vinden dat een goede website geen luxe hoeft te zijn. Daarom staan al onze prijzen openbaar op de site, maken wij eerst een vrijblijvende offerte en bouwen wij elke site met een eigen ontwerp in plaats van een sjabloon.`] },
+      { t: 'band', id: 'wie-wij-zijn', intro: ['Een jonge webstudio.', 'Wij maken websites voor zaken in heel België.'], h2: 'Wie wij zijn', lead: [`Webstudio K is een jonge webstudio. Wij maken websites en webshops voor ondernemers, verenigingen en zelfstandigen in heel België. Daarnaast werken wij aan uw vindbaarheid in Google en ontwerpen wij logo's en huisstijlen.`, `Wij vinden dat een goede website geen luxe hoeft te zijn. Daarom staan al onze prijzen openbaar op de site, maken wij eerst een vrijblijvende offerte en bouwen wij elke site met een eigen ontwerp in plaats van een sjabloon.`] },
       { t: 'cards', id: 'waarden', h2: 'Waar wij voor staan', items: [
         ['Eén vast aanspreekpunt', 'U praat altijd met dezelfde persoon, van het eerste gesprek tot de wijzigingen jaren later. U wordt niet doorgeschakeld en hoeft geen ticket in te dienen.'],
         ['Prijzen vooraf', `Alle pakketten en losse diensten hebben een vanaf-prijs op de site. U krijgt een schriftelijke offerte voor u beslist. Zie <a href="${P.prijs.nl}">onze prijzen</a>.`],
@@ -116,21 +116,21 @@ const over = {
         ['Talen', 'Wij werken in het Nederlands, het Frans en het Engels.'],
         ['Contact opnemen', `Via het formulier op de <a href="${P.contact.nl}">contactpagina</a>, per e-mail of telefonisch. ${REPLY.nl}`],
       ] },
-      { t: 'faq', id: 'faq-over', h2: 'Veelgestelde vragen over Kempen Webstudio', items: [
-        ['Voor welke regio werkt Kempen Webstudio?', 'Voor zaken in heel België. Kennismaking en overleg verlopen online, per e-mail of telefoon.'],
-        ['Werkt Kempen Webstudio met sjablonen?', 'Nee. Elke website krijgt een eigen ontwerp, vertrekkend van uw vak, uw klanten en de sfeer van uw zaak.'],
+      { t: 'faq', id: 'faq-over', h2: 'Veelgestelde vragen over Webstudio K', items: [
+        ['Voor welke regio werkt Webstudio K?', 'Voor zaken in heel België. Kennismaking en overleg verlopen online, per e-mail of telefoon.'],
+        ['Werkt Webstudio K met sjablonen?', 'Nee. Elke website krijgt een eigen ontwerp, vertrekkend van uw vak, uw klanten en de sfeer van uw zaak.'],
         ['Zijn de voorbeeldontwerpen echte klanten?', 'Nee. Het zijn ontwerpen met fictieve namen en gegevens, die tonen wat wij voor verschillende sectoren kunnen maken.'],
         ['Kan ik eerst kennismaken?', `Ja. Stuur een bericht via de <a href="${P.contact.nl}">contactpagina</a> of bel ons. Kennismaking verloopt online, per e-mail of telefoon.`],
       ] },
-      cta('nl', 'Kennismaken met Kempen Webstudio?'),
+      cta('nl', 'Kennismaken met Webstudio K?'),
     ],
   },
   fr: {
-    path: P.over.fr, pageType: 'AboutPage', title: 'À propos de Kempen Webstudio | Kasterlee, toute la Belgique', desc: 'Kempen Webstudio est un jeune studio web à Kasterlee. Nous créons des sites rapides et accessibles pour les PME, associations et indépendants en Belgique.',
-    h1: 'À propos de Kempen Webstudio', crumbCur: 'À propos',
-    slogan: 'Kempen Webstudio est un jeune studio web qui crée des sites pour des entreprises dans toute la Belgique, avec des prix connus d’avance et un seul interlocuteur.',
+    path: P.over.fr, pageType: 'AboutPage', title: 'À propos de Webstudio K | Kasterlee, toute la Belgique', desc: 'Webstudio K est un jeune studio web à Kasterlee. Nous créons des sites rapides et accessibles pour les PME, associations et indépendants en Belgique.',
+    h1: 'À propos de Webstudio K', crumbCur: 'À propos',
+    slogan: 'Webstudio K est un jeune studio web qui crée des sites pour des entreprises dans toute la Belgique, avec des prix connus d’avance et un seul interlocuteur.',
     sections: [
-      { t: 'band', id: 'qui-sommes-nous', intro: ['Un jeune studio web.', 'Nous créons des sites pour des entreprises dans toute la Belgique.'], h2: 'Qui sommes-nous', lead: [`Kempen Webstudio est un jeune studio web. Nous créons des sites internet et des boutiques en ligne pour des entrepreneurs, des associations et des indépendants dans toute la Belgique. Nous travaillons aussi votre visibilité dans Google et concevons logos et identités visuelles.`, `Pour nous, un bon site ne doit pas être un luxe. C’est pourquoi tous nos prix sont publics, que nous préparons d’abord un devis sans engagement et que chaque site reçoit un design propre plutôt qu’un modèle tout fait.`] },
+      { t: 'band', id: 'qui-sommes-nous', intro: ['Un jeune studio web.', 'Nous créons des sites pour des entreprises dans toute la Belgique.'], h2: 'Qui sommes-nous', lead: [`Webstudio K est un jeune studio web. Nous créons des sites internet et des boutiques en ligne pour des entrepreneurs, des associations et des indépendants dans toute la Belgique. Nous travaillons aussi votre visibilité dans Google et concevons logos et identités visuelles.`, `Pour nous, un bon site ne doit pas être un luxe. C’est pourquoi tous nos prix sont publics, que nous préparons d’abord un devis sans engagement et que chaque site reçoit un design propre plutôt qu’un modèle tout fait.`] },
       { t: 'cards', id: 'valeurs', h2: 'Nos valeurs', items: [
         ['Un seul interlocuteur', 'Vous parlez toujours à la même personne, du premier entretien aux modifications des années plus tard.'],
         ['Des prix connus d’avance', `Chaque formule et chaque service a un prix de départ sur le site. Vous recevez une offre écrite avant de décider. Voir <a href="${P.prijs.fr}">nos prix</a>.`],
@@ -146,21 +146,21 @@ const over = {
         ['Langues', 'Nous travaillons en français, en néerlandais et en anglais.'],
         ['Nous contacter', `Par le formulaire de la <a href="${P.contact.fr}">page de contact</a>, par e-mail ou par téléphone. ${REPLY.fr}`],
       ] },
-      { t: 'faq', id: 'faq-apropos', h2: 'Questions fréquentes sur Kempen Webstudio', items: [
-        ['Pour quelle région travaille Kempen Webstudio ?', 'Pour des entreprises dans toute la Belgique. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone.'],
+      { t: 'faq', id: 'faq-apropos', h2: 'Questions fréquentes sur Webstudio K', items: [
+        ['Pour quelle région travaille Webstudio K ?', 'Pour des entreprises dans toute la Belgique. La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone.'],
         ['Utilisez-vous des modèles tout faits ?', 'Non. Chaque site reçoit un design propre, à partir de votre métier, de vos clients et de l’ambiance de votre entreprise.'],
         ['Les exemples de sites sont-ils de vrais clients ?', 'Non. Ce sont des designs avec des noms et des données fictifs, qui montrent ce que nous pouvons créer pour différents secteurs.'],
         ['Puis-je d’abord faire connaissance ?', `Oui. Envoyez un message via la <a href="${P.contact.fr}">page de contact</a> ou appelez-nous. La prise de contact se fait en ligne, par e-mail ou par téléphone.`],
       ] },
-      cta('fr', 'Faire connaissance avec Kempen Webstudio ?'),
+      cta('fr', 'Faire connaissance avec Webstudio K ?'),
     ],
   },
   en: {
-    path: P.over.en, pageType: 'AboutPage', title: 'About Kempen Webstudio | Kasterlee, for all of Belgium', desc: 'Kempen Webstudio is a young web studio in Kasterlee, Belgium. We build fast, accessible websites for SMEs, associations and freelancers across Belgium.',
-    h1: 'About Kempen Webstudio', crumbCur: 'About us',
-    slogan: 'Kempen Webstudio is a young web studio that builds websites for businesses across Belgium, with prices up front and one point of contact.',
+    path: P.over.en, pageType: 'AboutPage', title: 'About Webstudio K | Kasterlee, for all of Belgium', desc: 'Webstudio K is a young web studio in Kasterlee, Belgium. We build fast, accessible websites for SMEs, associations and freelancers across Belgium.',
+    h1: 'About Webstudio K', crumbCur: 'About us',
+    slogan: 'Webstudio K is a young web studio that builds websites for businesses across Belgium, with prices up front and one point of contact.',
     sections: [
-      { t: 'band', id: 'who-we-are', intro: ['A young web studio.', 'We build websites for businesses across Belgium.'], h2: 'Who we are', lead: [`Kempen Webstudio is a young web studio. We build websites and online shops for entrepreneurs, associations and freelancers across Belgium. We also work on how easily you are found on Google, and we design logos and visual identities.`, `We believe a good website should not be a luxury. So our prices are public, we start with an introductory conversation and a no-obligation quote, and every site gets its own design instead of a template.`] },
+      { t: 'band', id: 'who-we-are', intro: ['A young web studio.', 'We build websites for businesses across Belgium.'], h2: 'Who we are', lead: [`Webstudio K is a young web studio. We build websites and online shops for entrepreneurs, associations and freelancers across Belgium. We also work on how easily you are found on Google, and we design logos and visual identities.`, `We believe a good website should not be a luxury. So our prices are public, we start with an introductory conversation and a no-obligation quote, and every site gets its own design instead of a template.`] },
       { t: 'cards', id: 'values', h2: 'What we stand for', items: [
         ['One point of contact', 'You always talk to the same person, from the first conversation to changes years later.'],
         ['Prices up front', `Every package and service has a starting price on the site. You get a written quote before you decide. See <a href="${P.prijs.en}">our prices</a>.`],
@@ -176,12 +176,12 @@ const over = {
         ['Languages', 'We work in English, Dutch and French.'],
         ['Get in touch', `Use the form on the <a href="${P.contact.en}">contact page</a>, email or call us. ${REPLY.en}`],
       ] },
-      { t: 'faq', id: 'faq-about', h2: 'Frequently asked questions about Kempen Webstudio', items: [
-        ['Which region does Kempen Webstudio work for?', 'For businesses across Belgium. Introductions and meetings take place online, by email or phone.'],
+      { t: 'faq', id: 'faq-about', h2: 'Frequently asked questions about Webstudio K', items: [
+        ['Which region does Webstudio K work for?', 'For businesses across Belgium. Introductions and meetings take place online, by email or phone.'],
         ['Do you use templates?', 'No. Every website gets its own design, based on your trade, your customers and the feel of your business.'],
         ['Are the sample designs real clients?', 'No. They are designs with fictional names and details, showing what we can build for different sectors.'],
       ] },
-      cta('en', 'Want to get to know Kempen Webstudio?'),
+      cta('en', 'Want to get to know Webstudio K?'),
     ],
   },
 };
@@ -190,14 +190,14 @@ const over = {
 const mapFig = lang => pic('kaart', 'kaart169', lang, '(min-width: 1024px) 520px, 92vw');
 const contact = {
   nl: {
-    path: P.contact.nl, pageType: 'ContactPage', title: 'Contact | Kempen Webstudio, Kasterlee', desc: 'Contact Kempen Webstudio in Kasterlee: bel +32 14 71 80 80, mail info@kempenwebstudio.be of stuur een bericht. Antwoord doorgaans binnen 1 werkdag.',
-    h1: 'Contact met Kempen Webstudio', crumbCur: 'Contact',
+    path: P.contact.nl, pageType: 'ContactPage', title: 'Contact en offerte | Webstudio K', desc: 'Contact Webstudio K in Kasterlee: bel +32 14 71 80 80, mail info@kempenwebstudio.be of stuur een bericht. Antwoord doorgaans binnen 1 werkdag.',
+    h1: 'Contact met Webstudio K', crumbCur: 'Contact',
     slogan: 'Vertel kort over uw zaak, en wij nemen contact met u op. Op een bericht antwoorden wij doorgaans binnen 1 werkdag.',
     sections: [
       { t: 'cards', id: 'bereik-ons', h2: 'Zo bereikt u ons', items: [
         ['Telefoon', '<a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>. Krijgt u ons niet meteen te pakken, laat dan een bericht na of stuur een e-mail.'],
         ['E-mail', '<a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a>. ' + REPLY.nl],
-        ['Adres', 'Kempen Webstudio, Kemelbeekstraat 16, 2460 Kasterlee. Ondernemingsnummer BE 0897.577.919.'],
+        ['Adres', 'Webstudio K, Kemelbeekstraat 16, 2460 Kasterlee. Ondernemingsnummer BE 0897.577.919.'],
         ['Openingsuren', UREN.nl + ' ' + 'Buiten de openingsuren kunt u altijd een bericht sturen.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="bericht-t" class="sec kw-form"><div class="wrap"><p class="lbl">Contactformulier</p><h2 id="bericht-t">Stuur ons een bericht</h2><div class="kw-form-txt"><p>Vertel kort wat voor zaak u hebt en wat u zoekt: een nieuwe website, een webshop, een vernieuwing of hulp met uw vindbaarheid. Daarna maken wij een vrijblijvende offerte voor uw zaak.</p><p>${REPLY.nl}</p></div></div></section>` },
@@ -212,14 +212,14 @@ const contact = {
     ],
   },
   fr: {
-    path: P.contact.fr, pageType: 'ContactPage', title: 'Nous contacter | Kempen Webstudio, Kasterlee', desc: 'Contactez Kempen Webstudio : appelez le +32 14 71 80 80, écrivez à info@kempenwebstudio.be ou via le formulaire. Réponse en général sous 1 jour.',
-    h1: 'Contacter Kempen Webstudio', crumbCur: 'Contact',
+    path: P.contact.fr, pageType: 'ContactPage', title: 'Contact et devis | Webstudio K', desc: 'Contactez Webstudio K : appelez le +32 14 71 80 80, écrivez à info@kempenwebstudio.be ou via le formulaire. Réponse en général sous 1 jour.',
+    h1: 'Contacter Webstudio K', crumbCur: 'Contact',
     slogan: 'Parlez-nous brièvement de votre entreprise et nous vous recontactons. Nous répondons généralement à un message dans un délai d’un jour ouvrable.',
     sections: [
       { t: 'cards', id: 'nous-joindre', h2: 'Comment nous joindre', items: [
         ['Téléphone', '<a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>. Si vous ne nous joignez pas tout de suite, laissez un message ou envoyez un e-mail.'],
         ['E-mail', '<a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a>. ' + REPLY.fr],
-        ['Adresse', 'Kempen Webstudio, Kemelbeekstraat 16, 2460 Kasterlee. Numéro d’entreprise BE 0897.577.919.'],
+        ['Adresse', 'Webstudio K, Kemelbeekstraat 16, 2460 Kasterlee. Numéro d’entreprise BE 0897.577.919.'],
         ['Heures d’ouverture', UREN.fr + ' ' + 'En dehors de ces heures, vous pouvez toujours envoyer un message.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="message-t" class="sec kw-form"><div class="wrap"><p class="lbl">Formulaire de contact</p><h2 id="message-t">Envoyez-nous un message</h2><div class="kw-form-txt"><p>Dites-nous brièvement quel type d’entreprise vous avez et ce que vous cherchez : un nouveau site, une boutique en ligne, une refonte ou de l’aide pour être trouvé. Nous préparons d’abord un devis sans engagement.</p><p>${REPLY.fr}</p></div></div></section>` },
@@ -234,14 +234,14 @@ const contact = {
     ],
   },
   en: {
-    path: P.contact.en, pageType: 'ContactPage', title: 'Contact us | Kempen Webstudio, Kasterlee', desc: 'Contact Kempen Webstudio in Kasterlee, Belgium: call +32 14 71 80 80, email info@kempenwebstudio.be or use the form. Usually a reply within 1 working day.',
-    h1: 'Contact Kempen Webstudio', crumbCur: 'Contact',
+    path: P.contact.en, pageType: 'ContactPage', title: 'Contact and quote | Webstudio K', desc: 'Contact Webstudio K in Kasterlee, Belgium: call +32 14 71 80 80, email info@kempenwebstudio.be or use the form. Usually a reply within 1 working day.',
+    h1: 'Contact Webstudio K', crumbCur: 'Contact',
     slogan: 'Tell us briefly about your business and we will get back to you. We usually reply to a message within 1 working day.',
     sections: [
       { t: 'cards', id: 'reach-us', h2: 'How to reach us', items: [
         ['Phone', '<a class="nw" href="tel:+3214718080">+32 14 71 80 80</a>. If you cannot reach us straight away, leave a message or send an email.'],
         ['Email', '<a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a>. ' + REPLY.en],
-        ['Address', 'Kempen Webstudio, Kemelbeekstraat 16, 2460 Kasterlee. Company number BE 0897.577.919.'],
+        ['Address', 'Webstudio K, Kemelbeekstraat 16, 2460 Kasterlee. Company number BE 0897.577.919.'],
         ['Opening hours', UREN.en + ' ' + 'Outside these hours you can always send a message.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="message-en-t" class="sec kw-form"><div class="wrap"><p class="lbl">Contact form</p><h2 id="message-en-t">Send us a message</h2><div class="kw-form-txt"><p>Tell us briefly about your business and what you are looking for: a new website, an online shop, a redesign or help getting found. We start with a no-obligation quote.</p><p>${REPLY.en}</p></div></div></section>` },
@@ -290,7 +290,7 @@ const seo = {
     slogan: 'Gevonden worden in Google, Google Maps en AI-zoekmachines, met overal dezelfde gegevens en duidelijke prijzen vooraf.',
     service: { name: 'SEO en zichtbaarheid', type: 'Zoekmachineoptimalisatie', offers: false },
     sections: [
-      { t: 'band', id: 'seo-intro', intro: ['Vindbaar waar uw klanten zoeken.', 'Met prijzen vooraf, maandelijks opzegbaar.'], h2: 'Een SEO-bureau voor kleine zaken', lead: [`De meeste klanten zoeken eerst in Google of op Google Maps. Een zaak die daar niet verschijnt, slaan ze meestal over. Wij werken aan uw vindbaarheid op de zoekwoorden die voor u tellen, met een site die vlot laadt, duidelijke teksten en overal dezelfde gegevens. Bouwen wij uw website, dan zit de basis daarvan al in elk pakket; zie <a href="/">website laten maken</a>.`, 'Ook als u al een website hebt die iemand anders bouwde, kunt u bij Kempen Webstudio terecht voor een audit of voor lokale SEO.'] },
+      { t: 'band', id: 'seo-intro', intro: ['Vindbaar waar uw klanten zoeken.', 'Met prijzen vooraf, maandelijks opzegbaar.'], h2: 'Een SEO-bureau voor kleine zaken', lead: [`De meeste klanten zoeken eerst in Google of op Google Maps. Een zaak die daar niet verschijnt, slaan ze meestal over. Wij werken aan uw vindbaarheid op de zoekwoorden die voor u tellen, met een site die vlot laadt, duidelijke teksten en overal dezelfde gegevens. Bouwen wij uw website, dan zit de basis daarvan al in elk pakket; zie <a href="/">website laten maken</a>.`, 'Ook als u al een website hebt die iemand anders bouwde, kunt u bij Webstudio K terecht voor een audit of voor lokale SEO.'] },
       { t: 'cards', id: 'seo-diensten', h2: 'Onze SEO-diensten en prijzen', side: 'Alle prijzen zijn exclusief btw.', items: SEO_ITEMS.nl },
       { t: 'prose', id: 'seo-aanpak', h2: 'Hoe wij aan uw vindbaarheid werken', html: `<p>Wij beginnen bij wat uw klanten intypen: uw dienst, vaak met uw gemeente of regio erbij. Elke belangrijke dienst krijgt een eigen, duidelijke pagina met een goede titel en omschrijving. Uw naam, adres en telefoon staan overal hetzelfde: op uw site, in uw Google Bedrijfsprofiel en in bedrijfsgidsen. Technisch zorgen wij voor lichte pagina's, correcte gestructureerde gegevens en een site die werkt op een gsm.</p><p>Wij zeggen vooraf welk werk wij doen aan uw Google Bedrijfsprofiel, uw gegevens in gidsen en uw pagina\'s, en bij Lokale SEO krijgt u elke maand een kort verslag. Meer achtergrond leest u in ons artikel over <a href="${P.gbp.nl}">een Google Bedrijfsprofiel aanmaken</a>.</p>` },
       { t: 'cards', id: 'seo-voor-wie', h2: 'Voor wie is SEO zinvol?', items: [
@@ -301,7 +301,7 @@ const seo = {
       { t: 'faq', id: 'faq-seo', h2: 'Veelgestelde vragen over SEO laten doen', items: [
         ['Wat kost SEO laten doen?', 'Een optimalisatie van een bestaande pagina kost vanaf €59, een SEO-audit vanaf €190 en Lokale SEO vanaf €149 per maand, telkens excl. btw. Lokale SEO is maandelijks opzegbaar.'],
         ['Wanneer zie ik resultaat?', 'Dat hangt af van uw sector, uw regio en de concurrentie. Lokale verbeteringen, zoals een volledig ingevuld Google Bedrijfsprofiel, merkt u vaak eerder dan posities op brede zoekwoorden. Bij Lokale SEO ziet u in het maandverslag welk werk gedaan is.'],
-        ['Doet Kempen Webstudio ook SEO voor een site die iemand anders bouwde?', 'Ja. Een SEO-audit, optimalisatie van bestaande pagina\'s en Lokale SEO kunnen ook voor een bestaande website.'],
+        ['Doet Webstudio K ook SEO voor een site die iemand anders bouwde?', 'Ja. Een SEO-audit, optimalisatie van bestaande pagina\'s en Lokale SEO kunnen ook voor een bestaande website.'],
         ['Wat is lokale SEO?', 'Lokale SEO zorgt dat uw zaak verschijnt wanneer iemand in uw buurt zoekt, in Google en op Google Maps. Uw Google Bedrijfsprofiel, gelijke gegevens in gidsen en duidelijke pagina\'s per dienst spelen daarbij een grote rol.'],
         ['Wat zijn teksten voor AI-zoekmachines?', 'Sommige mensen stellen hun vraag aan een AI-assistent in plaats van een zoekmachine. Met duidelijke veelgestelde vragen en gestructureerde gegevens beschrijven zulke assistenten uw zaak correcter.'],
       ] },
@@ -347,13 +347,13 @@ const seo = {
 // ------------------------------------------------------------------------------------------------ EN BRUSSELS
 const brussels = {
   path: '/en/web-design-brussels/', lang: 'en', alt: { nl: '/website-laten-maken-brussel/', fr: '/fr/creation-site-internet-bruxelles/', en: '/en/web-design-brussels/' },
-  title: 'Web design in Brussels | Websites from €490 excl. VAT', desc: 'Web design in Brussels for small businesses, freelancers and associations: a custom, multilingual website in English, French or Dutch. From €490 excl. VAT.',
+  title: 'Web design in Brussels | Websites from €490 excl. VAT', desc: 'Custom web design for small businesses, freelancers and associations in Brussels, with a website in English, French or Dutch. From €490 excl. VAT.',
   h1: 'Web design in Brussels', crumbCur: 'Brussels', crumbs: [[P.home.en, HOME_LABEL.en], [P.hub.en, HUB_LABEL.en]],
   slogan: 'After an introductory conversation you receive a no-obligation quote for your business in Brussels, with the languages of your customers in mind.',
   ctas: [[CTA.en, ASK.en], [P.demos.en, 'View the sample designs']], trust: TRUST.en,
   service: { name: 'Web design in Brussels', type: 'Website design', area: { '@type': 'City', name: 'Brussels' } },
   sections: [
-    { t: 'band', id: 'brussels-intro', intro: ['Know the content and the price before you decide.', 'The quote comes with no obligation.'], h2: 'A website for a city of many languages', lead: [`Brussels is officially bilingual, and many customers prefer English. A business in Brussels often needs a website in more than one language, and each version needs the same care. We build fast, accessible websites with a custom design. Kempen Webstudio builds <a href="/en/">websites for businesses across Belgium</a>.`, 'A no-obligation quote shows what your website will contain and what it costs, before you decide anything.'] },
+    { t: 'band', id: 'brussels-intro', intro: ['Know the content and the price before you decide.', 'The quote comes with no obligation.'], h2: 'A website for a city of many languages', lead: [`Brussels is officially bilingual, and many customers prefer English. A business in Brussels often needs a website in more than one language, and each version needs the same care. We build fast, accessible websites with a custom design. Webstudio K builds <a href="/en/">websites for businesses across Belgium</a>.`, 'A no-obligation quote shows what your website will contain and what it costs, before you decide anything.'] },
     { t: 'cards', id: 'brussels-areas', h2: 'Websites for businesses in all 19 municipalities', items: [
       ['City centre and European Quarter', 'Around the Grand-Place, the Dansaert area, the Sablon and the European Quarter, restaurants, shops and service providers work for residents, commuters and international visitors. Visitors want to see straight away when you are open, where you are and which languages you speak.'],
       ['Residential neighbourhoods', 'In Ixelles, Saint-Gilles, Schaerbeek, Etterbeek, Uccle, Jette, Anderlecht or the Woluwes, customers look for a business close to home. We state clearly which municipalities you serve, matching your Google Business Profile.'],

@@ -47,7 +47,7 @@ export function shellModel(doc, url) {
   return {
     lang, prefix: lang === 'nl' ? '' : '/' + lang, ui, url,
     skip: text($(doc, 'a.skip')),
-    logoAria: $(doc, 'header .logo')?.getAttribute('aria-label') || 'Kempen Webstudio',
+    logoAria: $(doc, 'header .logo')?.getAttribute('aria-label') || 'Webstudio K',
     navAria: H ? $(H, '.nav')?.getAttribute('aria-label') : '',
     langAria: H ? $(H, '.lang')?.getAttribute('aria-label') : '',
     navTop, services, langs, mob, mcl,

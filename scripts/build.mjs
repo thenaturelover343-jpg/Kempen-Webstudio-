@@ -101,7 +101,7 @@ const MARK = (s = 28) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2
   const imgs = [16, 32, 48].map(s => png[s]); const head = Buffer.alloc(6 + 16 * imgs.length); head.writeUInt16LE(0, 0); head.writeUInt16LE(1, 2); head.writeUInt16LE(imgs.length, 4); let off = head.length;
   imgs.forEach((b, i) => { const s = [16, 32, 48][i], o = 6 + 16 * i; head.writeUInt8(s, o); head.writeUInt8(s, o + 1); head.writeUInt16LE(1, o + 4); head.writeUInt16LE(32, o + 6); head.writeUInt32LE(b.length, o + 8); head.writeUInt32LE(off, o + 12); off += b.length; });
   write('favicon.ico', Buffer.concat([head, ...imgs]));
-  write('site.webmanifest', JSON.stringify({ name: 'Kempen Webstudio', short_name: 'Kempen Webstudio', icons: [{ src: '/icons/kw-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icons/kw-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icons/kw.svg', sizes: 'any', type: 'image/svg+xml' }], theme_color: '#dcdde0', background_color: '#dcdde0', display: 'browser' }));
+  write('site.webmanifest', JSON.stringify({ name: 'Webstudio K', short_name: 'Webstudio K', icons: [{ src: '/icons/kw-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icons/kw-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icons/kw.svg', sizes: 'any', type: 'image/svg+xml' }], theme_color: '#dcdde0', background_color: '#dcdde0', display: 'browser' }));
 }
 const OG_IMAGE = '/assets/og-v4.jpg';
 
@@ -139,6 +139,8 @@ function enrichLd(arr, { url, lang, isHome, ogImg, doc }) {
       o.vatID = o.vatID || 'BE0897577919';
     }
     if (isHome && o['@id'] === ORG) o.priceRange = '€€';
+    // PDF Karim 18-11: merknaam Webstudio K, oude naam als alternateName; kaart naar het bestaande adres (geen geo: exacte coördinaten van het adres ontbreken)
+    if (o['@id'] === ORG) { o.name = 'Webstudio K'; o.alternateName = 'Kempen' + ' Webstudio'; if (ldTypes(o).some(t => /Service|Business/.test(t))) o.hasMap = 'https://www.google.com/maps/search/?api=1&query=Kemelbeekstraat+16%2C+2460+Kasterlee'; }
     if (ldTypes(o).includes('Article')) { o.image = ORIGIN + ogImg; if (!o.author) o.author = { '@id': ORG }; }
   }
   const sv = LD_SERVICE[baseOf(url)];
@@ -321,7 +323,7 @@ for (const rel of pages) {
   const ogk = crypto.createHash('sha1').update(lang + '|' + h1txt).digest('hex').slice(0, 12);
   const ogSrc = path.join(ROOT, 'src', 'img', 'og', ogk + '.jpg');
   let ogImg = OG_IMAGE; if (h1txt && fs.existsSync(ogSrc)) { ogImg = `/assets/og/${ogk}.jpg`; write(ogImg.slice(1), fs.readFileSync(ogSrc)); }
-  const metas = [...H.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')].map(m => { const k = m.getAttribute('property') ? 'property' : 'name', key = m.getAttribute(k); let v = m.getAttribute('content') || ''; if (key === 'og:image' || key === 'twitter:image') v = ORIGIN + ogImg; if (key === 'og:image:alt' && ogImg !== OG_IMAGE) v = `${h1txt}, Kempen Webstudio`; return `<meta ${k}="${esc(key)}" content="${esc(v)}">`; });
+  const metas = [...H.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')].map(m => { const k = m.getAttribute('property') ? 'property' : 'name', key = m.getAttribute(k); let v = m.getAttribute('content') || ''; if (key === 'og:image' || key === 'twitter:image') v = ORIGIN + ogImg; if (key === 'og:image:alt' && ogImg !== OG_IMAGE) v = `${h1txt}, Webstudio K`; return `<meta ${k}="${esc(key)}" content="${esc(v)}">`; });
   if (metas.length && !metas.some(m => m.includes('twitter:title'))) metas.push(`<meta name="twitter:title" content="${esc(title)}">`);
   if (metas.length && !metas.some(m => m.includes('"twitter:description"')) && desc) metas.push(`<meta name="twitter:description" content="${esc(desc)}">`);
   const alts = [...H.querySelectorAll('link[rel="alternate"][hreflang]')].map(l => `<link rel="alternate" hreflang="${esc(l.getAttribute('hreflang'))}" href="${esc(l.getAttribute('href'))}">`);
@@ -330,12 +332,12 @@ for (const rel of pages) {
   const head = [
     '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">',
     `<title>${esc(title)}</title>`, desc ? `<meta name="description" content="${esc(desc)}">` : '', `<meta name="robots" content="${robots}">`,
-    canon ? `<link rel="canonical" href="${esc(canon)}">` : '', ...alts,
+    (canon || (MODE === 'live' && DEMO.has(baseOf(url).split('/')[1]))) ? `<link rel="canonical" href="${esc(canon || ORIGIN + url)}">` : '', ...alts,
     '<meta name="theme-color" content="#dcdde0">', '<meta name="color-scheme" content="light">', ...metas,
     '<link rel="icon" href="/favicon.ico?v=3" sizes="any">', '<link rel="icon" href="/icons/kw.svg?v=3" type="image/svg+xml">', '<link rel="apple-touch-icon" href="/icons/kw-180.png?v=3">', '<link rel="manifest" href="/site.webmanifest?v=3">',
     '<link rel="preload" href="/assets/fonts/switzer.woff2" as="font" type="font/woff2" crossorigin>', '<link rel="preload" href="/assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>',
     isHome ? `<link rel="preload" as="image" type="image/avif" imagesrcset="${[360, 560, 760, 928].map(por).join(', ')}" imagesizes="(min-width: 1536px) 420px, (min-width: 1280px) 370px, (min-width: 1024px) 310px, (min-width: 640px) 400px, 360px" fetchpriority="high">` : '',
-    `<script>${HEAD_JS}</script>`, `<style>${CSS}</style>`, `<script src="${JS_FILE}" defer></script>`, ...ld,
+    `<script>${HEAD_JS}</script>`, '<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*.pdf"}}]},"eagerness":"moderate"}]}</script>', `<style>${CSS}</style>`, `<script src="${JS_FILE}" defer></script>`, ...ld,
   ].filter(Boolean).join('\n');
 
   // ---- body nabewerken: beelden (AVIF), controles
@@ -386,12 +388,14 @@ for (const rel of pages) {
 for (const rel of demoPages) {
   let s = fs.readFileSync(path.join(SRC, rel), 'utf8'); const want = ROBOTS(urlOf(rel)); const re = /<meta name="robots" content="[^"]*">/;
   if (re.test(s)) s = s.replace(re, `<meta name="robots" content="${want}">`); else if (want !== 'index,follow') s = s.replace('</head>', `<meta name="robots" content="${want}">\n</head>`);
+  if (MODE === 'live' && !/<link rel="canonical"/.test(s)) s = s.replace('</head>', `<link rel="canonical" href="${ORIGIN + urlOf(rel)}">
+</head>`);
   write(rel, s);
 }
 
 // ---------- 8b. oude FR-paden: 301 in _redirects (Cloudflare Pages/Workers, Netlify) + HTML-vangnet op het oude pad ----------
 {
-  const lines = ['# Oude FR-URL\'s (Nederlandse slug) -> Franse slug, permanent. Gegenereerd door scripts/build.mjs uit src/site/slugs.mjs'];
+  const lines = ['# /index.html -> homepage (permanent)', '/index.html / 301', '# Oude FR-URL\'s (Nederlandse slug) -> Franse slug, permanent. Gegenereerd door scripts/build.mjs uit src/site/slugs.mjs'];
   for (const [from, to] of Object.entries(FR_SLUGS)) {
     lines.push(`${from} ${to} 301`, `${from.replace(/\/$/, '')} ${to} 301`);
     const abs = ORIGIN + to;
@@ -407,11 +411,11 @@ if (MODE === 'live') {
   {
     const sec = (l, h) => ['', '## ' + h, ...indexable.filter(p => p.lang === l).sort((a, b) => a.url.localeCompare(b.url)).map(p => `- [${p.title}](${ORIGIN + p.url}): ${p.desc}`)];
     write('llms.txt', [
-      '# Kempen Webstudio',
+      '# Webstudio K',
       '',
       '> Webstudio uit Kasterlee (België) die websites, webshops, SEO, logo en huisstijl en webtoegankelijkheid (WCAG 2.2 AA) maakt voor ondernemers, verenigingen en zelfstandigen in heel België. Werkt in het Nederlands, Frans en Engels.',
       '',
-      '- Naam: Kempen Webstudio',
+      '- Naam: Webstudio K',
       '- Adres: Kemelbeekstraat 16, 2460 Kasterlee',
       '- Telefoon: +32 14 71 80 80',
       '- E-mail: info@kempenwebstudio.be',
@@ -426,7 +430,7 @@ if (MODE === 'live') {
   }
   // Cloudflare Pages / Netlify: lange cache voor bestanden met vaste of gehashte naam, basis-beveiligingsheaders
   write('_headers', ['/assets/fonts/*', '  Cache-Control: public, max-age=31536000, immutable', '/assets/site.*', '  Cache-Control: public, max-age=31536000, immutable',
-    '/assets/img/*', '  Cache-Control: public, max-age=2592000', '/*', '  X-Content-Type-Options: nosniff', '  Referrer-Policy: strict-origin-when-cross-origin', ''].join(String.fromCharCode(10)));
+    '/assets/img/*', '  Cache-Control: public, max-age=2592000', '/*', "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com https://static.cloudflareinsights.com; form-action 'self' https://api.web3forms.com mailto:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests", '  X-Content-Type-Options: nosniff', '  Referrer-Policy: strict-origin-when-cross-origin', ''].join(String.fromCharCode(10)));
   const online = fs.readFileSync(path.join(ROOT, 'config', 'sitemap-online.xml'), 'utf8');
   const order = [...online.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]); const rank = u => { const i = order.indexOf(u); return i < 0 ? 1e4 + u.length : i; };
   const byBase = {}; for (const p of indexable) (byBase[p.base] = byBase[p.base] || {})[p.lang] = ORIGIN + p.url;

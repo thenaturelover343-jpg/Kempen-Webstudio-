@@ -18,9 +18,9 @@ const T = {
       stad => `Na een kennismaking krijgt u een vrijblijvende offerte voor uw zaak in ${stad}, met de opbouw van de site en de prijs erbij. Daarna beslist u.`,
     ],
     samen: [
-      (s, stad) => ({ t: 'prose', h2: 'Zo werken wij samen, ook op afstand', id: 'samen-' + s, html: `<p>Kennismaking en overleg verlopen online, per e-mail of telefoon. U hoeft niet langs te komen en spreekt altijd met dezelfde persoon, die uw zaak en uw website kent. Teksten, foto's en wijzigingen stuurt u gewoon door; wij zetten ze voor u online.</p><p>Hoe wij werken en waarom, leest u bij <a href="${P.over.nl}">over Kempen Webstudio</a>, of neem meteen <a href="${P.contact.nl}">contact</a> op.</p>` }),
-      (s, stad) => ({ t: 'prose', h2: `Persoonlijk contact, ook vanuit ${stad}`, id: 'samen-' + s, html: `<p>Wij spreken af wanneer het u past: online, aan de telefoon of per e-mail. Voor uw website in ${stad} hoeft u dus niet te rijden, en u spreekt altijd met dezelfde persoon. Nieuwe foto's, een aangepaste prijslijst of andere openingsuren mailt u door, en wij passen ze aan.</p><p>Wie wij zijn en hoe wij werken, leest u bij <a href="${P.over.nl}">over Kempen Webstudio</a>. Liever meteen iets vragen? Neem <a href="${P.contact.nl}">contact</a> op.</p>` }),
-      (s, stad) => ({ t: 'prose', h2: `Samenwerken met een zaak in ${stad}`, id: 'samen-' + s, html: `<p>Het contact blijft persoonlijk. Na een eerste gesprek online of telefonisch maken wij de offerte, en daarna hebt u één aanspreekpunt dat uw zaak kent, ook na de lancering. Een wijziging stuurt u per e-mail; wij zetten ze online.</p><p>Meer over onze aanpak vindt u bij <a href="${P.over.nl}">over Kempen Webstudio</a>, of <a href="${P.contact.nl}">neem contact op</a>.</p>` }),
+      (s, stad) => ({ t: 'prose', h2: 'Zo werken wij samen, ook op afstand', id: 'samen-' + s, html: `<p>Kennismaking en overleg verlopen online, per e-mail of telefoon. U hoeft niet langs te komen en spreekt altijd met dezelfde persoon, die uw zaak en uw website kent. Teksten, foto's en wijzigingen stuurt u gewoon door; wij zetten ze voor u online.</p><p>Hoe wij werken en waarom, leest u bij <a href="${P.over.nl}">over Webstudio K</a>, of neem meteen <a href="${P.contact.nl}">contact</a> op.</p>` }),
+      (s, stad) => ({ t: 'prose', h2: `Persoonlijk contact, ook vanuit ${stad}`, id: 'samen-' + s, html: `<p>Wij spreken af wanneer het u past: online, aan de telefoon of per e-mail. Voor uw website in ${stad} hoeft u dus niet te rijden, en u spreekt altijd met dezelfde persoon. Nieuwe foto's, een aangepaste prijslijst of andere openingsuren mailt u door, en wij passen ze aan.</p><p>Wie wij zijn en hoe wij werken, leest u bij <a href="${P.over.nl}">over Webstudio K</a>. Liever meteen iets vragen? Neem <a href="${P.contact.nl}">contact</a> op.</p>` }),
+      (s, stad) => ({ t: 'prose', h2: `Samenwerken met een zaak in ${stad}`, id: 'samen-' + s, html: `<p>Het contact blijft persoonlijk. Na een eerste gesprek online of telefonisch maken wij de offerte, en daarna hebt u één aanspreekpunt dat uw zaak kent, ook na de lancering. Een wijziging stuurt u per e-mail; wij zetten ze online.</p><p>Meer over onze aanpak vindt u bij <a href="${P.over.nl}">over Webstudio K</a>, of <a href="${P.contact.nl}">neem contact op</a>.</p>` }),
     ],
     prijs: [
       (stad, s) => ({ t: 'pricing', id: 'prijs-' + s, h2: `Wat kost een website laten maken in ${stad}?`, side: `U betaalt in ${stad} dezelfde prijzen als overal in België.`, term: `Na een kort gesprek krijgt u een schriftelijke offerte. Alle prijzen, ook voor onderhoud en extra's, staan in onze prijsgids <a href="${P.prijs.nl}">wat kost een website laten maken in 2026</a>.` }),
@@ -48,8 +48,8 @@ const T = {
     ],
     samen: [
       (s, ville) => ({ t: 'prose', h2: 'Travailler ensemble, même à distance', id: 'ensemble-' + s, html: `<p>La prise de contact et le suivi se font en ligne, par e-mail ou par téléphone. Vous ne devez pas vous déplacer et vous parlez toujours à la même personne, qui connaît votre entreprise et votre site. Vous envoyez vos textes, vos photos et vos modifications, et nous les mettons en ligne pour vous.</p><p>Envie de savoir comment nous travaillons ? Qui nous sommes, vous le lisez sur la page <a href="${P.over.fr}">à propos</a>, ou <a href="${P.contact.fr}">contactez-nous</a>.</p>` }),
-      (s, ville) => ({ t: 'prose', h2: `Un contact personnel, aussi depuis ${ville}`, id: 'ensemble-' + s, html: `<p>Nous convenons d’un moment qui vous arrange : en ligne, par téléphone ou par e-mail. Pour votre site à ${ville}, vous n’avez pas à vous déplacer, et vous parlez toujours à la même personne. De nouvelles photos, des tarifs ou des horaires modifiés : envoyez-les par e-mail, nous les mettons à jour.</p><p>Qui nous sommes et comment nous travaillons : lisez <a href="${P.over.fr}">à propos de Kempen Webstudio</a>, ou <a href="${P.contact.fr}">contactez-nous</a>.</p>` }),
-      (s, ville) => ({ t: 'prose', h2: `Travailler avec une entreprise à ${ville}`, id: 'ensemble-' + s, html: `<p>Le contact reste personnel. Après un premier échange en ligne ou par téléphone, nous préparons le devis. Ensuite, vous avez un seul interlocuteur qui connaît votre entreprise, aussi après le lancement. Une modification ? Envoyez-la par e-mail, nous la mettons en ligne.</p><p>Notre approche est expliquée sur la page <a href="${P.over.fr}">à propos de Kempen Webstudio</a>, ou <a href="${P.contact.fr}">prenez contact</a>.</p>` }),
+      (s, ville) => ({ t: 'prose', h2: `Un contact personnel, aussi depuis ${ville}`, id: 'ensemble-' + s, html: `<p>Nous convenons d’un moment qui vous arrange : en ligne, par téléphone ou par e-mail. Pour votre site à ${ville}, vous n’avez pas à vous déplacer, et vous parlez toujours à la même personne. De nouvelles photos, des tarifs ou des horaires modifiés : envoyez-les par e-mail, nous les mettons à jour.</p><p>Qui nous sommes et comment nous travaillons : lisez <a href="${P.over.fr}">à propos de Webstudio K</a>, ou <a href="${P.contact.fr}">contactez-nous</a>.</p>` }),
+      (s, ville) => ({ t: 'prose', h2: `Travailler avec une entreprise à ${ville}`, id: 'ensemble-' + s, html: `<p>Le contact reste personnel. Après un premier échange en ligne ou par téléphone, nous préparons le devis. Ensuite, vous avez un seul interlocuteur qui connaît votre entreprise, aussi après le lancement. Une modification ? Envoyez-la par e-mail, nous la mettons en ligne.</p><p>Notre approche est expliquée sur la page <a href="${P.over.fr}">à propos de Webstudio K</a>, ou <a href="${P.contact.fr}">prenez contact</a>.</p>` }),
     ],
     prijs: [
       (ville, s) => ({ t: 'pricing', id: 'prix-' + s, h2: `Quel est le prix d’un site internet à ${ville} ?`, side: `À ${ville}, vous payez les mêmes prix que partout en Belgique.`, term: `Après un court entretien, vous recevez une offre écrite. Tous les prix, aussi pour la maintenance et les options, figurent dans notre guide <a href="${P.prijs.fr}">prix d’un site internet en Belgique en 2026</a>.` }),
@@ -94,11 +94,11 @@ export default [
   stad('nl', {
     s: 'antwerpen', city: 'Antwerpen', path: '/website-laten-maken-antwerpen/', crumb: 'Antwerpen',
     title: 'Website laten maken in Antwerpen | Webdesign vanaf €490',
-    desc: 'Website laten maken in Antwerpen: webdesign op maat in de stad of een district, eerst een kennismaking en een vrijblijvende offerte. Vanaf €490 excl. btw.',
+    desc: 'Voor uw zaak in de stad of een Antwerps district: webdesign op maat, eerst een kennismaking en een vrijblijvende offerte voor uw website. Vanaf €490.',
     h1: 'Website laten maken in Antwerpen',
     slogan: 'Na een kennismaking krijgt u een vrijblijvende offerte voor uw zaak in Antwerpen.',
     bandH2: 'Webdesign in Antwerpen, op maat van uw zaak',
-    bandLead: `In Antwerpen wil elke zaak op haar eigen manier gevonden worden: de bakker op de hoek, de schilder die in heel de provincie werkt, het advocatenkantoor op het Zuid. Elk van hen krijgt een lichte, toegankelijke website met een ontwerp dat voor die zaak gemaakt is. Kempen Webstudio maakt <a href="/">websites voor zaken in heel België</a>.`,
+    bandLead: `In Antwerpen wil elke zaak op haar eigen manier gevonden worden: de bakker op de hoek, de schilder die in heel de provincie werkt, het advocatenkantoor op het Zuid. Elk van hen krijgt een lichte, toegankelijke website met een ontwerp dat voor die zaak gemaakt is. Webstudio K maakt <a href="/">websites voor zaken in heel België</a>.`,
     wijkenH2: 'Websites voor zaken in de stad, de districten en de rand',
     wijken: [
       ['In de binnenstad en op het Zuid', `Rond de Meir, de Groenplaats, het Eilandje en het Zuid zoeken voorbijgangers en bezoekers op hun gsm naar openingsuren, een menu of de dichtstbijzijnde winkel, en ze willen dat meteen vinden. Meer daarover bij <a href="${nl('horeca')}">websites voor horeca</a> en <a href="${nl('winkel')}">websites voor winkels</a>.`],
@@ -116,11 +116,11 @@ export default [
     vb: `Voor Antwerpse zaken zijn bijvoorbeeld <a href="${demo('nl', 'bistro-tilvaar')}">Bistro Tilvaar</a> (horeca met online reserveren) en <a href="${demo('nl', 'vennebrand')}">Vennebrand</a> (een kleine webshop) bruikbare voorbeelden.`,
     faqH2: 'Veelgestelde vragen over een website in Antwerpen',
     faq: [
-      ['Maakt Kempen Webstudio ook websites voor zaken in de Antwerpse districten?', 'Ja. Wij maken websites voor zaken in heel Antwerpen, van de binnenstad tot Berchem, Deurne, Merksem, Wilrijk of Hoboken, en ook in de randgemeenten. Uw site zegt duidelijk waar u aan de slag gaat.'],
+      ['Maakt Webstudio K ook websites voor zaken in de Antwerpse districten?', 'Ja. Wij maken websites voor zaken in heel Antwerpen, van de binnenstad tot Berchem, Deurne, Merksem, Wilrijk of Hoboken, en ook in de randgemeenten. Uw site zegt duidelijk waar u aan de slag gaat.'],
       ['Moet ik langskomen voor een gesprek?', 'Nee. De kennismaking en het overleg gebeuren online, per e-mail of aan de telefoon, altijd met dezelfde persoon.'],
       ['Wat kost een website laten maken in Antwerpen?', 'U betaalt dezelfde prijzen als overal, met Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs vanaf €29, €49 of €79. U krijgt vooraf een vrijblijvende offerte.'],
       ['Hoe vinden klanten in Antwerpen mijn zaak?', 'Mensen zoeken vaak op een dienst met hun district of buurt erbij. Daarom staan uw diensten, uw werkgebied en uw openingsuren in gewone tekst op uw site, gelijk aan uw Google Bedrijfsprofiel. Met het pakket Vakman vullen wij dat profiel ook volledig in.'],
-      ['Kan Kempen Webstudio ook een webshop maken voor mijn winkel?', `Ja. Met het pakket Webshop verkoopt u tot 50 producten online, met veilig betalen met bankkaart of kredietkaart. Meer leest u bij <a href="${nl('webshop')}">webshop laten maken</a>.`],
+      ['Kan Webstudio K ook een webshop maken voor mijn winkel?', `Ja. Met het pakket Webshop verkoopt u tot 50 producten online, met veilig betalen met bankkaart of kredietkaart. Meer leest u bij <a href="${nl('webshop')}">webshop laten maken</a>.`],
     ],
     also: [['/website-laten-maken-mechelen/', 'Mechelen'], ['/website-laten-maken-brussel/', 'Brussel'], ['/website-laten-maken-gent/', 'Gent'], ['/website-laten-maken-kempen/', 'de Kempen'], [nl('hub'), 'heel België']],
   }),
@@ -130,11 +130,11 @@ export default [
     s: 'brussel', city: 'Brussel', path: '/website-laten-maken-brussel/', crumb: 'Brussel',
     alt: { nl: '/website-laten-maken-brussel/', fr: '/fr/creation-site-internet-bruxelles/', en: '/en/web-design-brussels/' },
     title: 'Website laten maken in Brussel | Webdesign vanaf €490',
-    desc: 'Website laten maken in Brussel: webdesign op maat voor uw zaak in een van de 19 gemeenten, in het Nederlands, Frans of Engels. Vanaf €490 excl. btw.',
+    desc: 'Webdesign op maat voor uw zaak in een van de 19 Brusselse gemeenten, met een website in het Nederlands, Frans of Engels. Vanaf €490 excl. btw.',
     h1: 'Website laten maken in Brussel',
     slogan: 'Na een kennismaking krijgt u een vrijblijvende offerte voor uw zaak in Brussel, rekening houdend met de talen van uw klanten.',
     bandH2: 'Webdesign in Brussel, voor een stad met veel talen',
-    bandLead: `Brussel is tweetalig, en veel klanten spreken bovendien Engels. Een Brusselse zaak heeft daarom vaak een website in meer dan één taal nodig, en elke taalversie moet even goed zijn. Wij bouwen vlotte, toegankelijke websites met een eigen ontwerp per zaak. Kempen Webstudio maakt <a href="/">websites voor zaken in heel België</a>.`,
+    bandLead: `Brussel is tweetalig, en veel klanten spreken bovendien Engels. Een Brusselse zaak heeft daarom vaak een website in meer dan één taal nodig, en elke taalversie moet even goed zijn. Wij bouwen vlotte, toegankelijke websites met een eigen ontwerp per zaak. Webstudio K maakt <a href="/">websites voor zaken in heel België</a>.`,
     wijkenH2: 'Websites voor zaken in de 19 Brusselse gemeenten',
     wijken: [
       ['In het centrum en de Europese wijk', `Rond de Grote Markt, de Dansaertwijk, de Zavel en de Europese wijk werken horeca, winkels en dienstverleners voor bewoners, pendelaars en internationale bezoekers. Wie uw site opent, ziet meteen uw uren, uw adres en in welke talen u helpt. Zie ook <a href="${nl('horeca')}">websites voor horeca</a>.`],
@@ -152,8 +152,8 @@ export default [
     vb: `Voor Brusselse zaken zijn bijvoorbeeld <a href="${demo('nl', 'velours')}">Velours</a> (een salon met afsprakenplanner) en <a href="${demo('nl', 'bistro-tilvaar')}">Bistro Tilvaar</a> (horeca met online reserveren) goede voorbeelden.`,
     faqH2: 'Veelgestelde vragen over een website in Brussel',
     faq: [
-      ['Kan Kempen Webstudio een website in het Nederlands, Frans en Engels maken?', 'Wij werken in het Nederlands, het Frans en het Engels; onze eigen website staat in die drie talen. Welke talen uw site nodig heeft en wat dat kost, bespreken wij vooraf in uw vrijblijvende offerte.'],
-      ['Werkt Kempen Webstudio in alle 19 Brusselse gemeenten?', 'Ja, in heel Brussel en in de gemeenten rond de stad. Op uw site staat in welke gemeenten u werkt.'],
+      ['Kan Webstudio K een website in het Nederlands, Frans en Engels maken?', 'Wij werken in het Nederlands, het Frans en het Engels; onze eigen website staat in die drie talen. Welke talen uw site nodig heeft en wat dat kost, bespreken wij vooraf in uw vrijblijvende offerte.'],
+      ['Werkt Webstudio K in alle 19 Brusselse gemeenten?', 'Ja, in heel Brussel en in de gemeenten rond de stad. Op uw site staat in welke gemeenten u werkt.'],
       ['Moet ik langskomen voor een gesprek?', 'Nee. Wij spreken online af of bellen, en daarna loopt veel per e-mail. U hebt één vast aanspreekpunt.'],
       ['Wat kost een website laten maken in Brussel?', 'U betaalt dezelfde prijzen als overal, met Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs vanaf €29, €49 of €79. Extra talen bespreken wij vooraf.'],
       ['Is mijn website toegankelijk voor iedereen?', `Wij bouwen volgens de richtlijnen voor webtoegankelijkheid (WCAG 2.2 AA), zodat ook mensen met een beperking uw site kunnen gebruiken. Meer bij <a href="${nl('wcag')}">toegankelijke website</a>.`],
@@ -165,11 +165,11 @@ export default [
   stad('nl', {
     s: 'mechelen', city: 'Mechelen', path: '/website-laten-maken-mechelen/', crumb: 'Mechelen',
     title: 'Website laten maken in Mechelen | Webdesign vanaf €490',
-    desc: 'Website laten maken in Mechelen: webdesign op maat in de stad, Muizen, Walem of Leest, eerst een kennismaking en een vrijblijvende offerte. Vanaf €490.',
+    desc: 'In Mechelen, Muizen, Walem of Leest: webdesign op maat voor uw zaak, met eerst een kennismaking en een vrijblijvende offerte voor uw website. Vanaf €490.',
     h1: 'Website laten maken in Mechelen',
-    slogan: 'Kempen Webstudio maakt websites voor zaken in Mechelen en omgeving.',
+    slogan: 'Webstudio K maakt websites voor zaken in Mechelen en omgeving.',
     bandH2: 'Webdesign in Mechelen, op maat van uw zaak',
-    bandLead: `Mechelen ligt midden tussen Antwerpen en Brussel. Veel Mechelse zaken hebben klanten uit de stad zelf en uit de ruime regio. Voor hen bouwen wij een vlotte, toegankelijke website met een eigen ontwerp. Kempen Webstudio maakt <a href="/">websites voor zaken in heel België</a>.`,
+    bandLead: `Mechelen ligt midden tussen Antwerpen en Brussel. Veel Mechelse zaken hebben klanten uit de stad zelf en uit de ruime regio. Voor hen bouwen wij een vlotte, toegankelijke website met een eigen ontwerp. Webstudio K maakt <a href="/">websites voor zaken in heel België</a>.`,
     wijkenH2: 'Websites voor zaken in de stad en de deelgemeenten',
     wijken: [
       ['In de binnenstad', `Rond de Grote Markt, de IJzerenleen, de Bruul en de Vismarkt komen bewoners, winkelend publiek en dagjesmensen. Op hun gsm zoeken ze uw openingsuren, uw menu of uw aanbod. Zie ook <a href="${nl('horeca')}">websites voor horeca</a> en <a href="${nl('winkel')}">websites voor winkels</a>.`],
@@ -187,11 +187,11 @@ export default [
     vb: `Voor Mechelse zaken zijn bijvoorbeeld <a href="${demo('nl', 'atelier-kleurwerk')}">Atelier Kleurwerk</a> (een schilder) en <a href="${demo('nl', 'kapsalon-ivelien')}">Kapsalon Ivelien</a> (een salon met afspraakknop) goede voorbeelden.`,
     faqH2: 'Veelgestelde vragen over een website in Mechelen',
     faq: [
-      ['Maakt Kempen Webstudio ook websites voor zaken in Muizen, Walem of Leest?', 'Ja. Wij werken voor zaken in heel Mechelen, in de deelgemeenten en in de gemeenten rond de stad.'],
+      ['Maakt Webstudio K ook websites voor zaken in Muizen, Walem of Leest?', 'Ja. Wij werken voor zaken in heel Mechelen, in de deelgemeenten en in de gemeenten rond de stad.'],
       ['Moet ik langskomen voor een gesprek?', 'Nee, dat is niet nodig. Na een eerste gesprek online of aan de telefoon regelen wij de rest per e-mail.'],
       ['Wat kost een website laten maken in Mechelen?', 'Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs vanaf €29, €49 of €79. U krijgt vooraf een vrijblijvende offerte.'],
       ['Wanneer staat mijn website in Mechelen online?', 'Reken op 5 werkdagen voor Start, 10 werkdagen voor Vakman en 3 tot 4 weken voor een Webshop, vanaf uw goedkeuring en zodra wij alles hebben wat nodig is.'],
-      ['Ik heb al een website. Kan Kempen Webstudio die vernieuwen?', `Ja. Wij bouwen uw site opnieuw op, met een eigen ontwerp en zonder dat bestaande pagina's verloren gaan. Meer bij <a href="${nl('vernieuwen')}">website laten vernieuwen</a>.`],
+      ['Ik heb al een website. Kan Webstudio K die vernieuwen?', `Ja. Wij bouwen uw site opnieuw op, met een eigen ontwerp en zonder dat bestaande pagina's verloren gaan. Meer bij <a href="${nl('vernieuwen')}">website laten vernieuwen</a>.`],
     ],
     also: [['/website-laten-maken-antwerpen/', 'Antwerpen'], ['/website-laten-maken-brussel/', 'Brussel'], ['/website-laten-maken-leuven/', 'Leuven'], ['/website-laten-maken-kempen/', 'de Kempen'], [nl('hub'), 'heel België']],
   }),
@@ -200,11 +200,11 @@ export default [
   stad('nl', {
     s: 'hasselt', city: 'Hasselt', path: '/website-laten-maken-hasselt/', crumb: 'Hasselt',
     title: 'Website laten maken in Hasselt | Webdesign vanaf €490',
-    desc: 'Website laten maken in Hasselt: webdesign op maat in de stad, Kermt, Kuringen of Stokrooie, eerst een kennismaking en een vrijblijvende offerte.',
+    desc: 'Van de Hasseltse binnenstad tot Kermt, Kuringen of Stokrooie: webdesign op maat, met eerst een kennismaking en een vrijblijvende offerte voor uw website.',
     h1: 'Website laten maken in Hasselt',
     slogan: 'Na een kennismaking krijgt u een vrijblijvende offerte voor uw zaak in Hasselt.',
     bandH2: 'Webdesign in Hasselt, op maat van uw zaak',
-    bandLead: `Hasselt is de hoofdstad van Limburg en een winkelstad. Veel klanten komen van buiten de stad en kiezen op hun gsm waar ze naartoe gaan. Wij bouwen een vlotte, toegankelijke website met een eigen ontwerp, waarop ze meteen zien wat u verkoopt en waar u zit. Kempen Webstudio maakt <a href="/">websites voor zaken in heel België</a>.`,
+    bandLead: `Hasselt is de hoofdstad van Limburg en een winkelstad. Veel klanten komen van buiten de stad en kiezen op hun gsm waar ze naartoe gaan. Wij bouwen een vlotte, toegankelijke website met een eigen ontwerp, waarop ze meteen zien wat u verkoopt en waar u zit. Webstudio K maakt <a href="/">websites voor zaken in heel België</a>.`,
     wijkenH2: 'Websites voor zaken in de stad en de deelgemeenten',
     wijken: [
       ['In het centrum', `Binnen de groene boulevard, rond de Grote Markt, de Hoogstraat en de Demerstraat, draait veel om winkels, mode en horeca. Daar zoeken mensen vooral uw uren, uw aanbod en hoe ze er geraken. Zie ook <a href="${nl('winkel')}">websites voor winkels</a>.`],
@@ -222,7 +222,7 @@ export default [
     vb: `Voor Hasseltse zaken zijn bijvoorbeeld <a href="${demo('nl', 'vennebrand')}">Vennebrand</a> (een kleine webshop) en <a href="${demo('nl', 'velours')}">Velours</a> (een schoonheidssalon met afsprakenplanner) goede voorbeelden.`,
     faqH2: 'Veelgestelde vragen over een website in Hasselt',
     faq: [
-      ['Maakt Kempen Webstudio ook websites voor zaken in Kermt, Kuringen of Stokrooie?', 'Ja. Wij maken websites voor zaken in heel Hasselt en de deelgemeenten, en ook in de gemeenten rond de stad. Uw site noemt de deelgemeenten en buurgemeenten waar u werkt.'],
+      ['Maakt Webstudio K ook websites voor zaken in Kermt, Kuringen of Stokrooie?', 'Ja. Wij maken websites voor zaken in heel Hasselt en de deelgemeenten, en ook in de gemeenten rond de stad. Uw site noemt de deelgemeenten en buurgemeenten waar u werkt.'],
       ['Hoe verloopt het contact vanuit Hasselt?', 'Alles verloopt op afstand, met een eerste gesprek online of aan de telefoon en daarna uw wijzigingen per e-mail. U hebt één vast aanspreekpunt.'],
       ['Wat kost een website laten maken in Hasselt?', 'Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs vanaf €29, €49 of €79. U krijgt vooraf een vrijblijvende offerte.'],
       ['Kan ik ook online verkopen?', `Ja. Met het pakket Webshop verkoopt u tot 50 producten online, met veilig betalen met bankkaart of kredietkaart. Meer bij <a href="${nl('webshop')}">webshop laten maken</a>.`],
@@ -235,11 +235,11 @@ export default [
   stad('nl', {
     s: 'brugge', city: 'Brugge', path: '/website-laten-maken-brugge/', crumb: 'Brugge',
     title: 'Website laten maken in Brugge | Webdesign vanaf €490',
-    desc: 'Website laten maken in Brugge: webdesign op maat voor uw zaak in de binnenstad, Sint-Andries, Assebroek of Zeebrugge, met een vrijblijvende offerte.',
+    desc: 'Een eigen website voor uw zaak in de Brugse binnenstad, Sint-Andries, Assebroek of Zeebrugge, met webdesign op maat en eerst een vrijblijvende offerte.',
     h1: 'Website laten maken in Brugge',
-    slogan: 'Kempen Webstudio maakt websites voor zaken in Brugge en omgeving.',
+    slogan: 'Webstudio K maakt websites voor zaken in Brugge en omgeving.',
     bandH2: 'Webdesign in Brugge, voor bewoners en bezoekers',
-    bandLead: `In Brugge heeft een zaak vaak twee soorten klanten: Bruggelingen uit de buurt en bezoekers uit binnen- en buitenland. Uw website moet voor allebei werken, op de gsm en zo nodig in meer dan één taal. Wij maken daarvoor een vlotte, toegankelijke site met een eigen ontwerp. Kempen Webstudio maakt <a href="/">websites voor zaken in heel België</a>.`,
+    bandLead: `In Brugge heeft een zaak vaak twee soorten klanten: Bruggelingen uit de buurt en bezoekers uit binnen- en buitenland. Uw website moet voor allebei werken, op de gsm en zo nodig in meer dan één taal. Wij maken daarvoor een vlotte, toegankelijke site met een eigen ontwerp. Webstudio K maakt <a href="/">websites voor zaken in heel België</a>.`,
     wijkenH2: 'Websites voor zaken in de stad en de deelgemeenten',
     wijken: [
       ['In de binnenstad', `Rond de Markt, de Burg, de Steenstraat en de reien lopen veel bezoekers die op hun gsm naar een restaurant, een winkel of een B&B zoeken. Zij willen meteen weten wanneer u open bent, waar u zit en of ze in hun taal terechtkunnen. Zie ook <a href="${nl('horeca')}">websites voor horeca</a> en <a href="${nl('winkel')}">websites voor winkels</a>.`],
@@ -258,7 +258,7 @@ export default [
     faqH2: 'Veelgestelde vragen over een website in Brugge',
     faq: [
       ['Kan mijn website ook in het Engels of Frans?', 'Wij werken in het Nederlands, het Frans en het Engels. Welke talen uw site nodig heeft en wat dat kost, bespreken wij vooraf in uw vrijblijvende offerte.'],
-      ['Maakt Kempen Webstudio ook websites voor zaken in Sint-Andries, Assebroek of Zeebrugge?', 'Ja, in heel Brugge, de deelgemeenten en het Brugse Ommeland. Op uw site staat waar u werkt.'],
+      ['Maakt Webstudio K ook websites voor zaken in Sint-Andries, Assebroek of Zeebrugge?', 'Ja, in heel Brugge, de deelgemeenten en het Brugse Ommeland. Op uw site staat waar u werkt.'],
       ['Moet ik langskomen voor een gesprek?', 'Nee. Kennismaking en overleg verlopen online, per e-mail of telefoon, met één vast aanspreekpunt.'],
       ['Wat kost een website laten maken in Brugge?', 'Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs vanaf €29, €49 of €79. Extra talen bespreken wij vooraf.'],
       ['Kunnen gasten online reserveren?', 'Ja. Vanaf het pakket Vakman koppelen wij uw website aan uw reservatie- of boekingssysteem.'],
@@ -275,7 +275,7 @@ export default [
     h1: 'Création de site internet à Bruxelles',
     slogan: 'Après une prise de contact, vous recevez un devis sans engagement pour votre entreprise à Bruxelles.',
     bandH2: 'Créer un site web à Bruxelles, une ville aux nombreuses langues',
-    bandLead: `Bruxelles est bilingue, et beaucoup de clients parlent aussi anglais. Une entreprise bruxelloise a donc souvent besoin d’un site en plusieurs langues, et chaque version doit être aussi soignée que les autres. Nous créons des sites rapides et accessibles, avec un design propre à votre entreprise. Kempen Webstudio réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
+    bandLead: `Bruxelles est bilingue, et beaucoup de clients parlent aussi anglais. Une entreprise bruxelloise a donc souvent besoin d’un site en plusieurs langues, et chaque version doit être aussi soignée que les autres. Nous créons des sites rapides et accessibles, avec un design propre à votre entreprise. Webstudio K réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
     wijkenH2: 'Des sites pour les entreprises des 19 communes',
     wijken: [
       ['Au centre et dans le quartier européen', `Autour de la Grand-Place, du quartier Dansaert, du Sablon et du quartier européen, l’horeca, les commerces et les prestataires travaillent pour les habitants, les navetteurs et les visiteurs internationaux. Le visiteur doit trouver tout de suite vos horaires, votre adresse et les langues que vous parlez. Voir aussi <a href="${fr('horeca')}">sites internet pour l’horeca</a>.`],
@@ -310,7 +310,7 @@ export default [
     h1: 'Création de site internet à Liège',
     slogan: 'Après une prise de contact, vous recevez un devis sans engagement pour votre entreprise à Liège.',
     bandH2: 'Créer un site web à Liège, sur mesure pour votre entreprise',
-    bandLead: `À Liège, chaque entreprise veut être trouvée à sa façon : le commerce du Carré, l’artisan qui travaille dans toute la province, le cabinet près de la gare des Guillemins. Chacun reçoit chez nous un site rapide et accessible, avec un design conçu pour son entreprise. Kempen Webstudio réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
+    bandLead: `À Liège, chaque entreprise veut être trouvée à sa façon : le commerce du Carré, l’artisan qui travaille dans toute la province, le cabinet près de la gare des Guillemins. Chacun reçoit chez nous un site rapide et accessible, avec un design conçu pour son entreprise. Webstudio K réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
     wijkenH2: 'Des sites pour les entreprises de la ville et de l’agglomération',
     wijken: [
       ['Au centre-ville', `Autour du Carré, de la place Saint-Lambert, d’Outremeuse et du marché de la Batte, les passants cherchent sur leur smartphone des horaires, une carte ou une boutique proche, et ils veulent la réponse vite. Voir <a href="${fr('horeca')}">sites pour l’horeca</a> et <a href="${fr('winkel')}">sites pour les commerces</a>.`],
@@ -343,9 +343,9 @@ export default [
     title: 'Création site internet Namur | Dès €490 HTVA',
     desc: 'Création de site internet à Namur : un site sur mesure pour votre entreprise au centre, à Jambes ou à Wépion, avec un devis sans engagement.',
     h1: 'Création de site internet à Namur',
-    slogan: 'Kempen Webstudio crée des sites web pour des entreprises à Namur et dans les environs.',
+    slogan: 'Webstudio K crée des sites web pour des entreprises à Namur et dans les environs.',
     bandH2: 'Créer un site web à Namur, sur mesure pour votre entreprise',
-    bandLead: `À Namur, on se connaît vite, mais les clients regardent quand même d’abord en ligne. Votre site doit leur montrer rapidement ce que vous proposez et comment vous joindre. Nous créons des sites rapides et accessibles, avec un design propre. Kempen Webstudio réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
+    bandLead: `À Namur, on se connaît vite, mais les clients regardent quand même d’abord en ligne. Votre site doit leur montrer rapidement ce que vous proposez et comment vous joindre. Nous créons des sites rapides et accessibles, avec un design propre. Webstudio K réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
     wijkenH2: 'Des sites pour les entreprises de la ville et des sections',
     wijken: [
       ['Au centre-ville', `Entre la gare, la rue de Fer, la place d’Armes et le pied de la citadelle, les commerces et l’horeca accueillent habitants, étudiants et visiteurs, qui veulent voir vos horaires et votre adresse sans chercher. Voir <a href="${fr('winkel')}">sites pour les commerces</a> et <a href="${fr('horeca')}">sites pour l’horeca</a>.`],
@@ -380,7 +380,7 @@ export default [
     h1: 'Création de site internet à Charleroi',
     slogan: 'Après une prise de contact, vous recevez un devis sans engagement pour votre entreprise à Charleroi.',
     bandH2: 'Créer un site web à Charleroi, sur mesure pour votre entreprise',
-    bandLead: `Charleroi change vite, et beaucoup d’entreprises y démarrent ou se relancent. Pour attirer de nouveaux clients, elles ont besoin d’un site rapide qu’on trouve facilement. Nous créons des sites accessibles, chacun avec son propre design. Kempen Webstudio réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
+    bandLead: `Charleroi change vite, et beaucoup d’entreprises y démarrent ou se relancent. Pour attirer de nouveaux clients, elles ont besoin d’un site rapide qu’on trouve facilement. Nous créons des sites accessibles, chacun avec son propre design. Webstudio K réalise la <a href="/fr/">création de sites internet dans toute la Belgique</a>.`,
     wijkenH2: 'Des sites pour les entreprises de la ville et des sections',
     wijken: [
       ['À la Ville Haute et la Ville Basse', `Autour de la place Charles II, de la Ville Basse et du centre commercial Rive Gauche, commerces et horeca accueillent habitants et navetteurs. Sur votre site, ils trouvent vite vos horaires, votre offre et votre adresse. Voir <a href="${fr('winkel')}">sites pour les commerces</a> et <a href="${fr('horeca')}">sites pour l’horeca</a>.`],

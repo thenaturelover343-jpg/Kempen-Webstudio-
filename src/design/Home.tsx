@@ -1,5 +1,5 @@
 // HomePage.tsx uit het design, statisch gerenderd. Zelfde secties, opbouw en klassen; gevuld met de teksten, links en
-// CTA's van de huidige startpagina van Kempen Webstudio (per taal). Interactie (slider, keuzes, tabs, accordeon,
+// CTA's van de huidige startpagina van Webstudio K (per taal). Interactie (slider, keuzes, tabs, accordeon,
 // cursor) doet site.js via data-attributen. Teksten die alleen in het design bestaan: zie src/site/ui-text.mjs.
 import { Fragment } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronDown, Globe, Mail, MapPin, Phone } from 'lucide-react';
@@ -719,7 +719,7 @@ function BelgiumMap({ lang, x }: { lang: string; x: any }) {
           <div className="flex items-center gap-4">
             <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border border-white/20 bg-[#141416] shadow-2xl shrink-0"><Foto id="portret" vorm="cirkel" lang={lang} sizes="96px" className="absolute inset-0 block w-full h-full object-cover" /></div>
             <div>
-              <p className="text-[18px] font-medium text-white leading-snug">Kempen Webstudio</p>
+              <p className="text-[18px] font-medium text-white leading-snug">Webstudio K</p>
               <p className="text-[16px] text-[#D3D6DA]">{x.address}</p>
               <p className="text-[16px] text-[#F1A36A]">{x.regionLine}</p>
             </div>

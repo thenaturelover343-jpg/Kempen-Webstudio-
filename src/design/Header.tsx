@@ -1,4 +1,4 @@
-// HeaderAndMenu.tsx uit het design, statisch: zelfde opmaak. Ingevuld met de navigatie van Kempen Webstudio
+// HeaderAndMenu.tsx uit het design, statisch: zelfde opmaak. Ingevuld met de navigatie van Webstudio K
 // (Diensten-submenu, Voorbeelden, Werkwijze, Kosten, Uitleg, Contact) en echte links per taal.
 import { ArrowRight, ChevronDown, X } from 'lucide-react';
 import { ActiveNavFlower, WebstudioLogoMark } from './brand';

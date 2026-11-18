@@ -1,4 +1,4 @@
-// Footer.tsx uit het design, statisch. Ingevuld met de footer van Kempen Webstudio: Diensten, Sectoren, Pagina's,
+// Footer.tsx uit het design, statisch. Ingevuld met de footer van Webstudio K: Diensten, Sectoren, Pagina's,
 // Contact, en onderaan de 9 plaatsen (Website laten maken in ...) als links.
 import { ArrowUpRight } from 'lucide-react';
 import { WebstudioLogoMark } from './brand';

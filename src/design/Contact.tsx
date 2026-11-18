@@ -6,7 +6,7 @@ const Hidden = ({ f }: { f: any }) => (
   <>
     {Object.entries(f.hidden).map(([k, v]) => <input key={k} type="hidden" name={k} value={v as string} />)}
     <label className="kw-sr" aria-hidden="true">{f.labels.website}<input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
-    <input className="kw-sr" type="checkbox" name="botcheck" tabIndex={-1} aria-hidden="true" />
+    <input className="kw-sr" type="checkbox" name="botcheck" tabIndex={-1} aria-hidden="true" aria-label="botcheck" />
   </>
 );
 

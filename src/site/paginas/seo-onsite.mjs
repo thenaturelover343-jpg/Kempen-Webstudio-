@@ -16,7 +16,7 @@ const KEMPEN = [
     html: `<p>Een Kempense zaak werkt zelden alleen voor de eigen gemeente. Een schilder uit Kasterlee rijdt naar Herentals en Turnhout, een kapsalon in Geel krijgt klanten uit Westerlo en Laakdal. Wie zoekt, typt vaak "in de buurt" of de naam van het eigen dorp. Daarom staat op uw website in welke gemeenten u werkt en wat u daar doet.</p><p>Ook uw Google Bedrijfsprofiel telt mee. Naam, adres en telefoon moeten er letterlijk hetzelfde staan als op uw website. Hoe u dat profiel aanmaakt, leest u in <a href="${P.gbp.nl}">Google Bedrijfsprofiel aanmaken</a>. Met het pakket Vakman vullen wij het volledig voor u in. Om daarna beter gevonden te worden in de streek, kan <a href="${P.seo.nl}">lokale SEO</a> helpen.</p>`,
     faq: [
       ['Wat kost een website laten maken in de Kempen?', 'U betaalt dezelfde prijzen als overal in België, met Start vanaf €490, Vakman vanaf €990 en Webshop vanaf €1.890, telkens eenmalig en excl. btw, plus een maandprijs vanaf €29, €49 of €79. U krijgt vooraf een vrijblijvende offerte.'],
-      ['Maakt Kempen Webstudio ook websites voor verenigingen in de Kempen?', `Ja. Ook een vereniging of vzw krijgt een eigen ontwerp, met uw werking, activiteiten en contact op één duidelijke site. Meer leest u bij <a href="${P.vereniging.nl}">website voor een vereniging</a>.`],
+      ['Maakt Webstudio K ook websites voor verenigingen in de Kempen?', `Ja. Ook een vereniging of vzw krijgt een eigen ontwerp, met uw werking, activiteiten en contact op één duidelijke site. Meer leest u bij <a href="${P.vereniging.nl}">website voor een vereniging</a>.`],
     ],
   },
   {
@@ -82,12 +82,12 @@ const pages = KEMPEN.map(k => ({
 
 // ------------------------------------------------------------------ België (hub)
 pages.push({
-  path: '/website-laten-maken-belgie/', lang: 'nl', voorFaq: [{ t: 'cards', id: 'kiezen', h2: 'Waar u op let bij het kiezen van een webdesigner', side: 'Leg de prijs naast wat erin zit. Bij Kempen Webstudio staan al deze punten in de offerte.', items: [
-    ['De prijs vooraf, op papier', 'Vraag een schriftelijke offerte met het eenmalige bedrag en de maandprijs. Bij Kempen Webstudio krijgt u na een kennismaking een vrijblijvende offerte.'],
-    ['Uw domeinnaam op uw eigen naam', 'Staat uw domein op naam van de webbouwer, dan kost overstappen later tijd en geld. Bij Kempen Webstudio staat uw domeinnaam altijd op uw eigen naam.'],
+  path: '/website-laten-maken-belgie/', lang: 'nl', voorFaq: [{ t: 'cards', id: 'kiezen', h2: 'Waar u op let bij het kiezen van een webdesigner', side: 'Leg de prijs naast wat erin zit. Bij Webstudio K staan al deze punten in de offerte.', items: [
+    ['De prijs vooraf, op papier', 'Vraag een schriftelijke offerte met het eenmalige bedrag en de maandprijs. Bij Webstudio K krijgt u na een kennismaking een vrijblijvende offerte.'],
+    ['Uw domeinnaam op uw eigen naam', 'Staat uw domein op naam van de webbouwer, dan kost overstappen later tijd en geld. Bij Webstudio K staat uw domeinnaam altijd op uw eigen naam.'],
     ['Wat er in het onderhoud zit', 'Hosting, back-ups, updates en een aantal minuten aanpassingen per maand. Zo betaalt u niet voor elke kleine wijziging apart.'],
     ['Een vlotte, toegankelijke site', 'Een site die vlot laadt op een gsm en die iedereen kan gebruiken, ook mensen met een beperking. Wij bouwen volgens WCAG 2.2 AA.'],
-    ['Eén vast aanspreekpunt', 'U wilt weten bij wie u terechtkan als er iets moet veranderen. Bij Kempen Webstudio is dat telkens dezelfde persoon, die uw zaak kent.'],
+    ['Eén vast aanspreekpunt', 'U wilt weten bij wie u terechtkan als er iets moet veranderen. Bij Webstudio K is dat telkens dezelfde persoon, die uw zaak kent.'],
     ['De looptijd van het contract', 'Kijk hoe lang u vastzit. Onze pakketten lopen minimaal 12 maanden en zijn daarna maandelijks opzegbaar.'],
   ], after: `Meer over prijzen en verborgen kosten leest u in <a href="${P.prijs.nl}">wat kost een website laten maken</a>; wat zelf bouwen kost, in <a href="${P.zelf.nl}">website laten maken of zelf bouwen</a>.` }],
 });
@@ -105,7 +105,7 @@ pages.push({
   ], after: `Alle prijzen naast elkaar vindt u in <a href="${P.prijs.nl}">wat kost een website laten maken</a>.` }] }],
   faqExtra: [
     ['Wat kost een webshop per jaar?', 'Na de bouw betaalt u de maandprijs van het pakket Webshop, vanaf €79 per maand excl. btw. Op jaarbasis is dat vanaf €948 excl. btw, met hosting, back-ups, updates en 30 minuten aanpassingen per maand.'],
-    ['Wat kost een webshop laten maken?', 'Bij Kempen Webstudio begint een webshop tot 50 producten vanaf €1.890 eenmalig en vanaf €79 per maand, excl. btw.'],
+    ['Wat kost een webshop laten maken?', 'Bij Webstudio K begint een webshop tot 50 producten vanaf €1.890 eenmalig en vanaf €79 per maand, excl. btw.'],
   ],
 });
 
@@ -113,14 +113,14 @@ pages.push({
 pages.push({
   path: '/seo-laten-doen/', lang: 'nl', voorFaq: [{ t: 'prose', id: 'seo-regio', h2: 'Een SEO-bureau voor Antwerpen, Gent en heel België', html: `<p>Wij werken voor zaken in heel België, van Antwerpen en Gent tot Leuven, Hasselt en de Kempen. Lokale SEO werkt overal op dezelfde manier: een volledig Google Bedrijfsprofiel, dezelfde naam, hetzelfde adres en telefoonnummer op elke plek waar uw zaak vermeld staat, en pagina's die in gewone taal zeggen wat u doet en waar. Overleg verloopt online, per e-mail of telefoon, dus het maakt niet uit waar uw zaak ligt.</p><p>Voor zaken in Antwerpen leest u op onze <a href="/website-laten-maken-antwerpen/">pagina over Antwerpen</a> hoe wij omgaan met districten en randgemeenten. Bouwen wij ook uw website, dan zit de basis-SEO er al in; lees meer over <a href="/">een website laten maken</a> of over <a href="${P.gbp.nl}">uw Google Bedrijfsprofiel</a>.</p>` }],
   faqExtra: [
-    ['Werkt Kempen Webstudio als SEO-bureau ook voor zaken in Antwerpen of Gent?', 'Ja. Wij werken voor zaken in heel België. Overleg verloopt online, per e-mail of telefoon, en de prijzen zijn overal dezelfde: een SEO-audit vanaf €190, lokale SEO vanaf €149 per maand en optimalisatie van een bestaande pagina vanaf €59.'],
+    ['Werkt Webstudio K als SEO-bureau ook voor zaken in Antwerpen of Gent?', 'Ja. Wij werken voor zaken in heel België. Overleg verloopt online, per e-mail of telefoon, en de prijzen zijn overal dezelfde: een SEO-audit vanaf €190, lokale SEO vanaf €149 per maand en optimalisatie van een bestaande pagina vanaf €59.'],
   ],
 });
 
 // ------------------------------------------------------------------ EN: hub en SEO (dunne pagina's)
 pages.push({
-  path: P.hub.en, lang: 'en', voorFaq: [{ t: 'cards', id: 'choosing', h2: 'What to check when choosing a web designer', side: 'Set the price against what is included. At Kempen Webstudio all of these points are in the quote.', items: [
-    ['The price up front, in writing', 'Ask for a written quote with the one-off amount and the monthly fee. At Kempen Webstudio you first get a no-obligation quote, after an introductory conversation.'],
+  path: P.hub.en, lang: 'en', voorFaq: [{ t: 'cards', id: 'choosing', h2: 'What to check when choosing a web designer', side: 'Set the price against what is included. At Webstudio K all of these points are in the quote.', items: [
+    ['The price up front, in writing', 'Ask for a written quote with the one-off amount and the monthly fee. At Webstudio K you first get a no-obligation quote, after an introductory conversation.'],
     ['Your domain in your own name', 'If your domain is registered to your web builder, switching later costs time and money. With us, your domain is always in your own name.'],
     ['What maintenance includes', 'Hosting, backups, updates and a number of minutes for changes each month, so you do not pay for every small edit separately.'],
     ['A fast, accessible site', 'A site that loads quickly on a phone and that everyone can use, including people with a disability. We build to WCAG 2.2 AA.'],

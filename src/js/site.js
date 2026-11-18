@@ -1,4 +1,4 @@
-/* Kempen Webstudio – het enige script van de site (defer, ~10 kB). Doet wat React/motion in het design deed, maar
+/* Webstudio K – het enige script van de site (defer, ~10 kB). Doet wat React/motion in het design deed, maar
    zonder framework: verschijnen bij scrollen, sliders en keuzes, FAQ (filter + accordeon), menupaneel, diensten-
    submenu, klok, voortgangsbalk, cursor-effect in de hero, contactvenster en -formulier (web3forms), cookiekeuze
    (statistiek pas na toestemming). Animaties alleen via transform/opacity; bij "minder beweging" staat alles stil. */
@@ -256,7 +256,7 @@
         var b = 'Naam: ' + data.naam + '\nZaak: ' + (data.zaak || '-') + '\nE-mailadres: ' + data.email + '\nDienst: ' + data.dienst + '\n\n' + data.bericht;
         reset(); location.href = 'mailto:' + E + '?subject=' + encodeURIComponent(T.subj + data.dienst) + '&body=' + encodeURIComponent(b); return;
       }
-      var body = { access_key: K, subject: f.elements.subject ? f.elements.subject.value : 'Nieuwe aanvraag via kempenwebstudio.be', from_name: f.elements.from_name ? f.elements.from_name.value : 'Kempen Webstudio website', botcheck: false };
+      var body = { access_key: K, subject: f.elements.subject ? f.elements.subject.value : 'Nieuwe aanvraag via kempenwebstudio.be', from_name: f.elements.from_name ? f.elements.from_name.value : 'Webstudio K website', botcheck: false };
       for (var k in data) body[k] = data[k];
       fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) })
         .then(function (r) { return r.json().then(function (j) { return r.ok && j && j.success ? j : Promise.reject(); }); }).then(done).catch(fail);

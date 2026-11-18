@@ -35,7 +35,7 @@ export const FOTOS = {
   kortrijk: { src: 'stad-kortrijk-inh-1280.webp', alt: { nl: 'Toren van de Sint-Maartenskerk in Kortrijk', fr: 'Tour de l’église Saint-Martin à Courtrai', en: 'Tower of St Martin’s Church in Kortrijk' } },
   leuven: { src: 'stad-leuven-inh-1280.webp', alt: { nl: 'Historische gebouwen in Leuven', fr: 'Bâtiments historiques à Louvain', en: 'Historic buildings in Leuven' } },
   planner: { src: 'pl-ivelien-m-700.webp', crop: { left: 0, top: 0, width: 700, height: 735 }, alt: { nl: 'Afsprakenplanner in het voorbeeldontwerp Kapsalon Ivelien', fr: 'Agenda de rendez-vous dans l’exemple de design Kapsalon Ivelien', en: 'Appointment planner in the sample design Kapsalon Ivelien' } },
-  portret: { src: 'hero-portret.jpg', crop: { left: 64, top: 300, width: 800, height: 800 }, alt: { nl: 'Kempen Webstudio, uw vaste aanspreekpunt', fr: 'Kempen Webstudio, votre interlocuteur fixe', en: 'Kempen Webstudio, your fixed point of contact' } },
+  portret: { src: 'hero-portret.jpg', crop: { left: 64, top: 300, width: 800, height: 800 }, alt: { nl: 'Webstudio K, uw vaste aanspreekpunt', fr: 'Webstudio K, votre interlocuteur fixe', en: 'Webstudio K, your fixed point of contact' } },
   // screenshots van de 9 voorbeeldsites (gsm, bovenste deel)
   'vb-houtatelier': { src: 'houtatelier-nethe-m600.webp', crop: { left: 0, top: 40, width: 600, height: 630 }, ...vb('Houtatelier Nethe') },
   'vb-horeca': { src: 'horeca-voorbeeld-m600.webp', crop: { left: 0, top: 40, width: 600, height: 630 }, ...vb('Bistro Tilvaar') },

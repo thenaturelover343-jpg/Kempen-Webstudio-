@@ -92,7 +92,7 @@ for (const f of files) {
   // dezelfde offertezin twee keer op één pagina (ook als de ene zin het begin van de andere is, of alleen het onderwerp verschilt)
   const main = d.querySelector('main') || d.body;
   const OFF = /offerte|quote|devis/i;
-  const kern = z => z.toLowerCase().replace(/[.!?]$/, '').replace(/^(wij maken|kempen webstudio maakt|we prepare|kempen webstudio prepares|nous établissons|nous préparons|kempen webstudio établit|kempen webstudio prépare)( eerst| first| d’abord)? /, 'X ').trim();
+  const kern = z => z.toLowerCase().replace(/[.!?]$/, '').replace(/^(wij maken|kempen webstudio maakt|webstudio k maakt|webstudio k prepares|webstudio k établit|webstudio k prépare|we prepare|kempen webstudio prepares|nous établissons|nous préparons|kempen webstudio établit|kempen webstudio prépare)( eerst| first| d’abord)? /, 'X ').trim();
   const zinnen = [];
   [...main.querySelectorAll('p,li,summary,div.fq-a,td,dd')].filter(e => !e.querySelector(INNER) && !e.closest('.kw-sr')).forEach((b, bi) => {
     const t = norm(b.textContent);

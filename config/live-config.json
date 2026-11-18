@@ -8,10 +8,32 @@
     "/cookiebeleid/": "noindex,follow",
     "/horeca-voorbeeld/": "noindex,nofollow"
   },
-  "demoFolders": ["barbier-voorbeeld", "dakwerken-hoogland", "horeca-voorbeeld", "houtatelier-nethe", "kapsalon-voorbeeld", "kleurwerk-voorbeeld", "schoonheidssalon-voorbeeld", "tuin-voorbeeld", "webshop-voorbeeld"],
+  "demoFolders": [
+    "barbier-voorbeeld",
+    "dakwerken-hoogland",
+    "horeca-voorbeeld",
+    "houtatelier-nethe",
+    "kapsalon-voorbeeld",
+    "kleurwerk-voorbeeld",
+    "schoonheidssalon-voorbeeld",
+    "tuin-voorbeeld",
+    "webshop-voorbeeld"
+  ],
   "demoRobots": "noindex,follow",
-  "robotsTxt": "User-agent: *\nAllow: /\nSitemap: https://www.kempenwebstudio.be/sitemap.xml\n",
+  "robotsTxt": "User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-SearchBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Perplexity-User\nAllow: /\n\nSitemap: https://www.kempenwebstudio.be/sitemap.xml\n",
   "cname": null,
-  "exclude": [".git", ".gitignore", ".claude", "_build", "_gusje-live", "CNAME"],
-  "excludeExt": [".patch", ".zip", ".tar", ".md"]
+  "exclude": [
+    ".git",
+    ".gitignore",
+    ".claude",
+    "_build",
+    "_gusje-live",
+    "CNAME"
+  ],
+  "excludeExt": [
+    ".patch",
+    ".zip",
+    ".tar",
+    ".md"
+  ]
 }
