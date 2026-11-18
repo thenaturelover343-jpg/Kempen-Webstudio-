@@ -22,7 +22,7 @@ const G = {
     secs: [
       { t: 'table', id: 'prijsvorken', h2: 'Prijzen per type website in 2026', caption: 'Prijzen van Kempen Webstudio per type website, exclusief btw', head: ['Type website', 'Eenmalig', 'Per maand', 'Online binnen'], rows: [
         ['Eenvoudige website (Start)', 'vanaf €490', 'vanaf €29', '5 werkdagen'], ['Professionele website (Vakman)', 'vanaf €990', 'vanaf €49', '10 werkdagen'], ['Webshop tot 50 producten (Webshop)', 'vanaf €1.890', 'vanaf €79', '3 à 4 weken'],
-        ['Landingspagina (één pagina)', 'vanaf €290', '–', 'in overleg'], ['Extra pagina', 'vanaf €79 per pagina', '–', 'in overleg'], ['Logo / huisstijl', 'vanaf €190 / €490', '–', 'in overleg']],
+        ['Landingspagina (één pagina)', 'vanaf €290', 'geen', 'in overleg'], ['Extra pagina', 'vanaf €79 per pagina', 'geen', 'in overleg'], ['Logo / huisstijl', 'vanaf €190 / €490', 'geen', 'in overleg']],
         before: '<p>Dit zijn onze vanaf-prijzen per type site. Het exacte bedrag staat in de schriftelijke offerte die u na een kort gesprek krijgt.</p>',
         after: `<p>Bij Kempen Webstudio kost een website vanaf €490 en een webshop vanaf €1.890 eenmalig, plus een maandprijs vanaf €29, €49 of €79, telkens excl. btw.</p><p>Bij Kempen Webstudio hebt u één vast aanspreekpunt, vaste pakketten en openbare prijzen. Meer over de afweging leest u in <a href="${P.zelf.nl}">website laten maken of zelf bouwen</a>.</p>` },
       { t: 'cards', id: 'onderhoudskosten', h2: 'Wat kost onderhoud van een website?', side: 'Met onderhoud blijft uw site veilig en up-to-date. Het meeste daarvan zit in de maandprijs van uw pakket.', items: [
@@ -55,7 +55,7 @@ const G = {
     secs: [
       { t: 'table', id: 'fourchettes', h2: 'Prix par type de site en 2026', caption: 'Prix de Kempen Webstudio par type de site, HTVA', head: ['Type de site', 'Une fois', 'Par mois', 'En ligne en'], rows: [
         ['Site simple (Start)', 'à partir de €490', 'à partir de €29', '5 jours ouvrables'], ['Site professionnel (Vakman)', 'à partir de €990', 'à partir de €49', '10 jours ouvrables'], ['Boutique jusqu’à 50 produits (Webshop)', 'à partir de €1.890', 'à partir de €79', '3 à 4 semaines'],
-        ['Landing page (une page)', 'à partir de €290', '–', 'à convenir'], ['Page supplémentaire', 'à partir de €79 par page', '–', 'à convenir'], ['Logo / identité visuelle', 'à partir de €190 / €490', '–', 'à convenir']],
+        ['Landing page (une page)', 'à partir de €290', 'aucun', 'à convenir'], ['Page supplémentaire', 'à partir de €79 par page', 'aucun', 'à convenir'], ['Logo / identité visuelle', 'à partir de €190 / €490', 'aucun', 'à convenir']],
         before: '<p>Voici nos prix de départ par type de site. Le montant exact figure dans l’offre écrite que vous recevez après un court entretien.</p>',
         after: `<p>Chez Kempen Webstudio, un site coûte à partir de €490 et une boutique à partir de €1.890 une seule fois, plus un abonnement à partir de €29, €49 ou €79 par mois, HTVA.</p><p>Chez Kempen Webstudio, vous avez un seul interlocuteur, des formules fixes et des prix publics. Plus d’informations dans <a href="${P.zelf.fr}">faire créer ou créer soi-même</a>.</p>` },
       { t: 'cards', id: 'maintenance', h2: 'Combien coûte la maintenance d’un site ?', side: 'La maintenance garde votre site sûr et à jour. Chez nous, l’essentiel est compris dans l’abonnement mensuel.', items: [
@@ -88,7 +88,7 @@ const G = {
     secs: [
       { t: 'table', id: 'price-ranges', h2: 'Prices per type of website in 2026', caption: 'Kempen Webstudio prices per type of website, excluding VAT', head: ['Type of website', 'One-off', 'Per month', 'Live within'], rows: [
         ['Simple website (Start)', 'from €490', 'from €29', '5 working days'], ['Professional website (Vakman)', 'from €990', 'from €49', '10 working days'], ['Online shop up to 50 products (Webshop)', 'from €1,890', 'from €79', '3 to 4 weeks'],
-        ['Landing page (one page)', 'from €290', '–', 'by agreement'], ['Extra page', 'from €79 per page', '–', 'by agreement'], ['Logo / visual identity', 'from €190 / €490', '–', 'by agreement']],
+        ['Landing page (one page)', 'from €290', 'none', 'by agreement'], ['Extra page', 'from €79 per page', 'none', 'by agreement'], ['Logo / visual identity', 'from €190 / €490', 'none', 'by agreement']],
         before: '<p>These are our starting prices per type of site. The exact amount is in the written quote you receive after a short conversation.</p>',
         after: `<p>At Kempen Webstudio a website costs from €490 and an online shop from €1,890 one-off, plus a monthly fee from €29, €49 or €79, excl. VAT.</p><p>At Kempen Webstudio you have one point of contact, fixed packages and public prices. Read more in <a href="${P.zelf.en}">having a website built or building it yourself</a>.</p>` },
       { t: 'cards', id: 'maintenance-costs', h2: 'What does website maintenance cost?', side: 'Maintenance keeps your site secure and up to date. With us, most of it is included in the monthly fee.', items: [

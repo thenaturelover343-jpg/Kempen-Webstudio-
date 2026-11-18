@@ -56,6 +56,40 @@ for (const f of files) {
     vorige = tx;
   }
   for (const [bron, s] of strs) for (const [naam, re] of tests) if (re.test(s)) add(f, naam + ' (' + bron + ')', norm(s));
+
+  // ---- evaluatie 18-11 ----
+  const pad = '/' + path.relative(DIR, f).replace(/\\/g, '/');
+  const demo = /-voorbeeld\/|voorbeeldontwerpen\/|exemples-de-design\/|sample-designs\//.test(pad);
+  for (const [bron, s] of strs) {
+    // demo-rest "Vous la consultez" (la ≠ le devis)
+    if (/Vous la consultez/i.test(s)) add(f, 'Vous la consultez (' + bron + ')', norm(s));
+    // proposal / proposition / voorstel in de betekenis van offerte (logo-voorstellen en demo-sites zijn in orde)
+    if (!demo) {
+      const z = s.replace(/\d+ (?:ontwerp)?(?:voorstellen|proposals|propositions)|ontwerpvoorstel(?:len)?|design proposals?|propositions? de design|(?:elk|each|chaque) (?:voorstel|proposal|proposition)|het voorstel dat u kiest|the proposal you choose|la proposition que vous|(?:de|the|les) (?:voorstellen|proposals|propositions)(?: uit)?\b|work out the proposals|élaborons les propositions/gi, '');
+      if (/\b(?:voorstel(?:len)?|proposals?|propositions?)\b/i.test(z)) add(f, 'voorstel/proposal/proposition als offerte (' + bron + ')', norm(s));
+    }
+  }
+  // "altijd vrijblijvend" direct na een vrijblijvende offerte (ook over twee alinea's heen)
+  const blokken = []; for (const el of d.querySelectorAll(BLOCK)) { if (el.querySelector(INNER)) continue; const tx = norm(el.textContent); if (tx) blokken.push({ tx, el }); }
+  const vol = blokken.map(b => b.tx).join(' ');
+  const naOfferte = /(vrijblijvende offerte|no-obligation quote|devis sans engagement)[^.?!]*[.?!]\s+[^.?!]*(altijd vrijblijvend|always without obligation|toujours sans engagement)/gi;
+  for (const m of vol.matchAll(naOfferte)) add(f, 'altijd vrijblijvend na een vrijblijvende offerte', m[0]);
+  for (const [bron, s] of strs) if (bron !== 'tekst') for (const m of s.matchAll(naOfferte)) add(f, 'altijd vrijblijvend na een vrijblijvende offerte (' + bron + ')', m[0]);
+  // dezelfde offertezin twee keer op één pagina (ook als de ene zin het begin van de andere is, of alleen het onderwerp verschilt)
+  const main = d.querySelector('main') || d.body;
+  const OFF = /offerte|quote|devis/i;
+  const kern = z => z.toLowerCase().replace(/[.!?]$/, '').replace(/^(wij maken|kempen webstudio maakt|we prepare|kempen webstudio prepares|nous établissons|nous préparons|kempen webstudio établit|kempen webstudio prépare)( eerst| first| d’abord)? /, 'X ').trim();
+  const zinnen = [];
+  [...main.querySelectorAll('p,li,summary,div.fq-a,td,dd')].filter(e => !e.querySelector(INNER) && !e.closest('.kw-sr')).forEach((b, bi) => {
+    const t = norm(b.textContent);
+    if (/aanspreekpunt|interlocuteur|point of contact/.test(t) && /(excl\.( btw| VAT)?|HTVA)\.?$/.test(t)) return; // trust-strip
+    for (const z of t.split(/(?<=[.?!])\s+/)) if (OFF.test(z) && z.split(' ').length > 4) zinnen.push({ z, k: kern(z), bi });
+  });
+  const gezien = new Set();
+  for (let i = 0; i < zinnen.length; i++) for (let j = i + 1; j < zinnen.length; j++) {
+    const a = zinnen[i], b = zinnen[j]; if (a.bi === b.bi) continue;
+    if (a.k === b.k || b.k.startsWith(a.k + ',') || a.k.startsWith(b.k + ',')) { const key = a.z + '|' + b.z; if (!gezien.has(key)) { gezien.add(key); add(f, 'dubbele offertezin op de pagina', a.z + '  <=>  ' + b.z); } }
+  }
 }
 const uniek = [...new Map(hits.map(h => [h.pagina + h.soort + h.tekst, h])).values()];
 const per = {}; for (const h of uniek) per[h.soort] = (per[h.soort] || 0) + 1;

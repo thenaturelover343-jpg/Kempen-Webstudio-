@@ -74,7 +74,7 @@ const KEMPEN = [
 const pages = KEMPEN.map(k => ({
   path: k.path, lang: 'nl', aanvul: true,
   insert: [{ before: k.before, sections: [
-    { t: 'pricing', id: 'prijs-lokaal-' + k.s, h2: `Wat kost een website laten maken in ${k.stad}?`, side: k.side, term: PRIJS_TERM },
+    { t: 'pricing', id: 'prijs-lokaal-' + k.s, h2: `Wat kost een website laten maken in ${k.stad}?`, side: k.side, term: k.s === 'mol' ? PRIJS_TERM.replace('Na een kort gesprek krijgt u een schriftelijke offerte. ', '') : PRIJS_TERM },
     { t: 'prose', id: 'lokaal-' + k.s, h2: k.h2, html: k.html },
   ] }],
   faqExtra: k.faq,

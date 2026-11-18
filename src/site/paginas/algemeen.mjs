@@ -7,9 +7,9 @@ const pic = (id, vorm, lang, sizes) => { const f = foto(id, vorm, lang); return 
 const alt3 = k => ({ nl: P[k].nl, fr: P[k].fr, en: P[k].en });
 const UREN = {"nl":"Maandag tot en met zaterdag van 09:00 tot 20:00. Zondag gesloten.","fr":"Du lundi au samedi de 09h00 à 20h00. Fermé le dimanche.","en":"Monday to Saturday from 09:00 to 20:00. Closed on Sunday."};
 const NAP = {
-  nl: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Telefoon: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Ondernemingsnummer: BE 0897.577.919</li><li>Openingsuren: maandag tot en met zaterdag 09:00–20:00, zondag gesloten</li></ul>`,
-  fr: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Téléphone : <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail : <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Numéro d’entreprise : BE 0897.577.919</li><li>Heures d’ouverture : du lundi au samedi 09h00–20h00, fermé le dimanche</li></ul>`,
-  en: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee, Belgium</li><li>Phone: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>Email: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Company number: BE 0897.577.919</li><li>Opening hours: Monday to Saturday 09:00–20:00, closed on Sunday</li></ul>`,
+  nl: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Telefoon: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Ondernemingsnummer: BE 0897.577.919</li><li>Open van maandag tot zaterdag, van 9 tot 20 uur. Op zondag gesloten.</li></ul>`,
+  fr: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee</li><li>Téléphone : <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>E-mail : <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Numéro d’entreprise : BE 0897.577.919</li><li>Ouvert du lundi au samedi de 9 h à 20 h, fermé le dimanche.</li></ul>`,
+  en: `<ul><li><strong>Kempen Webstudio</strong></li><li>Kemelbeekstraat 16, 2460 Kasterlee, Belgium</li><li>Phone: <a class="nw" href="tel:+3214718080">+32 14 71 80 80</a></li><li>Email: <a href="mailto:info@kempenwebstudio.be">info@kempenwebstudio.be</a></li><li>Company number: BE 0897.577.919</li><li>Open Monday to Saturday from 9:00 to 20:00, closed on Sunday.</li></ul>`,
 };
 
 // ------------------------------------------------------------------------------------------------ REGIO-HUB
@@ -53,7 +53,7 @@ const hub = {
         ['Bruxelles', `<a href="/fr/creation-site-internet-bruxelles/">Création de site internet à Bruxelles</a>, dans les 19 communes.`],
         ['Wallonie', `<a href="/fr/creation-site-internet-liege/">Liège</a>, <a href="/fr/creation-site-internet-namur/">Namur</a> et <a href="/fr/creation-site-internet-charleroi/">Charleroi</a>.`],
         ['Flandre', `<a href="/fr/creation-site-internet-gand/">Gand</a>, <a href="/fr/creation-site-internet-louvain/">Louvain</a>, <a href="/fr/creation-site-internet-courtrai/">Courtrai</a> et <a href="/fr/creation-site-internet-campine/">la Campine</a>.`],
-        ['Votre ville n’y figure pas ?', `Aucun problème. Nous créons des sites pour des entreprises dans toute la Belgique, y compris dans les petites communes. <a href="${P.contact.fr}">Contactez-nous</a> ou demandez directement une proposition.`],
+        ['Votre ville n’y figure pas ?', `Aucun problème. Nous créons des sites pour des entreprises dans toute la Belgique, y compris dans les petites communes. <a href="${P.contact.fr}">Contactez-nous</a> ou demandez directement un devis sans engagement.`],
       ] },
       { t: 'cards', id: 'services-hub', h2: 'Ce que nous créons pour votre entreprise', items: [
         ['Un nouveau site internet', `Un design propre, des textes rédigés par nous et un site qui fonctionne sur smartphone et ordinateur. Voir <a href="/fr/">création de site internet</a>.`],

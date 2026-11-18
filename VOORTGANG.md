@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 17-11-2026 (audit 17-11 verwerkt, restanten op de home opgeruimd).
+Laatst bijgewerkt: 18-11-2026 (evaluatie 18-11 verwerkt).
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -141,6 +141,12 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
     - Trust-strip: "eén" is nu "één" (stond op 56 pagina's) (functie `lc1` in Home.tsx en Blocks.tsx).
     - In Blocks.tsx stonden twee lijstdetecties met een backspace-teken in plaats van `\b`. Die zijn hersteld; de uitvoer verandert daardoor niet.
     - Nieuwe controle: `npm run restcheck` (scripts/restcheck.mjs). Die zoekt op alle 226 pagina's naar " · ,", ", ,", dubbele spaties, zinnen die met een kleine letter beginnen, "eén", lege lijst-items en dubbele leestekens, in tekst, schermlezertekst, title, meta, alt en JSON-LD. Resultaat: 0 in test en live.
+- [x] **Evaluatie 18-11 verwerkt** (Karim, nieuwe crawl van de testsite): `EVALUATIE-18-11-VERWERKT.md`, tag `voor-evaluatie-18-11`.
+  - 67/67 punten verwerkt, 0 niet verwerkt. Per pagina geteld: 14 demo-resten, 18 keer "altijd vrijblijvend", 22 dubbele offertezinnen, 6 fouten na vervanging, 1 vergelijkingsadvies, 3 openingsuren, 3 tabellen. Daarnaast 12 gelijkaardige restanten verbeterd die niet in de evaluatie stonden (onder meer JSON-LD "voorstel", galerij-intro op de homes, FR "voir quelque chose", Namur, slot-CTA sectorpagina's).
+  - FR: "Vous la consultez" is overal weg. Karims zin "Vous lisez le devis et décidez ensuite." staat één keer per pagina, in de stappenkaart.
+  - Hero-slogans van Brugge, Mechelen en Namur: een zin zoals bij Kortrijk; de langere offertezin blijft in de tekst. Mol: de eerste zin van het prijsblok is weggelaten (seo-onsite.mjs).
+  - `npm run restcheck` meldt nu ook: een dubbele offertezin per pagina, "Vous la consultez", "voorstel/proposal/proposition" als offerte (logovoorstellen tellen niet mee) en "altijd vrijblijvend" na een vrijblijvende offerte. Resultaat: 0 op 226 pagina's.
+  - Een controlescript per punt (oude tekst weg, nieuwe tekst aanwezig) gaf op dist-live 67/67 in orde.
 
 ## Bezig
 
