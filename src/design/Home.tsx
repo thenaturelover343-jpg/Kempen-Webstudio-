@@ -25,7 +25,7 @@ const H1_SPLIT: Record<string, string[]> = {
 const Badge = ({ children, dark = false, copper = false }: { children: any; dark?: boolean; copper?: boolean }) => (
   <span className={copper ? 'inline-block rounded-md bg-[#B85D28]/10 border border-[#B85D28]/20 px-3 py-1 text-[15px] font-medium text-[#5E2A11]'
     : dark ? 'inline-block rounded-md bg-[#1D1D20] px-3 py-1 text-[15px] font-medium text-[#D3D6DA]'
-    : 'inline-block rounded-md bg-[#F2F2F2] px-3 py-1 text-[15px] font-medium text-[#4C433F]'}><span aria-hidden="true">• </span>{children}</span>
+    : 'inline-block rounded-md bg-[#F2F2F2] px-3 py-1 text-[15px] font-medium text-[#4C433F]'}>{children}</span>
 );
 /** tekst in twee regels breken zoals in het design (op de laatste spatie vóór het midden, of na een komma) */
 export function split2(t: string): [string, string] {
@@ -110,7 +110,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                 <Html html={h.hero.slogan} />
               </Load>
               <Load y={16} duration={0.55} delay={0.34} className="mt-4 sm:mt-5 flex flex-wrap items-center gap-3 sm:gap-3.5">
-                <span className="text-[15px] sm:text-[15px] text-[#4C433F] font-normal tracking-[-0.01em]">{t0} · {t2}</span>
+                <span className="text-[15px] sm:text-[15px] text-[#4C433F] font-normal tracking-[-0.01em]">{t0}</span><span className="text-[15px] sm:text-[15px] text-[#4C433F] font-normal tracking-[-0.01em]">{t2}</span>
               </Load>
               <Load y={16} duration={0.55} delay={0.42} className="mt-5 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <A href={demoCta.href} chat className="kw-pop group inline-flex items-center gap-3 sm:gap-3.5 rounded-full bg-[#121214] hover:bg-[#232327] text-white pl-5 pr-1.5 py-1.5 min-h-[44px] text-[15px] font-medium transition-colors cursor-pointer whitespace-nowrap shrink-0">
@@ -195,7 +195,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               <div className="contents lg:flex lg:col-span-5 lg:flex-col lg:justify-between lg:gap-20">
-                <div className="order-1"><span className="inline-block rounded-md bg-[#F2F2F2] px-3 py-1 text-[15px] font-medium text-[#4C433F]"><span aria-hidden="true">• </span>{ui.badgeIntro}</span></div>
+                <div className="order-1"><span className="inline-block rounded-md bg-[#F2F2F2] px-3 py-1 text-[15px] font-medium text-[#4C433F]">{ui.badgeIntro}</span></div>
                 <div className="order-3 lg:order-2 flex items-center gap-3.5 text-[16px] text-[#4C433F]">
                   <div className="w-8 h-8 rounded-full border border-[#D3D6DA] flex items-center justify-center shrink-0"><Globe className="w-4 h-4 text-[#121214]" /></div>
                   <div className="border-l border-[#D3D6DA] pl-3 leading-snug max-w-xs"><p>{gl1}</p><p>{gl2}</p></div>
@@ -241,7 +241,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
           <FadeIn delay={0.08}>
             <div data-sel="" data-sel-wrap="" data-sel-auto="5500" aria-roledescription="carrousel" className="relative rounded-[24px] sm:rounded-[32px] bg-[#050507] text-white p-7 sm:p-12 lg:p-14 min-h-[420px] sm:min-h-[480px] flex flex-col justify-between overflow-hidden">
               <div className="flex flex-wrap items-center justify-between gap-4 text-[15px] text-[#C8C8CC] tabular-nums">
-                <span>{works.map((w: any, i: number) => <span key={i} data-sel-panel={i} hidden={i > 0}>0{i + 1} / 0{nW} · {w.cat}</span>)}</span>
+                <span>{works.map((w: any, i: number) => <span key={i} data-sel-panel={i} hidden={i > 0}>0{i + 1} / 0{nW}<span className="ml-3">{w.cat}</span></span>)}</span>
                 <div className="flex items-center gap-1.5">
                   {works.map((w: any, i: number) => (
                     <button key={i} type="button" data-sel-to={i} aria-label={`${ui.select} ${w.h}`} {...sel(i === 0, 'w-6 bg-[#D47A3B]', 'w-1.5 bg-white/25 hover:bg-white/50', 'h-1.5 rounded-full transition-all duration-200 cursor-pointer')} data-sel-item={i} />
@@ -331,10 +331,6 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
               </div>
             </div>
             <SectorMarquee lang={L} />
-            <div className="mt-10 pt-4 border-t border-[#E5E7EB] flex flex-wrap items-center justify-between gap-2 text-[16px] text-[#4C433F]">
-              <p className="m-0">{leadA}</p>
-              <a href={h.werk.cta.more.href} className="inline-flex items-center gap-1.5 font-medium text-[#B85D28] hover:text-[#121214] transition-colors cursor-pointer"><span>{h.werk.cta.more.label}</span><ArrowRight className="w-3.5 h-3.5" /></a>
-            </div>
           </FadeIn>
         </div>
 
@@ -369,8 +365,8 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                       <div className="flex items-baseline gap-1.5">
                         <span className="font-title text-[34px] sm:text-[38px] leading-none font-normal tracking-[-0.04em]">{h.vn.name}</span>
                       </div>
-                      <p className="mt-3 text-[16px]"><span className="text-white">{h.vn.type} </span><span className="text-[#C8C8CC]">· {h.vn.reviews}</span></p>
-                      <p className="mt-2 text-[16px] text-[#C8C8CC]">{h.vn.btns.join(' · ')}</p>
+                      <p className="mt-3 text-[16px]"><span className="text-white">{h.vn.type} </span><span className="text-[#C8C8CC]">{h.vn.reviews}</span></p>
+                      <p className="mt-2 text-[16px] text-[#C8C8CC]">{h.vn.btns.join(', ')}</p>
                       <p className="mt-3 text-[16px] text-[#C8C8CC] leading-relaxed">{h.vn.no}</p>
                     </div>
                     <a className="my-auto block rounded-[12px] overflow-hidden mt-4" data-sel-panel="1" hidden href={h.vn.naHref} target="_blank" rel="noopener">
@@ -424,7 +420,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                           <div className={cx('text-[16px] leading-snug border-t pt-3 lg:min-h-[76px]', first ? 'text-white border-white/25' : 'text-[#D3D6DA] border-white/10')}>
                             <p className={cx('font-medium', !first && 'text-[#F1A36A]')}>{d.priceText}</p>
                             {d.chips.length > 0 && <p className={cx('relative z-10 mt-0.5 [text-wrap:pretty]', first ? 'text-white/90' : 'text-[#D3D6DA]/85')}>
-                              {d.chips.map((c: string, k: number) => <Fragment key={k}>{k > 0 && <span aria-hidden="true" className="opacity-60"> · </span>}<Html html={c} /></Fragment>)}
+                              {d.chips.map((c: string, k: number) => <Fragment key={k}>{k > 0 && ', '}<Html html={c} /></Fragment>)}
                             </p>}
                           </div>
                         </div>
@@ -535,7 +531,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                   return (
                     <article key={i} className={cx('kw-lift group relative rounded-[20px] p-6 sm:p-7 min-h-[290px] flex flex-col justify-between', dark ? 'bg-[#2C2C2E] text-white' : 'bg-[#F7F7F8] text-[#121214] border border-[#ECECEE]')}>
                       <div className="flex items-start justify-between gap-4">
-                        <h3 className="text-[17px] font-semibold tracking-tight">{c.n} · <Html html={c.h} /></h3>
+                        <h3 className="text-[17px] font-semibold tracking-tight"><span className="tabular-nums mr-2">{c.n}</span><Html html={c.h} /></h3>
                         <span className="kw-zoom relative w-14 h-14 rounded-xl overflow-hidden bg-[#141416] shrink-0">{CASE_FOTO[i] ? <Foto id={CASE_FOTO[i]} vorm="mini" lang={L} sizes="56px" className="absolute inset-0 block w-full h-full object-cover" /> : <ShowcaseEmblem />}</span>
                       </div>
                       <p className={cx('my-6 text-[16px] leading-relaxed kw-link', dark ? 'text-[#E4E4E7]' : 'text-[#4C433F]')}><Html html={c.p} /></p>
@@ -800,7 +796,7 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
             <article className={`kw-lift h-full rounded-[24px] p-7 sm:p-8 flex flex-col justify-between ${surface}`}>
               <div>
                 <div className="flex items-center justify-between gap-2">
-                  <span className={`rounded-full border px-3.5 py-1 text-[15px] font-medium ${badge}`}><span aria-hidden="true">• </span>{tier.badge ? <>{tier.badge} · {hTxt}</> : hTxt}</span>
+                  <span className={`rounded-full border px-3.5 py-1 text-[15px] font-medium whitespace-nowrap ${badge}`}>{tier.badge || hTxt}</span>
                   {delivery && delivery[i] && <span className={`text-[15px] ${soft}`}>{delivery[i]}</span>}
                 </div>
                 <div className="mt-6">

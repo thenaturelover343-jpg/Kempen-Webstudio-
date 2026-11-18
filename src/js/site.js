@@ -140,7 +140,7 @@
       try {
         var now = new Date(), t = new Intl.DateTimeFormat(loc, { timeZone: 'Europe/Brussels', hour: '2-digit', minute: '2-digit' }).format(now),
           dt = new Intl.DateTimeFormat(loc, { timeZone: 'Europe/Brussels', day: 'numeric', month: 'short', year: 'numeric' }).format(now);
-        clocks.forEach(function (c) { c.textContent = t + ' · ' + dt; });
+        clocks.forEach(function (c) { c.textContent = t + ', ' + dt; });
       } catch (e) { }
     };
     tick(); setInterval(tick, 30000);

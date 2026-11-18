@@ -59,7 +59,7 @@ const W = 'max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10';
 const strip = (h: string) => (h || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const Badge = ({ children, dark = false, light = false }: { children: any; dark?: boolean; light?: boolean }) => (
   <span className={dark ? 'inline-block rounded-md bg-[#1D1D20] px-3 py-1 text-[15px] font-medium text-[#D3D6DA]' : light ? 'inline-block rounded-md bg-white/75 px-3 py-1 text-[15px] font-medium text-[#4C433F]' : 'inline-block rounded-md bg-[#F2F2F2] px-3 py-1 text-[15px] font-medium text-[#4C433F]'}>
-    <span aria-hidden="true">• </span>{children}
+    {children}
   </span>
 );
 const H2 = ({ html, id, tag = 'h2', dark = false, className = '' }: { html: string; id?: string; tag?: string; dark?: boolean; className?: string }) => {
@@ -126,7 +126,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
             {h.crumbs ? (
               <nav aria-label={h.crumbAria} className="inline-block rounded-md bg-white/75 px-3 py-1 text-[15px] font-medium text-[#4C433F]">
                 <ol className="flex flex-wrap items-center gap-x-1.5">
-                  <li aria-hidden="true">•</li>
+                  
                   {h.crumbs.map((c: any, i: number) => (
                     <li key={i} className={cx('inline-flex items-center gap-x-1.5', c.mid && 'hidden sm:inline-flex')}>
                       {i > 0 && <span aria-hidden="true" className="text-[#C8C8CC]">/</span>}
@@ -341,7 +341,7 @@ function toItems(els: string[]): Item[] {
   return out;
 }
 
-const LIST_DOT = '[&_ul]:list-none [&_ul]:pl-0 [&_ul]:mt-3 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2 [&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.3em] [&_li]:before:w-4 [&_li]:before:h-4 [&_li]:before:rounded-full [&_li]:before:bg-[#B85D28]/20 [&_li]:after:absolute [&_li]:after:left-[5px] [&_li]:after:top-[calc(0.3em+5px)] [&_li]:after:w-1.5 [&_li]:after:h-1.5 [&_li]:after:rounded-full [&_li]:after:bg-[#B85D28]';
+const LIST_DOT = '[&_ul]:list-none [&_ul]:pl-0 [&_ul]:mt-3 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2 [&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.8em] [&_li]:before:w-[0.65em] [&_li]:before:h-[2px] [&_li]:before:bg-[#B85D28]';
 
 /** grote lead-zin zoals de intro van de home: eerste zin donker, de rest grijs, met een koperen accentlijn */
 function Lead({ html, dark, size }: { html: string; dark: boolean; size: number }) {
@@ -555,12 +555,12 @@ function render(b: any, P: any, s: any, f?: any) {
           <FadeIn className={cx(b.fig ? 'lg:col-span-5' : 'lg:col-span-5')}>
             {b.h2 && b.intro.length === 0 && <H2 html={b.h2} id={b.h2id} />}
             {b.fig && b.lead.length > 0 && <div className="mt-6 flex flex-col gap-4">{b.lead.map((p: any, i: number) => <p key={i} className={cx('kw-link leading-relaxed', p.lead ? 'text-[16px] text-[#121214]' : 'text-[16px] text-[#4C433F]')} dangerouslySetInnerHTML={{ __html: p.html }} />)}</div>}
-            {b.fig && b.txt && <Prose html={b.txt} className="mt-6 [&_ul]:list-none [&_ul]:pl-0 [&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.35em] [&_li]:before:w-4 [&_li]:before:h-4 [&_li]:before:rounded-full [&_li]:before:bg-[#B85D28]/15" />}
+            {b.fig && b.txt && <Prose html={b.txt} className="mt-6 [&_ul]:list-none [&_ul]:pl-0 [&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.8em] [&_li]:before:w-[0.65em] [&_li]:before:h-[2px] [&_li]:before:bg-[#B85D28]" />}
           </FadeIn>
           {!b.fig && (b.lead.length > 0 || b.prose || b.chips) && (
             <FadeIn delay={0.08} className="lg:col-span-7 flex flex-col gap-6">
               {b.lead.map((p: any, i: number) => <p key={i} className={cx('kw-link leading-relaxed', p.lead ? 'text-[16px] sm:text-[18px] text-[#4C433F]' : 'text-[16px] text-[#4C433F]')} dangerouslySetInnerHTML={{ __html: p.html }} />)}
-              {b.txt && <Prose html={b.txt} className="[&_ul]:list-none [&_ul]:pl-0 [&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.35em] [&_li]:before:w-4 [&_li]:before:h-4 [&_li]:before:rounded-full [&_li]:before:bg-[#B85D28]/15" />}
+              {b.txt && <Prose html={b.txt} className="[&_ul]:list-none [&_ul]:pl-0 [&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.8em] [&_li]:before:w-[0.65em] [&_li]:before:h-[2px] [&_li]:before:bg-[#B85D28]" />}
               {b.prose && <Prose html={b.prose} />}
               {b.chips && <Chips links={b.chips.links} aria={b.chips.aria} />}
             </FadeIn>
@@ -625,7 +625,7 @@ function render(b: any, P: any, s: any, f?: any) {
       <Sec {...P}>
         <FadeIn className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div>
-            {b.badge && <span className="inline-block rounded-md bg-[#B85D28]/10 border border-[#B85D28]/20 px-3 py-1 text-[15px] font-medium text-[#5E2A11]"><span aria-hidden="true">• </span>{b.badge}</span>}
+            {b.badge && <span className="inline-block rounded-md bg-[#B85D28]/10 border border-[#B85D28]/20 px-3 py-1 text-[15px] font-medium text-[#5E2A11]">{b.badge}</span>}
             <h2 id={b.h2id || undefined} className={cx(b.badge && 'mt-4', 'text-[34px] sm:text-[44px] leading-[1.04] tracking-[-0.03em] font-normal text-[#121214] max-w-2xl [text-wrap:balance]')} dangerouslySetInnerHTML={{ __html: b.h2 }} />
           </div>
         </FadeIn>

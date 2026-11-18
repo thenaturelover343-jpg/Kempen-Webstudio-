@@ -62,15 +62,14 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
         </FadeIn>
 
         <div className="pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[15px] text-[#4C433F]">
-          <p>{copy} · {kbo}</p>
+          <p className="flex flex-wrap gap-x-4"><span>{copy}</span><span>{kbo}</span></p>
           <nav aria-label={cities ? cities.title : ''} className="flex flex-wrap items-center gap-3">
             {cities && cities.links.map((l: any, i: number) => (
               <span key={l.href} className="inline-flex items-center gap-3">
-                {i > 0 && <span aria-hidden="true">·</span>}
+                
                 <a href={l.href} title={`${cities.title} ${l.label}`} className="kw-ul hover:text-[#18181B] transition-colors">{l.label}</a>
               </span>
             ))}
-            <span aria-hidden="true">·</span>
             <a href="#top" className="kw-ul text-[#18181B] font-medium hover:text-[#B85D28] transition-colors cursor-pointer">{s.ui.backToTop}</a>
           </nav>
         </div>

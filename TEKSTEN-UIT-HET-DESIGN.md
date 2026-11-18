@@ -4,15 +4,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 
 ## NL
 
-- 01 / 09 · Schrijnwerker  _(op 1 pagina)_
-- 02 / 09 · Horeca  _(op 1 pagina)_
-- 03 / 09 · Webshop  _(op 1 pagina)_
-- 04 / 09 · Dakwerker  _(op 1 pagina)_
-- 05 / 09 · Fijnschilder  _(op 1 pagina)_
-- 06 / 09 · Tuinonderhoud  _(op 1 pagina)_
-- 07 / 09 · Schoonheidssalon  _(op 1 pagina)_
-- 08 / 09 · Kapsalon  _(op 1 pagina)_
-- 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5 tot 10 werkdagen  _(op 1 pagina)_
 - Aanvraag ontvangen, één aanspreekpunt, antwoord binnen 1 werkdag.  _(op 1 pagina)_
 - Afsprakenplanner  _(op 1 pagina)_
@@ -20,7 +11,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Architecten  _(op 1 pagina)_
 - Bakkers  _(op 1 pagina)_
 - Barbiers  _(op 1 pagina)_
-- België · CET  _(op 114 pagina's)_
+- België, CET  _(op 114 pagina's)_
 - Boekhouders  _(op 1 pagina)_
 - Bouwbedrijven  _(op 1 pagina)_
 - Cateraars  _(op 1 pagina)_
@@ -50,14 +41,12 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Namen  _(op 3 pagina's)_
 - Offerteformulier  _(op 1 pagina)_
 - Online boeken  _(op 1 pagina)_
-- Onze aanrader · Vakman  _(op 17 pagina's)_
 - Oost-Vlaanderen  _(op 1 pagina)_
 - Op maat  _(op 1 pagina)_
 - Per behandeling  _(op 1 pagina)_
-- Prijzen vanaf €490 excl. btw · Eén aanspreekpunt  _(op 1 pagina)_
 - Productpagina’s  _(op 1 pagina)_
 - Rijscholen  _(op 1 pagina)_
-- Route · Bellen · Website  _(op 1 pagina)_
+- Route, Bellen, Website  _(op 1 pagina)_
 - Rustig palet  _(op 1 pagina)_
 - Schoonheidssalons  _(op 1 pagina)_
 - Slagers  _(op 1 pagina)_
@@ -83,20 +72,9 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Werkt vlot op gsm en computer  _(op 1 pagina)_
 - Winkelmand  _(op 1 pagina)_
 - Zes van onze voorbeeldontwerpen, elk voor een andere sector. Namen en gegevens zijn fictief; klik door voor de doelgroep, de keuzes en de functies.  _(op 1 pagina)_
-- © 2026 Kempen Webstudio · Ondernemingsnummer BE 0897.577.919  _(op 57 pagina's)_
-- · Nog geen reviews  _(op 1 pagina)_
 
 ## FR
 
-- 01 / 09 · Menuisier  _(op 1 pagina)_
-- 02 / 09 · Horeca  _(op 1 pagina)_
-- 03 / 09 · Webshop  _(op 1 pagina)_
-- 04 / 09 · Couvreur  _(op 1 pagina)_
-- 05 / 09 · Peintre de finition  _(op 1 pagina)_
-- 06 / 09 · Entretien de jardins  _(op 1 pagina)_
-- 07 / 09 · Institut de beauté  _(op 1 pagina)_
-- 08 / 09 · Salon de coiffure  _(op 1 pagina)_
-- 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5 à 10 jours ouvrables  _(op 1 pagina)_
 - Actif dans toute la Belgique  _(op 57 pagina's)_
 - Adapté mobile  _(op 1 pagina)_
@@ -105,7 +83,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Architectes  _(op 1 pagina)_
 - Auto-écoles  _(op 1 pagina)_
 - Barbiers  _(op 1 pagina)_
-- Belgique · CET  _(op 110 pagina's)_
+- Belgique, CET  _(op 110 pagina's)_
 - Boucheries  _(op 1 pagina)_
 - Boulangeries  _(op 1 pagina)_
 - Boutique en ligne  _(op 2 pagina's)_
@@ -136,7 +114,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Heure en Belgique  _(op 55 pagina's)_
 - Instituts de beauté  _(op 1 pagina)_
 - Intérieur  _(op 1 pagina)_
-- Itinéraire · Appeler · Site web  _(op 1 pagina)_
+- Itinéraire, Appeler, Site web  _(op 1 pagina)_
 - Jardiniers  _(op 1 pagina)_
 - Jour 1  _(op 1 pagina)_
 - Kinés  _(op 1 pagina)_
@@ -151,7 +129,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Namen  _(op 1 pagina)_
 - Nos exemples de sites en images  _(op 1 pagina)_
 - Nos réponses sur la méthode, les prix et le délai de mise en ligne.  _(op 1 pagina)_
-- Notre recommandation · Vakman  _(op 10 pagina's)_
 - Oost-Vlaanderen  _(op 1 pagina)_
 - Paiement sécurisé  _(op 1 pagina)_
 - Palette apaisante  _(op 1 pagina)_
@@ -161,7 +138,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Prise de contact et devis sans engagement, un seul interlocuteur, prix à partir de €490 HTVA.  _(op 43 pagina's)_
 - Prise de contact et devis sans engagement, un seul interlocuteur, réponse en général sous 1 jour ouvrable.  _(op 11 pagina's)_
 - Prix fixe  _(op 1 pagina)_
-- Prix à partir de €490 HTVA · Un seul interlocuteur  _(op 1 pagina)_
 - Rapide sur smartphone et PC  _(op 1 pagina)_
 - Réponse habituelle sous 1 jour ouvrable  _(op 55 pagina's)_
 - Réservation en ligne  _(op 2 pagina's)_
@@ -183,21 +159,10 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - West-Vlaanderen  _(op 1 pagina)_
 - Zone d’action  _(op 1 pagina)_
 - Zone d’intervention  _(op 1 pagina)_
-- © 2026 Kempen Webstudio · Numéro d’entreprise BE 0897.577.919  _(op 55 pagina's)_
-- · Pas encore d’avis  _(op 1 pagina)_
 - Événementiel  _(op 1 pagina)_
 
 ## EN
 
-- 01 / 09 · Joiner  _(op 1 pagina)_
-- 02 / 09 · Hospitality  _(op 1 pagina)_
-- 03 / 09 · Webshop  _(op 1 pagina)_
-- 04 / 09 · Roofer  _(op 1 pagina)_
-- 05 / 09 · Finish painter  _(op 1 pagina)_
-- 06 / 09 · Garden maintenance  _(op 1 pagina)_
-- 07 / 09 · Beauty salon  _(op 1 pagina)_
-- 08 / 09 · Hair salon  _(op 1 pagina)_
-- 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5 to 10 working days  _(op 1 pagina)_
 - Accountants  _(op 1 pagina)_
 - All of Belgium  _(op 53 pagina's)_
@@ -207,7 +172,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Bakers  _(op 1 pagina)_
 - Beauty Salon  _(op 1 pagina)_
 - Beauty salons  _(op 1 pagina)_
-- Belgium · CET  _(op 104 pagina's)_
+- Belgium, CET  _(op 104 pagina's)_
 - Bespoke work  _(op 1 pagina)_
 - Bold typography  _(op 1 pagina)_
 - Booking button  _(op 1 pagina)_
@@ -224,7 +189,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Coaches  _(op 1 pagina)_
 - Coverage area  _(op 1 pagina)_
 - Day 1  _(op 1 pagina)_
-- Directions · Call · Website  _(op 1 pagina)_
+- Directions, Call, Website  _(op 1 pagina)_
 - Driving schools  _(op 1 pagina)_
 - Event agencies  _(op 1 pagina)_
 - Fast on mobile and desktop  _(op 1 pagina)_
@@ -251,12 +216,10 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - One point of contact after launch  _(op 1 pagina)_
 - Online shops  _(op 1 pagina)_
 - Oost-Vlaanderen  _(op 1 pagina)_
-- Our recommendation · Vakman  _(op 7 pagina's)_
 - Our sample designs at a glance  _(op 1 pagina)_
 - Per treatment  _(op 1 pagina)_
 - Photographers  _(op 1 pagina)_
 - Physiotherapists  _(op 1 pagina)_
-- Prices from €490 excl. VAT · A single point of contact  _(op 1 pagina)_
 - Quote form  _(op 1 pagina)_
 - Refined style  _(op 1 pagina)_
 - Rental companies  _(op 1 pagina)_
@@ -281,5 +244,3 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - West-Vlaanderen  _(op 1 pagina)_
 - Works well on phone and desktop  _(op 1 pagina)_
 - You know the price before you decide  _(op 1 pagina)_
-- © 2026 Kempen Webstudio · Company number BE 0897.577.919  _(op 52 pagina's)_
-- · No reviews yet  _(op 1 pagina)_
