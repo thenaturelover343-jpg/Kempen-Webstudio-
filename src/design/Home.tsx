@@ -72,7 +72,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
   const sectors = h.vak.items;
   const metaSent = sentences(x.metaDesc);
   const [gl1, gl2] = split2(h.band.lead.replace(/<[^>]+>/g, ''));
-  const [leadA, leadB] = sentences(h.vak.lead);
+  const [leadA] = sentences(h.vak.lead);
   const dienstSent = sentences(h.diensten.lead);
   const faq = h.faq; const groups = faq.groups; const allFaq = groups.flatMap((g: any) => g.items.map((it: any) => ({ ...it, topic: g.title })));
   const places = x.places;
@@ -332,9 +332,8 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
             </div>
             <SectorMarquee lang={L} />
             <div className="mt-10 pt-4 border-t border-[#E5E7EB] flex flex-wrap items-center justify-between gap-2 text-[16px] text-[#4C433F]">
-              <span><span aria-hidden="true">• </span>{leadA}</span>
-              <span><span aria-hidden="true">• </span>{leadB}</span>
-              <a href={h.werk.cta.more.href} className="hover:text-[#121214] transition-colors cursor-pointer"><span aria-hidden="true">• </span>{h.werk.cta.more.label}</a>
+              <p className="m-0">{leadA}</p>
+              <a href={h.werk.cta.more.href} className="inline-flex items-center gap-1.5 font-medium text-[#B85D28] hover:text-[#121214] transition-colors cursor-pointer"><span>{h.werk.cta.more.label}</span><ArrowRight className="w-3.5 h-3.5" /></a>
             </div>
           </FadeIn>
         </div>
