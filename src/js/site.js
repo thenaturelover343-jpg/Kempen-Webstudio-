@@ -221,11 +221,17 @@
   /* ---------- zwevende knop: niet over de hero en niet bij het contactformulier ---------- */
   var fl = d.querySelector('[data-floating]'), ct = d.getElementById('contact');
   if (fl) {
-    var fh = d.querySelector('[data-fl-hide]'), inC = false, inH = !!fh, upd = function () { fl.classList.toggle('kw-on', !inC && !inH); };
+    /* Karim 18-11: pas na de hero; weg zodra een CTA, het contactblok of de footer in beeld is;
+       op gsm ook weg bij naar beneden scrollen (dan ligt hij niet over de tekst) en terug bij omhoog scrollen */
+    var fh = d.querySelector('[data-fl-hide]'), inH = !!fh, ctas = 0, down = false, lastY = scrollY, small = matchMedia('(max-width: 1023px)');
+    var upd = function () { fl.classList.toggle('kw-on', !inH && !ctas && !(small.matches && down)); };
     if ('IntersectionObserver' in W) {
       if (fh) new IntersectionObserver(function (es) { inH = es[0].isIntersecting; upd(); }).observe(fh);
-      if (ct) new IntersectionObserver(function (es) { inC = es[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(ct);
+      var seen = new Set(), io2 = new IntersectionObserver(function (es) { es.forEach(function (x) { if (x.isIntersecting) seen.add(x.target); else seen.delete(x.target); }); ctas = seen.size; upd(); }, { threshold: 0.05 });
+      $$('#contact, footer, section[aria-labelledby^="cta"], .ct6, [data-sel-auto] a[data-chat]').forEach(function (el) { io2.observe(el); });
+      if (ct && !ct.matches('section[aria-labelledby^="cta"]')) io2.observe(ct);
     } else inH = false;
+    addEventListener('scroll', function () { var y = scrollY; if (Math.abs(y - lastY) > 12) { down = y > lastY && y > 200; lastY = y; upd(); } }, { passive: true });
     upd();
   }
 

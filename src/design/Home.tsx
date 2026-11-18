@@ -128,7 +128,7 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
             <Load delay={0.14} className="relative z-20 lg:col-span-4 lg:col-start-9 flex flex-col items-stretch lg:items-end justify-between lg:min-h-[395px] pt-1 lg:pt-2">
               <div data-sel="" data-sel-wrap="" data-sel-auto="6500" className="order-2 lg:order-1 mt-6 lg:mt-0 mx-auto lg:mx-0 w-full max-w-[360px] xl:max-w-[392px] rounded-[24px] sm:rounded-[28px] p-3 sm:p-3.5 bg-gradient-to-br from-[#C4C5C8]/90 via-[#B8B9BC]/85 to-[#ABACB0]/90 border border-white/30 flex items-stretch gap-3.5 sm:gap-5 shadow-[0_12px_30px_rgba(0,0,0,0.04)] backdrop-blur-xs">
                 <div className="relative overflow-hidden w-[126px] sm:w-[172px] h-[152px] sm:h-[176px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405]">
-                  {slides.map((_, i) => <div key={i} data-sel-panel={i} hidden={i > 0} className="absolute inset-0"><Foto id={HERO_FOTO[i % HERO_FOTO.length]} vorm="kaart" lang={L} sizes="(min-width: 640px) 172px, 126px" className="absolute inset-0 block w-full h-full object-cover object-left-top" /></div>)}
+                  {slides.map((_, i) => <div key={i} data-sel-panel={i} hidden={i > 0} className="absolute inset-0"><Foto id={HERO_FOTO[i % HERO_FOTO.length]} vorm="kaart" lang={L} sizes="(min-width: 640px) 172px, 126px" className="absolute inset-0 block w-full h-full object-contain object-center" /></div>)}
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col justify-between py-1 sm:py-1.5 pr-0.5 sm:pr-1">
                   <div className="flex items-center justify-between">
@@ -404,22 +404,27 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {h.diensten.items.map((d: any, i: number) => {
-                const first = i === 0;
+                // Karim 18-11: meer kleur uit de stijlgids; kaarten wisselen af (koper, lichtgrijs, warm grijs, wit), tekst telkens AA
+                const V = [
+                  { box: 'copper-panel-gradient', h: 'text-white', p: 'text-white/90', num: 'text-white/90', line: 'text-white border-white/25', price: '', chips: 'text-white/90' },
+                  { box: 'bg-[#F2F2F2]', h: 'text-[#121214]', p: 'text-[#4C433F]', num: 'text-[#B85D28]', line: 'text-[#4C433F] border-[#D3D6DA]', price: 'text-[#9A4A1C]', chips: 'text-[#4C433F]' },
+                  { box: 'bg-[#4C433F]', h: 'text-white', p: 'text-[#E4E4E7]', num: 'text-[#F7C59F]', line: 'text-[#E4E4E7] border-white/20', price: 'text-[#F7C59F]', chips: 'text-[#E4E4E7]' },
+                  { box: 'bg-white', h: 'text-[#121214]', p: 'text-[#4C433F]', num: 'text-[#B85D28]', line: 'text-[#4C433F] border-[#E5E7EB]', price: 'text-[#9A4A1C]', chips: 'text-[#4C433F]' },
+                ][i % 4];
                 return (
                   <Fragment key={d.id}>
                     <FadeIn delay={0.05 + i * 0.045} className="h-full">
-                      <div id={d.id} className={cx('group relative w-full h-full text-left rounded-[20px] p-6 sm:p-7 min-h-[230px] sm:min-h-[300px] flex flex-col justify-between',
-                        first ? 'copper-panel-gradient transition-transform duration-200 hover:-translate-y-0.5' : 'bg-[#1C1C1E] hover:bg-[#262629] border border-white/10 transition-colors duration-200')}>
+                      <div id={d.id} className={cx('group kw-lift relative w-full h-full text-left rounded-[20px] p-6 sm:p-7 min-h-[230px] sm:min-h-[300px] flex flex-col justify-between', V.box)}>
                         <a href={d.more.href} className="absolute inset-0 rounded-[20px]" aria-label={`${d.h}: ${d.more.label}`} />
                         <div>
-                          <h3 className="text-[18px] font-medium text-white">{d.h}</h3>
-                          <p className={first ? 'mt-2 text-[16px] text-white/90 leading-relaxed' : 'mt-2 text-[16px] text-[#D3D6DA]/90 leading-relaxed'}><Html html={d.d} /></p>
+                          <h3 className={cx('text-[18px] font-medium', V.h)}>{d.h}</h3>
+                          <p className={cx('mt-2 text-[16px] leading-relaxed', V.p)}><Html html={d.d} /></p>
                         </div>
                         <div className="flex flex-col gap-4 pt-6">
-                          <span aria-hidden="true" className={cx('font-title text-[56px] sm:text-[64px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', first ? 'text-white/90' : 'text-[#F1A36A]')}>0{i + 1}.</span>
-                          <div className={cx('text-[16px] leading-snug border-t pt-3 lg:min-h-[76px]', first ? 'text-white border-white/25' : 'text-[#D3D6DA] border-white/10')}>
-                            <p className={cx('font-medium', !first && 'text-[#F1A36A]')}>{d.priceText}</p>
-                            {d.chips.length > 0 && <p className={cx('relative z-10 mt-0.5 [text-wrap:pretty]', first ? 'text-white/90' : 'text-[#D3D6DA]/85')}>
+                          <span aria-hidden="true" className={cx('font-title text-[56px] sm:text-[64px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', V.num)}>0{i + 1}.</span>
+                          <div className={cx('text-[16px] leading-snug border-t pt-3 lg:min-h-[76px]', V.line)}>
+                            <p className={cx('font-medium', V.price)}>{d.priceText}</p>
+                            {d.chips.length > 0 && <p className={cx('relative z-10 mt-0.5 [text-wrap:pretty]', V.chips)}>
                               {d.chips.map((c: string, k: number) => <Fragment key={k}>{k > 0 && ', '}<Html html={c} /></Fragment>)}
                             </p>}
                           </div>
@@ -763,7 +768,7 @@ function SectorMarquee({ lang }: { lang: string }) {
   );
 }
 
-const SECTOR_FOTO: Record<string, string> = { '/website-horeca/': 'terras', '/website-kapsalon/': 'kapsalon' };
+const SECTOR_FOTO: Record<string, string> = { '/website-vakmensen/': 'sector-vakman', '/website-horeca/': 'sector-horeca', '/website-kapsalon/': 'sector-kapsalon', '/website-schilder/': 'sector-schilder', '/website-tuinaannemer/': 'sector-tuin' };
 function SectorBtn({ m, i }: { m: any; i: number }) {
   const fid = SECTOR_FOTO[baseOf(m.href)];
   return (
@@ -782,11 +787,11 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
     <StaggerGroup className="mt-10 sm:mt-12 grid grid-cols-1 lg:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
       {tiers.map((tier: any, i: number) => {
         const cop = tier.hi; const obs = !cop && i === tiers.length - 1 && tiers.length === 3;
-        const surface = cop ? 'copper-panel-gradient text-white shadow-[0_18px_40px_rgba(184,93,40,0.22)]' : obs ? 'bg-[#070709] text-white border border-[#B85D28]/45 shadow-[0_16px_36px_rgba(7,7,9,0.14)]' : 'bg-[#F2F2F2] text-[#121214] border border-[#D3D6DA]';
-        const badge = cop ? 'bg-white/15 border-white/30 text-white' : obs ? 'bg-[#FB4D27]/15 border-[#FB4D27]/45 text-[#F1A36A]' : 'bg-[#B85D28]/10 border-[#B85D28]/25 text-[#5E2A11]';
+        const surface = cop ? 'copper-panel-gradient text-white shadow-[0_18px_40px_rgba(184,93,40,0.22)]' : obs ? 'bg-[#4C433F] text-white border border-white/10 shadow-[0_16px_36px_rgba(7,7,9,0.14)]' : 'bg-[#F2F2F2] text-[#121214] border border-[#D3D6DA]';
+        const badge = cop ? 'bg-white/15 border-white/30 text-white' : obs ? 'bg-[#FB4D27]/15 border-[#FB4D27]/45 text-[#F7C59F]' : 'bg-[#B85D28]/10 border-[#B85D28]/25 text-[#5E2A11]';
         const soft = cop ? 'text-white/90' : obs ? 'text-[#D3D6DA]' : 'text-[#4C433F]';
-        const monthAcc = cop ? 'text-white' : obs ? 'text-[#F1A36A]' : 'text-[#9A4A1C]';
-        const check = cop ? 'bg-white/20 text-white' : obs ? 'bg-[#B85D28]/25 text-[#F1A36A]' : 'bg-[#B85D28]/12 text-[#B85D28]';
+        const monthAcc = cop ? 'text-white' : obs ? 'text-[#F7C59F]' : 'text-[#9A4A1C]';
+        const check = cop ? 'bg-white/20 text-white' : obs ? 'bg-[#B85D28]/25 text-[#F7C59F]' : 'bg-[#B85D28]/12 text-[#B85D28]';
         const feat = cop ? 'text-white/95' : obs ? 'text-[#D3D6DA]' : 'text-[#4C433F]';
         const note = cop ? 'text-white/85 border-white/20' : obs ? 'text-[#D3D6DA]/90 border-white/15' : 'text-[#4C433F] border-[#D3D6DA]';
         const cta = cop ? 'bg-[#070709] hover:bg-[#18181B] text-white' : obs ? 'copper-pill-gradient hover:opacity-90 text-white' : 'bg-[#4C433F] hover:bg-[#5E2A11] text-white';
@@ -810,7 +815,7 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
                         <span className="text-[15px] opacity-95">{tier.amtAfter}</span>
                       </div>
                       {tier.m.map((m: any, k: number) => (
-                        <p key={k} className={`mt-2 text-[16px] tabular-nums ${m.ex ? (cop || obs ? 'text-white/90' : 'text-[#4C433F]') : (cop || obs ? 'text-white/90' : 'text-[#4C433F]')} [&_em]:not-italic [&_em]:font-medium ${cop ? '[&_em]:text-white' : obs ? '[&_em]:text-[#F1A36A]' : '[&_em]:text-[#9A4A1C]'}`}><Html html={m.ex ? m.html : m.html.replace(/^([^<€]*€\s?[\d.,]+)/, '<em>$1</em>')} /></p>
+                        <p key={k} className={`mt-2 text-[16px] tabular-nums ${m.ex ? (cop || obs ? 'text-white/90' : 'text-[#4C433F]') : (cop || obs ? 'text-white/90' : 'text-[#4C433F]')} [&_em]:not-italic [&_em]:font-medium ${cop ? '[&_em]:text-white' : obs ? '[&_em]:text-[#F7C59F]' : '[&_em]:text-[#9A4A1C]'}`}><Html html={m.ex ? m.html : m.html.replace(/^([^<€]*€\s?[\d.,]+)/, '<em>$1</em>')} /></p>
                       ))}
                     </div>
                   )}

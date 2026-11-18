@@ -149,7 +149,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
           <Load delay={0.14} className="relative z-20 lg:col-span-4 lg:col-start-9 flex flex-col items-stretch lg:items-end gap-8 lg:gap-14 lg:pt-6">
             {slides.length > 0 && (
               <div data-sel="" data-sel-wrap="" data-sel-auto="6500" className="mx-auto lg:mx-0 w-full max-w-[360px] xl:max-w-[392px] rounded-[24px] sm:rounded-[28px] p-3 sm:p-3.5 bg-gradient-to-br from-[#C4C5C8]/90 via-[#B8B9BC]/85 to-[#ABACB0]/90 border border-white/30 flex items-stretch gap-3.5 sm:gap-5 shadow-[0_12px_30px_rgba(0,0,0,0.06)] backdrop-blur-xs">
-                <div className="relative overflow-hidden w-[118px] sm:w-[160px] h-[146px] sm:h-[168px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center">{fid ? <Foto id={fid} vorm="kaart" lang={h.lang} sizes="(min-width: 640px) 160px, 118px" className="absolute inset-0 block w-full h-full object-cover object-left-top" /> : <ShowcaseEmblem />}</div>
+                <div className="relative overflow-hidden w-[118px] sm:w-[160px] h-[146px] sm:h-[168px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center">{fid ? <Foto id={fid} vorm="kaart" lang={h.lang} sizes="(min-width: 640px) 160px, 118px" className="absolute inset-0 block w-full h-full object-contain object-center" /> : <ShowcaseEmblem />}</div>
                 <div className="flex-1 min-w-0 flex flex-col justify-between py-1 sm:py-1.5 pr-0.5 sm:pr-1">
                   <span aria-hidden="true" className="text-[15px] font-semibold text-[#18181B] tabular-nums">
                     {slides.map((_, i) => <span key={i} data-sel-panel={i} hidden={i > 0}>0{i + 1}</span>)}
@@ -370,7 +370,7 @@ function ParaCards({ items, dark, onPanel }: { items: Item[]; dark: boolean; onP
         const lists = it.html.split(/(?=<ul|<ol)/).slice(1).join('');
         return (
           <StaggerItem key={i} i={i} className={cx('h-full', span6(n, i), span2(n, i))}>
-            <div className={cx('kw-lift h-full rounded-[22px] p-6 sm:p-7 flex flex-col gap-5', dark ? 'bg-[#161618] border border-white/10' : onPanel ? 'bg-white border border-[#E5E7EB]' : 'bg-[#F2F2F2] border border-[#D3D6DA]')}>
+            <div className={cx('kw-lift h-full rounded-[22px] p-6 sm:p-7 flex flex-col gap-5', dark ? (i % 3 === 1 ? 'bg-[#4C433F] border border-white/10' : 'bg-[#161618] border border-white/10') : onPanel ? 'bg-white border border-[#E5E7EB]' : 'bg-[#F2F2F2] border border-[#D3D6DA]')}>
               <span aria-hidden="true" className={cx('font-title text-[40px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', dark ? 'text-[#F1A36A]' : 'text-[#B85D28]')}>{String(i + 1).padStart(2, '0')}.</span>
               <div className={cx('text-[16px] leading-relaxed kw-prose kw-link max-w-[68ch]', LIST_DOT, dark ? 'text-[#C8C8CC] [&_a]:text-white [&_strong]:text-white' : 'text-[#4C433F] [&_strong]:text-[#121214]')}>
                 {p ? (b ? <p><span className={cx('font-medium', dark ? 'text-white' : 'text-[#121214]')}><Html html={a} /></span> <Html html={b} /></p> : <p><Html html={a} /></p>) : <Html html={it.html.split(/(?=<ul|<ol)/)[0]} as="div" />}
@@ -688,13 +688,13 @@ function render(b: any, P: any, s: any, f?: any) {
     }
     case 'cta': return (
       <Sec {...P}>
-        <FadeIn className="rounded-[28px] bg-[#070709] text-white p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <FadeIn className="rounded-[28px] bg-[#4C433F] text-white p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-2xl">
             {b.also && (
               <nav aria-label={b.also.aria || undefined} className="flex flex-wrap items-center gap-3 text-[15px] text-[#D3D6DA] mb-3">
                 <span>{b.also.label}</span>
                 {b.also.links.map((l: any) => (
-                  <a key={l.href} href={l.href} className="inline-flex items-center gap-1.5 hover:text-white transition-colors"><MapPin className="w-3 h-3 text-[#F1A36A]" /><span>{l.label}</span></a>
+                  <a key={l.href} href={l.href} className="inline-flex items-center gap-1.5 hover:text-white transition-colors"><MapPin className="w-3 h-3 text-[#F7C59F]" /><span>{l.label}</span></a>
                 ))}
               </nav>
             )}

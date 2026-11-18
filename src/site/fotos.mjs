@@ -17,6 +17,12 @@ const vb = naam => ({ alt: { nl: `Voorbeeldontwerp ${naam} op een smartphone`, f
 /** id -> bron (in src/img/foto/bron), optionele uitsnede {left, top, width, height}, focus voor 'cover', alt per taal;
  *  vorm: { <vorm>: { src, crop, pos } } geeft een eigen bron of uitsnede voor één vorm (bv. de 16:10-tegel), zonder handmatige bestanden */
 export const FOTOS = {
+  // sectorcirkels op de home (Unsplash License, zie FOTO-BRONNEN.md; zelfde warme kleurgrading)
+  'sector-vakman': { src: 'sector-vakman.webp', alt: { nl: 'Schrijnwerker aan het werk in een houtatelier', fr: 'Menuisier au travail dans un atelier de bois', en: 'Joiner at work in a woodworking shop' } },
+  'sector-horeca': { src: 'sector-horeca.webp', alt: { nl: 'Chef werkt een gerecht af in de keuken', fr: 'Chef dressant une assiette en cuisine', en: 'Chef finishing a dish in the kitchen' } },
+  'sector-kapsalon': { src: 'sector-kapsalon.webp', alt: { nl: 'Kapper knipt haar in een salon', fr: 'Coiffeuse coupant des cheveux dans un salon', en: 'Hairdresser cutting hair in a salon' } },
+  'sector-schilder': { src: 'sector-schilder.webp', alt: { nl: 'Schilder rolt een lichte muur', fr: 'Peintre passant le rouleau sur un mur clair', en: 'Painter rolling a light-coloured wall' } },
+  'sector-tuin': { src: 'sector-tuin.webp', alt: { nl: 'Tuinaannemer zet een plant in de grond', fr: 'Jardinier plantant un plant en pleine terre', en: 'Landscaper planting a seedling' } },
   // foto's uit de bestaande site (assets/img) en de voorbeeldsites
   horeca: { src: 'sec-horeca-1400.webp', alt: { nl: 'Gedekte tafels in een restaurant met warm licht', fr: 'Tables dressées dans un restaurant à la lumière chaleureuse', en: 'Laid tables in a restaurant with warm light' } },
   starters: { src: 'sec-starters-1400.webp', alt: { nl: 'Laptop, notitieboek en koffie op een houten tafel', fr: 'Ordinateur portable, carnet et café sur une table en bois', en: 'Laptop, notebook and coffee on a wooden table' } },
