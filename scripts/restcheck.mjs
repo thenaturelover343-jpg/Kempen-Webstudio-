@@ -18,7 +18,12 @@ const tests = [
   ['komma na bolletje of komma', /·[\s  ]*,|,[\s  ]*,/],
   ['dubbele leestekens', new RegExp(`([.;:!?])${SP}\\1(?!\\1)|[,;:]${SP}[.!?]|\\.${SP}[,;:]`)],
   ['eén', /(^|[^\p{L}])eén(?!\p{L})|[a-zà-ÿ,] Eén(?!\p{L})/u],
-  ['kleine letter na zinseinde', /(?<!(?:o\.a|bv|bijv|incl|excl|ca|nr|vb|ex|e\.g|i\.e|etc|min|max|p|c|art|z\.?o))(?<![A-Za-z0-9]\.[A-Za-z0-9]+)[.!?][\s ]+(?=[a-zà-ÿ])(?!www\b|e-mail\b|https?)/],
+  // evaluatie 2 (18-11): Kasterlee/Kempen als werkplek, dubbele naam in de kruimel, NAP-varianten, FR-zinnen
+  ['Kasterlee/Kempen als werkplek', /vanuit Kasterlee|webstudio uit Kasterlee|webdesigner uit Kasterlee|(?:zit|zitten)(?: zelf)? in Kasterlee|gevestigd in Kasterlee|naar Kasterlee (?:te )?komen|wij in Kasterlee|webstudio uit (?:de Kempen|uw gemeente)|from Kasterlee|based in Kasterlee|In Kasterlee, for|to Kasterlee|web studio (?:from the Kempen|in Kasterlee)|depuis Kasterlee|établi à Kasterlee|nous à Kasterlee|rendre à Kasterlee|À Kasterlee, pour|studio web (?:de|à) (?:Kasterlee|Campine|votre commune)|agence web de Kasterlee|Campine anversoise|Kempen region|Kasterlee, BE · CET|Waarom Kasterlee|Why Kasterlee|Pourquoi Kasterlee/],
+  ['dubbele naam (KempenKempen)', /KempenKempen|CampineCampine/],
+  ['NAP niet identiek', /2460 Kasterlee, (?:werkt|works|actif|intervient|Belgium|België|Belgique)/],
+  ['FR-zin na vervanging', /\bce que un\b|vous lisez (?:dans|sur notre page sur) un site web/],
+  ['kleine letter na zinseinde',/(?<!(?:o\.a|bv|bijv|incl|excl|ca|nr|vb|ex|e\.g|i\.e|etc|min|max|p|c|art|z\.?o))(?<![A-Za-z0-9]\.[A-Za-z0-9]+)[.!?][\s ]+(?=[a-zà-ÿ])(?!www\b|e-mail\b|https?)/],
 ];
 const hits = [];
 const add = (f, soort, tekst) => hits.push({ pagina: '/' + path.relative(DIR, f).replace(/\\/g, '/').replace(/index\.html$/, ''), soort, tekst: tekst.slice(0, 180) });
@@ -69,6 +74,14 @@ for (const f of files) {
       if (/\b(?:voorstel(?:len)?|proposals?|propositions?)\b/i.test(z)) add(f, 'voorstel/proposal/proposition als offerte (' + bron + ')', norm(s));
     }
   }
+  // EN: "the Kempen", nooit "Campine"
+  if (pad.startsWith('/en/')) for (const [bron, s] of strs) if (/Campine/.test(s)) add(f, 'EN: Campine in plaats van the Kempen (' + bron + ')', norm(s));
+  // "Kies uw stad": alfabetisch
+  for (const p of d.querySelectorAll('p')) if (/^(Kies uw stad|Choisissez votre ville|Choose your city)$/.test(norm(p.textContent))) {
+    const ul = p.nextElementSibling; if (!ul || ul.tagName !== 'UL') continue;
+    const n = [...ul.querySelectorAll('li')].map(li => norm(li.textContent)); const lg = (d.documentElement.getAttribute('lang') || 'nl').slice(0, 2);
+    if (n.join('|') !== [...n].sort((a, b) => a.localeCompare(b, lg)).join('|')) add(f, 'Kies uw stad niet alfabetisch', n.join(', '));
+  }
   // "altijd vrijblijvend" direct na een vrijblijvende offerte (ook over twee alinea's heen)
   const blokken = []; for (const el of d.querySelectorAll(BLOCK)) { if (el.querySelector(INNER)) continue; const tx = norm(el.textContent); if (tx) blokken.push({ tx, el }); }
   const vol = blokken.map(b => b.tx).join(' ');
@@ -88,7 +101,11 @@ for (const f of files) {
   const gezien = new Set();
   for (let i = 0; i < zinnen.length; i++) for (let j = i + 1; j < zinnen.length; j++) {
     const a = zinnen[i], b = zinnen[j]; if (a.bi === b.bi) continue;
-    if (a.k === b.k || b.k.startsWith(a.k + ',') || a.k.startsWith(b.k + ',')) { const key = a.z + '|' + b.z; if (!gezien.has(key)) { gezien.add(key); add(f, 'dubbele offertezin op de pagina', a.z + '  <=>  ' + b.z); } }
+    // ook: twee offertezinnen die met dezelfde 7 woorden beginnen (bv. "Na een kennismaking krijgt u een vrijblijvende offerte ...")
+    // (de gedeelde slot-CTA "Na een kennismaking krijgt u een vrijblijvende offerte." is een goedgekeurd blok en telt hier niet)
+    const CTA = /^(na een kennismaking krijgt u een vrijblijvende offerte|after an introductory conversation you receive a no-obligation quote|après une prise de contact, vous recevez un devis sans engagement)$/;
+    const w7 = x => x.split(' ').slice(0, 7).join(' '), zelfdeBegin = !CTA.test(a.k) && !CTA.test(b.k) && a.k.split(' ').length > 7 && b.k.split(' ').length > 7 && w7(a.k) === w7(b.k);
+    if (a.k === b.k || b.k.startsWith(a.k + ',') || a.k.startsWith(b.k + ',') || zelfdeBegin) { const key = a.z + '|' + b.z; if (!gezien.has(key)) { gezien.add(key); add(f, 'dubbele offertezin op de pagina', a.z + '  <=>  ' + b.z); } }
   }
 }
 const uniek = [...new Map(hits.map(h => [h.pagina + h.soort + h.tekst, h])).values()];

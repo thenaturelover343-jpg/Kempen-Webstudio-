@@ -52,6 +52,7 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
                       <li><button type="button" className="ck-open hover:text-[#18181B] transition-colors cursor-pointer text-left">{f.cookieBtn}</button></li>
                     )}
                     {/Contact/i.test(c.title) && address && <li className="text-[#4C433F]">{address}</li>}
+                    {/Contact/i.test(c.title) && address && s.ui && s.ui.areaTitle && <li className="text-[#4C433F]">{s.ui.areaTitle}</li>}
                     {/Contact/i.test(c.title) && hours && <li className="text-[#4C433F]">{hours}</li>}
                   </ul>
                 </nav>

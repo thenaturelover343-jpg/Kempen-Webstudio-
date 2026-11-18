@@ -5,7 +5,7 @@
 export const UI = {
   nl: {
     region: 'Heel België', timeIn: 'Tijd in België', language: 'Taal', langGroup: 'Taalkeuze', menu: 'MENU',
-    menuOpen: 'Menu openen', menuClose: 'Menu sluiten', clockLocale: 'nl-BE', clockFallback: 'Kasterlee, BE · CET',
+    menuOpen: 'Menu openen', menuClose: 'Menu sluiten', clockLocale: 'nl-BE', clockFallback: 'België · CET',
     backToTop: 'Naar boven', chatClose: 'Venster sluiten', chatBrand: 'Antwoord doorgaans binnen 1 werkdag',
     badgeIntro: 'Voor elke zaak', badgeArea: 'Werkgebied', badgeReal: 'Realisaties & Voorbeelden', faqAll: 'Alle',
     capsules: ['Vlot', 'Helder', 'Op maat'], moreNum: 'Alle', moreLabel: 'sectoren', areaTitle: 'Werkt in heel België',
@@ -19,7 +19,7 @@ export const UI = {
   },
   fr: {
     region: 'Toute la Belgique', timeIn: 'Heure en Belgique', language: 'Langue', langGroup: 'Choix de langue', menu: 'MENU',
-    menuOpen: 'Ouvrir le menu', menuClose: 'Fermer le menu', clockLocale: 'fr-BE', clockFallback: 'Kasterlee, BE · CET',
+    menuOpen: 'Ouvrir le menu', menuClose: 'Fermer le menu', clockLocale: 'fr-BE', clockFallback: 'Belgique · CET',
     backToTop: 'Haut de page', chatClose: 'Fermer la fenêtre', chatBrand: 'Réponse habituelle sous 1 jour ouvrable',
     badgeIntro: 'Pour chaque activité', badgeArea: 'Zone d’action', badgeReal: 'Réalisations & Exemples', faqAll: 'Toutes',
     capsules: ['Rapide', 'Clair', 'Sur mesure'], moreNum: 'Tous', moreLabel: 'les secteurs', areaTitle: 'Actif dans toute la Belgique',
@@ -33,7 +33,7 @@ export const UI = {
   },
   en: {
     region: 'All of Belgium', timeIn: 'Time in Belgium', language: 'Language', langGroup: 'Language selector', menu: 'MENU',
-    menuOpen: 'Open menu', menuClose: 'Close menu', clockLocale: 'en-GB', clockFallback: 'Kasterlee, BE · CET',
+    menuOpen: 'Open menu', menuClose: 'Close menu', clockLocale: 'en-GB', clockFallback: 'Belgium · CET',
     backToTop: 'Back to top', chatClose: 'Close dialog', chatBrand: 'Reply usually within 1 business day',
     badgeIntro: 'For every business', badgeArea: 'Service Area', badgeReal: 'Work & Examples', faqAll: 'All',
     capsules: ['Fast', 'Clear', 'Custom'], moreNum: 'All', moreLabel: 'sectors', areaTitle: 'Serving all of Belgium',

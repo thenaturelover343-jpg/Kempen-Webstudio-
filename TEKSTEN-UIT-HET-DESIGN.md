@@ -20,6 +20,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Architecten  _(op 1 pagina)_
 - Bakkers  _(op 1 pagina)_
 - Barbiers  _(op 1 pagina)_
+- België · CET  _(op 114 pagina's)_
 - Boekhouders  _(op 1 pagina)_
 - Bouwbedrijven  _(op 1 pagina)_
 - Cateraars  _(op 1 pagina)_
@@ -37,7 +38,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Heldere opbouw  _(op 1 pagina)_
 - Henegouwen  _(op 1 pagina)_
 - Ingetogen ontwerp  _(op 1 pagina)_
-- Kasterlee, BE · CET  _(op 114 pagina's)_
 - Kennismaking en vrijblijvende offerte, één aanspreekpunt, antwoord doorgaans binnen 1 werkdag.  _(op 11 pagina's)_
 - Kennismaking en vrijblijvende offerte, één aanspreekpunt, prijzen vanaf €490 excl. btw.  _(op 44 pagina's)_
 - Lichte stijl  _(op 1 pagina)_
@@ -79,7 +79,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Webshops  _(op 1 pagina)_
 - Website laten maken in België: webdesign op maat, eerst een kennismaking en een vrijblijvende offerte.  _(op 1 pagina)_
 - Werkgebied  _(op 2 pagina's)_
-- Werkt in heel België  _(op 2 pagina's)_
+- Werkt in heel België  _(op 59 pagina's)_
 - Werkt vlot op gsm en computer  _(op 1 pagina)_
 - Winkelmand  _(op 1 pagina)_
 - Zes van onze voorbeeldontwerpen, elk voor een andere sector. Namen en gegevens zijn fictief; klik door voor de doelgroep, de keuzes en de functies.  _(op 1 pagina)_
@@ -98,13 +98,14 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - 08 / 09 · Salon de coiffure  _(op 1 pagina)_
 - 09 / 09 · Barbershop  _(op 1 pagina)_
 - 5 à 10 jours ouvrables  _(op 1 pagina)_
-- Actif dans toute la Belgique  _(op 2 pagina's)_
+- Actif dans toute la Belgique  _(op 57 pagina's)_
 - Adapté mobile  _(op 1 pagina)_
 - Agenda par soin  _(op 1 pagina)_
 - Aménagement  _(op 1 pagina)_
 - Architectes  _(op 1 pagina)_
 - Auto-écoles  _(op 1 pagina)_
 - Barbiers  _(op 1 pagina)_
+- Belgique · CET  _(op 110 pagina's)_
 - Boucheries  _(op 1 pagina)_
 - Boulangeries  _(op 1 pagina)_
 - Boutique en ligne  _(op 2 pagina's)_
@@ -117,7 +118,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Coachs  _(op 1 pagina)_
 - Comptables  _(op 1 pagina)_
 - Continu  _(op 1 pagina)_
-- Création de site internet en Belgique par une agence web de Kasterlee : un site sur mesure, avec d’abord un devis sans engagement.  _(op 1 pagina)_
+- Création de site internet en Belgique : un site sur mesure, avec d’abord une prise de contact et un devis sans engagement.  _(op 1 pagina)_
 - Demande de devis  _(op 1 pagina)_
 - Demande reçue, un seul interlocuteur, réponse sous 1 jour ouvrable.  _(op 1 pagina)_
 - Design épuré  _(op 1 pagina)_
@@ -138,7 +139,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Itinéraire · Appeler · Site web  _(op 1 pagina)_
 - Jardiniers  _(op 1 pagina)_
 - Jour 1  _(op 1 pagina)_
-- Kasterlee, BE · CET  _(op 110 pagina's)_
 - Kinés  _(op 1 pagina)_
 - Limburg  _(op 1 pagina)_
 - Limites : © EuroGeographics  _(op 1 pagina)_
@@ -207,6 +207,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Bakers  _(op 1 pagina)_
 - Beauty Salon  _(op 1 pagina)_
 - Beauty salons  _(op 1 pagina)_
+- Belgium · CET  _(op 104 pagina's)_
 - Bespoke work  _(op 1 pagina)_
 - Bold typography  _(op 1 pagina)_
 - Booking button  _(op 1 pagina)_
@@ -238,7 +239,6 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Introductory conversation and no-obligation quote, a single point of contact, prices from €490 excl. VAT.  _(op 40 pagina's)_
 - Introductory conversation and no-obligation quote, a single point of contact, usually a reply within 1 working day.  _(op 11 pagina's)_
 - Joinery  _(op 1 pagina)_
-- Kasterlee, BE · CET  _(op 104 pagina's)_
 - Lawyers  _(op 1 pagina)_
 - Liberal professions  _(op 1 pagina)_
 - Light aesthetic  _(op 1 pagina)_
@@ -265,7 +265,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Secure checkout  _(op 1 pagina)_
 - Service Area  _(op 1 pagina)_
 - Service overview  _(op 1 pagina)_
-- Serving all of Belgium  _(op 2 pagina's)_
+- Serving all of Belgium  _(op 54 pagina's)_
 - Shopping cart  _(op 1 pagina)_
 - Single point of contact  _(op 1 pagina)_
 - Six of our sample designs, each for a different sector. Names and details are fictional; click through for the audience, choices and features.  _(op 1 pagina)_

@@ -682,9 +682,9 @@ function cityHref(k: string, lang: string) {
 // labelpositie per stad (de Kempense steden liggen dicht bij elkaar)
 const LBL: Record<string, [number, number, string]> = { turnhout: [0, -12, 'middle'], geel: [3, 22, 'middle'], mol: [9, 6, 'start'], herentals: [-9, 12, 'end'], antwerpen: [-9, 4, 'end'], mechelen: [-9, 5, 'end'], gent: [9, 4, 'start'], leuven: [9, 5, 'start'], brussel: [-9, 5, 'end'], kortrijk: [9, 5, 'start'], brugge: [9, 4, 'start'], hasselt: [9, 5, 'start'], liege: [9, 5, 'start'], namur: [9, 5, 'start'], charleroi: [-9, 5, 'end'] };
 const MAP_TXT: Record<string, { aria: string; list: string; src: string }> = {
-  nl: { aria: 'Kaart van België met de steden waar wij websites maken, vanuit Kasterlee', list: 'Kies uw stad', src: 'Grenzen: © EuroGeographics' },
-  fr: { aria: 'Carte de la Belgique avec les villes où nous créons des sites, depuis Kasterlee', list: 'Choisissez votre ville', src: 'Limites : © EuroGeographics' },
-  en: { aria: 'Map of Belgium with the cities where we build websites, from Kasterlee', list: 'Choose your city', src: 'Boundaries: © EuroGeographics' },
+  nl: { aria: 'Kaart van België met de steden waar wij websites maken', list: 'Kies uw stad', src: 'Grenzen: © EuroGeographics' },
+  fr: { aria: 'Carte de la Belgique avec les villes où nous créons des sites', list: 'Choisissez votre ville', src: 'Limites : © EuroGeographics' },
+  en: { aria: 'Map of Belgium with the cities where we build websites', list: 'Choose your city', src: 'Boundaries: © EuroGeographics' },
 };
 function BelgiumMap({ lang, x }: { lang: string; x: any }) {
   const M: any = BEKAART; const home = M.cities.find((c: any) => c.k === 'kasterlee');
@@ -731,8 +731,8 @@ function BelgiumMap({ lang, x }: { lang: string; x: any }) {
           </div>
           <p className="mt-7 text-[16px] font-medium text-[#D3D6DA]">{t.list}</p>
           <ul className="mt-3 flex flex-wrap gap-2">
-            {M.cities.map((c: any) => (
-              <li key={c.k}><a href={cityHref(c.k, lang)} className={cx('inline-flex rounded-full px-4 py-2 text-[15px] font-medium transition-colors cursor-pointer', c.k === 'kasterlee' ? 'copper-pill-gradient text-white' : 'bg-white/10 text-white hover:bg-[#B85D28]')}>{name(c)}</a></li>
+            {[...M.cities].sort((p: any, q: any) => name(p).localeCompare(name(q), lang)).map((c: any) => (
+              <li key={c.k}><a href={cityHref(c.k, lang)} className={cx('inline-flex rounded-full px-4 py-2 text-[15px] font-medium transition-colors cursor-pointer', 'bg-white/10 text-white hover:bg-[#B85D28]')}>{name(c)}</a></li>
             ))}
           </ul>
         </div>

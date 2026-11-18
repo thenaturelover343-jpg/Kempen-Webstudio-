@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 18-11-2026 (hover en animatie aangevuld).
+Laatst bijgewerkt: 18-11-2026 (evaluatie 2 verwerkt).
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -151,6 +151,11 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Nieuw, alleen met transform/opacity en alleen voor muis: kaart-lift met schaduw (`kw-lift`), foto-zoom met overlay (`kw-zoom`), meeschuivende pijlen, onderlijn-animatie (`kw-ul`, menu en footer), submenu-items die gestaffeld binnenkomen, FAQ die vloeiend opent (geen hoogte-animatie meer), tellers op de prijsbedragen (`data-count`, vaste breedte), scroll-parallax op het heroportret, koperen focusrand voor alle bedienbare elementen.
   - Geen Motion/LazyMotion: de site draait zonder React in de browser, en hydrateren zou veel JS kosten. Alles is gedaan met CSS en `site.js`.
   - Nieuwe controle: `npm run hovertest` (12 controles in een echte browser, ook voor minder beweging en touch). Lighthouse mobiel 99-100, desktop 100, CLS 0.
+- [x] **Evaluatie 2 verwerkt** (Karim 18-11): `EVALUATIE2-VERWERKT.md`, tag `voor-evaluatie2-18-11`. Per pagina geteld: 90/90 punten verwerkt.
+  - Kasterlee en de Kempen worden niet meer als werkplek vermeld (over ons, contact, stadspagina's, meta, FAQ). Regiopagina's, klantgerichte zinnen en de NAP blijven. In EN staat overal "the Kempen". De dubbele kruimel ("KempenKempen") is weg. "Kies uw stad" staat alfabetisch. Header: "België · CET".
+  - NAP: in de footer staat het adres apart, met daaronder "Werkt in heel België" (`s.ui.areaTitle`). ", Belgium/België/Belgique" is weg.
+  - Dubbele offertezinnen weg op webshop, sectorpagina's, vereniging, vernieuwen, Gent en Liège (plus Gent-band, FR-prijsgids). FR-zinnen over nouveaux entrepreneurs herschreven.
+  - restcheck meldt nu ook: werkplekzinnen, KempenKempen, NAP-varianten, FR "ce que un", Campine op EN-pagina's, "Kies uw stad" alfabetisch, en offertezinnen met dezelfde 7 beginwoorden (zonder de gedeelde CTA).
 
 ## Bezig
 
