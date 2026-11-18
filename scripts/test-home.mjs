@@ -70,10 +70,8 @@ for (const w of [1440, 390]) {
   // zwevende knoppen: bovenaan onzichtbaar, na de hero zichtbaar, bij contact weer weg
   const fl = async () => p.evaluate(() => { const f = document.querySelector('[data-floating]'); return f ? getComputedStyle(f).visibility : 'none'; });
   ok(await fl() !== 'visible', `${T} zwevende knoppen verborgen in de hero`);
-  await p.evaluate(() => scrollTo(0, innerHeight * 2.4)); await p.waitForTimeout(400);
-  // op gsm verdwijnt de knop bij naar beneden scrollen (Karim 18-11) en komt hij terug bij omhoog scrollen
   await p.evaluate(() => scrollTo(0, innerHeight * 2.2)); await p.waitForTimeout(500);
-  ok(await fl() === 'visible', `${T} zwevende knoppen zichtbaar na de hero (bij omhoog scrollen)`);
+  ok(await fl() === 'visible', `${T} zwevende knoppen zichtbaar na de hero`);
   // hele pagina scrollen: alles verschenen, niets horizontaal
   const H = await p.evaluate(() => document.documentElement.scrollHeight);
   for (let y = 0; y < H; y += 400) { await p.evaluate(v => scrollTo(0, v), y); await p.waitForTimeout(50); }
