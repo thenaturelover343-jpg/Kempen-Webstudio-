@@ -167,6 +167,31 @@
     hero.addEventListener('pointerleave', function () { aura.style.opacity = 0; dot.style.opacity = 0; nx = ny = 0; if (!run) { run = true; requestAnimationFrame(loop); } });
   }
 
+  /* ---------- zachte parallax op het heroportret bij scrollen (alleen transform; niets bij "minder beweging") ---------- */
+  var por = $$('.kw-portrait img'), praf = 0;
+  if (por.length && !reduced) {
+    var spar = function () { praf = 0; var y = Math.min(Math.max(scrollY, 0), 700) * 0.06; por.forEach(function (im) { im.style.transform = y ? 'translate3d(0,' + y.toFixed(1) + 'px,0)' : ''; }); };
+    addEventListener('scroll', function () { if (!praf && scrollY < 1200) praf = requestAnimationFrame(spar); }, { passive: true });
+  }
+
+  /* ---------- tellers: bedragen tellen op zodra ze in beeld komen. De breedte ligt vast (onzichtbare eindwaarde in
+     dezelfde rastercel), dus niets verschuift; schermlezers lezen de eindwaarde. Niet bij "minder beweging". ---------- */
+  if ('IntersectionObserver' in W && !reduced) $$('[data-count]').forEach(function (el) {
+    var txt = el.textContent, m = txt.match(/\d[\d.,]*/); if (!m) return;
+    var n = +m[0].replace(/[.,]/g, ''), sep = m[0].indexOf(',') > -1 ? ',' : '.'; if (!(n > 9)) return;
+    var r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) return;
+    var fmt = function (v) { return txt.replace(m[0], String(v).replace(/\B(?=(\d{3})+(?!\d))/g, sep)); };
+    var fin = d.createElement('span'), run = d.createElement('span');
+    fin.textContent = txt; fin.style.cssText = 'grid-area:1/1;opacity:0'; run.textContent = fmt(0); run.style.gridArea = '1/1'; run.setAttribute('aria-hidden', 'true');
+    el.style.display = 'inline-grid'; el.textContent = ''; el.appendChild(fin); el.appendChild(run);
+    var o = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return; o.disconnect(); var t0 = 0;
+      var step = function (t) { t0 = t0 || t; var p = Math.min(1, (t - t0) / 1100), e = 1 - Math.pow(1 - p, 3); run.textContent = fmt(Math.round(n * e)); if (p < 1) requestAnimationFrame(step); else { el.textContent = txt; el.style.display = ''; } };
+      requestAnimationFrame(step);
+    }, { threshold: 0.6 });
+    o.observe(el);
+  });
+
   /* ---------- contactvenster (onOpenChat in het design) ---------- */
   var modal = d.querySelector('[data-modal]'), mLast = null;
   function chat(on, subject) {

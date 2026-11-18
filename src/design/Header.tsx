@@ -78,7 +78,7 @@ export function Header({ s }: { s: any }) {
               <div key={item.href + item.label} className="relative flex flex-col items-center">
                 <a href={item.href} aria-current={active ? 'page' : undefined}
                   className={cx('inline-flex items-center gap-1 transition-colors duration-150 cursor-pointer whitespace-nowrap shrink-0 py-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B85D28] rounded-sm',
-                    active ? 'text-[#121214] font-medium' : 'text-[#4C433F] hover:text-[#121214]')}>
+                    active ? 'text-[#121214] font-medium' : 'kw-ul text-[#4C433F] hover:text-[#121214]')}>
                   <span>{item.label}</span>
                 </a>
                 {active && <span className="mt-1"><ActiveNavFlower /></span>}

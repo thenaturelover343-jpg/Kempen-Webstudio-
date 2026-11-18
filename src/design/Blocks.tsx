@@ -245,14 +245,14 @@ const Card = ({ c, i, dark, articles }: { c: any; i: number; dark: boolean; arti
     </div>
   ); }
   if (dark || c.dark) return (
-    <div id={c.id || undefined} className="h-full rounded-[24px] bg-[#161618] border border-white/10 p-7 flex flex-col">
+    <div id={c.id || undefined} className="kw-lift h-full rounded-[24px] bg-[#161618] border border-white/10 p-7 flex flex-col">
       <span aria-hidden="true" className="text-[15px] tabular-nums text-[#F1A36A] font-medium">{String(i + 1).padStart(2, '0')}.</span>
       {c.h && <T id={c.hid || undefined} className="mt-4 text-[22px] font-medium tracking-[-0.02em] text-white" dangerouslySetInnerHTML={{ __html: c.h }} />}
       <div className={cx('mt-2.5 text-[16px] leading-relaxed text-[#C8C8CC] kw-prose kw-link [&_a]:text-white', LIST.replace(/#121214/g, '#FFFFFF').replace(/#D3D6DA/g, '#2E2E33').replace(/#9A4A1C/g, '#D47A3B'))} dangerouslySetInnerHTML={{ __html: c.body }} />
     </div>
   );
   return (
-    <div id={c.id || undefined} className="h-full rounded-[22px] bg-[#F2F2F2] hover:bg-[#EAEBEC] border border-[#D3D6DA] hover:border-[#B85D28]/60 p-6 flex flex-col transition-colors duration-200">
+    <div id={c.id || undefined} className="kw-lift h-full rounded-[22px] bg-[#F2F2F2] hover:bg-[#EAEBEC] border border-[#D3D6DA] hover:border-[#B85D28]/60 p-6 flex flex-col transition-colors duration-200">
       <span aria-hidden="true" className="text-[15px] tabular-nums font-semibold text-[#9A4A1C]">{String(i + 1).padStart(2, '0')}.</span>
       {c.h && <T id={c.hid || undefined} className="mt-3 text-[18px] font-medium text-[#121214]" dangerouslySetInnerHTML={{ __html: c.h }} />}
       <div className={cx('mt-2.5 text-[16px] leading-relaxed text-[#4C433F] kw-prose kw-link', LIST)} dangerouslySetInnerHTML={{ __html: c.body }} />
@@ -273,7 +273,7 @@ function Figure({ html, phone }: { html: string; phone?: boolean }) {
   if (!html) return null;
   return (
     <div className="w-full rounded-[24px] sm:rounded-[28px] copper-panel-gradient p-6 sm:p-10 flex items-center justify-center">
-      <div className={cx('overflow-hidden shadow-2xl [&_figure]:m-0 [&_img]:w-full [&_img]:h-auto', phone ? 'w-full max-w-[260px] rounded-[34px] bg-[#050507] p-2 [&_img]:rounded-[28px]' : 'w-full rounded-[20px] bg-[#050507]')} dangerouslySetInnerHTML={{ __html: html }} />
+      <div className={cx('overflow-hidden shadow-2xl [&_figure]:m-0 [&_img]:w-full [&_img]:h-auto', phone ? 'w-full max-w-[260px] rounded-[34px] bg-[#050507] p-2 [&_img]:rounded-[28px]' : 'kw-zoom w-full rounded-[20px] bg-[#050507]')} dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
 }
@@ -370,7 +370,7 @@ function ParaCards({ items, dark, onPanel }: { items: Item[]; dark: boolean; onP
         const lists = it.html.split(/(?=<ul|<ol)/).slice(1).join('');
         return (
           <StaggerItem key={i} i={i} className={cx('h-full', span6(n, i), span2(n, i))}>
-            <div className={cx('h-full rounded-[22px] p-6 sm:p-7 flex flex-col gap-5', dark ? 'bg-[#161618] border border-white/10' : onPanel ? 'bg-white border border-[#E5E7EB]' : 'bg-[#F2F2F2] border border-[#D3D6DA]')}>
+            <div className={cx('kw-lift h-full rounded-[22px] p-6 sm:p-7 flex flex-col gap-5', dark ? 'bg-[#161618] border border-white/10' : onPanel ? 'bg-white border border-[#E5E7EB]' : 'bg-[#F2F2F2] border border-[#D3D6DA]')}>
               <span aria-hidden="true" className={cx('font-title text-[40px] leading-[0.8] font-normal tracking-[-0.04em] tabular-nums', dark ? 'text-[#F1A36A]' : 'text-[#B85D28]')}>{String(i + 1).padStart(2, '0')}.</span>
               <div className={cx('text-[16px] leading-relaxed kw-prose kw-link max-w-[68ch]', LIST_DOT, dark ? 'text-[#C8C8CC] [&_a]:text-white [&_strong]:text-white' : 'text-[#4C433F] [&_strong]:text-[#121214]')}>
                 {p ? (b ? <p><span className={cx('font-medium', dark ? 'text-white' : 'text-[#121214]')}><Html html={a} /></span> <Html html={b} /></p> : <p><Html html={a} /></p>) : <Html html={it.html.split(/(?=<ul|<ol)/)[0]} as="div" />}
@@ -482,7 +482,7 @@ function render(b: any, P: any, s: any, f?: any) {
             <StaggerGroup className={longLast ? 'grid grid-cols-1 md:grid-cols-3 gap-5' : GRID6}>
               {b.cards.map((c: any, i: number) => (
                 <StaggerItem key={i} i={i} className={cx('h-full', longLast ? (i < 2 ? 'md:col-start-1' : 'md:col-start-2 md:col-span-2 md:row-start-1 md:row-span-2') : cx(span6(nc, i), span2(nc, i)))}>
-                  <div className="h-full rounded-[24px] bg-[#F2F2F2] border border-[#D3D6DA] p-7 flex flex-col">
+                  <div className="kw-lift h-full rounded-[24px] bg-[#F2F2F2] border border-[#D3D6DA] p-7 flex flex-col">
                     <span aria-hidden="true" className="font-title text-[20px] font-medium text-[#9A4A1C]">{['I.', 'II.', 'III.', 'IV.', 'V.'][i]}</span>
                     <div className="mt-6 text-[16px] leading-relaxed text-[#4C433F] kw-prose kw-link" dangerouslySetInnerHTML={{ __html: c.body }} />
                   </div>
@@ -514,7 +514,7 @@ function render(b: any, P: any, s: any, f?: any) {
                   <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     {b.cards.map((c: any, i: number) => (
                       <StaggerItem key={i} i={i} className={cx('h-full', b.cards.length % 2 === 1 && i === b.cards.length - 1 && 'sm:col-span-2')}>
-                        <div className="h-full rounded-[22px] bg-[#F2F2F2] border border-[#D3D6DA] p-6 sm:p-7 flex flex-col gap-4">
+                        <div className="kw-lift h-full rounded-[22px] bg-[#F2F2F2] border border-[#D3D6DA] p-6 sm:p-7 flex flex-col gap-4">
                           <span aria-hidden="true" className="font-title text-[28px] leading-none font-normal text-[#B85D28]">{['I.', 'II.', 'III.', 'IV.', 'V.', 'VI.'][i]}</span>
                           <div className="text-[16px] leading-relaxed text-[#4C433F] kw-prose kw-link" dangerouslySetInnerHTML={{ __html: c.body }} />
                         </div>

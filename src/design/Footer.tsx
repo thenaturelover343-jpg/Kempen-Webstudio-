@@ -44,7 +44,7 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
                   <ul className={ci === 0 ? 'flex flex-col gap-2.5' : 'flex flex-col gap-2.5 text-[#4C433F]'}>
                     {c.links.map((l: any) => (
                       <li key={l.href + l.label}>
-                        <a href={l.href} className={l.href.startsWith('mailto:') ? 'text-[#18181B] font-medium hover:text-[#B85D28] transition-colors break-all' : ci === 0 ? 'text-[#18181B] hover:text-[#B85D28] transition-colors' : 'hover:text-[#18181B] transition-colors'}
+                        <a href={l.href} className={l.href.startsWith('mailto:') ? 'kw-ul text-[#18181B] font-medium hover:text-[#B85D28] transition-colors break-all' : ci === 0 ? 'kw-ul text-[#18181B] hover:text-[#B85D28] transition-colors' : 'kw-ul hover:text-[#18181B] transition-colors'}
                           dangerouslySetInnerHTML={{ __html: l.html }} />
                       </li>
                     ))}
@@ -66,11 +66,11 @@ export function Footer({ s, cta }: { s: any; cta: { label: string; href: string 
             {cities && cities.links.map((l: any, i: number) => (
               <span key={l.href} className="inline-flex items-center gap-3">
                 {i > 0 && <span aria-hidden="true">·</span>}
-                <a href={l.href} title={`${cities.title} ${l.label}`} className="hover:text-[#18181B] transition-colors">{l.label}</a>
+                <a href={l.href} title={`${cities.title} ${l.label}`} className="kw-ul hover:text-[#18181B] transition-colors">{l.label}</a>
               </span>
             ))}
             <span aria-hidden="true">·</span>
-            <a href="#top" className="text-[#18181B] font-medium hover:text-[#B85D28] transition-colors cursor-pointer">{s.ui.backToTop}</a>
+            <a href="#top" className="kw-ul text-[#18181B] font-medium hover:text-[#B85D28] transition-colors cursor-pointer">{s.ui.backToTop}</a>
           </nav>
         </div>
       </div>

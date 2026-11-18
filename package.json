@@ -20,7 +20,8 @@
     "screens": "node scripts/screens.mjs",
     "seocheck": "node scripts/seocheck.mjs dist-live",
     "redirectcheck": "node scripts/redirectcheck.mjs",
-    "restcheck": "node scripts/restcheck.mjs dist-live && node scripts/restcheck.mjs dist-test"
+    "restcheck": "node scripts/restcheck.mjs dist-live && node scripts/restcheck.mjs dist-test",
+    "hovertest": "node scripts/hovertest.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/inter-tight": "^5.2.7",

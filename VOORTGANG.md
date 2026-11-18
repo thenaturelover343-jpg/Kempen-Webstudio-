@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 18-11-2026 (evaluatie 18-11 verwerkt).
+Laatst bijgewerkt: 18-11-2026 (hover en animatie aangevuld).
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -147,6 +147,10 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - Hero-slogans van Brugge, Mechelen en Namur: een zin zoals bij Kortrijk; de langere offertezin blijft in de tekst. Mol: de eerste zin van het prijsblok is weggelaten (seo-onsite.mjs).
   - `npm run restcheck` meldt nu ook: een dubbele offertezin per pagina, "Vous la consultez", "voorstel/proposal/proposition" als offerte (logovoorstellen tellen niet mee) en "altijd vrijblijvend" na een vrijblijvende offerte. Resultaat: 0 op 226 pagina's.
   - Een controlescript per punt (oude tekst weg, nieuwe tekst aanwezig) gaf op dist-live 67/67 in orde.
+- [x] **Hover en animatie aangevuld** (Karim 18-11): `HOVER-ANIMATIE-INVENTARIS.md`, tag `voor-hover-18-11`.
+  - Nieuw, alleen met transform/opacity en alleen voor muis: kaart-lift met schaduw (`kw-lift`), foto-zoom met overlay (`kw-zoom`), meeschuivende pijlen, onderlijn-animatie (`kw-ul`, menu en footer), submenu-items die gestaffeld binnenkomen, FAQ die vloeiend opent (geen hoogte-animatie meer), tellers op de prijsbedragen (`data-count`, vaste breedte), scroll-parallax op het heroportret, koperen focusrand voor alle bedienbare elementen.
+  - Geen Motion/LazyMotion: de site draait zonder React in de browser, en hydrateren zou veel JS kosten. Alles is gedaan met CSS en `site.js`.
+  - Nieuwe controle: `npm run hovertest` (12 controles in een echte browser, ook voor minder beweging en touch). Lighthouse mobiel 99-100, desktop 100, CLS 0.
 
 ## Bezig
 

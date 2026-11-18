@@ -534,10 +534,10 @@ export function Home({ h, s, f, x }: { h: any; s: any; f: any; x: any }) {
                 {h.cases.items.map((c: any, i: number) => {
                   const dark = i === 1;
                   return (
-                    <article key={i} className={cx('relative rounded-[20px] p-6 sm:p-7 min-h-[290px] flex flex-col justify-between', dark ? 'bg-[#2C2C2E] text-white' : 'bg-[#F7F7F8] text-[#121214] border border-[#ECECEE]')}>
+                    <article key={i} className={cx('kw-lift group relative rounded-[20px] p-6 sm:p-7 min-h-[290px] flex flex-col justify-between', dark ? 'bg-[#2C2C2E] text-white' : 'bg-[#F7F7F8] text-[#121214] border border-[#ECECEE]')}>
                       <div className="flex items-start justify-between gap-4">
                         <h3 className="text-[17px] font-semibold tracking-tight">{c.n} · <Html html={c.h} /></h3>
-                        <span className="relative w-14 h-14 rounded-xl overflow-hidden bg-[#141416] shrink-0">{CASE_FOTO[i] ? <Foto id={CASE_FOTO[i]} vorm="mini" lang={L} sizes="56px" className="absolute inset-0 block w-full h-full object-cover" /> : <ShowcaseEmblem />}</span>
+                        <span className="kw-zoom relative w-14 h-14 rounded-xl overflow-hidden bg-[#141416] shrink-0">{CASE_FOTO[i] ? <Foto id={CASE_FOTO[i]} vorm="mini" lang={L} sizes="56px" className="absolute inset-0 block w-full h-full object-cover" /> : <ShowcaseEmblem />}</span>
                       </div>
                       <p className={cx('my-6 text-[16px] leading-relaxed kw-link', dark ? 'text-[#E4E4E7]' : 'text-[#4C433F]')}><Html html={c.p} /></p>
                       <div className="flex items-end justify-between gap-3">
@@ -798,7 +798,7 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
         const hTxt = tier.h.replace(/<[^>]+>/g, '');
         return (
           <StaggerItem key={i} i={i}>
-            <article className={`h-full rounded-[24px] p-7 sm:p-8 flex flex-col justify-between ${surface}`}>
+            <article className={`kw-lift h-full rounded-[24px] p-7 sm:p-8 flex flex-col justify-between ${surface}`}>
               <div>
                 <div className="flex items-center justify-between gap-2">
                   <span className={`rounded-full border px-3.5 py-1 text-[15px] font-medium ${badge}`}><span aria-hidden="true">• </span>{tier.badge ? <>{tier.badge} · {hTxt}</> : hTxt}</span>
@@ -811,7 +811,7 @@ export function Tiers({ tiers, delivery }: { tiers: any[]; delivery?: string[] }
                     <div className={`mt-5 pb-5 border-b ${cop ? 'border-white/20' : obs ? 'border-white/15' : 'border-[#D3D6DA]'}`}>
                       <div className="flex items-baseline gap-2">
                         <span className="text-[15px] opacity-95">{tier.from}</span>
-                        <span className="font-title text-[36px] font-medium tabular-nums leading-none">{tier.amt}</span>
+                        <span data-count="" className="font-title text-[36px] font-medium tabular-nums leading-none">{tier.amt}</span>
                         <span className="text-[15px] opacity-95">{tier.amtAfter}</span>
                       </div>
                       {tier.m.map((m: any, k: number) => (
