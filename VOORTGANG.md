@@ -1,6 +1,6 @@
 # Voortgang: nieuwe website Kempen Webstudio
 
-Laatst bijgewerkt: 18-11-2026 (evaluatie 2 verwerkt).
+Laatst bijgewerkt: 18-11-2026 (evaluatie 2 verwerkt, SEO-vergelijking met de vorige build).
 
 Dit bestand wordt na elke grote stap bijgewerkt. Bij een onderbreking begin je hier; de details staan in `LEESMIJ.md`.
 
@@ -156,6 +156,7 @@ De site is af en gecontroleerd. Ze wacht op Karims goedkeuring (teksten uit het 
   - NAP: in de footer staat het adres apart, met daaronder "Werkt in heel België" (`s.ui.areaTitle`). ", Belgium/België/Belgique" is weg.
   - Dubbele offertezinnen weg op webshop, sectorpagina's, vereniging, vernieuwen, Gent en Liège (plus Gent-band, FR-prijsgids). FR-zinnen over nouveaux entrepreneurs herschreven.
   - restcheck meldt nu ook: werkplekzinnen, KempenKempen, NAP-varianten, FR "ce que un", Campine op EN-pagina's, "Kies uw stad" alfabetisch, en offertezinnen met dezelfde 7 beginwoorden (zonder de gedeelde CTA).
+  - SEO-regel Karim ("geen aanpassingen die de seo verminderen"): de vorige en de nieuwe build zijn per pagina vergeleken (189 pagina's). Zoekwoorden zijn terug in title en meta (Kasterlee, Kempen, Campine). De neutrale sectie met interne links op over ons is terug. 0 pagina's met meer dan 10% minder woorden, 0 met minder interne links. Bewust zonder Kasterlee: de meta van Mol en van /fr/ (daar was het alleen de werkplek).
 
 ## Bezig
 

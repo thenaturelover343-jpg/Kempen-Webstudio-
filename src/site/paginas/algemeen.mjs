@@ -96,7 +96,7 @@ const hub = {
 // ------------------------------------------------------------------------------------------------ OVER ONS
 const over = {
   nl: {
-    path: P.over.nl, pageType: 'AboutPage', title: 'Over Kempen Webstudio | Webstudio voor heel België', desc: 'Kempen Webstudio is een jonge webstudio. Wij maken lichte, toegankelijke websites voor kmo\'s, verenigingen en zelfstandigen in heel België.',
+    path: P.over.nl, pageType: 'AboutPage', title: 'Over Kempen Webstudio | Kasterlee, voor heel België', desc: 'Kempen Webstudio is een jonge webstudio in Kasterlee. Wij maken lichte, toegankelijke websites voor kmo\'s, verenigingen en zelfstandigen in heel België.',
     h1: 'Over Kempen Webstudio', crumbCur: 'Over ons',
     slogan: 'Kempen Webstudio is een jonge webstudio die websites maakt voor zaken in heel België, met prijzen vooraf en één vast aanspreekpunt.',
     sections: [
@@ -109,6 +109,7 @@ const over = {
         ['Eerlijk over voorbeelden', `Onze <a href="${P.demos.nl}">voorbeeldontwerpen</a> hebben fictieve namen en gegevens, en dat zeggen wij er ook bij. Wij tonen geen verzonnen klanten, reviews of cijfers.`],
         ['Gewone taal', 'Na een gesprek schrijven wij de teksten van uw site in gewone taal. Uw klanten lezen dan meteen wat u doet en voor wie.'],
       ] },
+      { t: 'prose', id: 'heel-belgie-over', h2: 'Voor zaken in heel België', html: `<p>Omdat kennismaking en overleg online verlopen, werken wij net zo goed voor een bistro in <a href="/website-laten-maken-gent/">Gent</a>, een advocaat in <a href="/website-laten-maken-brussel/">Brussel</a>, een kapsalon in <a href="/website-laten-maken-hasselt/">Hasselt</a> of een vakman in de <a href="/website-laten-maken-kempen/">Kempen</a>. Een overzicht vindt u bij <a href="${P.hub.nl}">website laten maken in heel België</a>.</p>` },
       { t: 'prose', id: 'werkwijze-over', h2: 'Hoe wij werken', html: `<p>Het begint met een kennismaking, per e-mail, telefonisch of online. Daarna krijgt u een vrijblijvende offerte met wat uw website bevat en wat ze kost. Gaat u verder, dan leggen wij het pakket vast in een schriftelijke offerte.</p><p>${DELIVERY.nl} Na de lancering houden wij uw site bij: updates, back-ups en kleine aanpassingen zitten in de maandprijs. Meer over de stappen leest u bij <a href="/#werkwijze">onze werkwijze</a>.</p>` },
       { t: 'cards', id: 'gegevens', h2: 'Onze gegevens', items: [
         ['Adres en contact', NAP.nl],
@@ -125,7 +126,7 @@ const over = {
     ],
   },
   fr: {
-    path: P.over.fr, pageType: 'AboutPage', title: 'À propos | Kempen Webstudio, studio web pour la Belgique', desc: 'Kempen Webstudio est un jeune studio web. Nous créons des sites rapides et accessibles pour les PME, associations et indépendants en Belgique.',
+    path: P.over.fr, pageType: 'AboutPage', title: 'À propos de Kempen Webstudio | Kasterlee, toute la Belgique', desc: 'Kempen Webstudio est un jeune studio web à Kasterlee. Nous créons des sites rapides et accessibles pour les PME, associations et indépendants en Belgique.',
     h1: 'À propos de Kempen Webstudio', crumbCur: 'À propos',
     slogan: 'Kempen Webstudio est un jeune studio web qui crée des sites pour des entreprises dans toute la Belgique, avec des prix connus d’avance et un seul interlocuteur.',
     sections: [
@@ -138,6 +139,7 @@ const over = {
         ['Honnêtes sur nos exemples', `Nos <a href="${P.demos.fr}">exemples de sites</a> portent des noms et des données fictifs, et nous le disons. Nous ne montrons ni clients, ni avis, ni chiffres inventés.`],
         ['Un langage clair', 'Nous rédigeons les textes de votre site après un entretien, dans un langage simple, pour que vos clients comprennent tout de suite ce que vous faites.'],
       ] },
+      { t: 'prose', id: 'toute-la-belgique-apropos', h2: 'Pour des entreprises dans toute la Belgique', html: `<p>Comme la prise de contact et le suivi se font en ligne, nous travaillons tout aussi bien pour un commerce à <a href="/fr/creation-site-internet-bruxelles/">Bruxelles</a>, un artisan à <a href="/fr/creation-site-internet-liege/">Liège</a>, un cabinet à <a href="/fr/creation-site-internet-namur/">Namur</a> ou une entreprise en <a href="/fr/creation-site-internet-campine/">Campine</a>. Vue d’ensemble : <a href="${P.hub.fr}">création de site internet dans toute la Belgique</a>.</p>` },
       { t: 'prose', id: 'methode', h2: 'Notre façon de travailler', html: `<p>Tout commence par une prise de contact, par e-mail, par téléphone ou en ligne. Ensuite, vous recevez un devis sans engagement avec le contenu de votre site et son prix. Si vous souhaitez continuer, nous fixons la formule dans une offre écrite.</p><p>${DELIVERY.fr} Après la mise en ligne, nous entretenons votre site : mises à jour, sauvegardes et petites modifications sont comprises dans l’abonnement mensuel.</p>` },
       { t: 'cards', id: 'coordonnees', h2: 'Nos coordonnées', items: [
         ['Adresse et contact', NAP.fr],
@@ -154,7 +156,7 @@ const over = {
     ],
   },
   en: {
-    path: P.over.en, pageType: 'AboutPage', title: 'About Kempen Webstudio | Web studio for all of Belgium', desc: 'Kempen Webstudio is a young web studio. We build fast, accessible websites for SMEs, associations and freelancers across Belgium.',
+    path: P.over.en, pageType: 'AboutPage', title: 'About Kempen Webstudio | Kasterlee, for all of Belgium', desc: 'Kempen Webstudio is a young web studio in Kasterlee, Belgium. We build fast, accessible websites for SMEs, associations and freelancers across Belgium.',
     h1: 'About Kempen Webstudio', crumbCur: 'About us',
     slogan: 'Kempen Webstudio is a young web studio that builds websites for businesses across Belgium, with prices up front and one point of contact.',
     sections: [
@@ -167,6 +169,7 @@ const over = {
         ['Honest about examples', `Our <a href="${P.demos.en}">sample designs</a> use fictional names and details, and we say so. We never show invented clients, reviews or figures.`],
         ['Plain language', 'We write your website copy after a conversation, in plain language, so your customers understand straight away what you do.'],
       ] },
+      { t: 'prose', id: 'all-belgium-about', h2: 'For businesses across Belgium', html: `<p>Because introductions and meetings take place online, we work just as well for a business in <a href="/en/web-design-brussels/">Brussels</a>, <a href="/en/website-laten-maken-gent/">Ghent</a> or the <a href="/en/website-laten-maken-kempen/">Kempen</a>. Overview: <a href="${P.hub.en}">website design across Belgium</a>.</p>` },
       { t: 'prose', id: 'how-we-work', h2: 'How we work', html: `<p>It starts with an introduction by email, phone or online. We then prepare a no-obligation quote for your business, showing what your website will contain and what it costs. If you want to go ahead, we confirm the package in a written quote.</p><p>${DELIVERY.en} After launch we maintain your site: updates, backups and small changes are included in the monthly fee.</p>` },
       { t: 'cards', id: 'details', h2: 'Our details', items: [
         ['Address and contact', NAP.en],
@@ -187,7 +190,7 @@ const over = {
 const mapFig = lang => pic('kaart', 'kaart169', lang, '(min-width: 1024px) 520px, 92vw');
 const contact = {
   nl: {
-    path: P.contact.nl, pageType: 'ContactPage', title: 'Contact | Kempen Webstudio', desc: 'Contact Kempen Webstudio: bel +32 14 71 80 80, mail info@kempenwebstudio.be of stuur een bericht. Antwoord doorgaans binnen 1 werkdag.',
+    path: P.contact.nl, pageType: 'ContactPage', title: 'Contact | Kempen Webstudio, Kasterlee', desc: 'Contact Kempen Webstudio in Kasterlee: bel +32 14 71 80 80, mail info@kempenwebstudio.be of stuur een bericht. Antwoord doorgaans binnen 1 werkdag.',
     h1: 'Contact met Kempen Webstudio', crumbCur: 'Contact',
     slogan: 'Vertel kort over uw zaak, en wij nemen contact met u op. Op een bericht antwoorden wij doorgaans binnen 1 werkdag.',
     sections: [
@@ -198,7 +201,7 @@ const contact = {
         ['Openingsuren', UREN.nl + ' ' + 'Buiten de openingsuren kunt u altijd een bericht sturen.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="bericht-t" class="sec kw-form"><div class="wrap"><p class="lbl">Contactformulier</p><h2 id="bericht-t">Stuur ons een bericht</h2><div class="kw-form-txt"><p>Vertel kort wat voor zaak u hebt en wat u zoekt: een nieuwe website, een webshop, een vernieuwing of hulp met uw vindbaarheid. Daarna maken wij een vrijblijvende offerte voor uw zaak.</p><p>${REPLY.nl}</p></div></div></section>` },
-      { t: 'band', id: 'waar', intro: ['Wij werken voor zaken in heel België.', 'Overleg gebeurt online, per e-mail of telefoon.'], h2: 'Waar wij zitten', lead: [`Kennismaking en overleg verlopen online, per e-mail of telefoon, voor zaken in <a href="/website-laten-maken-antwerpen/">Antwerpen</a>, <a href="/website-laten-maken-gent/">Gent</a> of <a href="/website-laten-maken-brussel/">Brussel</a>.`, 'Kaart: © OpenStreetMap-bijdragers.'], fig: mapFig('nl') },
+      { t: 'band', id: 'waar', intro: ['Wij werken voor zaken in heel België.', 'Overleg gebeurt online, per e-mail of telefoon.'], h2: 'Waar wij zitten', lead: [`Kennismaking en overleg verlopen online, per e-mail of telefoon, voor zaken in <a href="/website-laten-maken-antwerpen/">Antwerpen</a>, <a href="/website-laten-maken-gent/">Gent</a>, <a href="/website-laten-maken-brussel/">Brussel</a> of de <a href="/website-laten-maken-kempen/">Kempen</a>.`, 'Kaart: © OpenStreetMap-bijdragers.'], fig: mapFig('nl') },
       { t: 'faq', id: 'faq-contact', h2: 'Veelgestelde vragen over contact', items: [
         ['Wat zijn de openingsuren?', UREN.nl],
         ['Wanneer krijg ik antwoord?', REPLY.nl + ' Bij een vraag over een nieuwe website maken wij daarna een vrijblijvende offerte.'],
@@ -209,7 +212,7 @@ const contact = {
     ],
   },
   fr: {
-    path: P.contact.fr, pageType: 'ContactPage', title: 'Nous contacter | Kempen Webstudio', desc: 'Contactez Kempen Webstudio : appelez le +32 14 71 80 80, écrivez à info@kempenwebstudio.be ou via le formulaire. Réponse en général sous 1 jour.',
+    path: P.contact.fr, pageType: 'ContactPage', title: 'Nous contacter | Kempen Webstudio, Kasterlee', desc: 'Contactez Kempen Webstudio : appelez le +32 14 71 80 80, écrivez à info@kempenwebstudio.be ou via le formulaire. Réponse en général sous 1 jour.',
     h1: 'Contacter Kempen Webstudio', crumbCur: 'Contact',
     slogan: 'Parlez-nous brièvement de votre entreprise et nous vous recontactons. Nous répondons généralement à un message dans un délai d’un jour ouvrable.',
     sections: [
@@ -231,7 +234,7 @@ const contact = {
     ],
   },
   en: {
-    path: P.contact.en, pageType: 'ContactPage', title: 'Contact us | Kempen Webstudio', desc: 'Contact Kempen Webstudio: call +32 14 71 80 80, email info@kempenwebstudio.be or use the form. Usually a reply within 1 working day.',
+    path: P.contact.en, pageType: 'ContactPage', title: 'Contact us | Kempen Webstudio, Kasterlee', desc: 'Contact Kempen Webstudio in Kasterlee, Belgium: call +32 14 71 80 80, email info@kempenwebstudio.be or use the form. Usually a reply within 1 working day.',
     h1: 'Contact Kempen Webstudio', crumbCur: 'Contact',
     slogan: 'Tell us briefly about your business and we will get back to you. We usually reply to a message within 1 working day.',
     sections: [

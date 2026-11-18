@@ -112,3 +112,36 @@ Ik tel per pagina. Een punt in de evaluatie dat voor NL, EN en FR geldt, telt du
 - links: 0 fouten.
 - seo-audit, met de JSON-LD-validatie van het schema: 0 fouten.
 - De test- en live-build zijn herbouwd.
+
+## SEO-controle na de regel van Karim
+
+Karims regel, letterlijk: "Het is belangrijk dat er geen aanpassingen gebeuren die de seo verminderen enkel fouten, ai teksten".
+
+Ik heb de vorige build (tag `voor-evaluatie2-18-11`) per pagina vergeleken met de nieuwe build, op title, H1, meta, het aantal woorden en het aantal interne links. Dat ging over 189 pagina's, waarvan er 74 gewijzigd zijn.
+
+**Eerste vergelijking: 19 pagina's verloren een zoekwoord in title of meta.** Ze zijn hersteld. De zinnen die de studio in Kasterlee situeren, blijven wel weg uit de lopende tekst.
+- Over ons, About us en À propos:
+  - title "Over Kempen Webstudio | Kasterlee, voor heel België" (EN en FR idem);
+  - meta "een jonge webstudio in Kasterlee".
+- Contact (NL, EN, FR):
+  - title "… | Kempen Webstudio, Kasterlee";
+  - meta "Contact Kempen Webstudio in Kasterlee …".
+- Meta's van de Kempense steden:
+  - NL Geel, Herentals, Turnhout en Mol: "… voor uw zaak in Geel en de Kempen";
+  - FR: "… à Geel, en Campine";
+  - EN Herentals: "… in Herentals and the Kempen".
+- Regiopagina's:
+  - NL Kempen-meta "Webdesign in de Kempen, van Turnhout tot Kasterlee …";
+  - FR Campine-meta "… à Turnhout, Geel, Mol ou Kasterlee";
+  - EN Kempen: title en H1 "Have a website built in the Kempen (Campine)", meta "… the Kempen (Campine)".
+- Interne links: op Over ons, About us en À propos staat een neutrale sectie "Voor zaken in heel België", met de links naar Gent, Brussel, Hasselt, de Kempen en de België-hub. De link naar de Kempen-pagina op /contact/ staat er weer.
+
+**Na het herstel:**
+- **Zoekwoord weg:** op 2 pagina's, en dat blijft bewust zo. Daar beschreef "Kasterlee" alleen de werkplek; het is geen zoekwoord van die pagina's. Het stadszoekwoord of het hoofdzoekwoord staat er nog vooraan, en de tekst is wat Karim in evaluatie 2 vroeg.
+  - /website-laten-maken-mol/: de meta zei "vanuit Kasterlee in de Kempen" en zegt nu "voor uw zaak in Mol en de Kempen".
+  - /fr/: de meta zei "par une agence web de Kasterlee". Nu staat er letterlijk Karims zin: "Création de site internet en Belgique : … d'abord une prise de contact et un devis sans engagement".
+- **Hoofdzoekwoord vooraan:** in elke title en H1. Geen enkele title of H1 verloor een zoekwoord.
+- **Woordenaantal:** geen pagina daalde meer dan 10%. De grootste daling is −6%, op /en/contact/ (−5% op /contact/).
+- **Interne links:** geen pagina heeft er minder. Ook alle links naar de Kempen- en Kasterlee-pagina's staan er nog.
+- **NAP en LocalBusiness-schema met het adres:** op elke pagina volledig.
+- **restcheck:** de werkplekregel geldt alleen voor de lopende tekst. Title, meta en JSON-LD mogen het zoekwoord Kasterlee/Kempen dragen. "the Kempen (Campine)" mag in EN.

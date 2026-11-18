@@ -60,7 +60,8 @@ for (const f of files) {
       add(f, 'begint met kleine letter', `<${tag}> na "…${vorige.slice(-50)}": ${tx}`);
     vorige = tx;
   }
-  for (const [bron, s] of strs) for (const [naam, re] of tests) if (re.test(s)) add(f, naam + ' (' + bron + ')', norm(s));
+  // werkplekregel alleen voor lopende tekst: title, meta en JSON-LD mogen het zoekwoord Kasterlee/Kempen houden (regel Karim: geen SEO-verlies)
+  for (const [bron, s] of strs) for (const [naam, re] of tests) if (re.test(s) && !(naam.startsWith('Kasterlee/Kempen') && bron !== 'tekst')) add(f, naam + ' (' + bron + ')', norm(s));
 
   // ---- evaluatie 18-11 ----
   const pad = '/' + path.relative(DIR, f).replace(/\\/g, '/');
@@ -75,7 +76,7 @@ for (const f of files) {
     }
   }
   // EN: "the Kempen", nooit "Campine"
-  if (pad.startsWith('/en/')) for (const [bron, s] of strs) if (/Campine/.test(s)) add(f, 'EN: Campine in plaats van the Kempen (' + bron + ')', norm(s));
+  if (pad.startsWith('/en/')) for (const [bron, s] of strs) if (/Campine/.test(s.replace(/Kempen \(Campine\)/g, ''))) add(f, 'EN: Campine in plaats van the Kempen (' + bron + ')', norm(s));
   // "Kies uw stad": alfabetisch
   for (const p of d.querySelectorAll('p')) if (/^(Kies uw stad|Choisissez votre ville|Choose your city)$/.test(norm(p.textContent))) {
     const ul = p.nextElementSibling; if (!ul || ul.tagName !== 'UL') continue;
