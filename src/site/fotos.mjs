@@ -14,7 +14,8 @@ export const VORMEN = {
 
 const vb = naam => ({ alt: { nl: `Voorbeeldontwerp ${naam} op een smartphone`, fr: `Exemple de design ${naam} sur un smartphone`, en: `Sample design ${naam} on a smartphone` } });
 
-/** id -> bron (in src/img/foto/bron), optionele uitsnede {left, top, width, height}, focus voor 'cover', alt per taal */
+/** id -> bron (in src/img/foto/bron), optionele uitsnede {left, top, width, height}, focus voor 'cover', alt per taal;
+ *  vorm: { <vorm>: { src, crop, pos } } geeft een eigen bron of uitsnede voor één vorm (bv. de 16:10-tegel), zonder handmatige bestanden */
 export const FOTOS = {
   // foto's uit de bestaande site (assets/img) en de voorbeeldsites
   horeca: { src: 'sec-horeca-1400.webp', alt: { nl: 'Gedekte tafels in een restaurant met warm licht', fr: 'Tables dressées dans un restaurant à la lumière chaleureuse', en: 'Laid tables in a restaurant with warm light' } },
@@ -41,7 +42,7 @@ export const FOTOS = {
   'vb-horeca': { src: 'horeca-voorbeeld-m600.webp', crop: { left: 0, top: 280, width: 600, height: 630 }, ...vb('Bistro Tilvaar') },
   'vb-webshop': { src: 'webshop-voorbeeld-m600.webp', crop: { left: 0, top: 300, width: 600, height: 630 }, ...vb('Vennebrand') },
   'vb-dakwerken': { src: 'dakwerken-hoogland-m600.webp', crop: { left: 0, top: 80, width: 600, height: 630 }, ...vb('Dakwerken Hoogland') },
-  'vb-kleurwerk': { src: 'kleurwerk-voorbeeld-m600.webp', crop: { left: 0, top: 160, width: 600, height: 630 }, ...vb('Atelier Kleurwerk') },
+  'vb-kleurwerk': { src: 'kleurwerk-voorbeeld-m600.webp', crop: { left: 0, top: 160, width: 600, height: 630 }, vorm: { tegel: { src: 'kleurwerk-voorbeeld-d1000.webp' } }, ...vb('Atelier Kleurwerk') },
   'vb-tuin': { src: 'tuin-voorbeeld-m600.webp', crop: { left: 0, top: 300, width: 600, height: 630 }, ...vb('Tuinzorg Varelinde') },
   'vb-schoonheid': { src: 'schoonheidssalon-voorbeeld-m600.webp', crop: { left: 0, top: 60, width: 600, height: 630 }, ...vb('Velours') },
   'vb-kapsalon': { src: 'kapsalon-voorbeeld-m600.webp', crop: { left: 0, top: 340, width: 600, height: 630 }, ...vb('Kapsalon Ivelien') },

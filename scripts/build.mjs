@@ -254,11 +254,13 @@ async function fotoFiles(doc) {
     if (FOTO_DONE.has(u)) continue; FOTO_DONE.add(u);
     const m = u.match(/^\/assets\/img\/f\/(.+)\.(\w+)\.(\d+)\.(avif|webp)$/); if (!m) throw new Error('foto-url ' + u);
     const [, id, vorm, w, ext] = m; const F = FOTOS[id], V = VORMEN[vorm]; if (!F || !V) throw new Error('foto onbekend ' + u);
-    const src = fs.readFileSync(path.join(ROOT, 'src', 'img', 'foto', 'bron', F.src));
+    const src = fs.readFileSync(path.join(ROOT, 'src', 'img', 'foto', 'bron', (F.vorm && F.vorm[vorm] && F.vorm[vorm].src) || F.src));
     const h = Math.round(+w * V.r[1] / V.r[0]);
-    const buf = await cached(`foto-${hash(src)}-${hash(JSON.stringify(F.crop || 0) + (F.pos || ''))}-${w}x${h}.${ext}`, () => {
-      let p = sharp(src); if (F.crop) p = p.extract(F.crop);
-      return p.resize({ width: +w, height: h, fit: 'cover', position: F.pos || 'centre' }).toFormat(ext, ext === 'avif' ? { quality: 55, effort: 5 } : { quality: 78, effort: 5 }).toBuffer();
+    // uitsnede of focus per vorm (fotos.mjs: vorm: { tegel: { crop, pos } }), anders die van de foto zelf
+    const VF = (F.vorm && F.vorm[vorm]) || {}, CROP = VF.crop || (VF.src ? null : F.crop), POS = VF.pos || (VF.src ? null : F.pos);
+    const buf = await cached(`foto-${hash(src)}-${hash(JSON.stringify(CROP || 0) + (POS || ''))}-${w}x${h}.${ext}`, () => {
+      let p = sharp(src); if (CROP) p = p.extract(CROP);
+      return p.resize({ width: +w, height: h, fit: 'cover', position: POS || 'centre' }).toFormat(ext, ext === 'avif' ? { quality: 55, effort: 5 } : { quality: 78, effort: 5 }).toBuffer();
     });
     write(u.slice(1), buf);
   }

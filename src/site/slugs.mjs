@@ -39,6 +39,9 @@ export const FR_SLUGS = {
   '/fr/website-winkel/': '/fr/site-internet-commerce/',
   '/fr/website-zorg/': '/fr/site-internet-soins-bien-etre/',
 };
+// paden die al een Franse slug hadden maar ook nog met de Nederlandse slug opgevraagd worden (Gusje 18-11: /fr/over-ons/ gaf 404)
+Object.assign(FR_SLUGS, { '/fr/over-ons/': '/fr/a-propos/', '/fr/seo-laten-doen/': '/fr/referencement-seo/', '/fr/website-laten-maken-belgie/': '/fr/creation-site-internet/', '/fr/website-laten-maken-brussel/': '/fr/creation-site-internet-bruxelles/' });
+for (const d of ['atelier-kleurwerk', 'barbier-kolvaard', 'bistro-tilvaar', 'dakwerken-hoogland', 'houtatelier-nethe', 'kapsalon-ivelien', 'tuinzorg-varelinde', 'velours', 'vennebrand']) FR_SLUGS[`/fr/voorbeeldontwerpen/${d}/`] = `/fr/exemples-de-sites/${d}/`;
 const FR_BACK = Object.fromEntries(Object.entries(FR_SLUGS).map(([a, b]) => [b, a]));
 
 /** pad zonder taalprefix, gelijk voor de drie talen (de Nederlandse slug): /fr/creation-site-internet-gand/ -> /website-laten-maken-gent/ */
@@ -74,6 +77,7 @@ const EN_SUB = {
   '/en/kennis/wettelijke-vermeldingen-website/': '/en/guides/legal-information-website-belgium/', '/en/kennis/wordpress-of-maatwerk/': '/en/guides/wordpress-or-custom-website/',
 };
 for (const d of ['atelier-kleurwerk', 'barbier-kolvaard', 'bistro-tilvaar', 'dakwerken-hoogland', 'houtatelier-nethe', 'kapsalon-ivelien', 'tuinzorg-varelinde', 'velours', 'vennebrand']) EN_SUB[`/en/voorbeeldontwerpen/${d}/`] = `/en/sample-designs/${d}/`;
+Object.assign(EN_TOP, { '/en/over-ons/': '/en/about-us/', '/en/seo-laten-doen/': '/en/seo-services/', '/en/website-laten-maken-belgie/': '/en/website-design-belgium/', '/en/website-laten-maken-brussel/': '/en/web-design-brussels/' });
 export const EN_SLUGS = { ...EN_SUB, ...EN_TOP };
 const EN_BACK = Object.fromEntries(Object.entries(EN_SLUGS).map(([a, b]) => [b, a]));
 /** baseOf met ook de Engelse slugs */
