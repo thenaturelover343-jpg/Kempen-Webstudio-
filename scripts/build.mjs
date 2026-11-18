@@ -412,7 +412,7 @@ if (MODE === 'live') {
       '> Webstudio uit Kasterlee (België) die websites, webshops, SEO, logo en huisstijl en webtoegankelijkheid (WCAG 2.2 AA) maakt voor ondernemers, verenigingen en zelfstandigen in heel België. Werkt in het Nederlands, Frans en Engels.',
       '',
       '- Naam: Kempen Webstudio',
-      '- Adres: Kemelbeekstraat 16, 2460 Kasterlee, België',
+      '- Adres: Kemelbeekstraat 16, 2460 Kasterlee',
       '- Telefoon: +32 14 71 80 80',
       '- E-mail: info@kempenwebstudio.be',
       '- Ondernemingsnummer: BE 0897.577.919',
