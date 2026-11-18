@@ -667,7 +667,7 @@ const MAP_NAME: Record<string, Record<string, string>> = {
 };
 const NL_CITY: Record<string, string> = { kasterlee: 'kasterlee', turnhout: 'turnhout', geel: 'geel', mol: 'mol', herentals: 'herentals', antwerpen: 'antwerpen', mechelen: 'mechelen', gent: 'gent', leuven: 'leuven', brussel: 'brussel', kortrijk: 'kortrijk', brugge: 'brugge', hasselt: 'hasselt' };
 const FR_CITY: Record<string, string> = { kasterlee: 'kasterlee', turnhout: 'turnhout', geel: 'geel', mol: 'mol', herentals: 'herentals', gent: 'gand', leuven: 'louvain', brussel: 'bruxelles', kortrijk: 'courtrai', liege: 'liege', namur: 'namur', charleroi: 'charleroi' };
-const EN_CITY: Record<string, string> = { kasterlee: '/en/website-laten-maken-kasterlee/', turnhout: '/en/website-laten-maken-turnhout/', geel: '/en/website-laten-maken-geel/', mol: '/en/website-laten-maken-mol/', herentals: '/en/website-laten-maken-herentals/', gent: '/en/website-laten-maken-gent/', leuven: '/en/website-laten-maken-leuven/', kortrijk: '/en/website-laten-maken-kortrijk/', brussel: '/en/web-design-brussels/' };
+const EN_CITY: Record<string, string> = { kasterlee: '/en/web-design-kasterlee/', turnhout: '/en/web-design-turnhout/', geel: '/en/web-design-geel/', mol: '/en/web-design-mol/', herentals: '/en/web-design-herentals/', gent: '/en/web-design-ghent/', leuven: '/en/web-design-leuven/', kortrijk: '/en/web-design-kortrijk/', brussel: '/en/web-design-brussels/' };
 function cityHref(k: string, lang: string) {
   const nl = NL_CITY[k] ? `/website-laten-maken-${NL_CITY[k]}/` : '', fr = FR_CITY[k] ? `/fr/creation-site-internet-${FR_CITY[k]}/` : '';
   if (lang === 'fr') return fr || nl;

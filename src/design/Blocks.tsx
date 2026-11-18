@@ -16,7 +16,7 @@ import DD from '../site/design-data.json';
 // ---------- galerij: beeldkaarten (screenshots van voorbeeldsites of foto's) met label, titel en link ----------
 const DEMO_SHOT: Record<string, string> = { 'houtatelier-nethe': 'houtatelier-nethe', 'bistro-tilvaar': 'horeca-voorbeeld', vennebrand: 'webshop-voorbeeld', 'dakwerken-hoogland': 'dakwerken-hoogland', 'atelier-kleurwerk': 'kleurwerk-voorbeeld', 'tuinzorg-varelinde': 'tuin-voorbeeld', velours: 'schoonheidssalon-voorbeeld', 'kapsalon-ivelien': 'kapsalon-voorbeeld', 'barbier-kolvaard': 'barbier-voorbeeld' };
 const DEMO_NAME: Record<string, string> = { 'houtatelier-nethe': 'Houtatelier Nethe', 'bistro-tilvaar': 'Bistro Tilvaar', vennebrand: 'Vennebrand', 'dakwerken-hoogland': 'Dakwerken Hoogland', 'atelier-kleurwerk': 'Atelier Kleurwerk', 'tuinzorg-varelinde': 'Tuinzorg Varelinde', velours: 'Velours', 'kapsalon-ivelien': 'Kapsalon Ivelien', 'barbier-kolvaard': 'Barbier Kolvaard' };
-const DEMO_BASE: Record<string, string> = { nl: '/voorbeeldontwerpen/', fr: '/fr/exemples-de-sites/', en: '/en/voorbeeldontwerpen/' };
+const DEMO_BASE: Record<string, string> = { nl: '/voorbeeldontwerpen/', fr: '/fr/exemples-de-sites/', en: '/en/sample-designs/' };
 // welke voorbeelden passen bij welke pagina (sector of dienst); anders een algemene mix
 const PAGE_DEMOS: Record<string, string[]> = {
   '/website-horeca/': ['bistro-tilvaar', 'vennebrand', 'velours'], '/website-kapsalon/': ['kapsalon-ivelien', 'barbier-kolvaard', 'velours'], '/website-zorg/': ['velours', 'kapsalon-ivelien', 'houtatelier-nethe'],

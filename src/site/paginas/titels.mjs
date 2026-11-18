@@ -74,9 +74,9 @@ export default [
 
   // ---------------------------------------------------------------- EN
   T('/en/', 'Website design in Belgium from €490 | Webstudio K', 'Have a website built in Belgium: a custom design, with an introductory conversation and a no-obligation quote first. From €490 excl. VAT.'),
-  T('/en/logo-en-huisstijl/', 'Logo and visual identity design | Logo from €190', 'Have a logo or visual identity created for your business: logo from €190 with 2 proposals, identity from €490 with a style guide.'),
-  T('/en/kennis/website-laten-maken-of-zelf-bouwen/', 'Have a website built or DIY: costs over 5 years', 'Have a website built or build it yourself? Costs and time compared over 5 years, so you can make an informed choice.'),
-  T('/en/website-laten-maken-herentals/', 'Have a website built in Herentals | Webstudio K', 'A custom design for your business in Herentals and the Kempen, with a no-obligation quote first. Websites from €490 excl. VAT.'),
-  T('/en/website-laten-maken-kortrijk/', 'Have a website built in Kortrijk | From €490', 'A custom website design for your business in Kortrijk and the surrounding area. No-obligation quote first, from €490 excl. VAT.', 'Have a website built in Kortrijk'),
-  T('/en/website-tuinaannemer/', 'Website for garden contractors | Webstudio K', 'A website for garden contractors and gardeners: projects, service area and a quote form, from creation to maintenance. From €490 excl. VAT.'),
+  T('/en/logo-and-brand-identity/', 'Logo and visual identity design | Logo from €190', 'Have a logo or visual identity created for your business: logo from €190 with 2 proposals, identity from €490 with a style guide.'),
+  T('/en/guides/website-built-or-diy/', 'Have a website built or DIY: costs over 5 years', 'Have a website built or build it yourself? Costs and time compared over 5 years, so you can make an informed choice.'),
+  T('/en/web-design-herentals/', 'Have a website built in Herentals | Webstudio K', 'A custom design for your business in Herentals and the Kempen, with a no-obligation quote first. Websites from €490 excl. VAT.'),
+  T('/en/web-design-kortrijk/', 'Have a website built in Kortrijk | From €490', 'A custom website design for your business in Kortrijk and the surrounding area. No-obligation quote first, from €490 excl. VAT.', 'Have a website built in Kortrijk'),
+  T('/en/website-landscaper/', 'Website for garden contractors | Webstudio K', 'A website for garden contractors and gardeners: projects, service area and a quote form, from creation to maintenance. From €490 excl. VAT.'),
 ];

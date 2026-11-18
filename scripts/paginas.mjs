@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parseHTML } from 'linkedom';
-import { FR_SLUGS } from '../src/site/slugs.mjs';
+import { FR_SLUGS, EN_SLUGS } from '../src/site/slugs.mjs';
 
 const ROOT = path.resolve('.');
 const C = path.join(ROOT, 'content');
@@ -16,7 +16,7 @@ const OGL = { nl: 'nl_BE', fr: 'fr_BE', en: 'en_GB' };
 const HOME = { nl: '/', fr: '/fr/', en: '/en/' };
 export const fileOf = u => path.join(C, ...u.split('/').filter(Boolean), 'index.html');
 /** pad van een bestaande pagina in een taal vanaf het NL-pad */
-export const pathIn = (lang, nl) => { let u = (lang === 'nl' ? '' : '/' + lang) + nl; if (lang === 'fr') u = FR_SLUGS[u] || u; return u; };
+export const pathIn = (lang, nl) => { let u = (lang === 'nl' ? '' : '/' + lang) + nl; if (lang === 'fr') u = FR_SLUGS[u] || u; if (lang === 'en') u = EN_SLUGS[u] || u; return u; };
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const strip = s => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const slug = s => strip(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40);

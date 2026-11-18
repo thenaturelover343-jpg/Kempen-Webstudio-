@@ -78,7 +78,7 @@ const hub = {
       { t: 'band', id: 'all-belgium', intro: ['One web studio for businesses across Belgium.', 'We meet online, with one point of contact.'], h2: 'Website design for every region', lead: [`Wherever your business is, the approach and the prices are the same: an introductory conversation and a no-obligation quote first, then a custom design that loads fast and that everyone can use. The city pages explain what is different in each city. For more about <a href="/en/">having a website built</a>, see our home page.`, 'Introductions and meetings take place online, by email or phone, so you never need to travel.'] },
       { t: 'cards', id: 'regions-en', h2: 'Choose your city', items: [
         ['Brussels', `<a href="/en/web-design-brussels/">Web design in Brussels</a>, in all 19 municipalities.`],
-        ['Flanders', `<a href="/en/website-laten-maken-gent/">Ghent</a>, <a href="/en/website-laten-maken-leuven/">Leuven</a>, <a href="/en/website-laten-maken-kortrijk/">Kortrijk</a> and <a href="/en/website-laten-maken-kempen/">the Kempen</a>.`],
+        ['Flanders', `<a href="/en/web-design-ghent/">Ghent</a>, <a href="/en/web-design-leuven/">Leuven</a>, <a href="/en/web-design-kortrijk/">Kortrijk</a> and <a href="/en/web-design-kempen/">the Kempen</a>.`],
         ['Other cities', `We also build websites for businesses in Antwerp, Mechelen, Hasselt, Bruges, Liège, Namur and Charleroi. Those pages are available in Dutch or French; <a href="${P.contact.en}">contact us</a> in English any time.`],
       ] },
       { t: 'pricing', id: 'prices-hub', h2: 'The same prices everywhere in Belgium', side: 'Your city does not change the price. You choose a package and know the amount in advance.', term: `After a short conversation you receive a written quote. All prices are in our guide <a href="${P.prijs.en}">what does a website cost in 2026</a>.` },
@@ -169,7 +169,7 @@ const over = {
         ['Honest about examples', `Our <a href="${P.demos.en}">sample designs</a> use fictional names and details, and we say so. We never show invented clients, reviews or figures.`],
         ['Plain language', 'We write your website copy after a conversation, in plain language, so your customers understand straight away what you do.'],
       ] },
-      { t: 'prose', id: 'all-belgium-about', h2: 'For businesses across Belgium', html: `<p>Because introductions and meetings take place online, we work just as well for a business in <a href="/en/web-design-brussels/">Brussels</a>, <a href="/en/website-laten-maken-gent/">Ghent</a> or the <a href="/en/website-laten-maken-kempen/">Kempen</a>. Overview: <a href="${P.hub.en}">website design across Belgium</a>.</p>` },
+      { t: 'prose', id: 'all-belgium-about', h2: 'For businesses across Belgium', html: `<p>Because introductions and meetings take place online, we work just as well for a business in <a href="/en/web-design-brussels/">Brussels</a>, <a href="/en/web-design-ghent/">Ghent</a> or the <a href="/en/web-design-kempen/">Kempen</a>. Overview: <a href="${P.hub.en}">website design across Belgium</a>.</p>` },
       { t: 'prose', id: 'how-we-work', h2: 'How we work', html: `<p>It starts with an introduction by email, phone or online. We then prepare a no-obligation quote for your business, showing what your website will contain and what it costs. If you want to go ahead, we confirm the package in a written quote.</p><p>${DELIVERY.en} After launch we maintain your site: updates, backups and small changes are included in the monthly fee.</p>` },
       { t: 'cards', id: 'details', h2: 'Our details', items: [
         ['Address and contact', NAP.en],
@@ -245,12 +245,12 @@ const contact = {
         ['Opening hours', UREN.en + ' ' + 'Outside these hours you can always send a message.'],
       ] },
       { t: 'raw', html: `<section aria-labelledby="message-en-t" class="sec kw-form"><div class="wrap"><p class="lbl">Contact form</p><h2 id="message-en-t">Send us a message</h2><div class="kw-form-txt"><p>Tell us briefly about your business and what you are looking for: a new website, an online shop, a redesign or help getting found. We start with a no-obligation quote.</p><p>${REPLY.en}</p></div></div></section>` },
-      { t: 'band', id: 'where', intro: ['For businesses across Belgium.', 'Meetings online, by email or phone.'], h2: 'Where we are', lead: [`Introductions and meetings take place online, by email or phone, for businesses in <a href="/en/web-design-brussels/">Brussels</a> or <a href="/en/website-laten-maken-gent/">Ghent</a>.`, 'Map: © OpenStreetMap contributors.'], fig: mapFig('en') },
+      { t: 'band', id: 'where', intro: ['For businesses across Belgium.', 'Meetings online, by email or phone.'], h2: 'Where we are', lead: [`Introductions and meetings take place online, by email or phone, for businesses in <a href="/en/web-design-brussels/">Brussels</a> or <a href="/en/web-design-ghent/">Ghent</a>.`, 'Map: © OpenStreetMap contributors.'], fig: mapFig('en') },
       { t: 'faq', id: 'faq-contact', h2: 'Frequently asked questions about contact', items: [
         ['What are your opening hours?', UREN.en],
         ['How quickly will I get a reply?', REPLY.en],
         ['Do I need to come in for a meeting?', 'No. Introductions and meetings take place online, by email or phone.'],
-        ['What happens to my details?', 'We only use your details to answer your question. See our <a href="/en/privacyverklaring/">privacy statement</a>.'],
+        ['What happens to my details?', 'We only use your details to answer your question. See our <a href="/en/privacy-policy/">privacy statement</a>.'],
       ] },
     ],
   },
@@ -368,7 +368,7 @@ const brussels = {
       ['What does a website cost in Brussels?', 'Start from €490, Vakman from €990 and Webshop from €1,890, one-off and excl. VAT, plus a monthly fee from €29, €49 or €79. Extra languages are agreed in advance.'],
       ['Will my website be accessible?', `We build to the web accessibility guidelines (WCAG 2.2 AA). See <a href="${P.wcag.en}">accessible website</a>.`],
     ] },
-    cta('en', 'A website for your business in Brussels?', ['Also active in', [['/en/website-laten-maken-leuven/', 'Leuven'], ['/en/website-laten-maken-gent/', 'Ghent'], [P.hub.en, 'all of Belgium']]]),
+    cta('en', 'A website for your business in Brussels?', ['Also active in', [['/en/web-design-leuven/', 'Leuven'], ['/en/web-design-ghent/', 'Ghent'], [P.hub.en, 'all of Belgium']]]),
   ],
 };
 

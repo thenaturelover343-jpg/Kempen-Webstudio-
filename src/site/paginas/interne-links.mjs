@@ -4,18 +4,18 @@
 // Wordt vóór de veelgestelde vragen (of de slot-CTA) ingevoegd.
 import fs from 'node:fs';
 import path from 'node:path';
-import { FR_SLUGS } from '../slugs.mjs';
+import { FR_SLUGS, EN_SLUGS } from '../slugs.mjs';
 import { PAGINA_FOTO } from '../fotos.mjs';
 import { P } from './_gemeen.mjs';
 
-const pathIn = (lang, nl) => { let u = (lang === 'nl' ? '' : '/' + lang) + nl; if (lang === 'fr') u = FR_SLUGS[u] || u; return u; };
+const pathIn = (lang, nl) => { let u = (lang === 'nl' ? '' : '/' + lang) + nl; if (lang === 'fr') u = FR_SLUGS[u] || u; if (lang === 'en') u = EN_SLUGS[u] || u; return u; };
 const DIENST = ['/webshop-laten-maken/', '/website-laten-vernieuwen/', '/logo-en-huisstijl/', '/toegankelijke-website/',
   '/website-horeca/', '/website-kapsalon/', '/website-schilder/', '/website-starters/', '/website-tuinaannemer/', '/website-vakmensen/', '/website-vereniging/', '/website-vrij-beroep/', '/website-winkel/', '/website-zorg/', '/kennis/'];
 const ART = ['/kennis/google-bedrijfsprofiel-aanmaken/', '/kennis/hoe-lang-duurt-website-laten-maken/', '/kennis/terugkerende-kosten-website/', '/kennis/wat-moet-er-op-een-website-staan/', '/kennis/website-fiscaal-aftrekbaar/', '/kennis/website-laten-maken-of-zelf-bouwen/', '/kennis/wettelijke-vermeldingen-website/', '/kennis/wordpress-of-maatwerk/'];
 const REGIO = {
   nl: { id: 'in-uw-regio', h2: 'Website laten maken in uw regio', lead: `Webstudio K maakt websites voor zaken in heel België. Kies uw stad, of lees meer over <a href="/">een website laten maken</a> en <a href="${P.prijs.nl}">wat een website kost</a>.`, chips: [['/website-laten-maken-antwerpen/', 'Antwerpen'], ['/website-laten-maken-brussel/', 'Brussel'], ['/website-laten-maken-gent/', 'Gent'], ['/website-laten-maken-leuven/', 'Leuven'], ['/website-laten-maken-kempen/', 'De Kempen'], [P.hub.nl, 'Alle regio\'s']], aria: 'Steden' },
   fr: { id: 'dans-votre-region', h2: 'Création de site internet dans votre région', lead: `Webstudio K crée des sites pour des entreprises dans toute la Belgique. Choisissez votre ville, ou découvrez la <a href="/fr/">création de site internet</a> et le <a href="${P.prijs.fr}">prix d’un site internet</a>.`, chips: [['/fr/creation-site-internet-bruxelles/', 'Bruxelles'], ['/fr/creation-site-internet-liege/', 'Liège'], ['/fr/creation-site-internet-namur/', 'Namur'], ['/fr/creation-site-internet-charleroi/', 'Charleroi'], ['/fr/creation-site-internet-gand/', 'Gand'], [P.hub.fr, 'Toutes les régions']], aria: 'Villes' },
-  en: { id: 'in-your-region', h2: 'Website design in your region', lead: `Webstudio K builds websites for businesses across Belgium. Choose your city, or read more about <a href="/en/">having a website built</a>, <a href="${P.prijs.en}">what a website costs</a> and <a href="${P.over.en}">who we are</a>.`, chips: [['/en/web-design-brussels/', 'Brussels'], ['/en/website-laten-maken-gent/', 'Ghent'], ['/en/website-laten-maken-leuven/', 'Leuven'], ['/en/website-laten-maken-kempen/', 'The Kempen'], ['/en/website-laten-maken-kortrijk/', 'Kortrijk'], [P.hub.en, 'All regions']], aria: 'Cities' },
+  en: { id: 'in-your-region', h2: 'Website design in your region', lead: `Webstudio K builds websites for businesses across Belgium. Choose your city, or read more about <a href="/en/">having a website built</a>, <a href="${P.prijs.en}">what a website costs</a> and <a href="${P.over.en}">who we are</a>.`, chips: [['/en/web-design-brussels/', 'Brussels'], ['/en/web-design-ghent/', 'Ghent'], ['/en/web-design-leuven/', 'Leuven'], ['/en/web-design-kempen/', 'The Kempen'], ['/en/web-design-kortrijk/', 'Kortrijk'], [P.hub.en, 'All regions']], aria: 'Cities' },
 };
 const LEES = { nl: ['Lees ook', 'Meer uitleg in gewone taal over uw website.', 'Uitleg'], fr: ['À lire aussi', 'D’autres explications claires sur votre site.', 'Conseils'], en: ['Read more', 'More plain-language guides about your website.', 'Guide'] };
 const h1Of = p => { const f = path.join('content', ...p.split('/').filter(Boolean), 'index.html'); const m = fs.existsSync(f) && fs.readFileSync(f, 'utf8').match(/<h1[^>]*>([\s\S]*?)<\/h1>/); return m ? m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() : ''; };

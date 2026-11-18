@@ -9,8 +9,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseHTML } from 'linkedom';
-import { FR_SLUGS, baseOf } from '../src/site/slugs.mjs';
-const STUBS = new Set(Object.keys(FR_SLUGS));
+import { FR_SLUGS, EN_SLUGS, baseOf } from '../src/site/slugs.mjs';
+const STUBS = new Set([...Object.keys(FR_SLUGS), ...Object.keys(EN_SLUGS)]);
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.resolve(ROOT, process.argv[2] || 'dist-live');
@@ -112,7 +112,7 @@ for (const rel of htmlFiles) {
   if (!LIVE && !/noindex/.test(robots || '')) err('robots', `${url}: test-build zonder noindex`);
   if (isDemo) continue; // voorbeeldsites: ongewijzigd overgenomen
   if (STUBS.has(url)) { // vangnet op een oud FR-pad: noindex, canonical en refresh naar het nieuwe pad
-    const c = H.querySelector('link[rel="canonical"]')?.getAttribute('href'); if (c !== ORIGIN + FR_SLUGS[url] || !/noindex/.test(robots || '')) err('redirect', `${url}: vangnet klopt niet`); continue; }
+    const c = H.querySelector('link[rel="canonical"]')?.getAttribute('href'); if (c !== ORIGIN + (FR_SLUGS[url] || EN_SLUGS[url]) || !/noindex/.test(robots || '')) err('redirect', `${url}: vangnet klopt niet`); continue; }
   nPages++;
   const base = baseOf(url);
   const want = LIVE ? (CFG.noindex[base] || 'index,follow') : 'noindex,nofollow';

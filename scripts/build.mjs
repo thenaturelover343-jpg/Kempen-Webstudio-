@@ -43,7 +43,7 @@ fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(CACHE, { recursive: true });
 const write = (rel, data) => { const f = path.join(OUT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, data); };
 const urlOf = rel => '/' + rel.split(path.sep).join('/').replace(/index\.html$/, '');
-const { baseOf, FR_SLUGS } = await import(pathToFileURL(path.join(ROOT, 'src', 'site', 'slugs.mjs')).href);
+const { baseOf, FR_SLUGS, EN_SLUGS } = await import(pathToFileURL(path.join(ROOT, 'src', 'site', 'slugs.mjs')).href);
 const langOf = u => (u.match(/^\/(fr|en)\//) || [, 'nl'])[1];
 const hash = s => crypto.createHash('sha1').update(s).digest('hex').slice(0, 10);
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -167,7 +167,7 @@ write(JS_FILE.slice(1), JS);
 // ---------- 5. gedeelde gegevens per taal (formulier, extra's voor de home) ----------
 const readDoc = rel => parse(fs.readFileSync(path.join(SRC, rel), 'utf8'));
 /** content-bestand van een pagina in een taal, vanaf het NL-pad (FR heeft eigen slugs) */
-const relFor = (lang, base) => { let u = (lang === 'nl' ? '' : '/' + lang) + base; if (lang === 'fr') u = FR_SLUGS[u] || u; return u.slice(1) + 'index.html'; };
+const relFor = (lang, base) => { let u = (lang === 'nl' ? '' : '/' + lang) + base; if (lang === 'fr') u = FR_SLUGS[u] || u; if (lang === 'en') u = EN_SLUGS[u] || u; return u.slice(1) + 'index.html'; };
 const PER_LANG = {};
 for (const lang of ['nl', 'fr', 'en']) {
   const p = lang === 'nl' ? '' : lang + '/';
@@ -400,6 +400,12 @@ for (const rel of demoPages) {
     lines.push(`${from} ${to} 301`, `${from.replace(/\/$/, '')} ${to} 301`);
     const abs = ORIGIN + to;
     write(path.join(...from.split('/').filter(Boolean), 'index.html'), `<!doctype html>\n<html lang="fr-BE">\n<head>\n<meta charset="utf-8">\n<title>Page déplacée</title>\n<meta name="robots" content="noindex,follow">\n<link rel="canonical" href="${abs}">\n<meta http-equiv="refresh" content="0; url=${to}">\n</head>\n<body>\n<p>Cette page a déménagé : <a href="${to}">${abs}</a></p>\n</body>\n</html>\n`);
+  }
+  lines.push('# Oude EN-URL\'s (Nederlandse slug) -> Engelse slug, permanent');
+  for (const [from, to] of Object.entries(EN_SLUGS)) {
+    lines.push(`${from} ${to} 301`, `${from.replace(/\/$/, '')} ${to} 301`);
+    const abs = ORIGIN + to;
+    write(path.join(...from.split('/').filter(Boolean), 'index.html'), `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<title>Page moved</title>\n<meta name="robots" content="noindex,follow">\n<link rel="canonical" href="${abs}">\n<meta http-equiv="refresh" content="0; url=${to}">\n</head>\n<body>\n<p>This page has moved: <a href="${to}">${abs}</a></p>\n</body>\n</html>\n`);
   }
   write('_redirects', lines.join('\n') + '\n');
 }
