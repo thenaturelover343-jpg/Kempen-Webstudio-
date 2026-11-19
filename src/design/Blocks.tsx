@@ -108,6 +108,8 @@ function SubPortrait() {
 /** trust-strip als één zin zonder bolletjes (audit 17-11): "Kennismaking en vrijblijvende offerte, één aanspreekpunt, prijzen vanaf €490 excl. btw." */
 const lc1 = (t: string) => /^E[eé]n\s/.test(t) ? "één" + t.slice(3) : t.charAt(0).toLowerCase() + t.slice(1);
 export function trustLine(trust: string[]) { const t = trust.map(x => strip(x)); return t.length >= 3 ? `${t[0]}, ${lc1(t[1])}, ${lc1(t[2])}.` : t.join(', ') + '.'; }
+/** beelden voor de volgende stappen in de hero-kaart: dezelfde als de home-hero (Home.tsx HERO_FOTO), plus een reserve als het paginabeeld er al één van is */
+const HERO_STAP_FOTO = ['vb-houtatelier', 'vb-kapsalon', 'vb-dakwerken'];
 export function PageHero({ h, ui }: { h: any; ui?: any }) {
   const h1t = strip(h.h1);
   const cur = h.crumbs ? strip((h.crumbs.find((c: any) => c.current) || {}).html || '') : strip(h.tag || '');
@@ -117,6 +119,7 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
     ...(h.trust || []).slice(0, 2).map((t: string) => ({ t: split2(strip(t)), dup: false })),
   ];
   const fid = (PAGINA_FOTO as any)[h.path] || '';
+  const heroFotos: string[] = [fid, ...HERO_STAP_FOTO.filter(x => x !== fid)];
   const sec = h.sectors && h.sectors.chips && h.sectors.chips.length ? h.sectors : null;
   return (
     <SectionReveal immediate data-fl-hide="" aria-labelledby={h.sectionAria || undefined} className="relative hero-canvas overflow-hidden flex flex-col justify-between lg:min-h-[calc(100vh-76px)]">
@@ -149,7 +152,10 @@ export function PageHero({ h, ui }: { h: any; ui?: any }) {
           <Load delay={0.14} className="relative z-20 lg:col-span-4 lg:col-start-9 flex flex-col items-stretch lg:items-end gap-8 lg:gap-14 lg:pt-6">
             {slides.length > 0 && (
               <div data-sel="" data-sel-wrap="" data-sel-auto="6500" className="mx-auto lg:mx-0 w-full max-w-[360px] xl:max-w-[392px] rounded-[24px] sm:rounded-[28px] p-3 sm:p-3.5 bg-gradient-to-br from-[#C4C5C8]/90 via-[#B8B9BC]/85 to-[#ABACB0]/90 border border-white/30 flex items-stretch gap-3.5 sm:gap-5 shadow-[0_12px_30px_rgba(0,0,0,0.06)] backdrop-blur-xs">
-                <div className="relative overflow-hidden w-[118px] sm:w-[160px] h-[146px] sm:h-[168px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center">{fid ? <Foto id={fid} vorm="kaart" lang={h.lang} sizes="(min-width: 640px) 160px, 118px" className="absolute inset-0 block w-full h-full object-contain object-center" /> : <ShowcaseEmblem />}</div>
+                {/* 19/11 (Karim): elke stap een eigen beeld, zoals op de home (eigen paneel per stap; eerst het paginabeeld, daarna de home-beelden) */}
+                <div className="relative overflow-hidden w-[118px] sm:w-[160px] h-[146px] sm:h-[168px] shrink-0 rounded-[18px] sm:rounded-[20px] bg-[#040405] flex items-center justify-center">
+                  {slides.map((_, i) => { const id = heroFotos[i]; return <div key={i} data-sel-panel={i} hidden={i > 0} className="absolute inset-0 flex items-center justify-center">{id ? <Foto id={id} vorm="kaart" lang={h.lang} sizes="(min-width: 640px) 160px, 118px" className="absolute inset-0 block w-full h-full object-contain object-center" /> : <ShowcaseEmblem />}</div>; })}
+                </div>
                 <div className="flex-1 min-w-0 flex flex-col justify-between py-1 sm:py-1.5 pr-0.5 sm:pr-1">
                   <span aria-hidden="true" className="text-[15px] font-semibold text-[#18181B] tabular-nums">
                     {slides.map((_, i) => <span key={i} data-sel-panel={i} hidden={i > 0}>0{i + 1}</span>)}
@@ -720,7 +726,7 @@ function render(b: any, P: any, s: any, f?: any) {
             <StaggerItem key={i} i={i} className={cx('h-full', b.items.length !== 4 && cx(span6(b.items.length, i), span2(b.items.length, i)))}>
               <a href={d.href} target={d.newTab ? '_blank' : undefined} rel={d.newTab ? 'noopener' : undefined} className="group rounded-[24px] bg-[#F2F2F2] border border-[#D3D6DA] hover:border-[#B85D28]/60 p-5 flex flex-col justify-between h-full transition-colors">
                 <div>
-                  <div className="aspect-[4/3] rounded-[18px] overflow-hidden bg-[#D3D6DA] [&_picture]:block [&_picture]:h-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:object-top" dangerouslySetInnerHTML={{ __html: d.img }} />
+                  <div className="aspect-[16/10] rounded-[18px] overflow-hidden bg-[#D3D6DA] [&_picture]:block [&_picture]:h-full [&_img]:w-full [&_img]:h-full [&_img]:object-contain [&_img]:object-center" dangerouslySetInnerHTML={{ __html: d.img }} />
                   <div className="mt-5">
                     <h3 className="text-[20px] font-medium text-[#121214]" dangerouslySetInnerHTML={{ __html: d.h }} />
                     <p className="mt-3 text-[16px] leading-relaxed text-[#4C433F]" dangerouslySetInnerHTML={{ __html: d.p }} />

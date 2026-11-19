@@ -60,9 +60,10 @@
         bars.forEach(function (b) { b.style.animation = 'none'; void b.offsetWidth; b.style.animation = go ? 'kw-bar ' + auto + 'ms linear forwards' : ''; });
         if (go) t = setTimeout(function () { set(cur + 1, 1); run(); }, auto);
       };
-      g.addEventListener('mouseenter', function () { paused = true; run(); });
-      g.addEventListener('mouseleave', function () { paused = false; run(); });
-      g.addEventListener('focusin', function () { paused = true; run(); });
+      /* 19/11: alleen een echte muis pauzeert; op gsm/tablet gaf een tik een "mouseenter" zonder "mouseleave" en bleef de kaart stilstaan */
+      g.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'mouse') return; paused = true; run(); });
+      g.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'mouse') return; paused = false; run(); });
+      g.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) { paused = true; run(); } });
       g.addEventListener('focusout', function (e) { if (!e.relatedTarget || !g.contains(e.relatedTarget)) { paused = false; run(); } });
       g.addEventListener('click', function () { setTimeout(run, 0); });
       if ('IntersectionObserver' in W) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; run(); }, { threshold: 0.35 }).observe(g);

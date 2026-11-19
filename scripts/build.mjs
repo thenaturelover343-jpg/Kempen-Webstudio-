@@ -98,6 +98,8 @@ const MARK = (s = 28) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2
     png[s] = await sharp(Buffer.from(MARK(inner))).resize(inner, inner).extend({ top: pad, bottom: pad, left: pad, right: pad, background: s >= 180 ? '#e2e3e6' : { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer();
     if (s >= 48) write(`icons/kw-${s}.png`, png[s]);
   }
+  // 19/11: oude root-iconen (vroeger blauw #1A2FFB) zijn nu exact dezelfde oranje bestanden als /icons/ (Google kan ze als site-icoon gebruiken)
+  write('apple-touch-icon.png', png[180]); write('icon-192.png', png[192]); write('icon-512.png', png[512]); write('favicon-48.png', png[48]);
   const imgs = [16, 32, 48].map(s => png[s]); const head = Buffer.alloc(6 + 16 * imgs.length); head.writeUInt16LE(0, 0); head.writeUInt16LE(1, 2); head.writeUInt16LE(imgs.length, 4); let off = head.length;
   imgs.forEach((b, i) => { const s = [16, 32, 48][i], o = 6 + 16 * i; head.writeUInt8(s, o); head.writeUInt8(s, o + 1); head.writeUInt16LE(1, o + 4); head.writeUInt16LE(32, o + 6); head.writeUInt32LE(b.length, o + 8); head.writeUInt32LE(off, o + 12); off += b.length; });
   write('favicon.ico', Buffer.concat([head, ...imgs]));
