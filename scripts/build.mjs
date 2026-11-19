@@ -388,8 +388,9 @@ for (const rel of pages) {
 
 // ---------- 8. voorbeeldsites: ongewijzigd, met juiste robots ----------
 for (const rel of demoPages) {
-  let s = fs.readFileSync(path.join(SRC, rel), 'utf8'); const want = ROBOTS(urlOf(rel)); const re = /<meta name="robots" content="[^"]*">/;
-  if (re.test(s)) s = s.replace(re, `<meta name="robots" content="${want}">`); else if (want !== 'index,follow') s = s.replace('</head>', `<meta name="robots" content="${want}">\n</head>`);
+  let s = fs.readFileSync(path.join(SRC, rel), 'utf8'); const want = ROBOTS(urlOf(rel)); const re = /<meta\s+name="robots"[^>]*>/gi; let first = true;
+  // precies één robots-meta: de eerste krijgt de juiste waarde, eventuele dubbele worden verwijderd
+  if (re.test(s)) s = s.replace(re, () => { if (!first) return ''; first = false; return `<meta name="robots" content="${want}">`; }); else if (want !== 'index,follow') s = s.replace('</head>', `<meta name="robots" content="${want}">\n</head>`);
   if (MODE === 'live' && !/<link rel="canonical"/.test(s)) s = s.replace('</head>', `<link rel="canonical" href="${ORIGIN + urlOf(rel)}">
 </head>`);
   write(rel, s);
