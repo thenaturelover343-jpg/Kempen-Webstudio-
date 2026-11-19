@@ -66,7 +66,8 @@
       g.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) { paused = true; run(); } });
       g.addEventListener('focusout', function (e) { if (!e.relatedTarget || !g.contains(e.relatedTarget)) { paused = false; run(); } });
       g.addEventListener('click', function () { setTimeout(run, 0); });
-      if ('IntersectionObserver' in W) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; run(); }, { threshold: 0.35 }).observe(g);
+      /* 19/11 10:40: drempel 0 i.p.v. 0.35: op gsm stond de kaart half onderaan in beeld (<35%) en speelde ze niet af */
+      if ('IntersectionObserver' in W) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; run(); }, { threshold: 0 }).observe(g);
       else { inView = true; run(); }
       d.addEventListener('visibilitychange', function () { inView = !d.hidden && inView; run(); });
     }
