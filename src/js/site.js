@@ -56,7 +56,7 @@
     if (auto && n > 1 && !reduced) {
       var paused = false, inView = false, t = 0, bars = own('[data-sel-bar]');
       var run = function () {
-        clearTimeout(t); var go = !paused && inView;
+        clearTimeout(t); var go = !paused && inView && !d.hidden;
         bars.forEach(function (b) { b.style.animation = 'none'; void b.offsetWidth; b.style.animation = go ? 'kw-bar ' + auto + 'ms linear forwards' : ''; });
         if (go) t = setTimeout(function () { set(cur + 1, 1); run(); }, auto);
       };
@@ -69,7 +69,11 @@
       /* 19/11 10:40: drempel 0 i.p.v. 0.35: op gsm stond de kaart half onderaan in beeld (<35%) en speelde ze niet af */
       if ('IntersectionObserver' in W) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; run(); }, { threshold: 0 }).observe(g);
       else { inView = true; run(); }
-      d.addEventListener('visibilitychange', function () { inView = !d.hidden && inView; run(); });
+      /* 19/11: paginazichtbaarheid apart van "in beeld" (die komt alleen van de IntersectionObserver). Vroeger zette
+         een app-wissel op gsm inView op false en kwam die nooit terug zolang de kaart in beeld bleef: de hero-kaart
+         bovenaan een onderpagina bleef dan stilstaan. Op home viel dat niet op omdat je naar de kaart toe scrolt. */
+      d.addEventListener('visibilitychange', run);
+      W.addEventListener('pageshow', function (e) { if (e.persisted) run(); });
     }
   });
 
