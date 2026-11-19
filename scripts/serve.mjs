@@ -1,5 +1,5 @@
 // serve.mjs: kleine statische server om een build lokaal te bekijken (zoals een statische host: map/ -> map/index.html,
-// /map zonder slash -> 301 naar /map/, onbekend -> 404.html met status 404). Gebruik: node scripts/serve.mjs dist-test 4100
+// /map zonder slash -> 301 naar /map/, onbekend -> 404.html met status 404, of fr/404.html / en/404.html als het pad met /fr/ of /en/ begint). Gebruik: node scripts/serve.mjs dist-test 4100
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,7 +16,12 @@ http.createServer((req, res) => {
     f = path.join(f, 'index.html');
   }
   let status = 200;
-  if (!fs.existsSync(f)) { status = 404; f = path.join(DIR, '404.html'); }
+  if (!fs.existsSync(f)) {
+    status = 404;
+    const loc = (p.match(/^\/(fr|en)(?=\/|$)/) || [])[1];
+    const localized = loc && path.join(DIR, loc, '404.html');
+    f = (localized && fs.existsSync(localized)) ? localized : path.join(DIR, '404.html');
+  }
   const ext = path.extname(f).toLowerCase(); let body = fs.readFileSync(f);
   const h = { 'Content-Type': TYPES[ext] || 'application/octet-stream', 'Cache-Control': /\/assets\/(fonts|img)\/|\/assets\/site\.[0-9a-f]+\.js$/.test(f.split(path.sep).join('/')) ? 'public, max-age=31536000, immutable' : 'no-cache' };
   if (/\.(html|css|js|json|xml|txt|svg|webmanifest)$/.test(ext) && /\bbr\b/.test(req.headers['accept-encoding'] || '')) { body = zlib.brotliCompressSync(body); h['Content-Encoding'] = 'br'; }
