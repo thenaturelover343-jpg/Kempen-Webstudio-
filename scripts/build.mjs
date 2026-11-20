@@ -32,6 +32,7 @@ const CACHE = path.join(ROOT, '.cache');
 const CFG = JSON.parse(fs.readFileSync(path.join(ROOT, 'config', 'live-config.json'), 'utf8'));
 const ORIGIN = CFG.origin.replace(/\/$/, '');
 const DEMO = new Set(CFG.demoFolders);
+const DEMO_INDEX = new Set(CFG.demoIndex || []);
 const LANGS = { nl: 'nl-BE', fr: 'fr-BE', en: 'en' };
 const today = new Date().toISOString().slice(0, 10);
 const warn = [];
@@ -225,7 +226,7 @@ for (const lang of ['nl', 'fr', 'en']) {
 }
 
 // ---------- 6. pagina's ----------
-const ROBOTS = url => { if (MODE === 'test') return 'noindex,nofollow'; const base = baseOf(url), top = base.split('/')[1]; return CFG.noindex[base] || (DEMO.has(top) ? CFG.demoRobots : 'index,follow'); };
+const ROBOTS = url => { if (MODE === 'test') return 'noindex,nofollow'; const base = baseOf(url), top = base.split('/')[1]; return CFG.noindex[base] || (DEMO.has(top) ? (DEMO_INDEX.has(top) ? 'index,follow' : CFG.demoRobots) : 'index,follow'); };
 function avifFor(srcset) {
   const parts = srcset.split(',').map(s => s.trim()).filter(Boolean).map(p => { const [u, d] = p.split(/\s+/); return { u, d, a: u.replace(/\.(webp|jpe?g|png)$/i, '.avif') }; });
   if (!parts.length || !parts.every(p => AVIF.has(p.a))) return null;
@@ -395,6 +396,11 @@ for (const rel of demoPages) {
   if (re.test(s)) s = s.replace(re, () => { if (!first) return ''; first = false; return `<meta name="robots" content="${want}">`; }); else if (want !== 'index,follow') s = s.replace('</head>', `<meta name="robots" content="${want}">\n</head>`);
   if (MODE === 'live' && !/<link rel="canonical"/.test(s)) s = s.replace('</head>', `<link rel="canonical" href="${ORIGIN + urlOf(rel)}">
 </head>`);
+  // vernieuwde voorbeeldsites (demoIndex): index,follow live, dus ook in sitemap.xml (niet in llms.txt)
+  if (MODE === 'live' && want === 'index,follow' && /index\.html$/.test(rel)) {
+    const t = (s.match(/<title>([^<]*)<\/title>/) || [, ''])[1], d = (s.match(/<meta name="description" content="([^"]*)"/) || [, ''])[1];
+    indexable.push({ url: urlOf(rel), base: urlOf(rel), lang: 'nl', title: t, desc: d, hl: [], imgs: [], demo: true });
+  }
   write(rel, s);
 }
 
@@ -420,7 +426,7 @@ if (MODE === 'live') {
   write('robots.txt', CFG.robotsTxt);
   // llms.txt: korte, feitelijke samenvatting voor AI-zoekmachines, met alle indexeerbare pagina's (titel + URL) per taal
   {
-    const sec = (l, h) => ['', '## ' + h, ...indexable.filter(p => p.lang === l).sort((a, b) => a.url.localeCompare(b.url)).map(p => `- [${p.title}](${ORIGIN + p.url}): ${p.desc}`)];
+    const sec = (l, h) => ['', '## ' + h, ...indexable.filter(p => p.lang === l && !p.demo).sort((a, b) => a.url.localeCompare(b.url)).map(p => `- [${p.title}](${ORIGIN + p.url}): ${p.desc}`)];
     write('llms.txt', [
       '# Webstudio K',
       '',

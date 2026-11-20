@@ -1,12 +1,11 @@
 {
-  "_uitleg": "Instellingen voor maak-live.mjs. 'noindex' = pagina's die ook live NIET in Google horen (zelfde waarde als op live, 11-11-2026). Alle andere pagina's worden index,follow. Voorbeeldsites (demoFolders) krijgen demoRobots, tenzij hierboven een eigen waarde staat.",
+  "_uitleg": "Instellingen voor maak-live.mjs. 'noindex' = pagina's die ook live NIET in Google horen (zelfde waarde als op live, 11-11-2026). Alle andere pagina's worden index,follow. Voorbeeldsites (demoFolders) krijgen demoRobots, tenzij hierboven een eigen waarde staat. 'demoIndex' = vernieuwde voorbeeldsites die live index,follow krijgen, met canonical en een plaats in sitemap.xml (20-11-2026, Karim/Marieke).",
   "origin": "https://www.kempenwebstudio.be",
   "noindex": {
     "/404.html": "noindex",
     "/bedankt/": "noindex",
     "/privacyverklaring/": "noindex,follow",
-    "/cookiebeleid/": "noindex,follow",
-    "/horeca-voorbeeld/": "noindex,nofollow"
+    "/cookiebeleid/": "noindex,follow"
   },
   "demoFolders": [
     "barbier-voorbeeld",
@@ -35,5 +34,14 @@
     ".zip",
     ".tar",
     ".md"
+  ],
+  "demoIndex": [
+    "barbier-voorbeeld",
+    "dakwerken-hoogland",
+    "horeca-voorbeeld",
+    "houtatelier-nethe",
+    "kapsalon-voorbeeld",
+    "kleurwerk-voorbeeld",
+    "tuin-voorbeeld"
   ]
 }
