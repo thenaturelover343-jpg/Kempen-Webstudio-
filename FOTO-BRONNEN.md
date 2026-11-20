@@ -33,3 +33,10 @@ Alle vijf onder de Unsplash License: gratis, ook voor commercieel gebruik, naams
 | sector-kapsalon.webp | kapper knipt haar | Farhad Ibrahimzade | https://unsplash.com/photos/V2HDOQTJh3o |
 | sector-schilder.webp | schilder rolt een muur | Barney Goodman | https://unsplash.com/photos/Azz07JvM-EA |
 | sector-tuin.webp | tuinaannemer zet een plant | Jonathan Kemper | https://unsplash.com/photos/CbZh3kaPxrE |
+
+## Update 20-11-2026: vernieuwde voorbeeldsites
+
+- **Screenshots** van de 7 vernieuwde voorbeeldsites (Tuinzorg Varelinde, Barbier Kolvaard, Kapsalon Ivelien, Dakwerken Hoogland, Bistro Tilvaar, Houtatelier Nethe, Atelier Kleurwerk) zijn opnieuw gemaakt: desktop 1280×800 (d1600/d1000/d640), gsm 390×844 (m600/m360), pagina volledig geladen, zonder intro of preloader. Ook `fr-houtatelier-*`, `fr-ivelien-*` (startbeeld en fotogalerij), `pl-ivelien-*` (boekingsplanner, stap Dag) en `pl-dak-*` (offerteformulier, eerste stap) komen nu uit de nieuwe versies. Velours en Vennebrand zijn ongewijzigd.
+- **kapsalon**: `kapsalon-ivelien-g2.webp` (foto uit de nieuwe Kapsalon Ivelien: kapper knipt haar met een schaar) vervangt `kapsalon-foto-2.webp` uit de oude versie.
+- **terras**: de terrasfoto uit de oude horeca-voorbeeldsite bestaat niet meer in Bistro Tilvaar; het beeld gebruikt nu `sec-horeca-1400.webp` (gedekte tafels in een restaurant, bestaande site).
+- **schilder, tuin, schrijnwerk**: `kleurwerk-foto-4`, `tuin-foto-2` en `houtatelier-foto-3` zijn dezelfde foto's (pixelvergelijking, alleen anders gecomprimeerd) als in de nieuwe voorbeeldsites (`kwasten.webp`, `img/d2-1400.webp`, `schaaf.webp`) en blijven.
