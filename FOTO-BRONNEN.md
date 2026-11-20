@@ -54,3 +54,13 @@ Alle vijf onder de Unsplash License: gratis, ook voor commercieel gebruik, naams
 | Atelier Kleurwerk | img/zetel(-sm).webp | woonkamer met zetel | schilders in een woonkamer, stoel afgedekt | Blue Bird | https://www.pexels.com/photo/couple-doing-house-renovations-7217957/ |
 | Atelier Kleurwerk | img/eetruimte(-sm).webp | witte eetruimte | schilder op een ladder zet een grondlaag | Ksenia Chernaya | https://www.pexels.com/photo/faceless-house-painter-undercoating-wall-in-bright-room-5691471/ |
 | Atelier Kleurwerk | img/woonkamer(-sm).webp | woonkamer met visgraatparket | schilders zetten plafond en muren in de verf | Tima Miroshnichenko | https://www.pexels.com/photo/couple-painting-the-room-6474482/ |
+
+## Update 20-11-2026 (3): Atelier Kleurwerk, vakmannen en behang
+
+Na de hercontrole van Marieke: de foto's `zetel` en `woonkamer` in «Uit het atelier» lazen als een koppel dat zelf klust, en dienstkaart 03 «Behangwerken» toonde een verfroller. Vervangers van Pexels, onder de Pexels License (gratis, ook commercieel, naamsvermelding niet verplicht, geen watermerk), op volle grootte nagekeken en uitgesneden tot exact de oude maten (zetel 1400×930 / 800×531, woonkamer 1400×934 / 800×534). Kaart 03 heeft nu een eigen bestand `behang-sm.webp` (800×534); `woonkamer-sm.webp` wordt alleen nog in de galerij gebruikt. De screenshots `kleurwerk-voorbeeld-*` tonen alleen de hero en zijn dus niet gewijzigd.
+
+| Bestand | Oud | Nieuw | Fotograaf | Bron |
+|---|---|---|---|---|
+| img/zetel.webp, img/zetel-sm.webp | koppel schildert een woonkamer (Pexels 7217957) | schilder in grijze overall en stofmasker spuit de wanden van een afgedekte kamer | Tima Miroshnichenko | https://www.pexels.com/photo/man-in-black-jacket-and-black-pants-wearing-white-helmet-6474300/ |
+| img/woonkamer.webp, img/woonkamer-sm.webp | koppel schildert een kamer (Pexels 6474482) | schilder in grijze overall spuit de bovenkant van de muur, ruimte afgeplakt en afgedekt met folie (uitsnede rechts) | Tima Miroshnichenko | https://www.pexels.com/photo/a-man-in-gray-suit-painting-a-house-6474199/ |
+| img/behang-sm.webp (nieuw, kaart 03 Behangwerken; was woonkamer-sm.webp) | verfroller (woonkamer-sm) | een baan behang wordt tegen de muur gezet en aangestreken (uitsnede) | Nataliya Vaitkevich | https://www.pexels.com/photo/back-view-of-a-woman-standing-on-a-table-near-the-wall-5641766/ |
