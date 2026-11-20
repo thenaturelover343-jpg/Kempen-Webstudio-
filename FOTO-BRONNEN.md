@@ -40,3 +40,17 @@ Alle vijf onder de Unsplash License: gratis, ook voor commercieel gebruik, naams
 - **kapsalon**: `kapsalon-ivelien-g2.webp` (foto uit de nieuwe Kapsalon Ivelien: kapper knipt haar met een schaar) vervangt `kapsalon-foto-2.webp` uit de oude versie.
 - **terras**: de terrasfoto uit de oude horeca-voorbeeldsite bestaat niet meer in Bistro Tilvaar; het beeld gebruikt nu `sec-horeca-1400.webp` (gedekte tafels in een restaurant, bestaande site).
 - **schilder, tuin, schrijnwerk**: `kleurwerk-foto-4`, `tuin-foto-2` en `houtatelier-foto-3` zijn dezelfde foto's (pixelvergelijking, alleen anders gecomprimeerd) als in de nieuwe voorbeeldsites (`kwasten.webp`, `img/d2-1400.webp`, `schaaf.webp`) en blijven.
+
+## Update 20-11-2026 (2): controle Marieke
+
+- **Screenshots** `barbier-voorbeeld-*` (titel past nu op gsm, ook op 360 px), `schoonheidssalon-voorbeeld-*` en `webshop-voorbeeld-*` (alle maten d1600/d1000/d640/m600/m360 en de bronnen d1000/m600; nu met «Webstudio K» in plaats van «Kempen Webstudio») zijn opnieuw gemaakt. De kaart `vb-barbier` toont nu de volledige titel (uitsnede top 400).
+- **Foto's in de voorbeeldsites** (regel van Karim: geen foto's die niets met het vak te maken hebben). Alle vervangers komen van Pexels, onder de Pexels License (gratis, ook commercieel, naamsvermelding niet verplicht, geen watermerk); uitgesneden tot exact de oude maten.
+
+| Voorbeeldsite | Bestand | Oud | Nieuw | Fotograaf | Bron |
+|---|---|---|---|---|---|
+| Tuinzorg Varelinde | img/d4-1400.webp, img/d4-800.webp | park met wandelpad en oude bomen | gazon wordt gemaaid met een duwmaaier | Magic K | https://www.pexels.com/photo/a-person-mowing-the-lawn-6728926/ |
+| Dakwerken Hoogland | img/woning.webp | bakstenen woning (geen werk) | dakwerkers hijsen latten naar een donker dak | hans middendorp | https://www.pexels.com/photo/men-working-on-the-roof-8576025/ |
+| Dakwerken Hoogland | img/dorp.webp | luchtfoto van een dorp | dakwerker op een hoogwerker aan een bakstenen gevel | Gundula Vogel | https://www.pexels.com/photo/roofer-performing-maintenance-on-red-brick-building-31762405/ |
+| Atelier Kleurwerk | img/zetel(-sm).webp | woonkamer met zetel | schilders in een woonkamer, stoel afgedekt | Blue Bird | https://www.pexels.com/photo/couple-doing-house-renovations-7217957/ |
+| Atelier Kleurwerk | img/eetruimte(-sm).webp | witte eetruimte | schilder op een ladder zet een grondlaag | Ksenia Chernaya | https://www.pexels.com/photo/faceless-house-painter-undercoating-wall-in-bright-room-5691471/ |
+| Atelier Kleurwerk | img/woonkamer(-sm).webp | woonkamer met visgraatparket | schilders zetten plafond en muren in de verf | Tima Miroshnichenko | https://www.pexels.com/photo/couple-painting-the-room-6474482/ |

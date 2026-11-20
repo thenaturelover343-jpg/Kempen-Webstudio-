@@ -52,7 +52,7 @@ export const FOTOS = {
   'vb-tuin': { src: 'tuin-voorbeeld-m600.webp', crop: { left: 0, top: 300, width: 600, height: 630 }, ...vb('Tuinzorg Varelinde') },
   'vb-schoonheid': { src: 'schoonheidssalon-voorbeeld-m600.webp', crop: { left: 0, top: 60, width: 600, height: 630 }, ...vb('Velours') },
   'vb-kapsalon': { src: 'kapsalon-voorbeeld-m600.webp', crop: { left: 0, top: 340, width: 600, height: 630 }, ...vb('Kapsalon Ivelien') },
-  'vb-barbier': { src: 'barbier-voorbeeld-m600.webp', crop: { left: 0, top: 270, width: 600, height: 630 }, ...vb('Barbier Kolvaard') },
+  'vb-barbier': { src: 'barbier-voorbeeld-m600.webp', crop: { left: 0, top: 400, width: 600, height: 630 }, ...vb('Barbier Kolvaard') },
   'vb-webshop-breed': { src: 'webshop-voorbeeld-d1000.webp', crop: { left: 0, top: 120, width: 1000, height: 433 }, alt: { nl: 'Voorbeeldontwerp Vennebrand, een webshop', fr: 'Exemple de design Vennebrand, une boutique en ligne', en: 'Sample design Vennebrand, an online shop' } },
   kaart: { src: 'kaart-kasterlee.png', alt: { nl: 'Kaart van Kasterlee en omgeving, met Turnhout, Geel, Herentals en Mol', fr: 'Carte de Kasterlee et environs, avec Turnhout, Geel, Herentals et Mol', en: 'Map of Kasterlee and surroundings, with Turnhout, Geel, Herentals and Mol' } },
   // de drie cases: fragment van de echte site (zonder logo of cookiebanner), screenshot 15-11-2026
