@@ -1,6 +1,6 @@
 # Teksten die alleen uit het design komen (ter goedkeuring)
 
-Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op de site komen woord voor woord uit de huidige site; de build controleert dat per pagina.
+Automatisch gemaakt door scripts/build.mjs (2026-11-20). Alle andere teksten op de site komen woord voor woord uit de huidige site; de build controleert dat per pagina.
 
 ## NL
 
@@ -76,14 +76,14 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 ## FR
 
 - 5 à 10 jours ouvrables  _(op 1 pagina)_
-- Actif dans toute la Belgique  _(op 57 pagina's)_
+- Actif dans toute la Belgique  _(op 58 pagina's)_
 - Adapté mobile  _(op 1 pagina)_
 - Agenda par soin  _(op 1 pagina)_
 - Aménagement  _(op 1 pagina)_
 - Architectes  _(op 1 pagina)_
 - Auto-écoles  _(op 1 pagina)_
 - Barbiers  _(op 1 pagina)_
-- Belgique, CET  _(op 110 pagina's)_
+- Belgique, CET  _(op 112 pagina's)_
 - Boucheries  _(op 1 pagina)_
 - Boulangeries  _(op 1 pagina)_
 - Boutique en ligne  _(op 2 pagina's)_
@@ -109,9 +109,9 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Galerie  _(op 1 pagina)_
 - Garages  _(op 1 pagina)_
 - Hasselt  _(op 2 pagina's)_
-- Haut de page  _(op 55 pagina's)_
+- Haut de page  _(op 56 pagina's)_
 - Henegouwen  _(op 1 pagina)_
-- Heure en Belgique  _(op 55 pagina's)_
+- Heure en Belgique  _(op 56 pagina's)_
 - Instituts de beauté  _(op 1 pagina)_
 - Intérieur  _(op 1 pagina)_
 - Itinéraire, Appeler, Site web  _(op 1 pagina)_
@@ -123,7 +123,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Location  _(op 1 pagina)_
 - Luik  _(op 1 pagina)_
 - Luxemburg  _(op 1 pagina)_
-- MENU  _(op 55 pagina's)_
+- MENU  _(op 56 pagina's)_
 - Malines  _(op 2 pagina's)_
 - Mobile-first  _(op 1 pagina)_
 - Namen  _(op 1 pagina)_
@@ -139,7 +139,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Prise de contact et devis sans engagement, un seul interlocuteur, réponse en général sous 1 jour ouvrable.  _(op 11 pagina's)_
 - Prix fixe  _(op 1 pagina)_
 - Rapide sur smartphone et PC  _(op 1 pagina)_
-- Réponse habituelle sous 1 jour ouvrable  _(op 55 pagina's)_
+- Réponse habituelle sous 1 jour ouvrable  _(op 56 pagina's)_
 - Réservation en ligne  _(op 2 pagina's)_
 - Services clairs  _(op 1 pagina)_
 - Six de nos exemples de design, chacun pour un autre secteur. Les noms et données sont fictifs ; cliquez pour voir à qui chaque site s’adresse, les choix et les fonctions.  _(op 1 pagina)_
@@ -165,14 +165,14 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 
 - 5 to 10 working days  _(op 1 pagina)_
 - Accountants  _(op 1 pagina)_
-- All of Belgium  _(op 53 pagina's)_
+- All of Belgium  _(op 54 pagina's)_
 - Answers about how we work, our prices and when your site goes live.  _(op 1 pagina)_
 - Architects  _(op 1 pagina)_
-- Back to top  _(op 52 pagina's)_
+- Back to top  _(op 53 pagina's)_
 - Bakers  _(op 1 pagina)_
 - Beauty Salon  _(op 1 pagina)_
 - Beauty salons  _(op 1 pagina)_
-- Belgium, CET  _(op 104 pagina's)_
+- Belgium, CET  _(op 106 pagina's)_
 - Bespoke work  _(op 1 pagina)_
 - Bold typography  _(op 1 pagina)_
 - Booking button  _(op 1 pagina)_
@@ -209,7 +209,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Light aesthetic  _(op 1 pagina)_
 - Luik  _(op 1 pagina)_
 - Luxemburg  _(op 1 pagina)_
-- MENU  _(op 52 pagina's)_
+- MENU  _(op 53 pagina's)_
 - Mobile friendly  _(op 1 pagina)_
 - Mobile-first  _(op 1 pagina)_
 - Namen  _(op 1 pagina)_
@@ -223,12 +223,12 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Quote form  _(op 1 pagina)_
 - Refined style  _(op 1 pagina)_
 - Rental companies  _(op 1 pagina)_
-- Reply usually within 1 business day  _(op 52 pagina's)_
+- Reply usually within 1 business day  _(op 53 pagina's)_
 - Request received, a single point of contact, reply within 1 working day.  _(op 1 pagina)_
 - Secure checkout  _(op 1 pagina)_
 - Service Area  _(op 1 pagina)_
 - Service overview  _(op 1 pagina)_
-- Serving all of Belgium  _(op 54 pagina's)_
+- Serving all of Belgium  _(op 55 pagina's)_
 - Shopping cart  _(op 1 pagina)_
 - Single point of contact  _(op 1 pagina)_
 - Six of our sample designs, each for a different sector. Names and details are fictional; click through for the audience, choices and features.  _(op 1 pagina)_
@@ -237,7 +237,7 @@ Automatisch gemaakt door scripts/build.mjs (2026-11-18). Alle andere teksten op 
 - Start-ups  _(op 1 pagina)_
 - Table booking  _(op 1 pagina)_
 - Therapists  _(op 1 pagina)_
-- Time in Belgium  _(op 52 pagina's)_
+- Time in Belgium  _(op 53 pagina's)_
 - Understated layout  _(op 1 pagina)_
 - Vlaams-Brabant  _(op 1 pagina)_
 - Waals-Brabant  _(op 1 pagina)_

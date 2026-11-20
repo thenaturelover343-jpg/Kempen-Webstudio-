@@ -1,8 +1,8 @@
 {
  "build": "dist-live",
- "paginas": 164,
- "html": 289,
- "links": 25712,
+ "paginas": 166,
+ "html": 291,
+ "links": 27382,
  "jsonLd": 544,
  "hreflangParen": 468,
  "urls": {
@@ -11,23 +11,13 @@
    "ok": 105,
    "ontbreekt": []
   },
-  "site": {
-   "totaal": 31,
-   "ok": 31,
-   "ontbreekt": []
-  },
-  "site-live": {
-   "totaal": 105,
-   "ok": 105,
-   "ontbreekt": []
-  },
   "content": {
-   "totaal": 189,
-   "ok": 189,
+   "totaal": 191,
+   "ok": 191,
    "ontbreekt": []
   },
   "sitemap": {
-   "nieuw": 154,
+   "nieuw": 161,
    "online": 105,
    "weg": [
     "https://www.kempenwebstudio.be/fr/voorbeeldontwerpen/",
@@ -109,6 +99,13 @@
     "https://www.kempenwebstudio.be/en/seo-services/",
     "https://www.kempenwebstudio.be/fr/referencement-seo/",
     "https://www.kempenwebstudio.be/seo-laten-doen/",
+    "https://www.kempenwebstudio.be/tuin-voorbeeld/",
+    "https://www.kempenwebstudio.be/horeca-voorbeeld/",
+    "https://www.kempenwebstudio.be/barbier-voorbeeld/",
+    "https://www.kempenwebstudio.be/houtatelier-nethe/",
+    "https://www.kempenwebstudio.be/dakwerken-hoogland/",
+    "https://www.kempenwebstudio.be/kapsalon-voorbeeld/",
+    "https://www.kempenwebstudio.be/kleurwerk-voorbeeld/",
     "https://www.kempenwebstudio.be/en/sample-designs/velours/",
     "https://www.kempenwebstudio.be/en/website-design-belgium/",
     "https://www.kempenwebstudio.be/fr/creation-site-internet/",
@@ -231,6 +228,13 @@
   "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/en/seo-services/",
   "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/fr/referencement-seo/",
   "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/seo-laten-doen/",
+  "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/tuin-voorbeeld/",
+  "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/horeca-voorbeeld/",
+  "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/barbier-voorbeeld/",
+  "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/houtatelier-nethe/",
+  "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/dakwerken-hoogland/",
+  "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/kapsalon-voorbeeld/",
+  "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/kleurwerk-voorbeeld/",
   "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/en/sample-designs/velours/",
   "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/en/website-design-belgium/",
   "nieuw in de sitemap (niet in de online sitemap): https://www.kempenwebstudio.be/fr/creation-site-internet/",

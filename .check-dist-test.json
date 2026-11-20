@@ -1,8 +1,8 @@
 {
  "build": "dist-test",
- "paginas": 164,
- "html": 289,
- "links": 25712,
+ "paginas": 166,
+ "html": 291,
+ "links": 27382,
  "jsonLd": 544,
  "hreflangParen": 468,
  "urls": {
@@ -11,19 +11,9 @@
    "ok": 105,
    "ontbreekt": []
   },
-  "site": {
-   "totaal": 31,
-   "ok": 31,
-   "ontbreekt": []
-  },
-  "site-live": {
-   "totaal": 105,
-   "ok": 105,
-   "ontbreekt": []
-  },
   "content": {
-   "totaal": 189,
-   "ok": 189,
+   "totaal": 191,
+   "ok": 191,
    "ontbreekt": []
   }
  },
