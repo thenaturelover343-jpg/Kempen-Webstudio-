@@ -256,7 +256,7 @@ async function fotoFiles(doc) {
   for (const u of urls) {
     if (FOTO_DONE.has(u)) continue; FOTO_DONE.add(u);
     const m = u.match(/^\/assets\/img\/f\/(.+)\.(\w+)\.(\d+)\.(avif|webp)$/); if (!m) throw new Error('foto-url ' + u);
-    const [, id, vorm, w, ext] = m; const F = FOTOS[id], V = VORMEN[vorm]; if (!F || !V) throw new Error('foto onbekend ' + u);
+    const [, idv, vorm, w, ext] = m; const id = idv.replace(/-r\d{4}$/, ''); const F = FOTOS[id], V = VORMEN[vorm]; if (!F || !V) throw new Error('foto onbekend ' + u);
     const src = fs.readFileSync(path.join(ROOT, 'src', 'img', 'foto', 'bron', (F.vorm && F.vorm[vorm] && F.vorm[vorm].src) || F.src));
     const h = Math.round(+w * V.r[1] / V.r[0]);
     // uitsnede of focus per vorm (fotos.mjs: vorm: { tegel: { crop, pos } }), anders die van de foto zelf

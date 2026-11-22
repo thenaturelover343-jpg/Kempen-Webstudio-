@@ -5,7 +5,11 @@
     "/404.html": "noindex",
     "/bedankt/": "noindex",
     "/privacyverklaring/": "noindex,follow",
-    "/cookiebeleid/": "noindex,follow"
+    "/cookiebeleid/": "noindex,follow",
+    "/webshop-voorbeeld/winkelmand/": "noindex,follow",
+    "/webshop-voorbeeld/afrekenen/": "noindex,follow",
+    "/webshop-voorbeeld/betalen/": "noindex,follow",
+    "/webshop-voorbeeld/bestelling/": "noindex,follow"
   },
   "demoFolders": [
     "barbier-voorbeeld",
@@ -42,6 +46,8 @@
     "houtatelier-nethe",
     "kapsalon-voorbeeld",
     "kleurwerk-voorbeeld",
-    "tuin-voorbeeld"
+    "tuin-voorbeeld",
+    "webshop-voorbeeld",
+    "schoonheidssalon-voorbeeld"
   ]
 }

@@ -36,24 +36,23 @@ export const FOTOS = {
   schilder: { src: 'kleurwerk-foto-4.webp', alt: { nl: 'Schilderskwasten op een werktafel', fr: 'Pinceaux de peintre sur une table de travail', en: 'Paintbrushes on a work table' } },
   tuin: { src: 'tuin-foto-2.webp', alt: { nl: 'Tuinpad tussen bloeiende borders', fr: 'Allée de jardin entre des massifs fleuris', en: 'Garden path between flowering borders' } },
   schrijnwerk: { src: 'houtatelier-foto-3.webp', alt: { nl: 'Schaaf en houtkrullen op een werkbank', fr: 'Rabot et copeaux de bois sur un établi', en: 'Plane and wood shavings on a workbench' } },
-  branderij: { src: 'webshop-foto-branderij.webp', alt: { nl: 'Koffiebrander in een branderij', fr: 'Torréfacteur de café dans une brûlerie', en: 'Coffee roaster in a roastery' } },
   terras: { src: 'sec-horeca-1400.webp', alt: { nl: 'Gedekte tafels in een restaurant met warm licht', fr: 'Tables dressées dans un restaurant à la lumière chaleureuse', en: 'Laid tables in a restaurant with warm light' } },
   gent: { src: 'stad-gent-inh-1280.webp', alt: { nl: 'Gevels aan het water in Gent bij avond', fr: 'Façades au bord de l’eau à Gand le soir', en: 'Waterside façades in Ghent in the evening' } },
   kortrijk: { src: 'stad-kortrijk-inh-1280.webp', alt: { nl: 'Toren van de Sint-Maartenskerk in Kortrijk', fr: 'Tour de l’église Saint-Martin à Courtrai', en: 'Tower of St Martin’s Church in Kortrijk' } },
   leuven: { src: 'stad-leuven-inh-1280.webp', alt: { nl: 'Historische gebouwen in Leuven', fr: 'Bâtiments historiques à Louvain', en: 'Historic buildings in Leuven' } },
-  planner: { src: 'pl-ivelien-m-700.webp', crop: { left: 10, top: 0, width: 680, height: 714 }, pos: 'top', alt: { nl: 'Afsprakenplanner in het voorbeeldontwerp Kapsalon Ivelien', fr: 'Agenda de rendez-vous dans l’exemple de design Kapsalon Ivelien', en: 'Appointment planner in the sample design Kapsalon Ivelien' } },
+  planner: { v: 'r2211', src: 'pl-ivelien-r2211-m-700.webp', crop: { left: 10, top: 0, width: 680, height: 714 }, pos: 'top', alt: { nl: 'Afsprakenplanner in het voorbeeldontwerp Kapsalon Ivelien', fr: 'Agenda de rendez-vous dans l’exemple de design Kapsalon Ivelien', en: 'Appointment planner in the sample design Kapsalon Ivelien' } },
   portret: { src: 'hero-portret.jpg', crop: { left: 64, top: 300, width: 800, height: 800 }, alt: { nl: 'Webstudio K, uw vaste aanspreekpunt', fr: 'Webstudio K, votre interlocuteur fixe', en: 'Webstudio K, your fixed point of contact' } },
   // screenshots van de 9 voorbeeldsites (gsm, bovenste deel)
-  'vb-houtatelier': { src: 'houtatelier-nethe-m600.webp', crop: { left: 0, top: 320, width: 600, height: 630 }, ...vb('Houtatelier Nethe') },
-  'vb-horeca': { src: 'horeca-voorbeeld-m600.webp', crop: { left: 0, top: 280, width: 600, height: 630 }, ...vb('Bistro Tilvaar') },
-  'vb-webshop': { src: 'webshop-voorbeeld-m600.webp', crop: { left: 0, top: 300, width: 600, height: 630 }, ...vb('Vennebrand') },
-  'vb-dakwerken': { src: 'dakwerken-hoogland-m600.webp', crop: { left: 0, top: 80, width: 600, height: 630 }, ...vb('Dakwerken Hoogland') },
-  'vb-kleurwerk': { src: 'kleurwerk-voorbeeld-m600.webp', crop: { left: 0, top: 160, width: 600, height: 630 }, vorm: { tegel: { src: 'kleurwerk-voorbeeld-d1000.webp' } }, ...vb('Atelier Kleurwerk') },
-  'vb-tuin': { src: 'tuin-voorbeeld-m600.webp', crop: { left: 0, top: 300, width: 600, height: 630 }, ...vb('Tuinzorg Varelinde') },
-  'vb-schoonheid': { src: 'schoonheidssalon-voorbeeld-m600.webp', crop: { left: 0, top: 60, width: 600, height: 630 }, ...vb('Velours') },
-  'vb-kapsalon': { src: 'kapsalon-voorbeeld-m600.webp', crop: { left: 0, top: 340, width: 600, height: 630 }, ...vb('Kapsalon Ivelien') },
-  'vb-barbier': { src: 'barbier-voorbeeld-m600.webp', crop: { left: 0, top: 400, width: 600, height: 630 }, ...vb('Barbier Kolvaard') },
-  'vb-webshop-breed': { src: 'webshop-voorbeeld-d1000.webp', crop: { left: 0, top: 120, width: 1000, height: 433 }, alt: { nl: 'Voorbeeldontwerp Vennebrand, een webshop', fr: 'Exemple de design Vennebrand, une boutique en ligne', en: 'Sample design Vennebrand, an online shop' } },
+  'vb-houtatelier': { v: 'r2211', src: 'houtatelier-nethe-r2211-m600.webp', crop: { left: 0, top: 320, width: 600, height: 630 }, ...vb('Houtatelier Nethe') },
+  'vb-horeca': { v: 'r2211', src: 'horeca-voorbeeld-r2211-m600.webp', crop: { left: 0, top: 280, width: 600, height: 630 }, ...vb('Bistro Tilvaar') },
+  'vb-webshop': { v: 'r2211', src: 'webshop-voorbeeld-r2211-m600.webp', crop: { left: 0, top: 150, width: 600, height: 630 }, ...vb('Vennebrand') },
+  'vb-dakwerken': { v: 'r2211', src: 'dakwerken-hoogland-r2211-m600.webp', crop: { left: 0, top: 80, width: 600, height: 630 }, ...vb('Dakwerken Hoogland') },
+  'vb-kleurwerk': { v: 'r2211', src: 'kleurwerk-voorbeeld-r2211-m600.webp', crop: { left: 0, top: 160, width: 600, height: 630 }, vorm: { tegel: { src: 'kleurwerk-voorbeeld-r2211-d1000.webp' } }, ...vb('Atelier Kleurwerk') },
+  'vb-tuin': { v: 'r2211', src: 'tuin-voorbeeld-r2211-m600.webp', crop: { left: 0, top: 300, width: 600, height: 630 }, ...vb('Tuinzorg Varelinde') },
+  'vb-schoonheid': { v: 'r2211', src: 'schoonheidssalon-voorbeeld-r2211-m600.webp', crop: { left: 0, top: 0, width: 600, height: 630 }, ...vb('Velours') },
+  'vb-kapsalon': { v: 'r2211', src: 'kapsalon-voorbeeld-r2211-m600.webp', crop: { left: 0, top: 340, width: 600, height: 630 }, ...vb('Kapsalon Ivelien') },
+  'vb-barbier': { v: 'r2211', src: 'barbier-voorbeeld-r2211-m600.webp', crop: { left: 0, top: 400, width: 600, height: 630 }, ...vb('Barbier Kolvaard') },
+  'vb-webshop-breed': { v: 'r2211', src: 'webshop-voorbeeld-r2211-d1000.webp', crop: { left: 0, top: 30, width: 1000, height: 433 }, alt: { nl: 'Voorbeeldontwerp Vennebrand, een webshop', fr: 'Exemple de design Vennebrand, une boutique en ligne', en: 'Sample design Vennebrand, an online shop' } },
   kaart: { src: 'kaart-kasterlee.png', alt: { nl: 'Kaart van Kasterlee en omgeving, met Turnhout, Geel, Herentals en Mol', fr: 'Carte de Kasterlee et environs, avec Turnhout, Geel, Herentals et Mol', en: 'Map of Kasterlee and surroundings, with Turnhout, Geel, Herentals and Mol' } },
   // de drie cases: fragment van de echte site (zonder logo of cookiebanner), screenshot 15-11-2026
   'case-koelaanhangwagen': { src: 'case-koelaanhangwagen-d.png', crop: { left: 40, top: 70, width: 760, height: 760 }, alt: { nl: 'Fragment van koelaanhangwagenverhuur.be', fr: 'Extrait de koelaanhangwagenverhuur.be', en: 'Excerpt from koelaanhangwagenverhuur.be' } },
@@ -104,7 +103,8 @@ export const CASE_FOTO = ['case-koelaanhangwagen', 'case-taponderhoud', 'case-ba
 export function foto(id, vorm, lang = 'nl') {
   const f = FOTOS[id], v = VORMEN[vorm];
   if (!f || !v) throw new Error(`onbekend beeld ${id} / ${vorm}`);
-  const url = (w, ext) => `/assets/img/f/${id}.${vorm}.${w}.${ext}`;
+  // versie in de bestandsnaam (bv. vb-barbier-r2211) zodat een nieuw beeld nooit uit een oude cache komt (max-age 30 dagen)
+  const url = (w, ext) => `/assets/img/f/${id}${f.v ? '-' + f.v : ''}.${vorm}.${w}.${ext}`;
   const set = ext => v.w.map(w => `${url(w, ext)} ${w}w`).join(', ');
   const w0 = v.w[v.w.length - 1];
   return { avif: set('avif'), webp: set('webp'), src: url(v.w[0], 'webp'), width: w0, height: Math.round(w0 * v.r[1] / v.r[0]), alt: (f.alt && (f.alt[lang] || f.alt.nl)) || '' };
