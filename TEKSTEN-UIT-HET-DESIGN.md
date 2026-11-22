@@ -1,6 +1,6 @@
 # Teksten die alleen uit het design komen (ter goedkeuring)
 
-Automatisch gemaakt door scripts/build.mjs (2026-11-20). Alle andere teksten op de site komen woord voor woord uit de huidige site; de build controleert dat per pagina.
+Automatisch gemaakt door scripts/build.mjs (2026-11-22). Alle andere teksten op de site komen woord voor woord uit de huidige site; de build controleert dat per pagina.
 
 ## NL
 
